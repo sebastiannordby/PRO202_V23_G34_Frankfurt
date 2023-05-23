@@ -18,8 +18,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " w-full"}>
-        <header className='flex items-center gap-2 bg-purple-500'>
-          <h1>Hei, Ola Normann!</h1>
+        <header className='flex gap-2 bg-purple-500 h-28 p-2 pt-3 items-start px-4'>
+          <Image
+            src="/images/web-logo.png"
+            alt="Arne Næss Logo"
+            className="dark:invert"
+            width={140}
+            height={40}
+            priority
+          />
+
           <Image
             src="/images/menu-hamburger-nav.svg"
             alt="Meny knapp"
@@ -46,9 +54,8 @@ export default function RootLayout({
             <li>Arkiv</li>
           </ul>
         </nav>
-        <div>
-          {children}
-        </div>  
+
+        {children}
       </body>
     </html>
   )

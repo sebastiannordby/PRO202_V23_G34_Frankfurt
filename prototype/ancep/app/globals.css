@@ -7,6 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --ancep: #96608E;
+  --gold: #CAB8A2;
 }
 
 nav {
@@ -33,7 +34,7 @@ html {
 }
 
 body {
-  color: #fff;
+  color: black;
   width: 100vw;
   height: 100%;
   /* background: linear-gradient(
