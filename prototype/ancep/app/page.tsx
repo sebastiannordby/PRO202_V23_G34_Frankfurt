@@ -5,22 +5,22 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center home
       justify-between p-6 rounded-t-3xl absolute bg-white w-full"
       style={{top: '80px'}}>
-      <div className="z-10 w-full max-w-5xl items-center justify-between bg-white
-        font-mono text-sm border border-slate-200 shadow-md rounded-lg p-2 lg:flex">
-        <div className='flex items-center gap-2 p-4 lg:mr-6'>
-          <Image
+      <div className="z-10 w-full max-w-5xl items-center justify-between bg-white cursor-pointer
+        text-sm shadow-3xl rounded-lg p-2 lg:flex">
+        <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
+          {/* <Image
             src="/images/portrait.jpg"
             width={'500'}
             height={'500'}
             alt="Kid profile picture"
             className="rounded-lg"
-            style={{width: '65px', height: '85px'}}/>
-            <div className="p-2">
+            style={{width: '65px', height: '85px'}}/> */}
+            <div className="p-2 w-full">
               <p className="block text-lg font-bold" style={{color: 'var(--gold)'}}>
                 Hei, Heidi Normann!
               </p>
-              <p className="font-bold">Høyskolen Kristiania</p>
-              <p className="font-bold">heidi@kristiania.no</p>
+              <p className="font-semibold mt-1">Høyskolen Kristiania</p>
+              <p className="font-semibold">heidi@kristiania.no</p>
             </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
@@ -16,7 +15,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [menuVisible, setMenuVisibility] = useState(false);
+  // const [menuVisible, setMenuVisibility] = useState(false);
 
   return (
     <html lang="en">
@@ -28,19 +27,19 @@ export default function RootLayout({
             href="/"
             rel="noopener noreferrer">
               <Image
-                src="/images/web-logo.png"
+                src="/images/arne.png"
                 alt="Arne Næss Logo"
-                className="dark:invert"
-                width={140}
+                className="dark:invert cursor-pointer"
+                width={100}
                 height={40}
                 priority
               />
           </a>
 
             <Image
-              src="/images/menu-hamburger-nav.svg"
+              src="/images/menu-hamburger-nav.png"
               alt="Meny knapp"
-              className="dark:invert ml-auto"
+              className="dark:invert ml-auto cursor-pointer"
               width={30}
               onClick={() => setMenuVisibility(!menuVisible)}
               height={30}
