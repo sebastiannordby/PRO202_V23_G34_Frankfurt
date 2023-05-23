@@ -10,6 +10,10 @@
   --gold: #f67500;
 }
 
+[aria-hidden="true"] {
+  display: none;
+}
+
 nav {
   background: #f41558;
   color: #fff;

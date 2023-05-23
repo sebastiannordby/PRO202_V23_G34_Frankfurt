@@ -8,8 +8,8 @@ export default function Home() {
       justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
         href="/profile"
-        className="z-10 w-full max-w-5xl items-center justify-between bg-white cursor-pointer
-          text-sm shadow-3xl rounded-lg p-2 lg:flex">
+        className="z-10 w-full items-center justify-between bg-white cursor-pointer
+          text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
           {/* <Image
             src="/images/portrait.jpg"
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </a>
 
-      <div className="mb-32 grid gap-2 text-center lg:mb-0 lg:grid-cols-4 lg:text-left mt-6 text-white">
+      <div className="mb-32 grid gap-2 text-center lg:mb-0 lg:grid-cols-4 lg:text-left mt-6 text-white max-w-sm">
         <a
           href="/archive"
           className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"

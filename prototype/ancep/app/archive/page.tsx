@@ -1,3 +1,4 @@
+import { SearchInput } from '../components/client/SearchInput'
 export const metadata = {
     title: 'Akriv',
 }
@@ -29,11 +30,15 @@ export default async function ArchivePage() {
             <h1 className="page-title">Arkiv</h1>
             <p className="text-white text-sm">Utforsk vårt akriv nedenfor</p>
 
-            <div className="flex flex-col gap-2 mt-2 p-2">
-                {
-                    pages.map(x => 
-                        <FrameItem key={x.title} title={x.title} url={x.url}/>)
-                }
+            <div className="mt-2 flex flex-col gap-2 p-2">
+                <SearchInput />
+
+                <div className="flex flex-col gap-2 mt-2">
+                    {
+                        pages.map(x => 
+                            <FrameItem key={x.title} title={x.title} url={x.url}/>)
+                    }
+                </div>
             </div>
         </main>
     );
