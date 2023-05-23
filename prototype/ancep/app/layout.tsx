@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { useState } from 'react'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
