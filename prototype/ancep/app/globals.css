@@ -7,25 +7,52 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --ancep: #96608E;
-  --gold: #CAB8A2;
+  --gold: #f67500;
 }
 
 nav {
-  background: var(--ancep);
+  background: #f41558;
   color: #fff;
   box-shadow: 0px 0px 11px 0px #92608f;
 }
 
-@media (prefers-color-scheme: dark) {
+header {
+  background: #f41558;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
 }
 
 html {
@@ -44,4 +71,35 @@ body {
     )
     rgb(var(--background-start-rgb));
      */
+}
+
+.main-layout {
+  background: url('/images/liquid-cheese.svg');
+  background-size: cover !important;
+  top: 80px;
+  padding: 1.5rem;
+  position: absolute;
+  width: 100%;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.page-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.main-layout:not(.home) {
+  background: url('/images/sun-tornado.svg');
+}
+
+main {
+  height: 100%;
+  overflow: auto;
+}
+
+.card {
+  background: rgb(234 12 86 / 39%);
+  color: #fff;
 }
