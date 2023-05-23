@@ -41,7 +41,6 @@ export default function RootLayout({
               alt="Meny knapp"
               className="dark:invert ml-auto cursor-pointer"
               width={30}
-              onClick={() => setMenuVisibility(!menuVisible)}
               height={30}
               priority
             />
