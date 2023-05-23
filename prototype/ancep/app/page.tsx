@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-between p-14 rounded-t-3xl absolute bg-white"
+    <main className="min-h-screen flex flex-col items-center justify-between p-6 rounded-t-3xl absolute bg-white"
       style={{top: '80px'}}>
       <div className="z-10 w-full max-w-5xl items-center justify-between text-center font-mono text-sm lg:flex">
         <div className='p-4 lg:mr-6'>
-          <p className="block text-2xl">
+          <p className="block text-2xl font-bold" style={{color: 'var(--gold)'}}>
             Hei, Ola Normann!
           </p>
         </div>
