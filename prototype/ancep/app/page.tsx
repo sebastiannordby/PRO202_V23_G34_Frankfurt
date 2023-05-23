@@ -4,9 +4,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center home
-      justify-between p-6 rounded-t-3xl absolute bg-white w-full"
-      style={{top: '80px'}}>
+    <main className="home min-h-screen flex flex-col items-center main-layout
+      justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
         href="/profile"
         className="z-10 w-full max-w-5xl items-center justify-between bg-white cursor-pointer

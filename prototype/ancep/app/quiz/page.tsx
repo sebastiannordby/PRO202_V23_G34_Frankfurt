@@ -4,6 +4,9 @@ export const metadata = {
   
 export default function QuizPage() {
     return(
-        <h1>Quiz</h1>
+        <main className="main-layout">
+            <h1 className="page-title">Quiz</h1>
+            <p className="text-white text-sm">Morsomme spill med din klasse</p>
+        </main>
     );
 }

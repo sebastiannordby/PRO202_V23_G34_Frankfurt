@@ -4,8 +4,9 @@ export const metadata = {
   
 export default function ProfilePage() {
     return (
-        <div>
-            <h1>Chat med &quot;Arne Næss&quot;</h1>
-        </div>
+        <main className="main-layout">
+            <h1 className="page-title">Chatbot - AI</h1>
+            <p className="text-white text-sm">Chat med Arne Næss</p>
+        </main>
     );
 }
