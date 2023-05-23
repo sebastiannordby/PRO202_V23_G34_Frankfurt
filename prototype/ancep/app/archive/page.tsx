@@ -25,8 +25,9 @@ export default async function ArchivePage() {
     };
 
     return (
-        <div className="p-2">
-            <h1 className="text-xl font-semibold">Arkiv</h1>
+        <main className="main-layout">
+            <h1 className="page-title">Arkiv</h1>
+            <p className="text-white text-sm">Utforsk vårt akriv nedenfor</p>
 
             <div className="flex flex-col gap-2 mt-2 p-2">
                 {
@@ -34,13 +35,13 @@ export default async function ArchivePage() {
                         <FrameItem key={x.title} title={x.title} url={x.url}/>)
                 }
             </div>
-        </div>
+        </main>
     );
 }
 
 function FrameItem({ title, url }: FramePage) {
     return (
         <a 
-           target="_blank" href={url} className="uppercase text-center border p-2">{title}</a>
+           target="_blank" href={url} className="card uppercase text-center p-2">{title}</a>
     );
 }
