@@ -1,4 +1,6 @@
-import Image from 'next/image'
+export const metadata = {
+  title: 'Hjem',
+}
 
 export default function Home() {
   return (
@@ -31,15 +33,14 @@ export default function Home() {
         <a
           href="/archive"
           className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
             Arkiv{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm`}>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
             Les i katalogen av Arne sine samlede verker. 
           </p>
         </a>
@@ -47,15 +48,14 @@ export default function Home() {
         <a
           href="/quiz"
           className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
             Quiz{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm`}>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
             Interaktiv quiz for hele klassen! Blir du klassens vinner?
           </p>
         </a>
@@ -63,15 +63,14 @@ export default function Home() {
         <a
           href="/chat"
           className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
             Chatbot - AI{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm`}>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
             Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
           </p>
         </a>
@@ -79,15 +78,14 @@ export default function Home() {
         <a
           href="/profile"
           className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
             Min profil{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm`}>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
             Se din tidligere prestasjon og fortjente merker.
           </p>
         </a>

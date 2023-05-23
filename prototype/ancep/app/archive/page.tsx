@@ -1,3 +1,7 @@
+export const metadata = {
+    title: 'Akriv',
+}
+
 type FramePage = {
     title: string;
     url: string;
