@@ -1,4 +1,5 @@
-import './globals.css'
+import './output.css'
+
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 
