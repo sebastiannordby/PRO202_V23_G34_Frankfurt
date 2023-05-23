@@ -1,5 +1,7 @@
+'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { useState } from 'react'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,27 +16,37 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const [menuVisible, setMenuVisibility] = useState(false);
+
   return (
     <html lang="en">
       <body className={inter.className + " w-full"}>
-        <header className='flex gap-2 bg-purple-500 h-28 p-2 pt-3 items-start px-4'>
-          <Image
-            src="/images/web-logo.png"
-            alt="Arne Næss Logo"
-            className="dark:invert"
-            width={140}
-            height={40}
-            priority
-          />
+        <header className='flex gap-2 h-28 p-2 pt-3 items-start px-4'>
+        
+          <div className="flex items-center w-full">
+            <a
+            href="/"
+            rel="noopener noreferrer">
+              <Image
+                src="/images/web-logo.png"
+                alt="Arne Næss Logo"
+                className="dark:invert"
+                width={140}
+                height={40}
+                priority
+              />
+          </a>
 
-          <Image
-            src="/images/menu-hamburger-nav.svg"
-            alt="Meny knapp"
-            className="dark:invert ml-auto"
-            width={30}
-            height={30}
-            priority
-          />
+            <Image
+              src="/images/menu-hamburger-nav.svg"
+              alt="Meny knapp"
+              className="dark:invert ml-auto"
+              width={30}
+              onClick={() => setMenuVisibility(!menuVisible)}
+              height={30}
+              priority
+            />
+          </div>
         </header>
         <nav className="p-2 w-full items-center px-4 hidden">
           <Image
