@@ -1,3 +1,5 @@
+import { HomeArrow } from "../components/HomeArrow";
+
 export const metadata = {
     title: 'Chat',
 }
@@ -5,6 +7,8 @@ export const metadata = {
 export default function ProfilePage() {
     return (
         <main className="main-layout">
+            <HomeArrow />
+
             <h1 className="page-title">Chatbot - AI</h1>
             <p className="text-white text-sm">Chat med Arne Næss</p>
 

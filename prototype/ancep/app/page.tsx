@@ -8,7 +8,7 @@ export default function Home() {
       justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
         href="/profile"
-        className="z-10 w-full items-center justify-between bg-white cursor-pointer
+        className="z-10 w-72 items-center justify-between bg-white cursor-pointer
           text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
           {/* <Image
@@ -28,10 +28,11 @@ export default function Home() {
         </div>
       </a>
 
-      <div className="mb-32 grid gap-2 text-center lg:mb-0 lg:grid-cols-4 lg:text-left mt-6 text-white max-w-sm">
+      <div 
+        className="mb-32 gap-2 flex flex-col text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-sm">
         <a
           href="/archive"
-          className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
             Arkiv{' '}
@@ -46,7 +47,7 @@ export default function Home() {
 
         <a
           href="/quiz"
-          className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
             Quiz{' '}
@@ -61,7 +62,7 @@ export default function Home() {
 
         <a
           href="/chat"
-          className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
             Chatbot - AI{' '}
@@ -76,7 +77,7 @@ export default function Home() {
 
         <a
           href="/profile"
-          className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
             Min profil{' '}

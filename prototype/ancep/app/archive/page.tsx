@@ -1,3 +1,4 @@
+import { HomeArrow } from '../components/HomeArrow';
 import { SearchInput } from '../components/client/SearchInput'
 export const metadata = {
     title: 'Akriv',
@@ -27,6 +28,7 @@ export default async function ArchivePage() {
 
     return (
         <main className="main-layout">
+            <HomeArrow />
             <h1 className="page-title">Arkiv</h1>
             <p className="text-white text-sm">Utforsk vårt akriv nedenfor</p>
 
