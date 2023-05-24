@@ -24,7 +24,7 @@ export default function ProfilePage() {
                             width={50}
                             alt="Merke"/>
 
-                        <label className="block">Jord</label>
+                        <label className="block text-white">Jord</label>
                     </div>
                     <div className="text-center">
                         <Image 
@@ -32,7 +32,7 @@ export default function ProfilePage() {
                             height={50}
                             width={50}
                             alt="Merke"/>
-                        <label className="block">Ellipse</label>
+                        <label className="block text-white">Ellipse</label>
                     </div>
                     <div className="text-center">
                         <Image 
@@ -40,7 +40,7 @@ export default function ProfilePage() {
                             height={50}
                             width={50}
                             alt="Merke"/>
-                        <label className="block">Meteoritt</label>
+                        <label className="block text-white">Meteoritt</label>
                     </div>
                     <div className="text-center">
                         <Image 
@@ -48,7 +48,7 @@ export default function ProfilePage() {
                             height={50}
                             width={50}
                             alt="Merke"/>
-                        <label className="block">Sol</label>
+                        <label className="block text-white">Sol</label>
                     </div>
                 </div>
             </div>
