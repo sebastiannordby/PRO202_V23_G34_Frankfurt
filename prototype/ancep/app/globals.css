@@ -95,7 +95,7 @@ body {
 }
 
 .main-layout:not(.home) {
-  background: url('/images/sun-tornado.svg');
+  background: url('/images/waves-4.svg');
 }
 
 main {
@@ -106,4 +106,10 @@ main {
 .card {
   background: rgb(234 12 86 / 39%);
   color: #fff;
+}
+
+.secondary-card {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
 }

@@ -17,7 +17,9 @@ export default async function ArchivePage() {
         { title: 'Positivismen', url: 'https://ancep.no/docs/positivismen/' },
         { title: 'Om å være konsekvent', url: 'https://ancep.no/docs/om-a-vaere-konsekvent/' },
         { title: 'PLURALISME OG ØKOSOFI', url: 'https://ancep.no/docs/pluralisme-og-okosofi/' },
-        { title: 'Filosofisk system', url: 'https://ancep.no/docs/filosofisk-system/' }
+        { title: 'Filosofisk system', url: 'https://ancep.no/docs/filosofisk-system/' },
+        { title: 'Spinozas etikk', url: 'https://ancep.no/docs/spinozas-etikk/'},
+        { title: 'Det gode liv', url: 'https://ancep.no/docs/det-gode-liv/' }
     ];
 
     const handleIframe = (page: FramePage) => {
@@ -30,7 +32,7 @@ export default async function ArchivePage() {
         <main className="main-layout">
             <HomeArrow />
             <h1 className="page-title">Arkiv</h1>
-            <p className="text-white text-sm">Utforsk vårt akriv nedenfor</p>
+            <p className="font-medium text-white text-sm">Utforsk vårt akriv nedenfor</p>
 
             <div className="mt-2 flex flex-col gap-2 p-2">
                 <SearchInput />
@@ -49,6 +51,6 @@ export default async function ArchivePage() {
 function FrameItem({ title, url }: FramePage) {
     return (
         <a 
-           target="_blank" href={url} className="card uppercase text-center p-2">{title}</a>
+           target="_blank" href={url} className="secondary-card font-medium uppercase text-center p-2">{title}</a>
     );
 }
