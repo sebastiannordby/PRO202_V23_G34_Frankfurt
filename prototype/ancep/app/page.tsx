@@ -1,5 +1,4 @@
 "use client"
-import { LoginForm } from "./components/login-form";
 import { useSession } from "next-auth/react";
 
 export const metadata = {
@@ -17,16 +16,8 @@ export default function Home() {
         className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
           text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
-          {/* <Image
-            src="/images/portrait.jpg"
-            width={'500'}
-            height={'500'}
-            alt="Kid profile picture"
-            className="rounded-lg"
-            style={{width: '65px', height: '85px'}}/> */}
             <div className="p-2 w-full">
               <p className="block text-lg font-bold text-white">
-                
                 {session != null ? <span>
                   Hei, {session?.user?.name}!
                 </span> : <span>Logg inn</span>}
