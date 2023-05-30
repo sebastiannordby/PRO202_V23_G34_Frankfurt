@@ -1,9 +1,9 @@
 "use client"
 import { useSession } from "next-auth/react";
 
-export const metadata = {
-  title: 'Hjem',
-}
+// export const metadata = {
+//   title: 'Hjem',
+// }
 
 export default function Home() {
   const { data: session } = useSession();
@@ -12,7 +12,7 @@ export default function Home() {
     <main className="home min-h-screen flex flex-col items-center main-layout
     justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
-        href={session != null ? "/profile" : "/auth"}
+        href={session != null ? "/profile" : "/api/auth/signin"}
         className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
           text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
@@ -86,6 +86,21 @@ export default function Home() {
           </h2>
           <p className={"m-0 max-w-[30ch] text-sm"}>
             Se din tidligere prestasjon og fortjente merker.
+          </p>
+        </a>
+
+        <a
+          href="api/auth/signout"
+          className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
+            Logg ut{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
+            Logg deg ut av nettsiden
           </p>
         </a>
       </div>
