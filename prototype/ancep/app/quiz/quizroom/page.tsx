@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-const { Server }  = require("socket.io");
+// const { Server }  = require("socket.io");
 
-
-
-export default async function quizRoom(){
-    const [io, setIO] = useState();
+// KOMMENTERT UT FORDI DET IKKE BYGGER PÅ SERVER.
 
 
-    useEffect(()=>{
+// export default async function quizRoom(){
+//     const [io, setIO] = useState();
+
+
+//     useEffect(()=>{
         
 
-    },[])
+//     },[])
 
-    return(
-        <div>
+//     return(
+//         <div>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }

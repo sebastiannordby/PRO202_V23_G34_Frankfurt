@@ -1,17 +1,32 @@
-import Image
- from "next/image";
+"use client"
+import Image from "next/image";
 import { HomeArrow } from "../components/HomeArrow";
-export const metadata = {
-    title: 'Min profil',
-}
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+
+// export const metadata = {
+//     title: 'Min profil',
+// }
+
   
 export default function ProfilePage() {
+    const { data: session } = useSession();
+
     return (
         <main className="main-layout">
             <HomeArrow />
 
             <h1 className="page-title">Min profil</h1>
             <p className="text-sm">Se dine oppnådde merker</p>
+            {session?.user?.image ? 
+                <>
+                    <img 
+                    width="150"
+                    height="150"
+                    className="mt-2"
+                    src={session?.user?.image as string}/> 
+                </> : ''
+            }
 
             <div className="flex flex-col gap-2 mt-4">
                 <h2 className="text-lg font-bold">Oppnådde merker</h2>
