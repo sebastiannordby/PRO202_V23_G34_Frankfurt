@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export default function createQuiz(){
     
-    const [questions , setQuestions ] = useState<Question[]>();
+    // const [questions , setQuestions ] = useState<Question[]>();
     // const [quiz, setQuiz] = useState<Quiz>();
 
 
