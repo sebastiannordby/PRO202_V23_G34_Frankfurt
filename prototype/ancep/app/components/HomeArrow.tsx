@@ -4,11 +4,11 @@ export function HomeArrow() {
     return (
         <a 
             href="/" 
-            className="flex items-center text-white relative"
+            className="flex items-center color-primary relative"
             style={{top: '-10px', left: '-10px'}}>
             <Image 
                 alt="Hjem pil"
-                src="/images/home-arrow.svg"
+                src="/images/home-arrow.png"
                 height={30}
                 width={30}/>
 

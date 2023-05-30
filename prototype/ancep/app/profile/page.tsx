@@ -11,44 +11,48 @@ export default function ProfilePage() {
             <HomeArrow />
 
             <h1 className="page-title">Min profil</h1>
-            <p className="text-white text-sm">Se dine oppnådde merker</p>
+            <p className="text-sm">Se dine oppnådde merker</p>
 
             <div className="flex flex-col gap-2 mt-4">
-                <h2 className="text-white text-lg">Oppnådde merker</h2>
+                <h2 className="text-lg font-bold">Oppnådde merker</h2>
 
-                <div className="flex gap-2">
+                <div className="flex gap-4 mt-3">
                     <div className="text-center">
                         <Image 
                             src="/images/merker/earth-medium.png"
                             height={50}
                             width={50}
+                            className="mx-auto"
                             alt="Merke"/>
 
-                        <label className="block text-white">Jord</label>
+                        <label className="block mt-2">Jord</label>
                     </div>
                     <div className="text-center">
                         <Image 
                             src="/images/merker/eclipse-medium.png"
                             height={50}
                             width={50}
+                            className="mx-auto"
                             alt="Merke"/>
-                        <label className="block text-white">Ellipse</label>
+                        <label className="block mt-2">Ellipse</label>
                     </div>
                     <div className="text-center">
                         <Image 
                             src="/images/merker/meteorite-medium.png"
                             height={50}
                             width={50}
+                            className="mx-auto"
                             alt="Merke"/>
-                        <label className="block text-white">Meteoritt</label>
+                        <label className="block mt-2">Meteoritt</label>
                     </div>
                     <div className="text-center">
                         <Image 
                             src="/images/merker/sun-medium.png"
                             height={50}
                             width={50}
+                            className="mx-auto"
                             alt="Merke"/>
-                        <label className="block text-white">Sol</label>
+                        <label className="block mt-2">Sol</label>
                     </div>
                 </div>
             </div>

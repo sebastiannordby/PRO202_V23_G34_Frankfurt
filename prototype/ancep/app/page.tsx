@@ -8,7 +8,7 @@ export default function Home() {
       justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
         href="/profile"
-        className="z-10 w-72 items-center justify-between bg-white cursor-pointer
+        className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
           text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
           {/* <Image
@@ -19,11 +19,11 @@ export default function Home() {
             className="rounded-lg"
             style={{width: '65px', height: '85px'}}/> */}
             <div className="p-2 w-full">
-              <p className="block text-lg font-bold" style={{color: 'var(--gold)'}}>
+              <p className="block text-lg font-bold text-white">
                 Hei, Heidi Normann!
               </p>
-              <p className="font-semibold mt-1">Høyskolen Kristiania</p>
-              <p className="font-semibold">heidi@kristiania.no</p>
+              <p className="text-white font-semibold mt-1">Høyskolen Kristiania</p>
+              <p className="text-white font-semibold">heidi@kristiania.no</p>
             </div>
         </div>
       </a>
@@ -50,7 +50,7 @@ export default function Home() {
           className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
-            Quiz og reflektering{' '}
+            Refleksjon/Quiz{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>

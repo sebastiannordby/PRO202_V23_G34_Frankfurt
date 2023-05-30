@@ -10,7 +10,7 @@ export default function ProfilePage() {
             <HomeArrow />
 
             <h1 className="page-title">Chatbot - AI</h1>
-            <p className="text-white text-sm">Chat med Arne Næss</p>
+            <p className="text-sm">Chat med Arne Næss</p>
 
             <div className="p-2 h-auto flex flex-col gap-2 relative">
                 <textarea 
