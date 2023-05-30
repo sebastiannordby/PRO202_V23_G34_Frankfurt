@@ -41,7 +41,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={"m-0 max-w-[30ch] text-sm"}>
-            Les i katalogen av Arne sine samlede verker. 
+            Naviger deg i katalogen av Arne sine samlede verker. 
           </p>
         </a>
 
