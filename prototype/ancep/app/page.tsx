@@ -1,9 +1,9 @@
 "use client"
 import { useSession } from "next-auth/react";
 
-export const metadata = {
-  title: 'Hjem',
-}
+// export const metadata = {
+//   title: 'Hjem',
+// }
 
 export default function Home() {
   const { data: session } = useSession();
