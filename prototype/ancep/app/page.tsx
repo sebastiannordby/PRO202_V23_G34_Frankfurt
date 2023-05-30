@@ -1,13 +1,19 @@
+"use client"
+import { LoginForm } from "./components/login-form";
+import { useSession } from "next-auth/react";
+
 export const metadata = {
   title: 'Hjem',
 }
 
 export default function Home() {
+  const { data: session } = useSession();
+
   return (
     <main className="home min-h-screen flex flex-col items-center main-layout
-      justify-between p-6 rounded-t-3xl absolute bg-white w-full">
+    justify-between p-6 rounded-t-3xl absolute bg-white w-full">
       <a 
-        href="/profile"
+        href={session != null ? "/profile" : "/auth"}
         className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
           text-sm shadow-3xl rounded-lg p-2 max-w-sm lg:flex">
         <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
@@ -20,10 +26,12 @@ export default function Home() {
             style={{width: '65px', height: '85px'}}/> */}
             <div className="p-2 w-full">
               <p className="block text-lg font-bold text-white">
-                Hei, Heidi Normann!
+                
+                {session != null ? <span>
+                  Hei, {session?.user?.name}!
+                </span> : <span>Logg inn</span>}
               </p>
-              <p className="text-white font-semibold mt-1">Høyskolen Kristiania</p>
-              <p className="text-white font-semibold">heidi@kristiania.no</p>
+              <p className="text-white font-semibold">{session?.user?.email}</p>
             </div>
         </div>
       </a>
@@ -91,5 +99,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
