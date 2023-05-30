@@ -1,23 +1,25 @@
-"use client";
+"use client"
 
 import { Question, QuestionType } from "@/lib/models/question";
 import { Quiz } from "@/lib/models/quiz"
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from 'react';
 
 export default function createQuiz(){
     
     const [questions , setQuestions ] = useState<Question[]>();
-    const [quiz, setQuiz] = useState<Quiz>();
+    // const [quiz, setQuiz] = useState<Quiz>();
 
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-        setQuestions([{Id: "", Value:"Kan kuer snakke?", Type: QuestionType.Dilemma , QuizId:""}])
-        setQuiz({Id:"", Name:"QuizName", Questions: questions ?? []})
+    //     setQuestions([{Id: "", Value:"Kan kuer snakke?", Type: QuestionType.Dilemma , QuizId:""}])
+    //     setQuiz({Id:"", Name:"QuizName", Questions: questions ?? []})
 
 
-    },[])
+    // },[])
+
+    // De over kjørte ikke i bygg
+    // Prøv npm run build
 
 
     // const QuizOptions:JSX.Element[] = () => {

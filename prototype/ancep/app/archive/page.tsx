@@ -30,7 +30,7 @@ export default function ArchivePage() {
                     <h1 className="font-medium text-lg">Dypøkologi</h1>
                     <ul className="pl-2 mt-2">
                         {
-                            docs.map(x => <li className='text-blue' key={x}>
+                            docs.map(x => <li className='hover:underline text-blue' key={x}>
                                 <a href={"api/archive?doc=" + x}>{x}</a>
                             </li>)
                         }
