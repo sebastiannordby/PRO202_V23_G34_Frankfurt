@@ -9,7 +9,10 @@ export default function QuizPage() {
         <main className="main-layout">
             <HomeArrow />
             <h1 className="page-title">Quiz</h1>
-            <p className="text-white text-sm">Morsomme spill med din klasse</p>
+            <ul className="text-white text-sm">
+                <li>Morsomme spill med din klasse</li>
+                <li>Reflektive spørsmål - vekk ditt indre</li>
+            </ul>
         </main>
     );
 }
