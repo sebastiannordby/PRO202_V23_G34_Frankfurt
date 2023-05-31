@@ -17,7 +17,7 @@ export default function ProfilePage() {
             <HomeArrow />
 
             <h1 className="page-title">Min profil</h1>
-            <p className="text-sm">Se dine oppnådde merker</p>
+            <p className="text-sm">Se din progresjon og opptjente merker</p>
             {session?.user?.image ? 
                 <>
                     <img 

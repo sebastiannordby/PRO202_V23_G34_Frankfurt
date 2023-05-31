@@ -72,6 +72,21 @@ export default function Home() {
         </a>
 
         <a
+          href="/profile"
+          className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          rel="noopener noreferrer">
+          <h2 className={"mb-3 text-2xl font-semibold"}>
+            Undervisnings veiledning{' '}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={"m-0 max-w-[30ch] text-sm"}>
+            Veiledning for undervisere og lærere.
+          </p>
+        </a>
+
+        <a
           href="api/auth/signout"
           className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
@@ -81,9 +96,6 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className={"m-0 max-w-[30ch] text-sm"}>
-            Logg deg ut av nettsiden
-          </p>
         </a>
       </div>
     </main>
