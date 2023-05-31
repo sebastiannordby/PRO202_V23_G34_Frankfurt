@@ -88,9 +88,9 @@ export default function Home() {
 
         <a
           href="api/auth/signout"
-          className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="content-center flex items-center text-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
-          <h2 className={"mb-3 text-2xl font-semibold"}>
+          <h2 className={"w-full mb-3 text-2xl text-center font-semibold"}>
             Logg ut{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
