@@ -61,92 +61,106 @@ export function MobileHeader() {
 
             <div id="defaultModal" tabIndex={-1} aria-hidden={!menuVisible} 
                 className="transition-opacity fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-hidden md:inset-0 backdrop-blur-md max-h-full h-screen  mx-auto">
-                <div className="relative h-full w-full max-w-2xl max-h-full mx-auto overflow-hidden">
+                <div className="relative h-full w-full max-w-xl max-h-full mx-auto overflow-hidden">
                     <div className="flex flex-col h-full overflow-hidden first-letter:relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <div className="flex items-start overflow-hidden justify-between p-4 border-b rounded-t dark:border-gray-600">
+                        <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                                 Hvor har du tenkt deg?
                             </h3>
                         </div> 
-                        <div className="h-full p-6 space-y-6">
-                            <div className="flex flex-col gap-2 text-center content-center lg:mb-0 lg:text-left mt-6 text-white max-w-sm mx-auto">
+                        <div className="h-full overflow-x-hidden overflow-y-scroll space-y-6">
+                            <div className="mb-32 w-full gap-2 flex flex-col justify-center content-center text-center mt-6 text-white">
                                 <a
                                     href="/quiz"
-                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
-                                    <h2 className={"mb-3 text-2xl font-semibold"}>
-                                        Aktiviteter{' '}
-                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                        -&gt;
-                                        </span>
-                                    </h2>
-                                    <p className={"m-0 max-w-[30ch] text-sm"}>
-                                        Interaktiv læring for hele klassen
-                                    </p>
+                                        <img
+                                        src="/images/sider/tankevekker.png"
+                                        width="50px"
+                                        height="50px"
+                                        style={{height: '50px'}}
+                                        alt="Tankevekker bilde"/>
+                                        <div className="text-left pl-2">
+                                            <h2 className={"mb-1 text-xl font-semibold"}>Aktiviteter</h2>
+                                            <p className={"m-0 max-w-[30ch] text-sm"}>
+                                                Interaktiv læring for hele klassen.
+                                            </p>
+                                        </div>
                                 </a>
-
+                                
                                 <a
                                     href="/chat"
-                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
-                                    <h2 className={"mb-3 text-2xl font-semibold"}>
-                                        Chatbot{' '}
-                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                        -&gt;
-                                        </span>
-                                    </h2>
-                                    <p className={"m-0 max-w-[30ch] text-sm"}>
-                                        Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
-                                    </p>
+                                        <img
+                                        src="/images/sider/chatbot.png"
+                                        width="50px"
+                                        height="50px"
+                                        style={{height: '50px'}}
+                                        alt="Chatbot bilde"/>
+                                        <div className="text-left pl-2">
+                                            <h2 className={"mb-1 text-xl font-semibold"}>Chatbot</h2>
+                                            <p className={"m-0 max-w-[30ch] text-sm"}>Snakk med Arne Næss</p>
+                                        </div>
                                 </a>
 
                                 <a
                                     href="/archive"
-                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
-                                    <h2 className={"mb-3 text-2xl font-semibold"}>
-                                        Kunnskapssamling{' '}
-                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                        -&gt;
-                                        </span>
-                                    </h2>
-                                    <p className={"m-0 max-w-[30ch] text-sm"}>
-                                        Les i katalogen av Arne sine samlede verker. 
-                                    </p>
+                                    <img
+                                        src="/images/sider/arkiv.png"
+                                        width="50px"
+                                        height="50px"
+                                        style={{height: '50px'}}
+                                        alt="Arkiv bilde"/>
+                                        <div className="text-left pl-2">
+                                            <h2 className={"mb-1 text-xl font-semibold"}>Kunnskapssamling</h2>
+                                            <p className={"m-0 max-w-[30ch] text-sm"}>Naviger deg i katalogen</p>
+                                        </div>
                                 </a>
 
                                 <a
                                     href="/profile"
-                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
-                                    <h2 className={"mb-3 text-2xl font-semibold"}>
-                                        Min profil{' '}
-                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                        -&gt;
-                                        </span>
-                                    </h2>
-                                    <p className={"m-0 max-w-[30ch] text-sm"}>
-                                        Se din tidligere prestasjon og fortjente merker.
-                                    </p>
+                                    <img
+                                    src="/images/sider/profil.png"
+                                    width="50px"
+                                    height="50px"
+                                    style={{height: '50px'}}
+                                    alt="Arkiv bilde"/>
+                                    <div className="text-left pl-2">
+                                        <h2 className={"mb-1 text-xl font-semibold"}>Min profil</h2>
+                                      <p className={"m-0 max-w-[30ch] text-sm"}>Se din tidligere prestasjon og fortjente merker.</p>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="/teacher"
+                                    className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                        <img
+                                        src="/images/sider/veiledning.png"
+                                        width="50px"
+                                        height="50px"
+                                        style={{height: '50px'}}
+                                        alt="Undervisnings veiledning bilde"/>
+                                    <div className="text-left pl-2">
+                                        <h2 className={"mb-1 text-xl font-semibold"}>Undervisnings veiledning</h2>
+                                        <p className={"m-0 max-w-[30ch] text-sm"}>Veiledning for undervisere og lærere.</p>
+                                    </div>
                                 </a>
 
                                 <a
                                     href="api/auth/signout"
-                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    className="mx-auto flex text-center content-center gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
-                                    <h2 className={"mb-3 text-2xl font-semibold"}>
-                                        Logg ut{' '}
-                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                        -&gt;
-                                        </span>
-                                    </h2>
-                                    <p className={"m-0 max-w-[30ch] text-sm"}>
-                                        Logg deg ut av nettsiden
-                                    </p>
+                                    <h2 className={"w-full mb-3 text-center text-xl font-semibold"}>Logg ut</h2>
                                 </a>
                             </div>
                         </div>
-                        <div className="flex items-end p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <div className="flex items-end p-2 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                             <button 
                                 data-modal-hide="defaultModal" 
                                 type="button" 
