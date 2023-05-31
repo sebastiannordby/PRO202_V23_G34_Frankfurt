@@ -22,7 +22,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={"m-0 max-w-[30ch] text-sm"}>
-            Interaktiv quiz for hele klassen eller vil du utforske ditt indre på egenhånd? 
+            Interaktive læring for hele klassen
           </p>
         </a>
         
@@ -31,7 +31,7 @@ export default function Home() {
           className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
-            Chatbot - AI{' '}
+            Chatbot{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
