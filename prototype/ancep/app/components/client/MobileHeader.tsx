@@ -8,8 +8,8 @@ export function MobileHeader() {
 
     return (
         <>
-            <header className='flex flex-col p-2 pt-3 items-start px-4 h-36 md:h-28'>
-                <div className="flex items-center w-full mb-2">
+            <header className='flex flex-col p-2 pt-3 items-start px-4 h-40 md:h-28'>
+                <div className="flex items-center w-full mb-3">
                     <a
                     href="/"
                     rel="noopener noreferrer">
@@ -48,10 +48,10 @@ export function MobileHeader() {
                             {session?.user?.image ? 
                                 <>
                                     <img 
-                                    width="50"
-                                    height="50"
-                                    className="mt-2 rounded-full"
-                                    src={session?.user?.image as string}/> 
+                                        width="50"
+                                        height="50"
+                                        className="mt-2 rounded-full md:hidden"
+                                        src={session?.user?.image as string}/> 
                                 </> : ''
                             }
                         </div>
