@@ -102,9 +102,9 @@ export default function ArchivePage() {
                             */}
 
                             </div> 
-                            <div className="p-6 space-y-6 h-full overflow-scroll flex-grow">
+                            <pre className="whitespace-break-spaces p-6 space-y-6 h-full overflow-y-scroll flex-grow">
                                 {document?.text}
-                            </div>
+                            </pre>
                             <div className="flex items-end p-4 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                                 <button 
                                     data-modal-hide="defaultModal" 
