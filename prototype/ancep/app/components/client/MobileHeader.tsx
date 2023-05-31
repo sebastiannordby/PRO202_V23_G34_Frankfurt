@@ -60,86 +60,91 @@ export function MobileHeader() {
             </header>
 
             <div id="defaultModal" tabIndex={-1} aria-hidden={!menuVisible} 
-                className="transition-opacity fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div className="relative w-full max-w-2xl max-h-full">
-                    <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <div className="p-6 space-y-6">
-                        <div className="grid gap-2 text-center lg:mb-0 lg:grid-cols-4 lg:text-left mt-6 text-white max-w-sm">
-                        <a
-                                href="/quiz"
-                                className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                rel="noopener noreferrer">
-                                <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Aktiviteter{' '}
-                                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                    -&gt;
-                                    </span>
-                                </h2>
-                                <p className={"m-0 max-w-[30ch] text-sm"}>
-                                    Interaktiv læring for hele klassen
-                                </p>
-                            </a>
+                className="transition-opacity fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-hidden md:inset-0 backdrop-blur-md max-h-full h-screen  mx-auto">
+                <div className="relative h-full w-full max-w-2xl max-h-full mx-auto overflow-hidden">
+                    <div className="flex flex-col h-full overflow-hidden first-letter:relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <div className="flex items-start overflow-hidden justify-between p-4 border-b rounded-t dark:border-gray-600">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                Hvor har du tenkt deg?
+                            </h3>
+                        </div> 
+                        <div className="h-full p-6 space-y-6">
+                            <div className="flex flex-col gap-2 text-center content-center lg:mb-0 lg:text-left mt-6 text-white max-w-sm mx-auto">
+                                <a
+                                    href="/quiz"
+                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                    <h2 className={"mb-3 text-2xl font-semibold"}>
+                                        Aktiviteter{' '}
+                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                        -&gt;
+                                        </span>
+                                    </h2>
+                                    <p className={"m-0 max-w-[30ch] text-sm"}>
+                                        Interaktiv læring for hele klassen
+                                    </p>
+                                </a>
 
-                            <a
-                                href="/chat"
-                                className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                rel="noopener noreferrer">
-                                <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Chatbot{' '}
-                                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                    -&gt;
-                                    </span>
-                                </h2>
-                                <p className={"m-0 max-w-[30ch] text-sm"}>
-                                    Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
-                                </p>
-                            </a>
+                                <a
+                                    href="/chat"
+                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                    <h2 className={"mb-3 text-2xl font-semibold"}>
+                                        Chatbot{' '}
+                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                        -&gt;
+                                        </span>
+                                    </h2>
+                                    <p className={"m-0 max-w-[30ch] text-sm"}>
+                                        Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
+                                    </p>
+                                </a>
 
-                            <a
-                                href="/archive"
-                                className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                rel="noopener noreferrer">
-                                <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Kunnskapssamling{' '}
-                                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                    -&gt;
-                                    </span>
-                                </h2>
-                                <p className={"m-0 max-w-[30ch] text-sm"}>
-                                    Les i katalogen av Arne sine samlede verker. 
-                                </p>
-                            </a>
+                                <a
+                                    href="/archive"
+                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                    <h2 className={"mb-3 text-2xl font-semibold"}>
+                                        Kunnskapssamling{' '}
+                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                        -&gt;
+                                        </span>
+                                    </h2>
+                                    <p className={"m-0 max-w-[30ch] text-sm"}>
+                                        Les i katalogen av Arne sine samlede verker. 
+                                    </p>
+                                </a>
 
-                            <a
-                                href="/profile"
-                                className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                rel="noopener noreferrer">
-                                <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Min profil{' '}
-                                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                    -&gt;
-                                    </span>
-                                </h2>
-                                <p className={"m-0 max-w-[30ch] text-sm"}>
-                                    Se din tidligere prestasjon og fortjente merker.
-                                </p>
-                            </a>
+                                <a
+                                    href="/profile"
+                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                    <h2 className={"mb-3 text-2xl font-semibold"}>
+                                        Min profil{' '}
+                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                        -&gt;
+                                        </span>
+                                    </h2>
+                                    <p className={"m-0 max-w-[30ch] text-sm"}>
+                                        Se din tidligere prestasjon og fortjente merker.
+                                    </p>
+                                </a>
 
-                            <a
-                                href="api/auth/signout"
-                                className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                rel="noopener noreferrer">
-                                <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Logg ut{' '}
-                                    <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                                    -&gt;
-                                    </span>
-                                </h2>
-                                <p className={"m-0 max-w-[30ch] text-sm"}>
-                                    Logg deg ut av nettsiden
-                                </p>
-                            </a>
-                        </div>
+                                <a
+                                    href="api/auth/signout"
+                                    className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                    rel="noopener noreferrer">
+                                    <h2 className={"mb-3 text-2xl font-semibold"}>
+                                        Logg ut{' '}
+                                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                                        -&gt;
+                                        </span>
+                                    </h2>
+                                    <p className={"m-0 max-w-[30ch] text-sm"}>
+                                        Logg deg ut av nettsiden
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                         <div className="flex items-end p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                             <button 
