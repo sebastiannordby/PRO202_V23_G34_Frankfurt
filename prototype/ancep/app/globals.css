@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --ancep: #96608E;
   --gold: #f67500;
+  --ancep-black: #231F20;
 }
 
 [aria-hidden="true"] {
@@ -21,7 +22,9 @@ nav {
 }
 
 header {
-  background: #96608e;
+  /* background: #96608e; */
+  background: #F3F3F1;
+  color: var(--ancep-black);
 }
 
 .bg-primary {
@@ -61,6 +64,7 @@ header {
 
 html, body {
   overflow: hidden;
+  min-width: 310px;
 }
 
 html {
@@ -82,9 +86,9 @@ body {
 }
 
 .main-layout {
-  background: url('/images/liquid-cheese.svg');
+  background: url('/images/Background_Mount.png');
   background-size: cover !important;
-  top: 80px;
+  top: 135px;
   padding: 1.5rem;
   position: absolute;
   width: 100%;
@@ -92,14 +96,33 @@ body {
   border-top-right-radius: 1.5rem;
 }
 
+.main-layout > .content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* background:rgb(146 96 143 / 96%); */
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 15px;
+  color: var(--ancep-black);
+}
+
+@media(min-width: 768px) {
+  .main-layout {
+    top: 75px;
+  }
+}
+
 .page-title {
-  color: #96608E;
+  /* color: #96608E; */
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 .main-layout:not(.home) {
-  background: url('/images/waves.svg');
+  /* background: url('/images/waves.svg'); */
+  background: url('/images/Background_Mount.png');
   color: #96608E;
 }
 
@@ -110,8 +133,10 @@ main {
 
 .card {
   /* background: rgb(234 12 86 / 39%); */
-  background: rgb(146 96 143 / 96%);
-  color: #fff;
+  /* background: rgb(146 96 143 / 96%); */
+  /* backdrop-filter: blur(65px); */
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ancep-black);
 }
 
 .secondary-card {

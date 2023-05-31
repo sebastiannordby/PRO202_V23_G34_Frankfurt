@@ -1,0 +1,460 @@
+1990B
+
+Deepness of Questions and the Deep Ecology Movement
+
+Arne Naess
+
+1.Historical Vorspiel
+
+This is a revised and shortened edition of an MS "Deepness of Questions"
+written in the 70s and because of its manifest weaknesses, was
+distributed only to a selected few. It reappears now because some
+interest in it persists, and because it got a prominant place in the
+important doctoral dissertation of Warwick Fox.
+
+This new version will also be sent only to a selected few.
+
+Conservation may be said to be the social movement which tries to
+conserve what is the best in what already exists. Such short expressions
+of what a social movement 'is' may have some value in some contexts, but
+generally a social movement requires fairly complex characterizations.
+Attempts to shorten them into one sentence which is then treated as
+so-called definitions or criteria are rarely successful - or the
+sentence gets to be too long and complicated. The term 'the deep ecology
+movement' has been introduced through characterizations using more than
+100 words. Vagueness and ambiguity are of course unavoidable, but
+attempts to offer one sentence characterizations or "senses" of the term
+have not been very successful.
+
+In my "The Deep Ecology Movement: Some Philosophical Aspects", in
+Philosophical Inquiry, 8, 1986, the contrast between deep and shallow
+ecological movements is characterized by using about 150 words. One
+difference is said to be decisive, it "concerns willingness to question
+and to appreciate the importance of questioning every economic and
+political policy in public. The questioning is 'deep' and public."
+(p.21).
+
+There has never been a proposal for defining deep ecology or shallow
+ecology movement only through their respective relations to the deep
+questioning[1]. One cannot leave out reference to ecology in their
+definitions. But comparing the two movements, the deep and the shallow
+(or reform) ecology movements, the relative deeper questioning
+(Problematizierung) of the former is quite manifest. It has been and
+still is my hypothesis that any systematical contemporary philosophy
+will, if it takes a stand in the ecological crisis, supports the deep
+ecology movement. Supporters of the deep ecology movement have therefore
+no systematic philosophy to fight. This is a strategically important
+hypothesis.
+
+The modern predicament is thoughtlessness rather than thought. In one
+sense we may say: if deep questioning, then there is compatibility with
+ecosophy T or other ecosophies articulating the perspectives of deep
+ecology movement. But then 'deepness' must include not only systematic
+philosophical deepness, but also the 'deepness' of proposed social
+changes. This second requirement was not stated in the previous version
+of the MS.
+
+2.Persistent 'Why?' and 'How?'
+
+Let us inspect the chain of questions in the following dialogue:
+
+(1) A: Turn on the gas!
+
+(2) B: Why?
+
+(3) A: Because we are going to boil the potatoes.
+
+(4) B: Why?
+
+(5) A: Because we ought to have dinner soon.
+
+(6) B: Why?
+
+(7) A: Because we should keep fit.
+
+(8) B: Why?
+
+(9) A: Because we should do what makes us feel happy.
+
+(10) B: Why?
+
+(11) A: Because happiness is what we ultimately desire.
+
+(12) B: Why?
+
+(13) A: 'Happiness' means satisfaction of all biological and
+
+social needs.
+
+(14) B: Why?
+
+At step (13) the pure why-chain turns from normative to descriptive.
+This may lead us into discussing the etymology of the term 'happiness'
+and other unphilosophical specialities. The 'why' at (10) and at (12) is
+within the traditions of philosophy and deeper - I would say - than at
+(8) or even at (13). Furthermore, I would perhaps rather arbitrarily,
+say that the 'why' at (8) is deeper, or leads, or may more easily lead,
+into deeper water than (6).
+
+At the start of introductory courses in philosophy my habit of
+persistently asking why, whatever the answers to my questions, for
+instance "what time is it?", makes the students bemused, bewildered,
+frustrated or angry in a remarkably fruitful way for the whole course.
+Within less than 10 minutes they are ready for anything.
+
+Some get happily bewildered because they feel I make fun of them or that
+their sanity is tested.
+
+The happily bewildered remind me of the research on 'tolerance of
+ambiguity' in the 30s and 40s motivated by the astonishing popularity of
+fascist and national socialist ideas. One working hypothesis said that
+intolerance of the ambiguity of a situation correlated highly with
+indicators of acceptance of fascist ideas: There should always be rules
+for correctness. The only test of saneness is correctness. Certain
+questions could be asked, others could not be asked. Idle wondering is
+dangerous, keep straight!
+
+- Suppose the above dialogue at an early stage went descriptive and
+explanatory:
+
+(1) A: Turn on the gas!
+
+(b) B: Why?
+
+(3b) A: Because, if you do not turn on the gas the water will not boil.
+
+(4b) B: Why?
+
+(5b) A: Because cold water needs heat from the gas in order to reach
+boiling point.
+
+(6b) B: Why?
+
+(7b) A: Boiling requires that water molecules attain higher velocities
+and these must be transferred from the hot flame of the gas.
+
+(8b) B: Why?
+
+(9b) A: Because, utlimately, quantum mechanical and thermodynamical laws
+prescribes certain conditions to be fulfilled.
+
+(10b) B: Why?
+
+(11b) A: We have no good reason to think that heating might be done
+otherwise than in conformity with physical and chemical laws or theories
+accepted today.
+
+(12b) B: Why?
+
+Again we have landed in philosophy. Why-strings in science inevitably
+lead us beyond science. Sequences of 'how?' show similar traits. Sooner
+or later we arrive in fields of inquiry typical of philosophy:
+
+(1c) A: Turn on the gas!
+
+(2c) B: How?
+
+(3c) A: Put your fingers here and turn to the left.
+
+(4c) B: How?
+
+(5c) A: Activate certain muscles of your underarm...!
+
+(6c) B: How?
+
+(7c) A: By deciding to do so.
+
+(8c) B: How?
+
+(9c) A: Pull yourself together!
+
+(10c) B: How?
+
+(11c) A: Use your free will!
+
+It seems that we can lead a dialogue out of philosophy even when
+continuing our why's and how's, but not without certain kinds of
+diversive steps or side tracking manoeurvres:
+
+(12c) B: How?
+
+(13c) A: By a careful study of the philosophy of personal development.
+
+It might be possible to keep the dialogue within the borders of
+techniques of study a couple of steps further. But roughly the
+conclusion holds: persistent questioning leads to deeper questions.
+
+The importance of the conclusion is limited because whereas question no.
+n may lead deeper, n + 1 may lead back to trivialities as exemplified by
+(12c). And which concepts of 'depth' are intended? 'Deep mathematical
+theorems' is something, 'deep grammatical structure' something else. Is
+philosophy invariably 'deep'? Deep water can be distinguished from murky
+water, but how are deep questions and answers distinguished from murky
+ones? Let us say the dialogue takes this turn:
+
+(x) There is something rather than nothing
+
+(x+1) Why?
+
+(x+2) ...
+
+The Heideggerian literature at step (x+2) some of us will characterize
+as murky rather than deep, or at least both murky and deep.
+
+In a critical situation a proposal A of how to act may be said to be
+based on a set of premises, some of them explicitly formulated in A,
+others playing the role of unarticulated 'presuppositions'
+(Collingwood). Suppose a proposal B is based on the same set of premises
+except one, an unarticulated presupposition P. B questions
+(problematizes) P, doesn't find it tenable and rejects proposal A. In
+this critical situation B may be said to question deeper than A, and the
+deeper question may be said to be 'Why P?'.
+
+The above is written just to touch upon the difficult questions we face
+if we try to formulate fairly simple, but useful, analyses
+(precizations) of 'deep questions', 'deeper questioning' and similar
+expressions.
+
+The questions do not, in my view, undermine the usefulness and
+appropriateness of the designation 'deep ecology movement'. But they
+justify the comments by Warwick Fox, David Rothenberg and others, that
+what the authors supporting the movement write is often sketchy,
+tentative, preliminary (using my words rather than theirs). The peace
+movement has produced much heavier stuff and also highly elaborated
+doctrines.
+
+Comparing argumentation patterns within the shallow and the deep
+movements, I find that the supporters of the deep ecology movement (as
+characterized in certain texts[2]) ask the deeper questions. But they
+are rarely zetetics, questioning everything. On the contrary. Like
+Rachel Carson they tend to have firm convictions - at a deep level: like
+people in the two other great movements, the peace movement and the
+social justice movment.
+
+It is essential to note that the characterizations offered in the above
+articles do not contain the term 'deep questioning'. It they did, some
+of what I say in what follows would be mere tautologies like 'The deep
+questioning movement is deep questioning.'
+
+Inspecting my examples of why- and how-strings some might wonder: are
+they not also suited for introducing concepts of 'p being sillier than
+q'? The question reminds us of the concept of relevance. When questions
+of what to do (or not to do) in a given situation is relevant - and they
+are always relevant - why- and how-strings sooner or later get to be
+irrelevant. They get sillier from the point of view of action. If we
+start a string of questions and answers why and how we eat, to eat gets
+more and more relevant as the hours pass. Action, in this case eating,
+cuts the Gordian knot, but leaves all questions open, and leaves all
+answers invoked to account for decision and action questionable.
+
+The main reaction of the Department of Agriculture and the chemical
+industry to the accusations of Rachel Carson's The Silent Spring was
+"wildly exaggerated!" If this factual and normative premise is accepted,
+a whole area of questions she raised is clearly irrelevant, some
+questions are even silly. From 1963 to 1989 there have been vast
+differences of opinion as to the gravity of the ecological situation.
+One may roughly distinguish between a white-out extreme optimistic
+opinion, a moderate optimism, a moderrate pessimism, and a black
+pessimism ('the Doomsday prophets'). The supporters of the deep ecology
+movement consider that there is a grave ecological crisis, and this may
+be seen as pessimism: Tremendous efforts are called for, the transition
+to broad ecological sustainability will be painful for most people. The
+supporters of the shallow movement tend towards optimism. Some do not
+even acknowledge anything like a crisis, but support vigorous action to
+investigate the ozone layer situation, to restore forests with trees
+growing much faster and being more resistant to pollutants, and to do
+other repair jobs.
+
+The nearly complete lack of discussion of deep questions in the shallow
+movement has as a main cause their irrelevance: why bother? Responsible
+ecological policies will be implemented in due time because of the
+clearly manageable magnitude of the implied problems.
+
+When the use of pesticides increased with a large yearly per cent only
+very few people were alarmed. Some were, but they found that strong
+forces were against restraint. When the short range, even undesirable
+consequences were clear, nothing decisive was undertaken to stop the
+growth.
+
+Few asked 'why?' and 'how?' with persistence. But those who did were
+deeply concerned. The answers did not only relate to chemistry and
+biology, but involved more and more of the aspects of human affairs -
+economic, technological, social, cultural - and ultimately philosophical
+and religious. That is, those who went deeper, both questioned deeper in
+the sense of deeper premises, and suggested deeper changes socially (in
+a wide sense).
+
+The per cent increase of sheer volume of impact and the increase of
+pernicious impact (special chemicals, special vulnerable regional
+changes) could not and cannot be exactly measured. There is always room
+for differences in degrees of optimism or pessimism. The effects of DDT
+were uncertain, causes and effects of acid rain are still uncertain,
+climatic changes - ice-age or warming of the planet, or both, or none? -
+are uncertain. Population growth correlates with growth of wealth if
+proper technology is at hand - look at the history of Holland! With high
+income and education population stabilizes.
+
+With moderate degrees of optimism the strings of 'why?' and 'how?' need
+not be long. Science and technology seem to furnish answers and they do
+not touch fundamental aspects of social or fundamental attitudes and
+value priorities.
+
+The difference between the deep and the shallow ecology movements may be
+looked upon from a special point of view: what is questioned and how
+deep does the questioning go?
+
+The terms 'questioning' and 'questionable' are not as forceful as their
+German and French equivalents problematieren, Problematizierung,
+problematique etc. In European philosophy and politics in the late 60s
+these terms were important - the whole industrial society was
+questioned, problematiziert. The movement to protect nature was
+politiziert in the sense that it had to face the economic and political
+forces that would mobilize against large protection. Without political
+changes there would be no shift to ecologically sane policies. In the
+USA terms like 'vested interests', 'the hidden persuaders' were used,
+but did not gain much influence in questions of environmentalism.
+
+Looking at the relevant literature and public debates my conclusion is
+and has long been that what characterizes the deep ecology movement (in
+relation to the shallow) is not so much the answers to 'deep questions',
+but that 'deep questions' are raised and taken seriously. It seems that
+if the deeper questions are raised seriously, the deep ecology point of
+view is accepted - more or less inevitably. The argumentation pattern
+within the shallow movement does rarely touch the deeper questions, the
+complete social, philosophical Problematizierung. If the supporters of
+the shallow movement are invited to answer the deeper questions it is my
+experience that the points of view of the deep ecology movement are
+mostly accepted.[3]
+
+From this I conclude that the view is untenable that in the ecological
+crisis one is confronted with politicians and influential people with a
+different philosophy of life, different view about man's place in the
+cosmic scheme, who effectively work against the realization of a green
+society with implied respect for the richness and diversity of life on
+Earth.
+
+The last years have seen a lively interest among religious leaders to
+denounce the arrogance towards, and the ruthless exploitation of the
+planet. The intrinsic value of all beings are proclaimed and Christian
+leaders speak about human sinful behavior towards God's creation.
+
+There is however one central point which this 'new green wave' on the
+philosophical and religious level has not taken seriously: the necessity
+of substantial change of the economic, social and ideological
+structures. If the first 5 points of the 8 points are accepted such
+changes are seen as necessary by most supporters of the deep ecology
+movement. (Cf. point 6).
+
+Should we then say that deeper questioning is not any longer what
+fundamentally makes deep ecology argumentation patterns differ from
+those of the shallow movement?
+
+The term "fundamentally" is too strong, I think, "most clearly" is
+better.
+
+A concept of pure 'why' strings was introduced. It was used to introduce
+a simple concept of 'deeper question' adapted to one of the many usages
+of the term 'deeper'. There is another usage which is relevant for the
+choice of the designation 'deep ecology movement', that of 'deepness of
+change'. Whereas the shallow movement suggests increase of the
+environmental budgets, letting the polluter pay for the pollution and
+many other changes of social policies, they are not 'deep'. The programs
+of green parties imply changes on a level of those implied by the deep
+ecological changes.
+
+As an example, let us consider the norm of universalizability applied to
+ecological policies. Because all major ecological problems are global,
+it cannot be tolerated that one society degrades life conditions very
+much more per capita than others. As it is now the richest societies
+degrade many times more per capita than the average. It requires
+formidable changes in order to be universalizable. It is unlikely that
+the population in the materially richest and most wasteful countries
+will tolerate such changes without also demanding a certain decrease of
+the difference of unecological behavior between the richest and the most
+privileged and the poorest and most needy within those countries.
+
+Opinions may differ about the 'ecopolitical' conditions implied by
+universalizability and other norms acceptable in green societies. The
+main conclusion is here in this particular context that what
+characterizes the shallow ecological movement is rather the absence of
+discussion of the difficult questions with which the green party
+propoents wrestle, than proposing solutions, technological and
+otherwise, which make it unnecessary to take up the problems.
+
+It is now more or less generally accepted that the so-called developing
+countries must find a course which combines economic growth with
+ecological sustainability. In the shallow movement it is accepted that
+this combination is possible and also that the development will lead
+towards a material standard of living of the kind realized in the
+"developed", that is, the richest countries. From the point of view of
+the deep ecology movement such a development is neither possible nor
+desirable. The materially and philosophically wastefulness of the rich
+countries does not deserve to be taken as a universal goal, and it is
+irresponsible to take it for granted that mere technological changes
+could them ecologically sustainable.
+
+This may even hold if sustainability is defined so as to make it equal
+to the absence of grave general catastrophes such as are likely if the
+ozone layer is destroyed or major climatic changes are produced.
+Ecological sustainability from the point of view of the deep ecology
+movement is more demanding. It implies life conditions such that
+richness and diversity of life forms - including human cultures - are
+maintained. How this kind of sustainability can be reached poses
+questions discussed largely within the deep movement. In the shallow
+movement they are largely ignored.
+
+It is of considerable importance that the deep ecology movement has so
+far faced no serious philosophically based criticism. There is no
+contemporary systematic philosophy from which a defence of the present
+unecological policies have been derived.
+
+How would I react towards an argumentation pattern with serious
+systematic philosophical derivations (from level 1), acceptance of the 8
+points (at level 2), but defending at least one atrociously unecological
+policy? I might class the pattern as a deep ecological argumentation
+pattern! I mention this for two reasons: (1) my confidence in the
+intimate relation between any great contemporary religious or
+philosophical movement and the deep ecology movement, and (2) the not
+too serious scandal of a defence of the above kind. Actually a case
+might be found where an atrocious policy in a poor country is defended
+because people have to go fast through the same stage of consumerism as
+the rich. A temporary, limited policy with all the prestige of the rich
+countries may help to realize sooner the idiocy of consumerism in
+general.
+
+Whatver the opinion on this rather artificial matter, the deep ecology
+movement cannot of course be defined through the attribute 'deep
+questioning'. What is, however, of interest, is the empirical view that
+if today an ecological policy is derived from a systematic philosophical
+basis, it is a policy compatible with the deep ecology movement.
+
+Jeremy Bentham worked both as a philosopher and as a social reformer who
+was not afraid of deriving very special, particular norms from general
+principles, for instance which color of ballot boxes would be best. For
+every British custom and legal procedure he said "Why so?" and if a
+procedure did not satisfy his pleasure-principle it was to be abandoned.
+That is, he questioned (problematized) every procedure in the light of
+his total view, his special form of utilitarianism. Even if his way of
+doing this by his special why-strings was to some degree ficticious
+(like the q.e.d. in Spinoza's 'proofs'), his reform movement was highly
+successful.
+
+The ecological crisis requires analogous scrutiny 'of everything' in the
+light of broad, global long range ecological sustainability. Here why-
+and how-strings mercilessly confront procedures with basic principles on
+the philosophical or religious level.
+
+[1] There are many overlapping attempts to characterize the differences
+between the deep and the shallow movements. Such characterizations
+acquire the function of describing usages of the terms. This area of
+semantics and theory of communication is not easy. Cp. my "A Note on
+Definitions, Criteria and Characterizations".
+
+[2] Bill Devall & George Sessions, Deep Ecology Salt Lake City, 1985;
+Arne Naess, Ecology, Community and Lifestyle, Cambridge University
+Press, 1989.
+
+[3] A pilot study in which influential people were invited to answer
+confirms my impression. More studies of this kind are highly desirable.
+-- Cp. "Holdninger til mennesker, dyr og planter", Samtiden Nr.5, 1985,
+pp.68-76.
