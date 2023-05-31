@@ -9,7 +9,7 @@ export function MobileHeader() {
     return (
         <>
             <header className='flex flex-col p-2 pt-3 items-start px-4 h-36 md:h-28'>
-                <div className="flex items-center w-full">
+                <div className="flex items-center w-full mb-2">
                     <a
                     href="/"
                     rel="noopener noreferrer">
