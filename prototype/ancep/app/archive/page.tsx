@@ -1,23 +1,31 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { HomeArrow } from '../components/HomeArrow';
-import { SearchInput } from '../components/client/SearchInput'
 
 export default function ArchivePage() {
     const [docs, setDocs] = useState<string[]>([]);
+    const [searchValue, setSearchValue] = useState<string>();
     const [document, setDocument] = useState<{name: string, text: string}>();
-    const[documentVisible, setDocumentVisibility] = useState<boolean>(false);
+    const [documentVisible, setDocumentVisibility] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log('Ehh');
         (async() => {
             const response = await fetch("api/archive");
-            const documents = await response.json();
-            console.log('Documents: ', documents);
-
-            setDocs(documents);
+            setDocs(await response.json());
         })();
     }, []);
+
+    useEffect(() => {
+        (async() => {
+            if(searchValue && searchValue.length > 0) {
+                const response = await fetch("api/archive?search=" + searchValue);
+                setDocs(await response.json());
+            } else {
+                const response = await fetch("api/archive");
+                setDocs(await response.json());
+            }
+        })();
+    }, [searchValue]);
 
     const showDocument = async (documentName: string) => {
         const response = await fetch("/api/archive", {
@@ -48,13 +56,28 @@ export default function ArchivePage() {
             <p className="font-medium text-sm">Utforsk Arne sitt akriv</p>
 
             <div className="mt-2 flex flex-col gap-2 p-2">
-                <SearchInput />
+                <input 
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    autoComplete="off" 
+                    autoCorrect="off" 
+                    autoCapitalize="off" 
+                    enterKeyHint="go" 
+                    spellCheck="false" 
+                    placeholder="Søk i arkivet" 
+                    maxLength={50}
+                    type="search" 
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)} 
+                    aria-activedescendant="docsearch-item-0" 
+                    aria-controls="docsearch-list" />
 
-                <section>
+                <section className="backdrop-blur-md">
                     <h1 className="font-medium text-lg">Dypøkologi</h1>
                     <ul className="pl-2 mt-2">
                         {
-                            docs?.map(x => <li className='hover:underline text-blue' key={x}>
+                            docs?.map(x => <li className='leading-8 hover:underline text-blue' key={x}>
                                 <span onClick={async() => await showDocument(x)}>{x?.replace('.doc', '')?.replace('.txt', '')}</span>
                             </li>)
                         }

@@ -3,12 +3,16 @@ import WordExtractor from 'word-extractor';
 import fs from 'fs/promises';
 import path from 'path';
 
-    // const { searchParams } = new URL(request.url);
-    // const doc = searchParams.get('doc');
-
 export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const searchText = searchParams.get('search')?.toLocaleLowerCase();
     const filePath = path.join(process.cwd(), '/lib/archive');
     const files = await fs.readdir(filePath);
+
+    if(searchText && searchText.length > 0) {
+        return NextResponse.json(
+            files.filter(x => x.toLocaleLowerCase().includes(searchText)));
+    }
 
     return NextResponse.json(files);
 }
