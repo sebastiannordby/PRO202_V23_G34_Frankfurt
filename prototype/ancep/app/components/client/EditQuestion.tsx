@@ -164,14 +164,11 @@ export default function EditQuestion(props:{question:Question, questionChanged:F
 
         const {quest} = props;
         if(quest != undefined){
-            return quest.map((data)=>{
-
-                return(
-                    <li>
-                        
-                    </li>
-                )
-            })
+            return quest.map(data=>
+                <div key={data + "id"}>
+                    
+                </div>
+            )
         }
         else{
             return <span>Ingen spørsmål i quizen</span>
