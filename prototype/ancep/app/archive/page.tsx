@@ -55,9 +55,9 @@ export default function ArchivePage() {
 
             <div className="content">
                 <h1 className="page-title">Kunnskapssamling</h1>
-                <p className="font-medium text-sm">Utforsk Arne sitt akriv</p>
+                <p className="font-medium text-md">Utforsk Arne sitt akriv</p>
 
-                <div className="mt-2 flex flex-col gap-2 p-2 h-full overflow-hidden">
+                <div className="mt-2 flex flex-col gap-3 p-2 h-full overflow-hidden">
                     <input 
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
@@ -75,9 +75,9 @@ export default function ArchivePage() {
                         aria-activedescendant="docsearch-item-0" 
                         aria-controls="docsearch-list" />
 
-                    <section className="flex flex-col backdrop-blur-md flex-grow max-h-72">
+                    <section className="flex flex-col flex-grow max-h-72">
                         <h1 className="font-medium text-lg">Dypøkologi</h1>
-                        <ul className="list-disc list-inside pl-2 mt-2 overflow-y-scroll max-h-full">
+                        <ul className="font-semibold list-disc list-inside pl-2 mt-2 overflow-y-scroll max-h-full">
                             {
                                 docs?.map(x => <li className='underline leading-8 mb-1 hover:underline' key={x}>
                                     <span onClick={async() => await showDocument(x)}>{x?.replace('.doc', '')?.replace('.txt', '')}</span>
