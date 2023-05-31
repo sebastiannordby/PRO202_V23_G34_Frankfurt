@@ -3,6 +3,7 @@ import Image from "next/image";
 import { HomeArrow } from "../components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { AddBadge } from "../components/AddBadge";
 
 // export const metadata = {
 //     title: 'Min profil',
@@ -11,6 +12,8 @@ import { useEffect, useState } from "react";
   
 export default function ProfilePage() {
     const { data: session } = useSession();
+
+    const { addBadgeToProfile } = AddBadge();
 
     return (
         <main className="main-layout">
@@ -70,6 +73,11 @@ export default function ProfilePage() {
                                 className="mx-auto"
                                 alt="Merke"/>
                             <label className="block mt-2">Sol</label>
+                        </div>
+                        <div>
+                            <button onClick={() => addBadgeToProfile('1')}>
+                                Add Badge
+                            </button>
                         </div>
                     </div>
                 </div>
