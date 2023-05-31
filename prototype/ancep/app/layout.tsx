@@ -21,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " w-full"}>
-        <MobileHeader/>
-        
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider>
+          <MobileHeader/>
+       
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   )

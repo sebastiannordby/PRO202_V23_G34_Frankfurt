@@ -61,6 +61,7 @@ header {
 
 html, body {
   overflow: hidden;
+  min-width: 310px;
 }
 
 html {
@@ -84,7 +85,7 @@ body {
 .main-layout {
   background: url('/images/liquid-cheese.svg');
   background-size: cover !important;
-  top: 80px;
+  top: 135px;
   padding: 1.5rem;
   position: absolute;
   width: 100%;
