@@ -79,17 +79,18 @@ export default function Home() {
 
         <a
           href="/teacher"
-          className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
-          <h2 className={"mb-3 text-2xl font-semibold"}>
-            Undervisnings veiledning{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={"m-0 max-w-[30ch] text-sm"}>
-            Veiledning for undervisere og lærere.
-          </p>
+            <img
+              src="/images/sider/veiledning.png"
+              width="50px"
+              height="50px"
+              style={{height: '50px'}}
+              alt="Undervisnings veiledning bilde"/>
+          <div className="text-left pl-2">
+              <h2 className={"mb-1 text-2xl font-semibold"}>Undervisnings veiledning</h2>
+              <p className={"m-0 max-w-[30ch] text-sm"}>Veiledning for undervisere og lærere.</p>
+            </div>
         </a>
       </div>
     </main>
