@@ -3,24 +3,27 @@ import WordExtractor from 'word-extractor';
 import fs from 'fs';
 import path from 'path';
 
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const doc = searchParams.get('doc');
+    // const { searchParams } = new URL(request.url);
+    // const doc = searchParams.get('doc');
+
+export function GET(request: Request) {
     const filePath = path.join(process.cwd(), '/lib/archive');
+    const files = fs.readdirSync(filePath);
 
-    console.log('Filepath: ', filePath);
+    return NextResponse.json(files);
+}
 
-    console.log('Search params: ', searchParams);
+export async function POST(request: Request) {
+    const {fileName} = await request.json();
 
-    if(!doc) {
-        const files = fs.readdirSync(filePath);
-        console.log('Files fetch');
+    console.log({
+        fileName
+    });
 
-        return NextResponse.json(files);
-    } 
-
+    const filePath = path.join(process.cwd(), '/lib/archive/' + fileName);
+    console.log('FilePath: ', filePath);
     const extractor = new WordExtractor();
-    const extracted = await extractor.extract(filePath + "/" + doc);    
+    const extracted = await extractor.extract(filePath);    
 
     return NextResponse.json(extracted.getBody());
 }
