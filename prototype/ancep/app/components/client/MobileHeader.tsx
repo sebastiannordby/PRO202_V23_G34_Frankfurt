@@ -8,7 +8,7 @@ export function MobileHeader() {
 
     return (
         <>
-            <header className='flex flex-col h-48 p-2 pt-3 items-start px-4' style={{height: '155px'}}>
+            <header className='flex flex-col p-2 pt-3 items-start px-4 h-36 md:h-28'>
                 <div className="flex items-center w-full">
                     <a
                     href="/"
@@ -31,16 +31,16 @@ export function MobileHeader() {
                         height={30}
                     />
                 </div>
-                <div className="text-center w-full mb-2">
+                <div className="text-center w-full mb-2 md:absolute md:top-0 md:max-w-lg md:right-0 md:left-0 md:mx-auto">
                     <a 
                         href={session != null ? "/profile" : "/api/auth/signin"}
                         className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
                         text-sm shadow-3xl rounded-lg max-w-sm">
-                        <div className='flex items-center gap-2 p-4 w-full text-center lg:mr-6'>
+                        <div className='flex items-center gap-2 w-full text-center lg:mr-6'>
                             <div className="p-2 flex-grow">
                                 <p className="block text-lg font-bold text-white">
                                     {session != null ? <span>
-                                    Hei, {session?.user?.name}!
+                                    {session?.user?.name}
                                     </span> : <span>Logg inn</span>}
                                 </p>
                                 <p className="text-white font-semibold">{session?.user?.email}</p>

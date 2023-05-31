@@ -85,12 +85,18 @@ body {
 .main-layout {
   background: url('/images/liquid-cheese.svg');
   background-size: cover !important;
-  top: 135px;
+  top: 122px;
   padding: 1.5rem;
   position: absolute;
   width: 100%;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
+}
+
+@media(min-width: 768px) {
+  .main-layout {
+    top: 75px;
+  }
 }
 
 .page-title {

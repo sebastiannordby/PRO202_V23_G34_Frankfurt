@@ -39,7 +39,6 @@ export default function ArchivePage() {
         });
 
         setDocumentVisibility(documentText != null && documentText != '');
-
     };
 
     return (
