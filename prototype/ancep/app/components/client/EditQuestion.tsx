@@ -87,30 +87,34 @@ export default function EditQuestion(props:{question:Question, questionChanged:F
         const [editAnswer , setEditAnswer] = useState<QuizAnswer>({} as QuizAnswer);
 
         useEffect(()=>{
-            setEditAnswer(answer);
+            if(answer !== undefined){
+
+                setEditAnswer(answer);
+            }
+            
+            console.log("Answer:")
+            console.log(editAnswer);
+
         }, [])
 
         switch(questionType){
             
             case QuestionType.Dilemma:
 
-            console.log(editAnswer)
-            console.log(editAnswer.Dilemma)
 
 
             return(
                 <div>
-                    <label>Dilemma Spørsmål</label>                    
-                    <input value={editAnswer.Dilemma.DilemmaQuestion} 
+                    {/* <label>Dilemma Spørsmål</label>                    
+                    <input value={editAnswer?.Dilemma?.DilemmaQuestion ?? ""} 
                         
                         onChange={(event)=> {
-                            console.log()
                             editAnswer.Dilemma.DilemmaQuestion = event.target.value;
                             setEditAnswer(editAnswer);
                         }}/>
 
                     <div className="flex justify-between">
-                        <input value={editAnswer.Dilemma.DilemmaAnswers[0]} 
+                        <input value={editAnswer.Dilemma?.DilemmaAnswers[0] ?? ""} 
                             onChange={(event)=>{
                                 if(editAnswer.Dilemma.DilemmaAnswers == undefined) editAnswer.Dilemma.DilemmaAnswers = [];
 
@@ -129,7 +133,7 @@ export default function EditQuestion(props:{question:Question, questionChanged:F
                             }}
                         />
 
-                    </div>
+                    </div> */}
                     
                 </div>
             )

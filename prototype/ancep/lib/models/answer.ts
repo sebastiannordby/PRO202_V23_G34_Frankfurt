@@ -10,7 +10,7 @@ export type QuizAnswer = {
 
 export type Dilemma = {
     DilemmaQuestion:string
-    DilemmaAnswers:string[], 
+    DilemmaAnswers1:string, 
     DilemmaTextAnswer:string
 }
 
