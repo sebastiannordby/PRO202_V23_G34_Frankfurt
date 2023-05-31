@@ -22,7 +22,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={"m-0 max-w-[30ch] text-sm"}>
-            Interaktive læring for hele klassen
+            Interaktiv læring for hele klassen
           </p>
         </a>
         
