@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 
-export default async function quizRoom(){
+export default async function QuizRoom(){
     return(
         <div>
 
