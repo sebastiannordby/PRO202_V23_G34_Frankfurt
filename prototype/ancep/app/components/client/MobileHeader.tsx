@@ -23,7 +23,7 @@ export function MobileHeader() {
                     </a>
 
                     <img
-                        src="/images/menu-hamburger-nav.png"
+                        src="/images/hamburger.png"
                         alt="Meny knapp"
                         onClick={() => setMenuVisibility(!menuVisible)}
                         className="dark:invert ml-auto cursor-pointer"
