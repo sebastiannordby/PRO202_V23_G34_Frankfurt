@@ -37,7 +37,7 @@ export default function Home() {
             </span>
           </h2>
           <p className={"m-0 max-w-[30ch] text-sm"}>
-            Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
+            Vil du teste hvordan det var å snakke med Arne Næss?
           </p>
         </a>
 
