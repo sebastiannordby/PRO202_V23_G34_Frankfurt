@@ -12,8 +12,21 @@ import { AddBadge } from "../components/AddBadge";
   
 export default function ProfilePage() {
     const { data: session } = useSession();
-
+    const [badges, setBadges] = useState([]);
     const { addBadgeToProfile } = AddBadge();
+    useEffect(() => {
+        fetch('/api/badges')
+            .then((response) => {
+                if (!response.ok) throw new Error('Failed to fetch badges');
+                return response.json();
+            })
+            .then((data) => {
+                // @ts-ignore
+                const imageUrls = data.map((badge) => badge.image_url);
+                setBadges(imageUrls);
+            })
+            .catch(console.error);
+    }, []);
 
     return (
         <main className="main-layout">
@@ -37,50 +50,27 @@ export default function ProfilePage() {
                     <h2 className="text-lg font-bold">Oppnådde merker</h2>
 
                     <div className="flex gap-4 mt-3">
-                        <div className="text-center">
-                            <Image 
-                                src="/images/merker/earth-medium.png"
-                                height={50}
-                                width={50}
-                                className="mx-auto"
-                                alt="Merke"/>
 
-                            <label className="block mt-2">Jord</label>
-                        </div>
-                        <div className="text-center">
-                            <Image 
-                                src="/images/merker/eclipse-medium.png"
-                                height={50}
-                                width={50}
-                                className="mx-auto"
-                                alt="Merke"/>
-                            <label className="block mt-2">Ellipse</label>
-                        </div>
-                        <div className="text-center">
-                            <Image 
-                                src="/images/merker/meteorite-medium.png"
-                                height={50}
-                                width={50}
-                                className="mx-auto"
-                                alt="Merke"/>
-                            <label className="block mt-2">Meteoritt</label>
-                        </div>
-                        <div className="text-center">
-                            <Image 
-                                src="/images/merker/sun-medium.png"
-                                height={50}
-                                width={50}
-                                className="mx-auto"
-                                alt="Merke"/>
-                            <label className="block mt-2">Sol</label>
-                        </div>
-                        <div>
-                            <button onClick={() => addBadgeToProfile('1')}>
-                                Add Badge
-                            </button>
-                        </div>
+
                     </div>
-                </div>
+
+                    <div>
+                        <button
+                            onClick={() => addBadgeToProfile('1')}
+                            className="bg-green-600 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
+                            Add Badge
+                        </button>
+                    </div>
+                    <div className="flex gap-4 mt-2">
+                        {badges.map((imageUrl) => (
+                            <img
+                                width="50"
+                                height="50"
+                                className="mt-2"
+                                src={imageUrl} alt="badge" key={imageUrl} />
+                        ))}
+                    </div>
+                    </div>
             </div>
         </main>
     );
