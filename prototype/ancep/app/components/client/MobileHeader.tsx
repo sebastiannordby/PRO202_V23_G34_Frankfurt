@@ -100,7 +100,7 @@ export function MobileHeader() {
                                 className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                 rel="noopener noreferrer">
                                 <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Kunnskapssamlingen{' '}
+                                    Kunnskapssamling{' '}
                                     <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                                     -&gt;
                                     </span>

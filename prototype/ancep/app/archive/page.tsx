@@ -44,7 +44,7 @@ export default function ArchivePage() {
     return (
         <main className="main-layout">
             <HomeArrow />
-            <h1 className="page-title">Kunnskapssamlingen</h1>
+            <h1 className="page-title">Kunnskapssamling</h1>
             <p className="font-medium text-sm">Utforsk Arne sitt akriv</p>
 
             <div className="mt-2 flex flex-col gap-2 p-2">
