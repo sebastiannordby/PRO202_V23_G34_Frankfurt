@@ -47,7 +47,7 @@ export default function Home() {
           className="card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
-            Arkiv{' '}
+            Kunnskapssamlingen{' '}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>

@@ -94,13 +94,13 @@ export function MobileHeader() {
                                     Vil du teste hvordan det var å snakke med Arne Næss? Prøv vår tilnærmede AI.
                                 </p>
                             </a>
-                            
+
                             <a
                                 href="/archive"
                                 className="card shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                 rel="noopener noreferrer">
                                 <h2 className={"mb-3 text-2xl font-semibold"}>
-                                    Arkiv{' '}
+                                    Kunnskapssamlingen{' '}
                                     <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                                     -&gt;
                                     </span>

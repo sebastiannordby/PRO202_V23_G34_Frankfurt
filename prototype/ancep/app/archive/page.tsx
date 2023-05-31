@@ -45,8 +45,8 @@ export default function ArchivePage() {
     return (
         <main className="main-layout">
             <HomeArrow />
-            <h1 className="page-title">Arkiv</h1>
-            <p className="font-medium text-sm">Utforsk vårt akriv nedenfor</p>
+            <h1 className="page-title">Kunnskapssamlingen</h1>
+            <p className="font-medium text-sm">Utforsk Arne sitt akriv</p>
 
             <div className="mt-2 flex flex-col gap-2 p-2">
                 <SearchInput />
