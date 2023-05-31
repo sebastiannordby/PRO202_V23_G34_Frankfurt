@@ -78,7 +78,7 @@ export default function Home() {
         </a>
 
         <a
-          href="/profile"
+          href="/teacher"
           className="card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <h2 className={"mb-3 text-2xl font-semibold"}>
