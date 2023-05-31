@@ -4,15 +4,15 @@ export function HomeArrow() {
     return (
         <a 
             href="/" 
-            className="flex items-center color-primary relative"
+            className="flex items-center underline text-white rounded-md p-2 relative"
             style={{top: '-10px', left: '-10px'}}>
-            <Image 
+            {/* <Image 
                 alt="Hjem pil"
                 src="/images/home-arrow.png"
                 height={30}
-                width={30}/>
+                width={30}/> */}
 
-            <span>Hjem</span>
+            <span>{'<-'} Hjem</span>
         </a>
     );
 }
