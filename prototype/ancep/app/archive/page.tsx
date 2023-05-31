@@ -77,9 +77,9 @@ export default function ArchivePage() {
 
                     <section className="flex flex-col backdrop-blur-md flex-grow max-h-72">
                         <h1 className="font-medium text-lg">Dypøkologi</h1>
-                        <ul className="pl-2 mt-2 overflow-y-scroll max-h-full">
+                        <ul className="list-disc list-inside pl-2 mt-2 overflow-y-scroll max-h-full">
                             {
-                                docs?.map(x => <li className='leading-8 hover:underline text-blue' key={x}>
+                                docs?.map(x => <li className='underline leading-8 mb-1 hover:underline' key={x}>
                                     <span onClick={async() => await showDocument(x)}>{x?.replace('.doc', '')?.replace('.txt', '')}</span>
                                 </li>)
                             }
