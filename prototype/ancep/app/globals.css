@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --ancep: #96608E;
   --gold: #f67500;
+  --ancep-black: #231F20;
 }
 
 [aria-hidden="true"] {
@@ -23,7 +24,7 @@ nav {
 header {
   /* background: #96608e; */
   background: #F3F3F1;
-  color: #231F20;
+  color: var(--ancep-black);
 }
 
 .bg-primary {
@@ -133,8 +134,10 @@ main {
 
 .card {
   /* background: rgb(234 12 86 / 39%); */
-  background: rgb(146 96 143 / 96%);
-  color: #fff;
+  /* background: rgb(146 96 143 / 96%); */
+  /* backdrop-filter: blur(65px); */
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ancep-black);
 }
 
 .secondary-card {
