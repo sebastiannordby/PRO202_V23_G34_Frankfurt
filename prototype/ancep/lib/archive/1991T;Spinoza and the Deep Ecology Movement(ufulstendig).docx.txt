@@ -1,0 +1,1124 @@
+1991T
+
+Spinoza and the Deep Ecology Movement
+
+Arne Naess
+
+I
+
+One of the strangest tasks which a professor of philosophy can engage
+in - voluntarily or more or less involuntarily - is to write a history
+of philosophy. My own, about 1000 pages, is 'neither fish nor fowl'
+because I could never solve the question of how to combine 'history of
+philosophy' and 'history of philosophy'.
+
+Methodology of historical research is an entertaining subject. One
+learns, for instance, how a historian's account of a happening based on
+only one eye witness is more detailed and written with more confidence
+than the account of a happening covered by two or more witnesses. What
+the witnesses have said or written normally differ so much that a highly
+responsible historian's account renounces some interesting details and
+is heavy reading because of 'ifs', 'perhaps', 'perhaps not', 'unclear',
+'contradictory', 'uncertain', and a host of more complicated
+reservations.
+
+Philosophy of history is a discipline of another character. It has no
+definite methodology: Abstract discussion on the essence of history, of
+time and change, but also about the dependence of philosophy of history
+upon general philosophy. Good historians often repeat that they somehow
+must avoid getting influenced by any definite philosophical system. That
+is impossible. In this century the vast discussion on the relation of
+dialectical materialism to philosophy of history and to actual
+historiography, the writings describing historical development, are at
+least interesting and important as historical material on the metalevel
+persuasively manifesting general philosophical positions, say those of
+Aristotle, Shankara, Thomas Aquinas, Spinoza, Hegel, or Marx.
+
+Established historians tend to say something like the following: the
+historical works by the ablest historians, who are from a general point
+of view more or less convinced dialectical materialists, do not reveal
+the doctrincal adherence to any definite general philosophical system.
+As a historian (Sverre Steen) said to his colleagues in a great humanist
+faculty: 'You are fortunate: you can use your different and complicated
+professional jargons, and you even improve your standing by sticking
+faithfullly to them. We historians (id est, historiographers) must
+somehow renounce all that.'
+
+The historian of philosophy, focusing on general philosophy, not on
+history of ideas as a part of the historiography of ideas, cannot or
+should not avoid asking himself or herself: When writing an account of
+the history of philosophy, from the point of view of which kind of
+general philosophy do I write? In particular, what kind of a philosophy
+of history, as a genuine part of general philosophy, do I subscribe to?
+
+Obviously, my account of a philosophy, say that of Spinoza, will depend
+upon my own philosophy and my own general philosophy of history, my view
+of historical causality etc. Because I am not a professional historian,
+I am not interested as a philosopher to hide the dependence of my
+interpretation of the Ethics upon my general philosophy, including my
+philosophy of history.
+
+If there ever were a tendency of textbooks of history of philosophy
+towards agreement, not to speak of an assymptotic nearness of accounts,
+it would signify the disappearance of deep cultural differences, of deep
+differences in Welt-und Lebensanschauungen. (I cannot avoid the German
+words for this. English makes what is meant not serious, dramatic, and
+world-shaking enough. 'Differences in Worldview and Life-outlook' - No.)
+
+Because of the plurality of the basic views about what history is, and
+because these views are part of philosophy, and there can be no definite
+history of philosophy. We easily get into interesting logical paradoxes
+if we proclaim that so and so is the only correct interpretation of
+Spinoza's texts, because you need a solution of the problems in the
+philosophy of history. There are different fundamental premisses of what
+history is, and hermeneutics, or the philosophies of interpretation, are
+many. Only if you say that only your philosophy is correct, without
+reasons at all, you can proceed to offer the 'correct' view of what
+Spinoza intended to say in the Ethics. A different way of saying this:
+Philosophy has no definite history.
+
+II
+
+Which philosophers of the past deserve to be called great? This question
+leads to another: Who are competent to judge? Which philosophy do we use
+as a frame when answering? I belong to those who do not feel competent
+to answer what even the question means, but let me use two possible
+indicators of greatness.
+
+One indicator is that of being rediscovered and highly appreciated by
+successive generations of philosophers in different cultures. Another
+indicator is the persistent richness and diversity of interpretations of
+their texts.Spinoza's texts are constantly reinterpreted by
+philosophers, poets, scientists, and others. Among the last century's
+well-known influential interpretations we may mention those of Goethe
+and Hegel. Among the many distinguished interpreters in this century I
+do not feel competent to pick out anybody in particular. But there is an
+encouraging variety. Encouraging in spite of a certain tendency to
+appreciate conformity. Of course, we would like all to avoid textual and
+purely factual, historical disagreement, but by interpretation, I mean
+philo-sophical agreement.
+
+In what follows I speak as a life philosopher, not as a historian. Study
+of the life and time of Spinoza is essential for any close study of the
+textual material, but for my purpose it can only be a necessary
+instrument. Also strict systematization of Spinoza's formulations in the
+Ethics, for instance, sentences such as "... means the same as..." can
+only be an instrument, a methodological technique, but my background is
+such that I find it natural to work systematically.
+
+The history of interpretations of Spinoza's texts shows the intimate
+relations to changing traditions. The religious character of his
+philosophy makes the history comparable to what Albert Schweitzer tells
+us in his History of the Research on the Life of Jesus. (Geschichte der
+Leben Jesu Forschung). Four periods are fairly clear, the time soon
+after Spinoza's death focussing on his atheism and his critique of the
+historicity of the Bible - the work of a pioneer in this field. Then we
+have the wonderful period when 'everybody' declared themselves
+Spinozists - with Goethe as the greatest luminary. The period is in the
+history of ideas mostly called the 'romantic' period, but it is from an
+ecosophical point of view rather to be called the realistic. The Kantian
+interpretation, heavily colored by its distinction dogmatic/ critical,
+should be mentioned. It was a useful distinction within professional
+philosophy at the time, but later it became clear that Kant introduced,
+as all great philosophers do, a new form of 'dogmatism' in the sense of
+proceeding from sets of unquestioned assumptions - the presuppositions
+in the sense of Collingwood. Spinoza's metaphysics was interpreted by
+Kantians as based on illusions. I don't think it is proper to speak of a
+Kantian tradition in interpreting Spinoza. But a new period of
+interpretations, alive even today, started with Hegel and tended to find
+that, for Spinoza, the single, particular beings somehow drowned in the
+mighty substance. The long series of modern attacks on substance started
+with interpreting Spinoza as a substance-philosopher rather than a
+process-philosopher, like Whitehead. 'The real is unchangeable, no
+dynamism, no time.'
+
+A fourth tradition made headway early in this century with 'the
+immanence of God (and substance)' as a key expression.[1] This is the
+tradition to which I belong. The most radical version might be thus
+formulated: 'Without modes (singular beings) no God nor Substance'. Of
+course, a tradition of interpretation includes much more than the
+interpretation of the first part of the Ethics, but unfortunately, I
+think, that part has been by far the most thoroughly studied within
+professional philosophy.
+
+What is the major thing to be learned from history in this case? From
+the wealth of significantly different interpretations by intensely
+engaged, learned Spinoza researchers? For me it primarily suggests that
+new interpretations will occur in the future and that my own will only
+be one of a long series - forgotten in due time. What also seems to be
+learned from the history is that the interpretations ostensibly
+expressing 'what Spinoza really meant', or at least suggesting this, can
+be viewed as interesting reconstructions of his philosophy - interesting
+because they make his texts meaningful for contemporaries of the authors
+of the interpretations. Reconstructions, as here understood, take the
+texts, sentence for sentence, as seriously as does the historian, and
+the reconstructor is supposed to use all historical materials, but he or
+she need not take seriously the question:"If Spinoza could read the
+construction, what would he think of it?"
+
+Many people who are engaged in the ecological crisis have been inspired
+'by Spinoza'. They read some of Spinoza's texts or his comments on those
+texts. Some even read about Spinoza himself, but this does not mean that
+they try to find out exactly what Spinoza meant. Why should they? They
+make use of his image and his texts in their lives. What more could or
+should Spinoza expect of them?
+
+Spinoza does not write about the beauty of wild nature. Perhaps he never
+talked about it. Not about the coastline of the Netherlands, the storms,
+the variety of light and darkness, the seabirds. There were people
+around him, Dutch landscape painters, who appreciated all this. Maybe he
+did also, but it scarcely influenced what he says in the Ethics. What he
+says about animals does not suggest he had any wide or deep sense of
+identification with any of them. Nevertheless his kind of philosophy of
+life, its structure is such that he inspires many supporters of the deep
+ecology movement.
+
+III
+
+One of the most inspiring aspects of the text Ethica ordine geometico
+demonstrata is this: it outlines a total view. It outlines a set of
+ultimate premisses in our thinking about ourselves and of the greater
+reality we are part of, and he applies it to concrete situations. There
+are other great thinkers who try to do the same. Aristotle, St.Thomas
+Aquinas, Thomas Hobbes. Spinoza remains a unique source.
+
+What is a total view? Here I speak of what might be
+
+called 'a general orientation with concrete applications'.The general
+orientation will include basic attitudes, and the applications are at
+its most important level decisions to act
+
+in a certain way in concrete situations. It is not a philosophy in an
+academic sense. Any verbal articulation of a total view must inevitably
+be fragmentary, but include praxis.
+
+The term 'premiss' is important. The relation of premises to conclusion,
+in order to be valid, must be logical at least in a wide sense of that
+very ambiguous word. For reasons and through motivations historians do
+not quite agree about, Spinoza chose an exposition of his total view
+with great stress on the relation premiss/conclusion - analogous but not
+very similar to Euclid's exposition of geometry.
+
+In the Elements of Euclid, important and interesting
+
+theorems occur far from the axioms. These can be modified - like
+ultimate premisses in systems of formal logic. There are many options.
+One need not start with a principle of contradiction. The same applies
+to the expositions of the Ethics. If there seems to be inconsistencies
+between a sentence in part x and one in part y, a modification of the
+interpretation of the sentence in x is as relevant as that of the
+sentence in y even if x has formal logical priority over y. That is,
+even if x may be part of the system of premisses from which y is
+derived. In what I have to say, this way of looking at formal priority
+and relevance is often made use of. We must not succumb to any
+irrational reverance for what is chosen as a premise. There is a
+metalogical theorem that is generally underestimated: a given conclusion
+y can always be derived from different sets of premisses, even rather
+odd ones. For exam-ple, the conclusion 'All whales are warmblooded' can
+be de-rived from premisses 'All whales are fish' and 'All fish are
+warm-blooded'.
+
+Academic philosphers are increasingly reflecting the ecological crisis
+in their writings. The sources of philosophic inspirations are many: the
+works of Aristotle, Spinoza, Bergson, Heidegger, Whitehead, ... .
+Personally I have since I was 17 years old had a special relation to
+Spinoza's Ethics, but that does not imply that I believe his work can be
+of help to everybody to articulate their basic attitudes. I believe
+there is need for deeply different verbal articulations of a total view,
+including the poetic.
+
+There are several terms in the Ethics which to my mind are
+extraordinarily helpful when we try to express the fundamental views
+which have motivated the environmental activism of some of us. I shall
+in the next sections focus mainly on one of those terms, namely amor
+intellectualis Dei, 'the understanding love of God'. The verb
+intelligere I translate with 'understand'. The adjective intellectualis
+should not be translated with 'intellectual' - a too intellectual term
+today.
+
+IV
+
+The term amor intellectualis Dei and closely related terms, had for
+centuries been theological terms within the rich tradition Spinoza
+modified in his own particular direction.
+
+Among the wise historians who have studied Spinoza, I wish to point to
+Harry Austryn Wolfson. His account of the spiritual genesis of the
+famous fifth part of the Ethics, 'on the power of the understanding or
+on human freedom', is so far unsurpassed, as far as I know. He mentions
+many authors studied by Spinoza and presumably influencing him. Among
+others St.Thomas Aquinas and Leo Hebraeus. Wolfson says:
+
+"A model classification of love in which intellectual love is included
+is given by Thomas Aquinas. He distinguishes between (a) natural love
+(amor naturalis) exists even in inanimate objects, (b) sensitive or
+animal love (amor sensitivus animalis), and (c)intellectual, rational,
+or spiritual love (amor intellectualis, rationalis, spiritualis). It is
+this classification of Thomas Aquinas which seems to be the origin of
+Leo Hebraeus' three-fold classification to love into natural, sensitive,
+and rational and voluntary (naturale, sensitivo, et rationale
+volontario). The last kind of love is also called by him mental love
+(l'amore mentale), or, as in Thomas Aquinas, intellectual love (l'amore
+intellettivo, intellettuale)." (Wolfson, The Philosphy of Spinoza, NY:
+Ridian Books, 1958, II, pp.303-304.)
+
+Love of God being the highest goal in the religious life of man,
+Spinoza - carefully following the old tradition - furnishes this love
+with an appropriate place in Part Five of his Ethics.
+
+But does the socalled 'rationalist' system invented by Spinoza allow him
+to put so much 'theology' into it? His supreme intention seems to have
+been both to stick firmly to reason but nevertheless furnishes his
+religious contemporaries with a strong faith as satisfactory, or more
+satisfactory, than theirs. This was a project that was unlikely to
+succeed as I can see. The result: a use of the term amor Dei that
+certainly admits various interpretations.[2] I shall stick to my
+consistently immanent interpretation of Deus and hold that amor
+intellectulis is directed towards 'God, not as infinite'
+
+(Deus non quatenus infinitus, as in 5P36.) It is directed towards
+individual finite beings. My minimum thesis here is that at least for
+one hermeneutially justifiable interpretation, the understanding of God,
+as part of the third and highest way of cognition, is directed towards
+individual finite beings. This position requires discussion of the term
+Deus. I shall need to discuss the thesis of immanence before returning
+to the amor intellectualis.
+
+V
+
+The Ethics is full of occurences of the term Deus. How is it that
+Spinoza was conceived as a diabolically clever atheist? It is very
+understandable. It was at his time inevitable.
+
+God is said to be maximally perfect (perfectissimus). God is the cause
+of everything, even himself. Nothing at all can be conceived except
+through God. This might be thought to be enough to calm the theologians.
+But they were not led astray by Spinoza's terminology. They knew, for
+instance, that Spinoza was using the adjective 'perfect' (perfectus) in
+an old way where it basically means 'complete'. (From Latin per - and
+FAC -. See Ethics Preface, Part Four). Wolfson mentions "the original
+use of the term "perfection" in the sense of "completeness" and of not
+lacking anything required by one's own particular nature..." Wolfson II,
+p.222-23). The nature or essence or power of the God of Spinoza is
+complete to the greatest possible extent - by sheer definition. (But
+Spinoza does not say anywhere that 'He' is good, and there is nothing
+personal about 'Him'!)
+
+'Perfection' is not a term which is introduced in the Ethics by means of
+a separate definition. When not applied to Nature it admits of degrees.
+Joy is an emotion through which mind is said to become 'more perfect'
+(III P11Sch, Part Three, Scholium to Proposition 11). More whole through
+more activeness and power. Whatever its connotation, 'more perfect'
+cannot be separated in denotation from 'more powerful'. Compare proof of
+Proposition 61: "Joy ... is the emotion through which the power of the
+body to act, increases or is furthered." The relation to activeness, and
+understanding is not only intimate. It is internal. The more perfect,
+the more active and the less passive (Part Five Proposition 40). In
+short, 'more perfect than' cannot, in denotation, be completely be
+separated from a number of other basic 'in itself'-relations. Among
+basic kinds of sentences Spinoza used to express his system in the sense
+of interconnected set of expressions such as 'x is in itself', 'x is
+conceived through itself', 'x causes y, partially or totally', 'x is
+more perfect than y'. There is no place, so far as I can see, for a God
+that has completely different properties from those of the 'in itself'-
+family. On the other hand, the theorems 5P32-5P35 seem to me difficult
+to understand from the point of view of immanence. They are too close to
+transcendental religious views Spinoza entertained in his younger years.
+The Ethics is not a finished work, not a crystal.
+
+There is an expression that more than any other has supported the
+concept of the immanent God: 'God or Nature' (deus sive natura).
+
+Some Spinoza students have supposed that Spinoza simply identified God
+with nature in a modern sense. This is clearly untenable, but the
+expression needs discussion which will be offered in a later section.
+Suffice here to mention a conclusion: the God of the Ethics may be
+identified essentially with Nature-as-creative (natura naturans) - the
+creative aspect of a supreme whole with two aspects, the creative and
+the created - natura naturata. The latter are the existing beings in
+their capacity of being there, temporarily. There is creativity but not
+a creator. The verb 'to nature' (naturare) covers both aspects in its
+dynamic aspect. A comparable verb today would be 'Gaia-ing', a term
+suitable for those who accept the most radical versions of the Gaia
+hypothesis: The planet Earth as a self-regulating living being. Clearly
+such ideas are inspiring for radical environmentalists.
+
+Immanence of God was, of course, unacceptable to contemporary
+theologians. The term 'atheist' referred to the denial of the God of the
+Old and New Testaments, not of every kind of God, and Spinoza was
+correctly classified in their terminology as an atheist, and a
+diabolical one in so far as his constant eulogy of God masked his basic
+terrifying aberrations.
+
+VI
+
+When I contemplate the life of Spinoza I have, like many others, a
+suspicion that he never completely gave up his Jewish faith, the
+transcendent God he loved in his youth. As a result he may not have
+managed to develop a system in which
+
+God clearly and consistently occurs as immanent in the particular beings
+we meet in our daily experience.
+
+From God's essence follows his existence, but only 'existence' as
+essence. "... God's power is nothing except God's active essence."
+(2P3Sch.) Its manifestations are the 'modes', the individual beings.
+This is implied by his system, but sometimes Spinoza seems to feel he
+needs more of God's power than mere essence, however eternal. The
+transcendent God of religion seems to appear from time to time in his
+texts and threatens the consistency of his consistently philosophical
+thinking and articulation. The threat is most conspicous in Part Five of
+the Ethics.
+
+It is in accordance with the immanence theory that every actually
+existing being partakes in the infinite power of God. This power, the
+only power that exists, is distributed unequally among natural beings,
+humans being the most powerful. As we shall see, this inequality plus
+the theorem of equivalence between power and right implies inequality of
+right (or rights), humans having 'more right' than other beings. Without
+careful delimitation of the terms potentia and ius, there is a source
+here of incompatibility with certain radical environmental views.
+
+The textual basis of the theory of immanence may be said already to
+start in Part One, with 1P25 and 1P26. According to 1P36 nothing exists
+from whose nature some effect does not follow. The proof of 1P36 relates
+every single thing to God.
+
+"Whatever exists expresses in a definite and determined way (P25Cor)
+God's essence or nature, that is, (1P34), whatever exists expresses in a
+definite and determined way the power of God,..."
+
+The texts of the Ethics furnishes no basis for assuming that God
+expresses a nature, essence, or power, in any other way than through
+each existent being.[3] From this, and what is previously said, I draw
+the following conclusion: Amor intel-lectualis Dei is a kind of love of
+the existent particular beings, that is, parts of the total richness and
+diversity of life forms on Earth, and on other regions of the universe.
+
+In a sense God as natura naturans is nothing else than a term expressing
+the unequally distributed intimately interrelated creativity manifested
+by particular beings. The creativity of these beings, however modest,
+justifies calling them living beings. Spinoza's socalled 'panpsychism'
+does not say much more, as I see it.
+
+Would not the above interpretation render God finite, and would it not
+go directly against a way Spinoza would accept? No, because of the
+infinite creative aspect of the whole which embraces natura naturans and
+natura naturata. Most students of Spinoza would presumably answer in the
+affirmative, but then they overlook a number of places in the text of
+the Ethics. In Part Two Proposition 9, he talks about God "not as
+infinite" (non quatenus infinitus). But if finite, God will have an
+aspect of 'modes'? Surely Spinoza talks of the modified God (Deus
+modificatus), of God being affected.[4] (See especially 2P9 and
+2P11Cor). God as natura naturans doe not exist as something separate
+from natura naturata.
+
+In short, the term Deus in the Ethics has two functions: One, to point
+towards an infinite whole with infinite dimensions of creativity, not in
+time, but making time possible. And a second function: To point to the
+manifold of finite creative beings manifesting and expressing the parts
+of that whole. At least this is a way to conceive and feel what the text
+of the Ethics suggests. The finite, temporal beings are creative, causa
+adequatae, in so far as they are in themselves, in se.
+
+By definition - or better, almost by definition, those who support the
+deep ecology movement are, as Spinoza, in part motivated by basic
+premisses of philosophical or religious kinds and feel that all living
+beings have intrinsic value. It makes sense to care for these beings for
+their own sake, as creative beings. Clearly they may appreciate
+something like the above verbal articulations of deep attitudes.
+
+VII
+
+Acting with part of the power of the immanent God, and knowing their own
+action, humans know God adequately. "The human mind has an adequate
+knowledge (cognitio) of the eternal and infinite essence of God".
+Interpretaters have difficulty here. What is 'adequacy'? If God is the
+creative power completely distributed among living beings, and humans
+know, are conscious of, this creativity itself, one may say that their
+knowledge of God is adequate. (Cp 1P34). Since the only things to be
+known as actual existing beings are the finite particular things, "the
+more we understand intelligimus) individual things, the more we
+understand God". (5P24)[5]
+
+From the point of view of immanence, human understanding of the highest
+"third, intuitive kind" does not only have a cognitive aspect but is
+more specially a relation of love. It is a special kind of intuitive
+understanding of particular things which involve an internal love
+relation. The second kind, culminating in scientific knowledge, does not
+have that relation to love, at least not as an internal, but only
+external relations.
+
+In his eagerness to convince his contemporaries that his philosophy
+furnishes all the satisfaction of Jewish and Christian faiths, Spinoza
+perhaps stretches too far. The reader easily gets the impression that a
+life centered around the love of God must be a life of unworldly
+contemplation, a
+
+life different from one centering around the loving understanding of
+particular things, say, like the life of Rachel Carson. Amor
+intellectualis Dei implies active loving concern for all living beings.
+
+Spinoza certainly was a socially and philosophically active person. One
+need not of course be interested in, like Rachel Carson, every living
+being along the shore-line, one may concentrate on humans, as Gandhi
+did, but the essential point is that the third kind of knowledge
+concerns particular beings, and that every one of them in a basically
+egalitarian way is an expression of the immanent God, part of natura
+naturans, Nature with a capital N, as well as of natura naturata.
+
+One may say the understanding love of God, and the third (intuitive) way
+of cognition, concentrates on the content of reality, not its abstract
+structure.[6] The abstract structure is investigated through the second
+way of cognition. Einstein and others obviously delight in God's
+thoughts in the form of ab-stract, but beautiful, laws of nature.
+Mathematicians delight in still more abstract structures. Spinoza,
+presumably, was delighted to study Euclid. In all this reason operates,
+but it is also a form of reason that leads us inevitably to the third
+kind of cognition (5P28): The third way is rational in the sense that
+reason and reason alone leads us to this third way.
+
+A supremely important rule which fits neatly in with the deep ecology
+slogan 'rich life with simple means!' has to do with the functin to
+reason as a servant of the third way: What is done that is not in
+harmony with ultimate goals of life cannot be reasonable. It is not
+enough to be reasonable and effective as means towards a subordinate
+goal. One must ask: Is this subordinate goal consistent with, or better,
+conducive to, the realization of ultimate goals - situations with
+meaning in themselves?
+
+Love of the immanent God is love of God's expressions, not of a
+separable God. A being expresses God's nature or essence, therefore love
+of God cannot be different from love of such a being. But what is God's
+nature or essence? Proposition 34 in Part One answers: "God's power is
+God's essence itself" - as already said. In the proof Spinoza says that
+through God's power God and every being exist and act more or less
+freely. Because God is not separate from God's expressions, causality
+from God to God's expressions is immanent, not the causality of our
+natural science. When a human loves God 'intellectually', it cannot be
+but a love of one expression directed towards another expression as an
+expression of God and as such of intrinsic value.
+
+There is basis for assuming that the particular beings understood the
+third way are understood in the light of a great, infinite whole, the
+creative aspect of that whole. The general structure of the Ethics is
+such that what is said about humans basically is applications of what is
+said about beings in a fairly general sense. Note the use of
+'consequently' (consequenter) in the proof of Proposition 4 in Part
+Four:
+
+"The power through which particular beings, and conse-quently humans,
+conserve their being, is God or Nature's power itself, not in so far /
+God or Nature / is infin-ite, but in so far / God or Nature / can be
+explicited through human actual essence."
+
+Supporters of the deep ecology movement like to say that they support
+ecocentrism, not anthropocentrism, and Spinoza certainly offers high
+level premisses for what has sometimes been labelled biocentric or
+ecocentric egalitarianism. I think these Latin/Greek terms are useless
+in serious discussions, but they may be helpful in offering some vague
+idea of a kind of basic attitude. Spinoza tried something immensely
+difficult, namely to articulate with some preciseness certain basic
+attitudes.
+
+What Spinoza's wholism, implied - vaguely implied? - all through the
+Ethics, is secured through his use of the term God, and by the
+generality of its theorems. There is a sen-tence in his work On the
+Improvement of the Understanding that many people try to use as a key to
+the understanding of Spinoza's system: He says explicitly that he
+strives to attain a stable mental state characterized by the knowledge
+of the union that the mind has with the whole of nature. Together with
+others, not alone: "to strive that many acquire it with me". He
+envisages a society conducive "to the attainment of this character
+(state) by the greatest number with the least difficulty and danger." It
+necessitates a healing of the way we understand things. A way of caring
+understanding? In a sense a movement towards 'green communities'? At
+least not incompatible with such a movement. Of course, if supporters do
+find something inspiring here, it is not in the belief that Spinoza as a
+person would be supporting what they do, but a kind of philosophy like
+his could support.
+
+VIII
+
+'But is the foregoing the most plausible interpretation of the text of
+the Ethics?'
+
+There cannot be any most plausible interpretation of the Ethics.
+Hermeneutics, as I understand it, precludes that. My job amounts to a
+reconstruction of parts of the system rather than to find out exactly
+what the complex person Spinoza in a certain period of his life intended
+to mean by his words and sentences in that period. The development and
+structure of the text of the Ethics are very complicated, to say the
+least. A good impression of this we get through reading the excellent,
+but formidable volume written by M.Gueroult on how to interpret Part
+One - one fifth - of the Ethics. (Spinoza I: Dieu, Paris 1968.) It is
+difficult for the reader to 'feel at home' with Spinoza at such a level
+of complication. The whole is lost. The level of complication of some of
+the fugues of Sebastian Bach does not destroy the possibility of their
+being experienced as an integrated whole. He was a genius, as was
+Spinoza. The fugues are short, the Ethics is short. (Written in terms of
+M.Gueroult the Ethics would at least be 10 times as long.)
+
+A question arises here: When do we write about Spinoza as a professor of
+academic philosophy and when do we write as philosphers on our own -
+however modest in our pretensions of originality? The great philosophers
+we write about in our textbooks of the history of philosophy inspired
+each other often in a negative way: They felt a contrast and a need to
+articulate their own vision. Their freedom, or licence, of
+interpretation of the others is astonishing from an academic point of
+view. The way leading Stoics interpreted Epicureans and vice versa, the
+way Hegel interpreted Hume, Marx and Kierkegaard interpreted Hegel, Kant
+interpreted Hume, Heidegger interprets metaphyics - do scarcely bear
+pedestrian academic scrutiny. Kant would probably have flunked any
+current university examination on Hume. He read very little, and ignored
+The Treatise on Human Nature. Undergraduates could have corrected him.
+
+I am not defending onesidedness and wildly implausible interpretations,
+but I am insisting on the supreme value of working out things under the
+inspiration of the texts. As philosophers, it is our obligation to try
+out tentative answers to the questions we find urgent and inevitable to
+answer. This means ultimately to work out reconstructions rather than
+detailed interpretations of the great philosphers. Gueroult should be
+studied carefully, but he cannot function as a guru.
+
+Philosophical and religious sources have played and will continue to
+play a role in environmental activism. The close relation to decision in
+concrete conflict situations precludes highly technical and complicated
+interpretations. One of the most characteristic, short answers to the
+question 'Why is it so important to protect so-and-so from extinction
+here in your neighborhood?' runs like this: 'They belong here.'
+
+IX
+
+In the deep ecology movement, like in the two other great contemporary
+movements, the peace movement and the social justice movement, progress
+is in part dependent upon active participation of a minority who is able
+to use part of their time and energy to serve a great cause. Reliable
+news about ecological crisis is nearly always bad. It is difficult not
+to get frustrated and join the many who passively deplore the
+destruction that is going on. Among the many sources of inspiration to
+enter and continue activism we have at our disposal the teaching of
+Spinoza.
+
+Activeness - a better term than 'activity' - makes for joy, according to
+Spinoza. It expresses the nature of the active being, the being as far
+as it is in itself (in se), and the more direct it expresses its unique
+nature, the greater the joy. Sorrow is due to passivity, lack of active
+expressions. There is an accident, you spontaneously engage all of
+yourself, wholeheartedly, and your own pain is not felt, there is a joy
+if the activeness is intense and comprehensive. The grave frustration
+and sorrow felt by millions in the present situation on Earth can be
+overcome, and is being overcome, by jointly entering into active
+relations, taking part each according to his own capacity and special
+interest. In the deep ecology movement the activeness is supposed to be
+directly motivated by the ultimate attitudes towards life and
+meaningfulness. ("Level 1"). An activeness that follows from our very
+nature as a whole.
+
+Crucial from a systematic point of view is here the definition of
+activeness in Part Three of the Ethics:
+
+"I say we act, when something in us or outside us happens, of which we
+are adequate cause, that is (according to the foregoing definition) when
+something follows in us or outside us from our nature, something that
+can only be understood clearly and distinctly from it alone..."
+
+The term 'alone' is crucial here. It is a supreme manifestation of
+freedom and creativeness. When we are active and free (liber) in this
+way, we are determined in our action by our (innermost) nature. We do
+something that is determined, completely determined, but freely, because
+determined by our own particular, unique nature. We do it exercising
+part of the power of God or Nature. And we cannot escape being joyful,
+whatever the tragic circumstances. The whole Part Five centers on how
+this activeness or freedom can be expanded, increased, and deepened. No
+freedom without activism, no activism without freedom.
+
+In the expression Deus sive Natura - nature written with capital N - the
+connotation of the two words is not the same, but the denotation is.
+There are not two separate entities, two existent somethings, not even
+one. Sameness of denotation does not imply general substitutability, of
+the two terms, but sometimes substitution offers new insights. Let us
+substitute 'Nature' for 'God' in Proposition 15, Part Five:
+
+"He who clearly and distinctly understands himself and his affects,
+loves Nature, and the more so the more he understands himself and his
+affects."
+
+It is the passive affects, hatred, jealousy, baseless hope, mindless
+anger or sorrow (tristitia) that are the obstacles, the immaturity of
+humans.
+
+The same substitution makes the introductory passage of the proof of
+Proposition 20 run as follows:
+
+"This love of Nature is the highest good we can strive for in harmony
+with the dictate of reason, and it is common to all humans, and we
+desire that all would enjoy it."
+
+We cannot, of course, identify Nature (with a capital N) with the set of
+particular physical and non-physical things, including suffering humans
+and animals. Such an atomistic view forgets that natura naturans and
+natura naturata together make an integral whole: the creative and the
+created are internally (insolubly) related. We are not invited to love
+the cruelty in nature.
+
+Gestalt thinking and the concept of 'internal relations' are useful in
+making precise the interconnectedness of parts and whole. But I cannot
+go into this here.
+
+Every single being deserves understanding love - this can be plausibly
+inferred from theorems in the Ethics. But Spinoza, as other great
+philosophers, changed attitudes and terminology through the years. In
+the Ethics there are still passages suggesting that the unchanging,
+permanent, eternal is the supreme and the most satisfactory as object of
+love and veneration. Thus a sequence of theorems in Part Five from
+theorem 17 and onwards seems to belong to a fairly early period of
+Spinoza's thinking. Love of God was in the early periods probably seen
+in contrast to love of finite, 'mortal' particulars. In some sections of
+Part Five, love of God is still somewhat similar to the love of a
+transcendent God, a God that has a power of His own, beyond and apart
+from the limited power of individual beings.
+
+Let us substitute 'God or Nature' for 'God' in Part Five, the Proof of
+Proposition 17:
+
+"The highest virtue (virtus) of the mind is to understand God or Nature,
+or to understand beings in the third way."
+
+The translation of virtus with 'virtue' is today misleading. There are
+not one-word translations available. The term has to do with capacity,
+like the Greek aretè. Spinoza shuns moralizing.
+
+Some might say: Spinoza wishes to contribute, as a green activist, to
+organize people and to contribute, using nonviolent means, to the
+establishment of a green society. The consciousness of the members will
+be characterized by awareness of their unity with nature and live
+according to that insight.
+
+This is going too far. But clearly the words of Spinoza do not diminish
+the feeling that a total view having important analogies to that of
+Spinoza is compatible with contemporary total views in part inspired by
+the ecological crisis, that is, analogous to an ecosophy.
+
+What would Spinoza in heaven say to this? Perhaps he would make a
+scornful remark. But his personal applause is not necessary for us.
+
+The very famous passage in his early work on human understanding, more
+specially the utterance about the union of the mind with nature as a
+whole, has led many to interpret Spinoza as an advocate of unio mystica,
+that is, as a 'mystic'. In the Ethics, on which I am focusing, there are
+no similar utterances. I find it plausible that he in his later years
+has experienced less mystical nearness to a supreme whole.
+
+Nature as conceived by many ecologists and expressed philosophically by
+James Lovelock and others, is not the passive, dead, value-neutral
+nature of mechanistic science, but is akin to the active, 'naturing'
+nature of Spinoza. It is all-inclusive, creative (as natura naturans),
+infinitely diverse, and is alive in the broad sense of Spinozistic
+socalled panpsychism. It manifests abstract structure, namely the laws
+of nature, simulated by such models as Einstein's field equations.
+Goethe reaches deeper, perhaps, when he warns us: "Die Natur hat weder
+Kern noch Schale, alles ist auf einem Male".
+
+Because 'Everything affects every other thing', we cannot predict the
+long range effects of our particular actions and policies. This is in
+harmony with Spinoza's warning that we should not think man capable of
+ever fully understanding the 'common order of nature'. Very much less is
+needed in order to appreciate the overwhelming creativity of Nature. The
+practical importance of the intrinsic-value principle of deep ecology is
+mainly due to the imperfection and fragmentariness of our knowledge of
+the common order of nature. Calculations of 'usefulness' are uncertain.
+
+X
+
+Nature (with a capital N) is intuitively conceived as perfect in the
+sense that Spinoza and ecologists hold more or less in common. It is not
+a narrowly moral, utilitarian or aesthetic perfection. Nature is perfect
+'in itself' and not in so far as it serves specific human needs. Nor is
+it moral or immoral. It is amoral.
+
+'Perfection' in Spinoza's medieval Latin means completeness of some
+sort. But suffering in nature? There is no reason to deny or
+underestimate it. Its relation to perfection? Neither should it be
+overestimated. Stephan Lackner[7] has published a highly stimulating
+book concerning that. Some ecologists seem to ask us to completely
+refrain from intervention in order to help needlessly suffering animals.
+But as humans we have obligations, primarily towards suffering humans,
+but also towards non-human beings. There are of course inevitable
+clashes of norms in this area, but some norms in the sense of general
+guidelines are fairly clear. We may refuse to passively witness what we
+consider unnecesary suffering. The predators kill, but we are free to
+intervene in some cases.[8] I don't know how the text of the Ethics may
+lend itself to thisquestion of the deep ecolog movement.
+
+XI
+
+Spinoza makes use of all central philosophical terms of his time but he
+defined them in his own way, and he has the tendency to relate to each
+of them to each of the others in a characteristic way. Without studying
+that very special way, I do not think one can get any adequate picture
+of his system. To act in the sense of expressing one's own nature, is to
+act freely, determined only by one's own nature and not arbitrarily or
+by chance. But, of course not determined in the sense of fatalism.
+
+An act causes something adequately, and every being causes something
+this way. That is, every being shares, as we have pointed out earlier,
+in the creativity of God or Nature. Every being is not wholly in
+something other (in alio) in the terminology of Spinoza. Power is power
+to act, that is, cause adequately, and an increase of this cannot but
+increase the level of virtue. (Here Spinoza fundamentally differs from
+Hobbes.) The relation of virtues to other key terms is fixed through 17
+equivalences.[9]
+
+In contemporary philosophy of politics, it is often distinguished
+between 'power over' ('coercise power') and 'power to'. Spinoza's term
+is clearly a kind of 'power to'-term.
+
+To be, and therefore to act, in one self (in suo esse) is one of the
+basic notions in the Ethics and it has a clear connection with
+self-preservation. But Spinoza prefers for important reasons a different
+term, 'perseverare in suo esse'. The relation of the ecosophically
+important notions of self-realization to the Spinozist perseverare
+justifies a closer inspection of terminology and the significantly
+different concepts at hand.
+
+The principle of self-preservation as exemplified and as defined by
+philosophers and biologists at least since the Stoics had a main
+component of defense against external threats. But it also covers
+behavior and structure adopted to maintain inner equilibrium under
+changing environmental conditions. Conceived in this way the principle
+has acquired renewed importance through the deep ecology movement.
+
+The notion of 'persevere in one's (particular) being' is useful in
+argumentation against arbitrary manipulation of genes in animals and
+humans. The usual more or less 'instinctive' reluctance to interfere
+with the particular beings developed through millions of years may find
+philosophical justification at this point. Affinities between Stoic
+philosophy and deep ecology attitudes have been often noted, but the
+differences are clear: the latter implies social and political activism
+directed towards conditions significantly different from those in all or
+most countries. There is no quietism, and no lack of passion in the deep
+ecology movement. In so far as it has affinities with Spinoza, it favors
+the strong positive emotions required for the advance in the level of
+freedom. But, of course,most supporters of the movement have never heard
+about Spinoza, and some might dislike what they hear.
+
+The increased level of perseveration seems to be proportional to the
+increase in all 8 or more in-se predicates: power, freedom, virtue... .
+The expression quantum in se est, 'in so far (the being is in itself)',
+is central, not only in the Ethics, but also in the Theological-
+Political Treatise: "It is a law of all nature (or: a highest law...)
+that every being endeavors (conatur) to persevere in its state, in so
+far as 'it is in itself'. (TTP, Cap.16) The translation 'to pre-serve'
+is misleading.
+
+The dictionary meaning of the English term 'persevere' Wyld formulates
+as follows:
+
+to persist doggedly and with determination, diligence and patience, with
+the object a) of completing a task; b) of overcoming difficulty or
+opposition; c) of attaining a purpose, securing an aim etc.
+
+The classic Latin term perseverare C.T.Lewis translates with "to abide,
+adhere strictly, continue steadfastly, persist, persevere". Example:
+navis perseveravit, "the ship
+
+kept on its course". We choose the course and persevere.[10]
+
+The term perseverare in the Ethics must of course be conceived more
+abstract and general, but I think the English term furnishes an adequate
+basis. The dynamic character of Spinoza's thinking is, for instance,
+better served than by "preservation" or by "conservation".
+
+Human power to act is proportional to the extent to which we are the
+adequate cause of something, which again, according to the definition of
+adequate causation, is porportional to the extent to which what is done
+follows from our nature or essence alone, and not from any pressure upon
+us. When we act in the sense introduced, we persevere in our being or
+essence. A thing that perseveres in its being "in so far as it is in
+itself" perseveres in its essence.
+
+'To persevere one's being' is the same as 'to persevere in one's
+essence' and not to persevere in someone else's essence, says Spinoza.
+Altruism in the sense of caring for others or doing things for the sake
+of others does not imply
+
+shedding one's essence and jumping into the essence of some-thing else.
+A being is the more free the more it acts out, or is caused by, its own
+nature alone. It is a question of maintaining identity, not of
+strengthening ego or egocentricity. The doctrine of Spinoza at this
+point with its undermining of the standard conception of altruism
+furnishes an excellent kind of basis for a deep ecology concept of
+identification with every living being. I say 'kind of' because of the
+opportunity of a variety of conceptualizations.
+
+The term perseverare acquires its function from its position within a
+structure that is unique to Spinoza's system and different from the
+function of related terms in other philosophers. But it would lead us
+astray if we adopted 'self-perseverance' as a fundamental term of
+Spinoza's system. No single term is fundamental in his system. There are
+at least a dozen, which are ultimates from a systematic point of view.
+Therefore we cannot overemphazise the importance of keeping their
+internal relations of a manifold of terms in mind. If not, the system
+falls apart - a disorderly heap of postulates.
+
+Taken at its crudest form - the endeavor to continue somehow to survive,
+is of little systematic interest. And taken to imply a resistance to
+change - a striving to keep on just as one always has done, it is
+clearly un-Spinozistic. There is an urge for change. Humans, and others
+are always 'on the way' - without change of essence. The dynamic,
+interactionist view of the self makes it inevitable to interpret a basic
+principles of conatus as a striving for self-causing-ness, activeness,
+power. We might connect it more specifically with the striving for
+perfection, for whole-ness, completeness, self-madeness, as suggested by
+the special use of the term in the Ethics. The use of conatus in
+Proposition 28, Part Five, is instructive:
+
+"The conatus or desire to understand things in the third way of
+cognition...". Love of particular beings, amor intellectualis, is not a
+luxury indulged by the few, but a bone-hard human reality.
+
+The proof of Proposition 20 in Part Four offers an excellent occurence
+of grading conatus, perseverance, conservation, power and virtue:
+
+"Virtue is the very power of man, and is defined solely by the essence
+of man, that is, which is defined through solely the striving by which
+man strives to preserve in his being. Therefore, the more each strives
+to conserve his being, and is able to do so, the more he is endowed with
+virtue. And as a consequence, to the extent a man neglects to conserve
+his own being, he is wanting in power." And of course wanting in virtue.
+One is reminded of the Greek term arete, conventionally translated to
+'virtue', whereas it lacks the specific moral atmosphere of 'virtue'.
+Spinoza's anti-moralistic attitude may remind one of that of Hobbes, but
+not the general gentleness and in a wide sense ethical approach. In the
+ecosophy I feel at home with, a fundamental norm can be formulated using
+one word, 'Self-realization!'. The nearest term in the terminology of
+the Ethics, 'to persevere in one's self', can be interpreted in the
+direction of 'express one's self', 'self-fulfillment', 'realizing one's
+potentials' - 'self-realization'.
+
+The self can be said to comprise what one identifies with. The
+identification may be superficial or deep, the scope of identification
+narrow or broad. The person, I suggest, who is 'all-round' mature cannot
+avoid identifying with every living being - 'seeing himself or herself
+in every being'. If the two persons are Anne and Tom Taylor evidently
+they do not see Anne and Tom in every being. There is something they see
+in themselves and in any other being. What something? It is tempting to
+mention one particular metaphysical theory specifying the x. I refer to
+Bhagavadgita's announcement: "Those who are equipped with yoga looks on
+all with an impartial yee, seeing Atman (the Self) in all beings and all
+beings in Atman." Chapter 6, verse 29, Gandhi's translation.)
+
+- Nine out of ten news about the ecological crisis are potentially
+discouraging. It is therefore understandable that some young supporters
+of the deep ecology movement despair, grow pessimistic and increasingly
+passive. This in spite of their feeling of certainty that the goal of
+the deep ecology movement is in harmony with what they fundamentally and
+intuitively stand up for: They try to 'persevere in their being, in so
+far as they are in themselves', that is, in so far as they are able to
+act as integrated, powerful people - in the Spinozistic sense of
+'power'.
+
+XII
+
+People motivated by the positive (active) affects and not by the
+negative (passive) ones have the same ultimate aim, taking part in the
+same highest virture of the mind (Part
+
+Five, Proposition 25, Proof), and are therefore capable of joining
+together in peaceful communities. The stronger these
+
+joyful affects are, the better. Spinoza is a rare bird among
+philosophers: he makes significant advance along the road to freedom
+dependent upon strength of positive feelings! Reason points out the way
+to go, but only the strength of the feelings can do the job, to travel
+along a long, difficult trail, each in a separate trail (svamarga),the
+way of one's own self).
+
+There are - perhaps I should add 'of course' - some sentences in the
+Ethics which are difficult to digest for supporters of the deep ecology
+movement. A passage in Part Four (P37Sch) seems to rely on a curious
+theorem: The less the nature of people is similar, the less easy it is
+to live together, and the less they are useful to each other. This I
+think, can be inferred from what he says about the nature of different
+living beings. From such a point of view he talks about animals which
+have feelings, he says, but have such a very different nature from ours
+that they cannot be our friends and members of our communities. He does
+not say that because they are inferior or lower that they cannot be our
+friends. Their nature is too different.
+
+Part of what Spinoza says in this connection is different from what
+supporters of the deep ecology movement tend to say. What I refer to is
+the expression of Spinoza when he says that animals have the same right
+in relation to humans as humans have in relation to animals, but that
+humans have more right than animals. Many supporters of the deep ecology
+movement say that animals have as much right as humans. There is an
+equality of right.
+
+I tend to disagree with any quantification here. Animals and humans may
+be said to have at least one kind of right in common, namely the right
+to live and blossom. The concept I prefer if I use the term 'right' in
+this connection is such that it does not warrant quantification. If I
+intentionally kill a mosquito, I violate its right, but not because I,
+as a human, have more right. If Spinoza relates to another being with
+amor intellectualis can he nevertheless deny doing things for their own
+sake? In modern terminology, intellectual love would not imply the
+attributing intrinsic value, but that is irrelevant here. Spinoza does
+not use the term right in such a way and he cannot avoid quantification.
+
+I find it strange that some people seem to find it paradoxical that
+theorists of the deep ecology movement tend to cherish Spinoza: He talks
+about animals with so little respect. But the inspiration does not
+depend on reading texts as a holy scripture. We do not expect him to be
+influenced by at least some of the dominant opinions among his
+contemporaries. We have the right to treat animals "as is most
+convenient for us", he writes in one of his 'notes', not as part of a
+theorem. But if some of use have advanced further than some others among
+us on the way towards the application of the third way of knowledge,
+amor intellectualis, the third way will have priority over conveniences.
+Animal factories which violate the dignity of animals cannot be operated
+in conformity with the active affect.
+
+There is among Spinoza's terms none that corresponds to the important
+term '(process of) identification' by which humans attribute intrinsic
+or inherent value to every human being and also to large sections, or
+all, non-human beings. The structure of his system is such that all
+beings take part in the power of God. Because of the equivalences
+joining 'power' with other terms, the structure is compatible with the
+intrinsic value and the self-realization views. The content of the note
+attached to Proposition 37 of Part Four is not. For my use of this note
+in Spinoza's text it is enough to add to it: what partakes in the
+creative power of God has intrinsic value and this applies to the total
+manifold of creatures. In this way the passage from the basic ("level
+1") announcements of Spinoza to the ("level 2") 8 points of my proposed
+8 points of the deep ecology movement is not difficult.[11]
+
+Supporters of the deep ecology movement have been increasingly involved
+in social and political conflicts. Since the controversies on
+pesticides, the pervasive influence of social and political obstacles
+have made supporters more pessimistic about the near future. The
+question must here be raised: Can something be learned from 17th century
+Spinoza about the 20th Century frustrating political situation? Not very
+much, I am afraid.
+
+The understanding of Spinoza's political opinion is clearly dependent
+upon what he says in the Ethics and other works, and upon the special
+social and political conditions in the Netherlands at that time. I shall
+here limit myself to some remarks on the relations between the Ethics
+and his social philosophy in so far as they are fairly independent of
+the special conditions in his time. They concern primarily some of the
+central terms mentioned in the foregoing.
+
+Adequate ideas are only available through the second and third kinds of
+cognition, the rational and the intuitive. These two kinds do not get
+into conflict, but the rational teaches us only what is required in our
+quest to understand in the third way, that is, ultimately what is
+necessary individually, socially, and politically, to reach a peaceful
+community.[12]
+
+But the social situation shows how far from reaching utopia we are: Most
+people are, according to Spinoza, led by passive rather than active
+affects, and they choose leaders who seem to help them reach goals
+derived from these passive affects. This means that even a democracy may
+fail to change policies.
+
+Spinoza grew increasingly pessimistic. He changed opinions during the
+long time he was working on the manuscript of the Ethics. The last time
+was in 1674, two years after the politically catastrophic year of the
+assassination of Jan de Witt. Spinoza was politically active and the
+depressing events of 1672 may have changed some of his ideas - he was
+led towards general pessimism about the future. But it did not influence
+the main structure of the Ethics, the propositions and their proofs. It
+is more likely that it affected some of the notes (Scholiae) put in
+between the Propositions.
+
+It is not the personal opinions, but the main body (and the general
+structure) of the Ethics which has inspired, and will in the future
+inspire those who, on the basis of their fundamental beliefs and
+attitudes, try to contribute, however modestly, to the solutions of the
+ecological crisis. It is clear to those who teach Spinoza at the
+universities that the appeal of Spinoza is close to universal. It is not
+astonishing that he is sometimes called THE philosopher.
+
+Spinoza had a vision, a small set of intimately connected deep
+intuitions. He clearly saw that to convey the content of his vision, and
+of all main views dependent on it, it would not be possible to use a
+small number of words. The arugmentation in the Ethics uses many words
+and many levels of the premiss/conclusion relation. The intimacy of the
+relation between the key terms enables the careful reader to get a
+feeling of the basic intuitions he tried to elicit in us.
+
+[1]     Spinoza uses the term causa immanens only twice, in the Ethics
+1P18 (Part One, Proposition 18) and Letter 73 when there is a positive
+reference to St. Paul.
+
+[2]     Naess, "Limited Definiteness of 'God' in Spinoza's system.
+Answer to Heine Siebrand", Neue Zeitschrift für sytematische Theologie
+und Religionsphilosophie, 28, 1986, pp.275-283.
+
+[3]     One may speak of the finite God (Deus modificatus) of Spinoza as
+well as aboout the infinite: Naess: "Spinoza's Finite God", Revue
+internationale de Philosophie, Vol. 35, 1981, pp.120-126. Researchers
+mostly take the first part of the Ethics more seriously than the last -
+the account of human freedom and power as genuine part of God's. Doing
+this they seem not to be aware of the limitation of mere formal logical
+priority. They ignore Deus modificatus because it occurs only in the
+later parts. Deep ecology theorizing neither thrives on Man apart, nor
+God apart.
+
+[4]     Cp.Naess, "Spinoza's Finite God", Revue internationale de
+Philosophie, 135, 1981, pp.120-126.
+
+[5]     It is important that Spinoza adds that 5P24 follows from
+1P25Cor, that is, from the thesis of modes expressing God's attributes.
+It supports a radically immanent interpretation of Deus.
+
+[6]     The distinction between content and abstract structure is worked
+out in Naess, "The World of Concrete Contents", Inquiry, 28, 1985,
+pp.417-428.
+
+[7]     Lackner, Stephan, Peaceable Nature, San Francisco:Harper & Row,
+1984.
+
+[8]     A little more on human intervention to decrease suffering:
+A.Naess, "Should we try to relieve clear cases of extreme suffering in
+nature?" in Pan Ecology, Vol.6, Number 1, Winter 1991.
+
+[9]     In Naess, Equivalent Terms and Notions in Spinoza's Ethics,
+Institute of Philosophy, University of Oslo 1973, I have guoted 243
+relations of equivalence among key terms.
+
+[10]     I have commented on perseverare and its relation to Hobbes in
+"Environmental Ethics and Spinoza's Ethics...", Inquiry, 23, 1980,
+pp.313-325. In what follows, some formulations are borrowed from that
+article. In the fourth part of the Ethics, the term conservare is
+sometimes used as a synonym for perseverare. (4P18Sch: reason demands
+(postulat) that everyone endeavors to conserve its being (esse), in so
+far as it is in itself.) I think 'conserve' is too passive, I shall
+accordingly write and talk as if perseverare was used consistently by
+Spinoza.
+
+[11]     Bill Devall & G.Sessions, Deep Ecology, Salt Lake City 1985,
+p.70.
+
+[12]     Some central places in the Ethics show the way from Spinoza's
+Ethics to his political writings. Concerning reason: Part Two,
+Proposition 40, Scholium 2. From the terminology follows Proposition 35
+of Part Four: "In so far men live under the guidance of reason, to that
+extent only do they always agree in nature". This is queer if one does
+not take into account Spinoza's somewhat special use of the term ratio.
+Concerning freedom, reason, mutual aid, peace, and friendship: "Only
+free men are truly advantageous (invicem utilissimi) to one another and
+united by a maximally close bond of friendship." (Part Four, Proposition
+71, Proof.) Here the term 'freedom' must be interpreted in accordance
+with what is said about adequate causation and activeness (Part Three,
+Definition 2), and the resulting close relation between the terms
+'freedom' and 'reason': "A free human being, that is, a man who lives
+under the guidance of reason, ..." (Part Four, Demonstration of
+Proposition 67.)
+
+From these places it is fairly clear that a Spinozistic social utopia is
+one which is conceived to furnish the best conditions for freedom for
+everybody - 'freedom' being interpreted in his way. But what kind of
+practical politics in the best? The question is open. I don't think
+Spinoza's political work can offer much here.

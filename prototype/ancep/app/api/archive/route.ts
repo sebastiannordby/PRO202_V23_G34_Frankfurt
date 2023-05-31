@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server';
 import WordExtractor from 'word-extractor';
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 
     // const { searchParams } = new URL(request.url);
     // const doc = searchParams.get('doc');
 
-export function GET(request: Request) {
+export async function GET(request: Request) {
     const filePath = path.join(process.cwd(), '/lib/archive');
-    const files = fs.readdirSync(filePath);
+    const files = await fs.readdir(filePath);
 
     return NextResponse.json(files);
 }
@@ -21,9 +21,10 @@ export async function POST(request: Request) {
     });
 
     const filePath = path.join(process.cwd(), '/lib/archive/' + fileName);
-    console.log('FilePath: ', filePath);
-    const extractor = new WordExtractor();
-    const extracted = await extractor.extract(filePath);    
+    const fileContent = await fs.readFile(filePath);
+    const fileContentStr = fileContent.toString();
 
-    return NextResponse.json(extracted.getBody());
+    return NextResponse.json({
+        text: fileContentStr
+    });
 }
