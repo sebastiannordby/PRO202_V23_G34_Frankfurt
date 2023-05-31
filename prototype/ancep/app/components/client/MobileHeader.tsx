@@ -38,12 +38,12 @@ export function MobileHeader() {
                         text-sm shadow-3xl rounded-lg max-w-sm">
                         <div className='flex items-center gap-2 w-full text-center lg:mr-6'>
                             <div className="p-2 flex-grow">
-                                <p className="block text-lg font-bold text-white">
+                                <p className="block text-lg font-bold ">
                                     {session != null ? <span>
                                     {session?.user?.name}
                                     </span> : <span>Logg inn</span>}
                                 </p>
-                                <p className="text-white font-semibold">{session?.user?.email}</p>
+                                <p className=" font-semibold">{session?.user?.email}</p>
                             </div>
                             {session?.user?.image ? 
                                 <>

@@ -21,7 +21,9 @@ nav {
 }
 
 header {
-  background: #96608e;
+  /* background: #96608e; */
+  background: #F3F3F1;
+  color: #231F20;
 }
 
 .bg-primary {
