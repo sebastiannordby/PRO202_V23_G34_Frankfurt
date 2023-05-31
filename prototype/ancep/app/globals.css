@@ -93,6 +93,13 @@ body {
   border-top-right-radius: 1.5rem;
 }
 
+.main-layout > .content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 @media(min-width: 768px) {
   .main-layout {
     top: 75px;
