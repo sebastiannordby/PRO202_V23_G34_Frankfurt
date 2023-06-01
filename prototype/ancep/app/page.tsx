@@ -10,10 +10,10 @@ export default function Home() {
     <main className="home min-h-screen flex flex-col items-center main-layout
       p-6 rounded-t-3xl justify-center bg-white w-full">
       <div 
-        className="mb-32 mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
+        className="mb-32 overflow-auto mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
         <a
           href="/quiz"
-          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/tankevekker.png"
@@ -31,7 +31,7 @@ export default function Home() {
         
         <a
           href="/chat"
-          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/chatbot.png"
@@ -47,7 +47,7 @@ export default function Home() {
 
         <a
           href="/archive"
-          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <img
               src="/images/sider/arkiv.png"
@@ -63,7 +63,7 @@ export default function Home() {
 
         <a
           href="/profile"
-          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/profil.png"
@@ -79,7 +79,7 @@ export default function Home() {
 
         <a
           href="/teacher"
-          className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/veiledning.png"
