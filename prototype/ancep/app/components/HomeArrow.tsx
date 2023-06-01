@@ -4,7 +4,7 @@ export function HomeArrow() {
     return (
         <a 
             href="/" 
-            className="flex items-center underline text-white rounded-md p-2 relative"
+            className="flex items-center underline text-lg text-white rounded-md p-2 relative"
             style={{top: '-10px', left: '-10px'}}>
             {/* <Image 
                 alt="Hjem pil"
