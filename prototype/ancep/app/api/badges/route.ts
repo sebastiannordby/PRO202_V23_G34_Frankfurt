@@ -15,8 +15,9 @@ export async function GET(request: Request) {
   if(user?.badges) {
     const result: Badge[] = [];
 
-    user?.badges?.forEach(x => {
-      const badge = badges.find(x => x.type);
+    user?.badges?.forEach(userBadgeType => {
+      const badge = badges.find(badge => 
+        badge.type == userBadgeType);
 
       if(badge) {
         result.push(badge);
