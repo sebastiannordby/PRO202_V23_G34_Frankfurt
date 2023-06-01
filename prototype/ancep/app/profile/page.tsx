@@ -63,9 +63,11 @@ export default function ProfilePage() {
                             Add Badge
                         </button>
                     </div>
-                    <div className="flex gap-4 mt-2">
+                    <div className="flex flex-wrap gap-4 mt-2">
                         {badges.map((badge) => (
-                            <div key={badge.image_url}>
+                            <div 
+                                key={badge.image_url}
+                                className="flex content-center">
                                 <img
                                     width="50"
                                     height="50"
