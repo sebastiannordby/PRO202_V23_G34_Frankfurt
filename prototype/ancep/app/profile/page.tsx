@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { AddBadge } from "../components/AddBadge";
 import { Badge } from "@/lib/models/badge";
+import CharLimitStatusBox from "@/app/components/CharLimitStatusBox";
 
 // export const metadata = {
 //     title: 'Min profil',
@@ -45,7 +46,10 @@ export default function ProfilePage() {
                         className="mt-2"
                         src={session?.user?.image as string}/> 
                     </> : ''
-                } 
+                }
+                <span>
+                    <CharLimitStatusBox limit={50} />
+                </span>
 
                 
                 <div className="flex flex-col gap-2 mt-4">
