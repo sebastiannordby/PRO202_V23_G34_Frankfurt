@@ -43,8 +43,8 @@ export default function ProfilePage() {
                         <img 
                         width="150"
                         height="150"
-                        className="mt-2"
-                        src={session?.user?.image as string}/> 
+                        className="mt-2 rounded-full md:hidden"
+                        src={session?.user?.image as string}/>
                     </> : ''
                 }
                 <span>
@@ -75,7 +75,7 @@ export default function ProfilePage() {
                                 <img
                                     width="50"
                                     height="50"
-                                    className="mt-2 mx-auto"
+                                    className="mt-2 mx-auto rounded-full"
                                     src={badge.image_url} alt="badge" />
 
                                 <span>{badge.name}</span>    
