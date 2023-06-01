@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export default function Popup(props:{visible:boolean, visibleChanged:Function, BodyContent:JSX.Element, Footer:JSX.Element, title:string }){
+export default function Popup(props:{visible:boolean, visibleChanged:Function, Footer:JSX.Element, title:string, children:JSX.Element }){
 
-    const {visible, title, BodyContent, Footer, visibleChanged} = props;
+    const {visible, title, children, Footer, visibleChanged} = props;
 
     useEffect(()=>{
 
@@ -25,7 +25,7 @@ export default function Popup(props:{visible:boolean, visibleChanged:Function, B
                     </div>
 
                     <div className="border h-full flex">
-                        {BodyContent}
+                        {children}
                     </div>
 
                     <div className="p-2">
