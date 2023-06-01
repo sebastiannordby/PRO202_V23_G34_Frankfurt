@@ -1,13 +1,34 @@
 import getDatabaseAsync from '@/lib/mongodb';
 import { NextResponse } from 'next/server';
+import { UserProfile } from '@/lib/models/user-profile';
+import { Badge } from '@/lib/models/badge';
 
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const userEmail = searchParams.get('email')?.toLocaleLowerCase();
 
-export async function GET(req: Request) {
   const client = await getDatabaseAsync;
   const db = client.db("ancep");
-  const badges = await db.collection('badges').find().toArray();
-  console.log('Badges: ', badges);
-  return NextResponse.json(badges);
+  const user = await db.collection<UserProfile>('users').findOne({ email: userEmail });
+  const badges = await db.collection<Badge>('badges').find().toArray();
+
+  if(user?.badges) {
+    const result: Badge[] = [];
+
+    user?.badges?.forEach(x => {
+      const badge = badges.find(x => x.type);
+
+      if(badge) {
+        result.push(badge);
+      }
+    });
+
+    console.log('UserBadges: ', result);
+
+    return NextResponse.json(result);
+  }
+
+  return NextResponse.json([]);
 }
 export async function POST(req: Request) {
   const client = await getDatabaseAsync;
@@ -25,7 +46,7 @@ export async function POST(req: Request) {
 
   const updateResult = await db.collection('users').updateOne(
       { email: email},
-      { $addToSet: { badges: badges } }
+      { $addToSet: { badges: { $each: badges } } }
   );
 
   if (updateResult.matchedCount === 0) {

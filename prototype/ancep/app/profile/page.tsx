@@ -4,6 +4,7 @@ import { HomeArrow } from "../components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { AddBadge } from "../components/AddBadge";
+import { Badge } from "@/lib/models/badge";
 
 // export const metadata = {
 //     title: 'Min profil',
@@ -12,20 +13,19 @@ import { AddBadge } from "../components/AddBadge";
   
 export default function ProfilePage() {
     const { data: session } = useSession();
-    const [badges, setBadges] = useState([]);
+    const [badges, setBadges] = useState<Badge[]>([]);
     const { addBadgeToProfile } = AddBadge();
+
     useEffect(() => {
-        fetch('/api/badges')
-            .then((response) => {
-                if (!response.ok) throw new Error('Failed to fetch badges');
-                return response.json();
-            })
-            .then((data) => {
-                // @ts-ignore
-                const imageUrls = data.map((badge) => badge.image_url);
-                setBadges(imageUrls);
-            })
-            .catch(console.error);
+        (async() => {
+            const response = await fetch('/api/badges?email=' + session?.user?.email);
+
+            if (!response.ok) 
+                throw new Error('Failed to fetch badges');
+
+            const data = await response.json() as Badge[];
+            setBadges(data);
+        })();
     }, []);
 
     return (
@@ -62,12 +62,17 @@ export default function ProfilePage() {
                         </button>
                     </div>
                     <div className="flex gap-4 mt-2">
-                        {badges.map((imageUrl) => (
-                            <img
-                                width="50"
-                                height="50"
-                                className="mt-2"
-                                src={imageUrl} alt="badge" key={imageUrl} />
+                        {badges.map((badge) => (
+                            <div>
+                                <img
+                                    width="50"
+                                    height="50"
+                                    className="mt-2"
+                                    src={badge.image_url} alt="badge" 
+                                    key={badge.image_url} />
+
+                                <span>{badge.name}</span>    
+                            </div>
                         ))}
                     </div>
                     </div>
