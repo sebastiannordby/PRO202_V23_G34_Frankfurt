@@ -60,10 +60,10 @@ export function MobileHeader() {
             </header>
 
             <div id="defaultModal" tabIndex={-1} aria-hidden={!menuVisible} 
-                className="transition-opacity fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-hidden md:inset-0 backdrop-blur-md max-h-full h-screen  mx-auto">
-                <div className="relative h-full w-full max-w-xl max-h-full mx-auto overflow-hidden">
-                    <div className="flex flex-col h-full overflow-hidden first-letter:relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                className="transition-opacity fixed top-0 left-0 right-0 z-50 w-full md:p-4 overflow-hidden md:inset-0 backdrop-blur-md max-h-full h-screen  mx-auto">
+                <div className="relative h-full w-full max-w-xl max-h-full mx-auto overflow-hidden shadow-2xl">
+                    <div className="flex flex-col h-full overflow-hidden first-letter:relative rounded-lg">
+                        <div className="flex items-start justify-between p-4 rounded-t">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                                 Hvor har du tenkt deg?
                             </h3>
@@ -160,7 +160,7 @@ export function MobileHeader() {
                                 </a>
                             </div>
                         </div>
-                        <div className="flex items-end p-2 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <div className="flex items-end p-2 space-x-2 rounded-b ">
                             <button 
                                 data-modal-hide="defaultModal" 
                                 type="button" 
