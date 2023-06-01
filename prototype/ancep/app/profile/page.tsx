@@ -67,11 +67,11 @@ export default function ProfilePage() {
                         {badges.map((badge) => (
                             <div 
                                 key={badge.image_url}
-                                className="flex content-center">
+                                className="flex flex-col justify-center content-center text-center">
                                 <img
                                     width="50"
                                     height="50"
-                                    className="mt-2"
+                                    className="mt-2 mx-auto"
                                     src={badge.image_url} alt="badge" />
 
                                 <span>{badge.name}</span>    
