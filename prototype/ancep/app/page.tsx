@@ -8,9 +8,9 @@ export default function Home() {
 
   return (
     <main className="home min-h-screen flex flex-col items-center main-layout
-      p-6 rounded-t-3xl justify-center absolute bg-white w-full">
+      p-6 rounded-t-3xl justify-center bg-white w-full">
       <div 
-        className="mb-32 gap-2 flex flex-col justify-center content-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
+        className="mb-32 mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
         <a
           href="/quiz"
           className="flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"

@@ -74,8 +74,11 @@ html {
 
 body {
   color: black;
+  background: #F3F3F1;
   width: 100vw;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   /* background: linear-gradient(
       to bottom,
       transparent,
@@ -88,18 +91,21 @@ body {
 .main-layout {
   background: url('/images/Background_Mount.png');
   background-size: cover !important;
-  top: 135px;
   padding: 1.5rem;
-  position: absolute;
   width: 100%;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .main-layout > .content {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
+  width: 100%;
   flex-direction: column;
   /* background:rgb(146 96 143 / 96%); */
   background: rgba(255, 255, 255, 0.85);
@@ -107,7 +113,7 @@ body {
   border-radius: 15px;
   color: var(--ancep-black);
   overflow: auto;
-  height: 90%;
+  height: auto;
 }
 
 @media(min-width: 768px) {
