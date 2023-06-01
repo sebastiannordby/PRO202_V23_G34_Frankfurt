@@ -63,13 +63,12 @@ export default function ProfilePage() {
                     </div>
                     <div className="flex gap-4 mt-2">
                         {badges.map((badge) => (
-                            <div>
+                            <div key={badge.image_url}>
                                 <img
                                     width="50"
                                     height="50"
                                     className="mt-2"
-                                    src={badge.image_url} alt="badge" 
-                                    key={badge.image_url} />
+                                    src={badge.image_url} alt="badge" />
 
                                 <span>{badge.name}</span>    
                             </div>
