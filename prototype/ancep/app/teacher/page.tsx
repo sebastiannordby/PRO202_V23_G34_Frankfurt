@@ -62,7 +62,7 @@ export default function QuizPage() {
                                     Chatbot AI: Benytt deg av chatbot AI-en for å kommunisere og diskutere med Arne Næss virtuelt. Chatboten er programmert til å svare i tråd med Næss&apos; tenkning og filosofi, og kan besvare spørsmål, gi råd eller engasjere seg i diskusjoner. Dette gir deg muligheten til å få innsikt i Næss&apos; tanker på en interaktiv måte. 
                                 </li>
                                 <li>
-                                    Min profil: Opprett og administrer din egen profil på plattformen. Profilen inneholder informasjon om din bruker og gir deg muligheten til å holde oversikt over dine prestasjoner og "merker" du har oppnådd gjennom interaksjon med kunnskapssamlingen, aktiviteter og chatbot AI. Dette gir deg en følelse av progresjon og belønning for ditt engasjement på plattformen. 
+                                    Min profil: Opprett og administrer din egen profil på plattformen. Profilen inneholder informasjon om din bruker og gir deg muligheten til å holde oversikt over dine prestasjoner og {'"'}merker{'"'} du har oppnådd gjennom interaksjon med kunnskapssamlingen, aktiviteter og chatbot AI. Dette gir deg en følelse av progresjon og belønning for ditt engasjement på plattformen. 
                                 </li>
                             </ul>
                         </div>
