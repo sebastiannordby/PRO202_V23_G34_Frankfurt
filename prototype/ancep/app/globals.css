@@ -106,6 +106,8 @@ body {
   padding: 2rem;
   border-radius: 15px;
   color: var(--ancep-black);
+  overflow: auto;
+  height: 90%;
 }
 
 @media(min-width: 768px) {
@@ -124,6 +126,7 @@ body {
   /* background: url('/images/waves.svg'); */
   background: url('/images/Background_Mount.png');
   color: #96608E;
+  overflow: hidden;
 }
 
 main {
