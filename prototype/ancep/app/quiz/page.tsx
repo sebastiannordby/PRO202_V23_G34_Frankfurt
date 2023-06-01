@@ -14,6 +14,7 @@ export default function QuizPage() {
                 <ul className="text-sm">
                     <li>Morsomme spill med din klasse</li>
                     <li>Reflektive spørsmål - vekk ditt indre</li>
+                    <li className="underline"><a href="/quiz/cabin">Gå til hytta</a></li>
                 </ul>
             </div>
         </main>
