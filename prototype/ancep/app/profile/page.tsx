@@ -18,15 +18,17 @@ export default function ProfilePage() {
 
     useEffect(() => {
         (async() => {
-            const response = await fetch('/api/badges?email=' + session?.user?.email);
-
-            if (!response.ok) 
-                throw new Error('Failed to fetch badges');
-
-            const data = await response.json() as Badge[];
-            setBadges(data);
+            if(session?.user?.email) {
+                const response = await fetch('/api/badges?email=' + session?.user?.email);
+    
+                if (!response.ok) 
+                    throw new Error('Failed to fetch badges');
+    
+                const data = await response.json() as Badge[];
+                setBadges(data);
+            }
         })();
-    }, []);
+    }, [session]);
 
     return (
         <main className="main-layout">
