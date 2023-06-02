@@ -67,19 +67,24 @@ export default function CabinChatPage() {
                 addBadgeToProfile('10');
             }
 
-            if(!channel?.subscribed) {
-                throw Error("Not subscribed");
-            }
+            sendMessage();
+        }
+    };
 
-            const chatMessage: ChatMessage = {
-                message: newMessage,
-                user: session?.user?.email ?? 'Ikke pålogget',
-                id: uuidv4()
-            };
+    const sendMessage = () => {
+        if(!channel?.subscribed) {
+            throw Error("Not subscribed");
+        }
 
-            channel.trigger(eventName, chatMessage);
+        const chatMessage: ChatMessage = {
+            message: newMessage,
+            user: session?.user?.email ?? 'Ikke pålogget',
+            id: uuidv4()
+        };
+
+        if(channel.trigger(eventName, chatMessage)) {
             messages.push(chatMessage);
-
+    
             setMessages(messages);
             setNewMessage('');
             addBadgeToProfile('3')
@@ -96,7 +101,7 @@ export default function CabinChatPage() {
                 <p className="text-lg">Del dine tanker med andre</p>
 
                 <div className="flex mt-2 flex-col h-full w-full  overflow-hidden">
-                    <div className="bg-white p-2 overflow-auto flex-grow h-full border border-slate-300">
+                    <div className="bg-white rounded-lg p-2 overflow-auto flex-grow h-full border border-slate-300">
                         {messages?.map(x => 
                             <div key={x.id}>
                                 <p>
@@ -106,15 +111,23 @@ export default function CabinChatPage() {
                         )}
                     </div>
 
-                    <div className="mt-2">
+                    <div className="flex gap-2 mt-2">
                         <input 
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
-                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                            focus:border-blue-500 block flex-grow p-2.5 dark:bg-gray-700 dark:border-gray-600 
                             dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             value={newMessage}
                             placeholder="Skriv en melding.."
                             onChange={(e) => setNewMessage(e.target.value)}
                             onKeyUp={(e) => onInput(e)}></input>
+                        <button 
+                            onClick={sendMessage}
+                            data-modal-hide="defaultModal" 
+                            type="button" 
+                            className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+                                focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+                                p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                                dark:focus:ring-blue-800">Bli med</button>
                     </div>    
                 </div>
             </div>
