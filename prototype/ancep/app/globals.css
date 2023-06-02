@@ -139,6 +139,7 @@ body {
 
 .main-layout.think-cabin {
   background: url('/images/think-cabin/cabin-inside.png') !important;
+  background-size: contain !important;
 }
 
 .main-layout:not(.home) {
