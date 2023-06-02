@@ -125,12 +125,6 @@ body {
   height: auto;
 }
 
-@media(min-width: 768px) {
-  .main-layout {
-    top: 75px;
-  }
-}
-
 .page-title {
   /* color: #96608E; */
   font-weight: bold;
@@ -176,10 +170,14 @@ main {
 /*
   Tanke hytte
 */
+.think-cabin {
+  position: relative !important;
+}
+
 .think-cabin .video {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  height: 100vh;
-  width: 100vw;
   top: 0;
   bottom: 0;
   left: 0;

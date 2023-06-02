@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function ThinkProvokingPage() {
     return (
-        <main className="main-layout">
+        <main className="main-layout relative">
             <div className="content h-full pb-10"
                 style={{ background: 'none'}}>
                 <h1 className="page-title mb-4 text-white">Tankevekker</h1>
@@ -17,7 +17,7 @@ export default function ThinkProvokingPage() {
                             src="/images/think-provoke/join-sirkel.png" />
                         <h1 className="think-pro-logo text-xl text-white">Bli med</h1>
                     </div>
-                    <div className="relative w-60 shadow-xl md:relative md:top-12 rounded-full"
+                    <div className="relative w-60 shadow-xl md:left-12 md:top-12 rounded-full"
                         style={{height: 'min-content'}}>
                         <img 
                             className="w-60"
