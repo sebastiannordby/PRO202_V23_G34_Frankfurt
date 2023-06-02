@@ -36,7 +36,11 @@ export default function CreateQuiz(){
             customTest.push(
             <div className="flex grid grid-cols-[5fr_1fr]">
                 <DilemmaQuestionView question={test} key={test.Value + i}/>
-                <button className="border border-secondary rounded bg-primary hover:border-primary hover:bg-white">Rediger</button>
+                <button 
+                    className="border border-secondary rounded bg-primary hover:border-primary hover:bg-white" 
+                    onClick={()=> setShowEditQuestion(true)}>
+                    Rediger
+                </button>
             </div>
             )
             
