@@ -206,3 +206,28 @@ video {
   width: 150px;
   text-align: center;
 }
+
+/*
+Badge Animation
+ */
+
+.badge-container {
+  position: relative;
+}
+
+.badge-name {
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 4px 8px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-container:hover .badge-name {
+  display: block;
+}
