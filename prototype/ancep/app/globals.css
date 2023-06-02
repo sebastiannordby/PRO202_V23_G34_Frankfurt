@@ -202,6 +202,14 @@ main {
     transform: scale(5.7, 5.7);
   }
   100% {
-    transform: scale(2, 2) translateX(-20%);
+    transform: scale(2, 2) translateX(-40%);
+  }
+}
+
+@media(min-width: 400px) {
+  @keyframes zoom-in-zoom-out {
+    100% {
+      transform: scale(2, 2) translateX(-30%);
+    }
   }
 }
