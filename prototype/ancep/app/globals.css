@@ -139,7 +139,7 @@ body {
 
 .main-layout.think-cabin {
   background: url('/images/think-cabin/cabin-inside.png') !important;
-  background-size: contain !important;
+  background-size: cover !important;
 }
 
 .main-layout:not(.home) {
@@ -192,6 +192,7 @@ main {
 
 video {
   margin: auto;
+  width: 100% !important;
 }
 
 .think-pro-logo {
