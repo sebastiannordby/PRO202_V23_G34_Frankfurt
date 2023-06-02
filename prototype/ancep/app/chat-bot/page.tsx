@@ -1,10 +1,13 @@
+"use client"
 import { HomeArrow } from "../components/HomeArrow";
+import { useEffect } from "react";
 
-export const metadata = {
-    title: 'Chat',
-}
-  
-export default function ProfilePage() {
+export default function ChatBotPage() {
+
+    useEffect(() => {
+        document.title = 'Chatbot';
+    }, []);
+    
     return (
         <main className="main-layout">
             <HomeArrow />

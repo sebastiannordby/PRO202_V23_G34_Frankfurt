@@ -1,8 +1,9 @@
-import Image from "next/image";
+"use client"
+import Link from "next/link";
 
 export function HomeArrow() {
     return (
-        <a 
+        <Link 
             href="/" 
             className="flex items-center underline text-lg text-white rounded-md p-2 relative"
             style={{top: '-25px', left: '-20px'}}>
@@ -13,6 +14,6 @@ export function HomeArrow() {
                 width={30}/> */}
 
             <span>{'<-'} Hjem</span>
-        </a>
+        </Link>
     );
 }

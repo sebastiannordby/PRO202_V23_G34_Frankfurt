@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 export function MobileHeader() {
     const [menuVisible, setMenuVisibility] = useState(false);
@@ -10,17 +11,17 @@ export function MobileHeader() {
         <>
             <header className='flex flex-col p-2 pt-3 items-start px-4 h-40 md:h-28'>
                 <div className="flex items-center w-full mb-3">
-                    <a
-                    href="/"
-                    rel="noopener noreferrer">
-                        <img
-                        src="/images/arne.png"
-                        alt="Arne Næss Logo"
-                        className="dark:invert cursor-pointer"
-                        width={90}
-                        height={40}
-                        />
-                    </a>
+                    <Link
+                        href="/"
+                        rel="noopener noreferrer">
+                            <img
+                                src="/images/arne.png"
+                                alt="Arne Næss Logo"
+                                className="dark:invert cursor-pointer"
+                                width={90}
+                                height={40}
+                            />
+                    </Link>
 
                     <img
                         src="/images/hamburger.png"
@@ -32,7 +33,7 @@ export function MobileHeader() {
                     />
                 </div>
                 <div className="text-center w-full mb-2 md:absolute md:top-0 md:max-w-lg md:right-0 md:left-0 md:mx-auto">
-                    <a 
+                    <Link
                         href={session != null ? "/profile" : "/api/auth/signin"}
                         className="z-10 w-72 items-center justify-between bg-primary cursor-pointer
                         text-sm shadow-3xl rounded-lg max-w-sm">
@@ -41,7 +42,7 @@ export function MobileHeader() {
                                 <p className="block text-lg font-bold ">
                                     {session != null ? <span>
                                     {session?.user?.name}
-                                    </span> : <span>Logg inn</span>}
+                                    </span> : ''}
                                 </p>
                                 <p className=" font-semibold">{session?.user?.email}</p>
                             </div>
@@ -55,7 +56,7 @@ export function MobileHeader() {
                                 </> : ''
                             }
                         </div>
-                    </a>
+                    </Link>
                 </div>
             </header>
 
@@ -70,7 +71,7 @@ export function MobileHeader() {
                         </div> 
                         <div className="h-full overflow-x-hidden overflow-y-scroll space-y-6">
                             <div className="mb-32 w-full gap-2 flex flex-col justify-center content-center text-center mt-6 text-white">
-                                <a
+                                <Link
                                     href="/quiz"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
@@ -86,9 +87,9 @@ export function MobileHeader() {
                                                 Interaktiv læring for hele klassen.
                                             </p>
                                         </div>
-                                </a>
+                                </Link>
                                 
-                                <a
+                                <Link
                                     href="/chat"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
@@ -102,9 +103,9 @@ export function MobileHeader() {
                                             <h2 className={"mb-1 text-xl font-semibold"}>Chatbot</h2>
                                             <p className={"m-0 max-w-[30ch] text-sm"}>Snakk med Arne Næss</p>
                                         </div>
-                                </a>
+                                </Link>
 
-                                <a
+                                <Link
                                     href="/archive"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
@@ -118,9 +119,9 @@ export function MobileHeader() {
                                             <h2 className={"mb-1 text-xl font-semibold"}>Kunnskapssamling</h2>
                                             <p className={"m-0 max-w-[30ch] text-sm"}>Naviger deg i katalogen</p>
                                         </div>
-                                </a>
+                                </Link>
 
-                                <a
+                                <Link
                                     href="/profile"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
@@ -134,9 +135,9 @@ export function MobileHeader() {
                                         <h2 className={"mb-1 text-xl font-semibold"}>Min profil</h2>
                                       <p className={"m-0 max-w-[30ch] text-sm"}>Se din tidligere prestasjon og fortjente merker.</p>
                                     </div>
-                                </a>
+                                </Link>
 
-                                <a
+                                <Link
                                     href="/teacher"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
@@ -150,7 +151,7 @@ export function MobileHeader() {
                                         <h2 className={"mb-1 text-xl font-semibold"}>Undervisnings veiledning</h2>
                                         <p className={"m-0 max-w-[30ch] text-sm"}>Veiledning for undervisere og lærere.</p>
                                     </div>
-                                </a>
+                                </Link>
 
 
                                 {

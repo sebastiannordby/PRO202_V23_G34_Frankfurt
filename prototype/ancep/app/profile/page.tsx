@@ -1,21 +1,19 @@
 "use client"
-import Image from "next/image";
 import { HomeArrow } from "../components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { AddBadge } from "../components/AddBadge";
 import { Badge } from "@/lib/models/badge";
 import CharLimitStatusBox from "@/app/components/CharLimitStatusBox";
-
-// export const metadata = {
-//     title: 'Min profil',
-// }
-
   
 export default function ProfilePage() {
     const { data: session } = useSession();
     const [badges, setBadges] = useState<Badge[]>([]);
     const { addBadgeToProfile } = AddBadge();
+
+    useEffect(() => {
+        document.title = 'Min profil';
+    }, []);
 
     useEffect(() => {
         (async() => {
