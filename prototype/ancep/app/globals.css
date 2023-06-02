@@ -191,7 +191,25 @@ main {
   max-width: unset;
   width: unset;
   height: 100%;
-  animation: zoom-in-zoom-out 4s ease infinite;
+  animation: zoom-in-zoom-out 6s ease infinite;
+}
+
+@media(min-width: 400px) {
+  .animation img {
+    animation: zoom-in-zoom-out-tablet 6s ease infinite;
+  }
+}
+
+@media(min-width: 900px) {
+  .animation img {
+    animation: zoom-in-zoom-out-desktop 6s ease infinite;
+  }
+}
+
+@keyframes zoom-in-zoom-out-tablet {
+  100% {
+    transform: scale(2, 2) translateX(-30%);
+  }
 }
 
 @keyframes zoom-in-zoom-out {
@@ -206,24 +224,14 @@ main {
   }
 }
 
-@media(min-width: 400px) {
-  @keyframes zoom-in-zoom-out {
-    100% {
-      transform: scale(2, 2) translateX(-30%);
-    }
+@keyframes zoom-in-zoom-out-desktop {
+  0% {
+    transform: scale(2, 1) translateY(-40%) translateX(30%);
   }
-}
-
-@media(min-width: 1100px) {
-  @keyframes zoom-in-zoom-out {
-    0% {
-      transform: scale(10.5, 10.5) translateX(50%);
-    }
-    50% {
-      transform: scale(5.7, 5.7);
-    }
-    100% {
-      transform: scale(3, 3) translateX(-20%);
-    }
+  50% {
+    transform: scale(1.5, 1);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0) translateX(-20%);
   }
 }

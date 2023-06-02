@@ -29,7 +29,7 @@ export default function CabinChatPage() {
     useEffect(() => {
         setTimeout(() => {
             setAnimationVisible(false);
-        }, 3000);
+        }, 6000);
     }, []);
 
     useEffect(() => {
