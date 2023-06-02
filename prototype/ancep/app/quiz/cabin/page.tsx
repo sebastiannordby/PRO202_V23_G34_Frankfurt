@@ -7,7 +7,6 @@ import { useSession } from 'next-auth/react';
 import { HomeArrow } from '@/app/components/HomeArrow';
 import { v4 as uuidv4 } from 'uuid';
 
-
 const channelName: string = 'private-cabin';
 const eventName: string = "client-message";
 
@@ -27,14 +26,13 @@ export default function CabinChatPage() {
     const [channel, setChannel] = useState<Channel>();
 
     useEffect(() => {
-
-        let newPusherClient = new PusherClient('bef553a644fc3fdd487a', {
+        const newPusherClient = new PusherClient('bef553a644fc3fdd487a', {
             cluster: 'eu'
         });
 
         setPusherClient(newPusherClient);
 
-        let newChannel = newPusherClient.subscribe(channelName);
+        const newChannel = newPusherClient.subscribe(channelName);
 
         newChannel.bind('pusher:subscription_succeeded', function(members: any) {
             console.log('successfully subscribed!');
@@ -70,7 +68,6 @@ export default function CabinChatPage() {
             };
 
             channel.trigger(eventName, chatMessage);
-
             messages.push(chatMessage);
 
             setMessages(messages);

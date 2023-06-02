@@ -152,12 +152,24 @@ export function MobileHeader() {
                                     </div>
                                 </a>
 
-                                <a
-                                    href="api/auth/signout"
-                                    className="mx-auto flex text-center content-center gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
-                                    rel="noopener noreferrer">
-                                    <h2 className={"w-full mb-3 text-center text-xl font-semibold"}>Logg ut</h2>
-                                </a>
+
+                                {
+                                    session != null ? 
+                                        <a
+                                            href="api/auth/signout"
+                                            className="mx-auto flex text-center content-center gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                            rel="noopener noreferrer">
+                                            <h2 className={"w-full mb-3 text-center text-xl font-semibold"}>Logg ut</h2>
+                                        </a>
+                                    :    
+                                        <a
+                                            href="api/auth/signin"
+                                            className="mx-auto flex text-center content-center gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+                                            rel="noopener noreferrer">
+                                            <h2 className={"w-full mb-3 text-center text-xl font-semibold"}>Logg inn</h2>
+                                        </a>
+                               }
+                                
                             </div>
                         </div>
                         <div className="flex items-end p-2 space-x-2 rounded-b ">
