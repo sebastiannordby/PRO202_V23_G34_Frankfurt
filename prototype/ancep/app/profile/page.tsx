@@ -71,7 +71,7 @@ export default function ProfilePage() {
                                     <img
                                         width="50"
                                         height="50"
-                                        className="mt-2 mx-auto rounded-full"
+                                        className="mt-2 mx-auto rounded-full hover:scale-110 hover:opacity-80 transition-all duration-150"
                                         src={badge.image_url}
                                         alt="badge"
                                     />
