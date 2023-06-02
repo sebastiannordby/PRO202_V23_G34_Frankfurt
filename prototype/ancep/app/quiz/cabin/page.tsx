@@ -41,7 +41,12 @@ export default function CabinChatPage() {
         });
 
         newChannel.bind(eventName, function(newMessage: any) {
-            setMessages([...messages, newMessage]);
+            const newMessages = [...messages, newMessage];
+
+            console.log(newMessages);
+
+            messages.push(newMessage);
+            setMessages(messages);
         });
 
         setChannel(newChannel);
@@ -66,7 +71,9 @@ export default function CabinChatPage() {
 
             channel.trigger(eventName, chatMessage);
 
-            setMessages([ ...messages, chatMessage ]);
+            messages.push(chatMessage);
+
+            setMessages(messages);
             setNewMessage('');
         }
     };
@@ -75,11 +82,12 @@ export default function CabinChatPage() {
         <main className="main-layout">
             <HomeArrow />
 
-            <div className="content h-full flex-grow">
-                <h1 className="page-title">Velkommen til chatten</h1>
+            <div className="content h-full flex-grow" style={{maxHeight: '700px'}}>
+                <h1 className="page-title">Velkommen til tankehytta</h1>
+                <p className="text-lg">Del dine tanker med andre</p>
 
-                <div className="flex flex-col h-full w-full max-h-96 overflow-hidden">
-                    <div className="p-2 overflow-auto flex-grow h-full border border-slate-300">
+                <div className="flex mt-2 flex-col h-full w-full  overflow-hidden">
+                    <div className="bg-white p-2 overflow-auto flex-grow h-full border border-slate-300">
                         {messages?.map(x => 
                             <div key={x.id}>
                                 <p>
@@ -89,7 +97,7 @@ export default function CabinChatPage() {
                         )}
                     </div>
 
-                    <div className="p-2">
+                    <div className="mt-2">
                         <input 
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                             focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
