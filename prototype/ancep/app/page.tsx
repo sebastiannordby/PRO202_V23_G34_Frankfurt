@@ -11,10 +11,11 @@ export default function Home() {
     const { addBadgeToProfile } = AddBadge();
 
   return (
-    <main className="home min-h-screen flex flex-col items-center main-layout
-      p-6 rounded-t-3xl justify-center bg-white w-full">
+    <main className="home flex flex-col items-center main-layout
+        p-6 rounded-t-3xl justify-center bg-white w-full">
       <div 
-        className="mb-32 overflow-auto mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
+        className="h-full overflow-auto mx-auto w-full gap-2 flex flex-col justify-center 
+          items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
         <a
           href="/quiz"
           onClick={() => addBadgeToProfile('7')}

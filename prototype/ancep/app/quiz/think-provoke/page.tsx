@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 export default function ThinkProvokingPage() {
     return (
         <main className="main-layout relative">
-            <div className="content h-full pb-10"
-                style={{ background: 'none'}}>
-                <h1 className="page-title mb-4 text-white">Tankevekker</h1>
+            <div className="content h-full pb-10 backdrop-blur-2xl"
+                style={{ background: 'none', height: '100%'}}>
+                <h1 className="text-3xl page-title mb-4 text-center text-white">Tankevekker</h1>
 
-                <div className="flex flex-col md:flex-row gap-10 relative p-4">
-                    <div className="relative w-60 shadow-xl rounded-full" 
+                <div className="flex flex-col md:flex-row gap-10 relative p-4 justify-center">
+                    <div className="game-round-card relative w-60 shadow-xl rounded-full" 
                         style={{height: 'min-content'}}>
                         <img 
                             className="w-60"
@@ -17,7 +17,7 @@ export default function ThinkProvokingPage() {
                             src="/images/think-provoke/join-sirkel.png" />
                         <h1 className="think-pro-logo text-xl text-white">Bli med</h1>
                     </div>
-                    <div className="relative w-60 shadow-xl md:left-12 md:top-12 rounded-full"
+                    <div className="game-round-card relative w-60 shadow-xl left-12 md:left-0 md:top-12 rounded-full"
                         style={{height: 'min-content'}}>
                         <img 
                             className="w-60"
@@ -25,7 +25,7 @@ export default function ThinkProvokingPage() {
                             src="/images/think-provoke/host-sirkel.png" />
                         <h1 className="think-pro-logo text-xl text-white">Host</h1>
                     </div>
-                    <div className="relative w-60 shadow-xl rounded-full"  
+                    <div className="game-round-card relative w-60 shadow-xl rounded-full"  
                         style={{height: 'min-content'}}>
                         <img 
                             className="w-60"

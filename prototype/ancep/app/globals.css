@@ -206,6 +206,11 @@ video {
   text-align: center;
 }
 
+.game-round-card:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
 /*
 Badge Animation
  */
