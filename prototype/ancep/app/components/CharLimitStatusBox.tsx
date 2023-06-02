@@ -2,6 +2,7 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import  SendTextToDb  from './SendTextToDb';
 import {Badge} from "@/lib/models/badge";
+import { AddBadge } from "../components/AddBadge";
 
 class text {
 }
@@ -12,6 +13,7 @@ const CharLimitStatusBox = ({ limit }) => {
     const [text, setText] = useState( '');
     const [isEditing, setIsEditing] = useState(false);
     const [status, setStatus] = useState('');
+    const { addBadgeToProfile } = AddBadge();
 
     useEffect(() => {
         (async() => {
@@ -46,11 +48,12 @@ const CharLimitStatusBox = ({ limit }) => {
     // @ts-ignore
     const handleKeyUp = (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Prevent the default behavior of adding a new line
+            e.preventDefault();
             SendTextToDb(email, text).then(r => console.log(r));
             setText('');
             setIsEditing(false);
             setStatus(text);
+            addBadgeToProfile('2');
         }
     };
     const handleEdit = () => {

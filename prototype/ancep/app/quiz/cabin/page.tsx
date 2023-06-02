@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { HomeArrow } from '@/app/components/HomeArrow';
 import { v4 as uuidv4 } from 'uuid';
+import { AddBadge } from '@/app/components/AddBadge';
 
 const channelName: string = 'private-cabin';
 const eventName: string = "client-message";
@@ -25,6 +26,7 @@ export default function CabinChatPage() {
     const [pusherClient, setPusherClient] = useState<PusherClient>();
     const [channel, setChannel] = useState<Channel>();
     const [animationVisible, setAnimationVisible] = useState(true);
+    const { addBadgeToProfile } = AddBadge();
 
     useEffect(() => {
         setTimeout(() => {
@@ -62,6 +64,7 @@ export default function CabinChatPage() {
 
             if(newMessage?.toLocaleLowerCase()?.includes("kom frem arne")) {
                 open('/images/arne-busk.jpg', '_blank');
+                addBadgeToProfile('10');
             }
 
             if(!channel?.subscribed) {
@@ -79,6 +82,7 @@ export default function CabinChatPage() {
 
             setMessages(messages);
             setNewMessage('');
+            addBadgeToProfile('3')
         }
     };
 

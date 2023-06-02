@@ -24,7 +24,7 @@ export async function GET(request: Request) {
       }
     });
 
-    console.log('UserBadges: ', result);
+    //console.log('UserBadges: ', result);
 
     return NextResponse.json(result);
   }
@@ -34,12 +34,7 @@ export async function GET(request: Request) {
 export async function POST(req: Request) {
   const client = await getDatabaseAsync;
   const db = client.db("ancep");
-
   const {email, badges} = await req.json();
-
-  console.log('req.body: ', req.body, 'req.body.email: ', email, 'req.body.badge: ', badges);
-
-
 
   if (!req.body || !email || !badges) {
     return NextResponse.json({ message: "No body provided" });
@@ -54,7 +49,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "No user found" });
   }
 
-    return NextResponse.json({ message: "User updated" });
+    return NextResponse.json({ message: "Badge Added" });
 }
 
 

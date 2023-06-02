@@ -1,6 +1,7 @@
 import { useSession } from 'next-auth/react';
 import { POST } from "@/app/api/badges/route";
 
+// @ts-ignore
 export const AddBadge = () => {
     const  { data: session } = useSession();
 
@@ -9,7 +10,6 @@ export const AddBadge = () => {
             console.error('A user must be logged in and badgeData must be set');
             return;
         }
-
         console.log('Email: ', session.user.email);
         console.log('Badge Data: ', badgeId);
 

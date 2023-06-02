@@ -60,13 +60,6 @@ export default function ProfilePage() {
 
                     </div>
 
-                    <div>
-                        <button
-                            onClick={() => addBadgeToProfile('1')}
-                            className="bg-green-600 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
-                            Add Badge
-                        </button>
-                    </div>
                     <div className="flex flex-wrap gap-4 mt-2">
                         {badges.map((badge) => (
                             <div 

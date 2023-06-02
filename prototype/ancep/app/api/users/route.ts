@@ -24,6 +24,6 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "No user found" });
     }
 
-    return NextResponse.json({ message: "User updated" });
+    return NextResponse.json({ message: "Status Updated" });
 }
 

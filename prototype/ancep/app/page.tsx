@@ -4,7 +4,11 @@
 //   title: 'Hjem',
 // }
 
+import {AddBadge} from "@/app/components/AddBadge";
+
 export default function Home() {
+
+    const { addBadgeToProfile } = AddBadge();
 
   return (
     <main className="home min-h-screen flex flex-col items-center main-layout
@@ -13,6 +17,7 @@ export default function Home() {
         className="mb-32 overflow-auto mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
         <a
           href="/quiz"
+          onClick={() => addBadgeToProfile('7')}
           className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
@@ -31,6 +36,7 @@ export default function Home() {
         
         <a
           href="/chat"
+          onClick={() => addBadgeToProfile('1')}
           className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
@@ -47,6 +53,7 @@ export default function Home() {
 
         <a
           href="/archive"
+          onClick={() => addBadgeToProfile('4')}
           className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <img
@@ -63,6 +70,7 @@ export default function Home() {
 
         <a
           href="/profile"
+          onClick={() => addBadgeToProfile('2')}
           className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
@@ -79,6 +87,7 @@ export default function Home() {
 
         <a
           href="/teacher"
+          onClick={() => addBadgeToProfile('9')}
           className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
