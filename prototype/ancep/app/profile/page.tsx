@@ -62,16 +62,21 @@ export default function ProfilePage() {
 
                     <div className="flex flex-wrap gap-4 mt-2">
                         {badges.map((badge) => (
-                            <div 
+                            <div
                                 key={badge.image_url}
-                                className="flex flex-col justify-center content-center text-center">
-                                <img
-                                    width="50"
-                                    height="50"
-                                    className="mt-2 mx-auto rounded-full"
-                                    src={badge.image_url} alt="badge" />
-
-                                <span>{badge.name}</span>    
+                                className="flex flex-col justify-center content-center text-center"
+                                style={{ position: 'relative' }}
+                            >
+                                <div className="badge-container">
+                                    <img
+                                        width="50"
+                                        height="50"
+                                        className="mt-2 mx-auto rounded-full"
+                                        src={badge.image_url}
+                                        alt="badge"
+                                    />
+                                    <span className="badge-name">{badge.name}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
