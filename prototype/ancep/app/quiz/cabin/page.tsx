@@ -24,6 +24,13 @@ export default function CabinChatPage() {
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [pusherClient, setPusherClient] = useState<PusherClient>();
     const [channel, setChannel] = useState<Channel>();
+    const [animationVisible, setAnimationVisible] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAnimationVisible(false);
+        }, 3000);
+    }, []);
 
     useEffect(() => {
         const newPusherClient = new PusherClient('bef553a644fc3fdd487a', {
@@ -76,10 +83,11 @@ export default function CabinChatPage() {
     };
 
     return (
-        <main className="main-layout">
+        <main className="main-layout think-cabin">
             <HomeArrow />
 
-            <div className="content h-full flex-grow" style={{maxHeight: '700px'}}>
+            <div className="content h-full flex-grow" 
+                style={{maxHeight: '700px', display: animationVisible ? 'none' : 'flex'}}>
                 <h1 className="page-title">Velkommen til tankehytta</h1>
                 <p className="text-lg">Del dine tanker med andre</p>
 
@@ -106,8 +114,12 @@ export default function CabinChatPage() {
                     </div>    
                 </div>
             </div>
+
+            <div className="animation" style={{display: animationVisible ? 'block' : 'none'}}>
+                <img 
+                    alt="Utsiden av Arne sin hytte på fjellet med grønt gress"
+                    src="/images/think-cabin/cabin-outside.png" />
+            </div>
         </main>
-        
-        
     );
 }

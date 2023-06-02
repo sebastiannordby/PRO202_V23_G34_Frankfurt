@@ -137,6 +137,10 @@ body {
   font-size: 1.5rem;
 }
 
+.main-layout.think-cabin {
+  background: url('/images/think-cabin/cabin-inside.png') !important;
+}
+
 .main-layout:not(.home) {
   /* background: url('/images/waves.svg'); */
   background: url('/images/Background_Mount.png');
@@ -166,4 +170,37 @@ main {
 
 .color-primary {
   color: #96608E;
+}
+
+/*
+  Tanke hytte
+*/
+.think-cabin .animation {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(50px);
+  animation: zoom-in-zoom-out 4s ease infinite;
+}
+
+.animation img {
+  max-width: unset;
+  width: unset;
+  height: 100%;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(10.5, 10.5) translateX(100%);
+  }
+  50% {
+    transform: scale(5.7, 5.7);
+  }
+  100% {
+    transform: scale(2, 2) translateX(-90%);
+  }
 }
