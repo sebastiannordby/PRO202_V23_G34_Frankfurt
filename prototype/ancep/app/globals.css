@@ -184,6 +184,8 @@ main {
   left: 0;
   right: 0;
   backdrop-filter: blur(100px);
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -226,12 +228,12 @@ main {
 
 @keyframes zoom-in-zoom-out-desktop {
   0% {
-    transform: scale(2, 1) translateY(-40%) translateX(30%);
+    transform: scale(6, 6) translateX(50%);
   }
   50% {
-    transform: scale(1.5, 1);
+    transform: scale(5, 5);
   }
   100% {
-    transform: scale(1, 1) translateY(0) translateX(-20%);
+    transform: scale(3, 3) translateX(-20%);
   }
 }
