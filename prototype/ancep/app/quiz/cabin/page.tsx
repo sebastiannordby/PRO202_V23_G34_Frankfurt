@@ -31,7 +31,7 @@ export default function CabinChatPage() {
     useEffect(() => {
         setTimeout(() => {
             setAnimationVisible(false);
-        }, 6000);
+        }, 5000);
     }, []);
 
     useEffect(() => {
@@ -119,10 +119,11 @@ export default function CabinChatPage() {
                 </div>
             </div>
 
-            <div className="animation" style={{display: animationVisible ? 'block' : 'none'}}>
-                <img 
-                    alt="Utsiden av Arne sin hytte på fjellet med grønt gress"
-                    src="/images/think-cabin/cabin-outside.png" />
+            <div className="video" style={{ display: animationVisible ? 'flex' : 'none'}}>
+                <video 
+                    autoPlay muted loop>
+                    <source src="/videos/tankevekker.mp4" type="video/mp4" />
+                </video>
             </div>
         </main>
     );
