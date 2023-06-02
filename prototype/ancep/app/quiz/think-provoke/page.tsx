@@ -8,7 +8,7 @@ export default function ThinkProvokingPage() {
                 style={{ background: 'none'}}>
                 <h1 className="page-title mb-4 text-white">Tankevekker</h1>
 
-                <div className="flex gap-10 relative p-4">
+                <div className="flex flex-col md:flex-row gap-10 relative p-4">
                     <div className="relative w-60 shadow-xl rounded-full" 
                         style={{height: 'min-content'}}>
                         <img 
