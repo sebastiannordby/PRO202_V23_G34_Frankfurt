@@ -36,18 +36,25 @@ export async function POST(req: Request) {
   const db = client.db("ancep");
   const {email, badges} = await req.json();
 
+  const user = await db.collection('users').findOne({ email: email });
+
   if (!req.body || !email || !badges) {
     return NextResponse.json({ message: "No body provided" });
+  }
+
+  // @ts-ignore
+  const existingBadges = user.badges || [];
+  // @ts-ignore
+  const newBadges = badges.filter(badge => !existingBadges.includes(badge));
+
+  if (newBadges.length === 0) {
+    return NextResponse.json({ message: "Badge allready owned" });
   }
 
   const updateResult = await db.collection('users').updateOne(
       { email: email},
       { $addToSet: { badges: { $each: badges } } }
   );
-
-  if (updateResult.matchedCount === 0) {
-    return NextResponse.json({ message: "No user found" });
-  }
 
     return NextResponse.json({ message: "Badge Added" });
 }
