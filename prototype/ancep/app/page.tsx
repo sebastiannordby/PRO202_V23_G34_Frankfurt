@@ -13,9 +13,8 @@ export default function Home() {
   return (
     <main className="home flex flex-col items-center main-layout
         p-6 rounded-t-3xl justify-center bg-white w-full">
-      <div 
-        className="h-full overflow-auto mx-auto w-full gap-2 flex flex-col justify-center 
-          items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
+      <div className="content items-center flex flex-col md:flex-row md:flex-wrap gap-2 bg-none"
+        style={{ background: 'none' }}>
         <a
           href="/quiz"
           onClick={() => addBadgeToProfile('7')}

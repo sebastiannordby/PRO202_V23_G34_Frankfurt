@@ -67,7 +67,7 @@ header {
   background-color: #a8bbbf;
 }
 
-* {
+*, ::after, ::before {
   box-sizing: border-box;
 }
 
