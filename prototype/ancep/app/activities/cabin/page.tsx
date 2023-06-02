@@ -78,7 +78,7 @@ export default function CabinChatPage() {
 
         const chatMessage: ChatMessage = {
             message: newMessage,
-            user: session?.user?.email ?? 'Ikke pålogget',
+            user: session?.user?.name ?? 'Ikke pålogget',
             id: uuidv4()
         };
 
