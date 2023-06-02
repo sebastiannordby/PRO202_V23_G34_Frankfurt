@@ -184,13 +184,14 @@ main {
   left: 0;
   right: 0;
   backdrop-filter: blur(50px);
-  animation: zoom-in-zoom-out 4s ease infinite;
 }
+
 
 .animation img {
   max-width: unset;
   width: unset;
   height: 100%;
+  animation: zoom-in-zoom-out 4s ease infinite;
 }
 
 @keyframes zoom-in-zoom-out {
@@ -201,6 +202,6 @@ main {
     transform: scale(5.7, 5.7);
   }
   100% {
-    transform: scale(2, 2) translateX(-90%);
+    transform: scale(2, 2) translateX(-20%);
   }
 }
