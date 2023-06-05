@@ -17,7 +17,6 @@ export default function JoinThinkProvokePage() {
 
         nSocket.connect();
 
-
         setSocket(nSocket);
     }, []);
 

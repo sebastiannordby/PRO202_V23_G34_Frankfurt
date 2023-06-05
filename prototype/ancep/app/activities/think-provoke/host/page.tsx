@@ -7,6 +7,7 @@ import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import PusherClient from 'pusher-js';
 import { io, Socket } from 'socket.io-client';
 import { getSocketServerAdr } from "@/lib/pusher-channels";
+import { join } from "path";
 
 export default function HostThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
@@ -34,8 +35,7 @@ export default function HostThinkProvokePage() {
                     nSocket.connect();
                     nSocket.on('think-provoke-joined', (data: JoinUser) => {
                         console.log('DATA: ', data);
-                        joinedUsers.push(data);
-                        setJoinedUsers(joinedUsers);
+                        setJoinedUsers([...joinedUsers, data]);
                     });
 
                     setSocket(socket);
