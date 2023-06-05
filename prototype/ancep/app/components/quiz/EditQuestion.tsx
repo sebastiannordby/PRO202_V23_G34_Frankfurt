@@ -1,19 +1,21 @@
 import { Question, QuestionType } from "@/lib/models/question";
 import Popup from "../client/Popup";
-import { Dilemma, QuizAnswer } from "@/lib/models/answer";
-import { Dispatch, use, useDeferredValue, useEffect, useState } from "react";
-import { Quiz } from "@/lib/models/quiz";
-import { setRequestMeta } from "next/dist/server/request-meta";
-import { eventNames } from "process";
-import MultipleChoiceQuestionEdit from "./MultipleChoiceQuestionEdit";
+import { Dispatch, useEffect, useState } from "react";
+import QuestionEditor from "./editviews/QuestionEditor";
 
-export default function EditQuestion(props:{question:Question, questionChanged:Function, visible:boolean, visibleChanged:Function}){
+export default function EditQuestion(props:{question:Question, questionChanged:Dispatch<Question>, visible:boolean, visibleChanged:Dispatch<boolean>}){
 
     const{question, questionChanged, visible, visibleChanged} = props;
 
     const [questionType, setQuestionType] = useState(QuestionType.TextAnswer);
 
     const [editQuestion, setEditQuestion] = useState(new Question())
+
+
+    const questionModified = (newValue:Question)=>{
+    
+        questionChanged(newValue)
+    }
 
   
     const QuizOptions: Function = (props:{click:Dispatch<QuestionType>, currentQuestionType: QuestionType}) => {
@@ -55,95 +57,6 @@ export default function EditQuestion(props:{question:Question, questionChanged:F
 
 
 
- 
-
-
-    const TextQuestionEdit: Function  = (props:{questionValue:string, questionValueChanged:Function })=>{
-
-        const{questionValue, questionValueChanged} = props;
-        return(
-            <div>
-                <label>Spørsmål:</label>
-                <input value={questionValue} onChange={()=>questionValueChanged?.()} />
-            </div>
-        )
-    }
-
-    const DilemmaQuestionEdit : Function = 
-    (props:
-        {
-            questionValue:string, 
-            questionValueChanged:Dispatch<string>, 
-            dilemma1:string, 
-            dilemma1Changed:Dispatch<string>, 
-            dilemma2:string,
-            dilemma2Changed:Dispatch<string>
-        }
-    )=>
-    {
-
-        const{questionValue, dilemma1, dilemma2, questionValueChanged, dilemma1Changed, dilemma2Changed} = props;
-
-        return(
-            <div>
-                <div>
-                    <label>Spørsmål:</label>
-                    <input value={questionValue}/>
-                </div>
-                <div className="grid grid-cols-2">
-                    <label>Dilemma1:</label>
-                    <label>Dilemma2:</label>
-                    <input value={dilemma1} onChange={(event) => dilemma1Changed(event.target.value)} />
-                    <input value={dilemma2} onChange={(event)=> dilemma2Changed(event.target.value)}/>
-                </div>
-
-            </div>
-        )
-
-    }
-
-   
-
-
-    const QuestionEditor: Function = (props:{type:QuestionType, question:Question, questionChanged:Dispatch<Question>})=>{
-
-        const{type, question, questionChanged} = props;
-
-
-
-
-
-        const questionAnswerModified = (newValue:string[])=>{
-            question.Answer.MultipleChoice = newValue; 
-            questionChanged(question)
-        }
-
-        switch(type){
-
-            case QuestionType.Dilemma:
-                return(
-                    <DilemmaQuestionEdit />
-                )
-            case QuestionType.MultipleChoice:
-                return(
-                    <MultipleChoiceQuestionEdit 
-                        questionValue={question.Value} 
-                        questionValueChanged={(newValue)=>{question.Value = newValue;  questionChanged(question);}}
-                        answers={question.Answer.MultipleChoice}
-                        answersChanged={(newValue)=>questionAnswerModified(newValue)}
-                    />
-                )
-            case QuestionType.TextAnswer:
-                return(
-                    <TextQuestionEdit/>
-                )
-        }
-
-
-    }
-
-
-
 
     return(
 
@@ -167,7 +80,7 @@ export default function EditQuestion(props:{question:Question, questionChanged:F
 
                 </div>
             </div>              
-            <QuestionEditor type={questionType} question={editQuestion} questionChanged={(newValue:Question)=>setEditQuestion(newValue)}/>
+            <QuestionEditor type={questionType} question={question} questionChanged={(newValue:Question)=>questionModified(newValue)}/>
         </div>
     </Popup>
     )

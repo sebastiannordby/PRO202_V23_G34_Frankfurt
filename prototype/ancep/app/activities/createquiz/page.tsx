@@ -17,7 +17,7 @@ export default function CreateQuiz(){
 
     const [showEditQuestion, setShowEditQuestion ] = useState(false);
 
-    const [currentEditQuestion, setCurrentEditQuestion] = useState({} as Question);
+    const [currentEditQuestion, setCurrentEditQuestion] = useState(new Question());
 
     const [testQuestions, setTestQuestions] = useState<Question[]>();
 
@@ -64,6 +64,11 @@ export default function CreateQuiz(){
         })
     }
 
+    const updateEditQuestion = (newValue:Question)=>{
+        console.log(newValue.Answer?.MultipleChoice)
+        setCurrentEditQuestion(newValue)
+    }
+
 
     return(
         <div className="flex flex-col p-1 h-full overflow-y-hidden" >
@@ -94,7 +99,7 @@ export default function CreateQuiz(){
            
            <EditQuestion 
                 question={currentEditQuestion} 
-                questionChanged={(newValue:Question)=>setCurrentEditQuestion(newValue)}
+                questionChanged={(newValue:Question)=>updateEditQuestion(newValue)}
                 visible={showEditQuestion}
                 visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}
             />

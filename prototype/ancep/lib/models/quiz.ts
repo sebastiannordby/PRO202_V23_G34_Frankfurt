@@ -1,7 +1,7 @@
 import { Question } from "./question"
 
 export class Quiz {
-    Id: string = "";
+    _id?: string;
     Name: string = "";
     Questions: Question[] = [];
 }

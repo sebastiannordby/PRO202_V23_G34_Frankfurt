@@ -1,7 +1,7 @@
 import { QuizAnswer } from "./answer";
 
 export class Question  {
-    Id:string = "";
+    _id?:string;
     Value:string = "";
     Type:QuestionType = QuestionType.TextAnswer
     QuizId:string = ""

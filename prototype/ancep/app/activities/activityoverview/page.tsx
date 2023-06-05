@@ -11,7 +11,7 @@ export default function ActivityOverview(){
     
     useEffect(()=>{
         var test:Quiz = new Quiz();
-        test.Id = "test";
+        test._id = "test";
         test.Name = "Min nye test quiz"
 
         var testList:Quiz[] = [];
