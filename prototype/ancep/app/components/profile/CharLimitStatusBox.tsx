@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import  SendTextToDb  from './SendTextToDb';
 import {Badge} from "@/lib/models/badge";
-import { AddBadge } from "../components/AddBadge";
+import { AddBadge } from "../AddBadge";
 
 class text {
 }
