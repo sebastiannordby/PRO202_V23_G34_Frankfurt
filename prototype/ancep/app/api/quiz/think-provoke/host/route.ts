@@ -23,7 +23,7 @@ export async function GET(request: Request) {
         return;
     }
 
-    const client = await getDatabaseAsync;
+    const client = await getDatabaseAsync();
     const db = client.db("ancep");
 
     const existingGame = await db
@@ -48,8 +48,8 @@ export async function GET(request: Request) {
             status: 'ongoing'
         });
 
-    client.close();
-    
+    await client.close();
+
     return NextResponse.json({
         code: generateCode
     });
