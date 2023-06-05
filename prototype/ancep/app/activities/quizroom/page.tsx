@@ -1,5 +1,5 @@
 "use client"
-import DilemmaQuestionView from "@/app/components/client/DilemmaQuestionView";
+import DilemmaQuestionView from "@/app/components/quiz/DilemmaQuestionView";
 import { Question } from "@/lib/models/question";
 import { Quiz } from "@/lib/models/quiz";
 import { useEffect, useState } from "react";
@@ -24,7 +24,7 @@ export default function QuizRoom(){
 
             customTest.push(
                 <div>
-                    <DilemmaQuestionView question={test} key={test.Value + i}/>
+                    <DilemmaQuestionView question={test} keyValue={test.Value + i}/>
                     <button className="border rounded p-1 text-xl bg-primary hover:bg-secondary">Rediger</button>
                 </div>
             )

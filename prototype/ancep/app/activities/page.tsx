@@ -31,7 +31,7 @@ export default function QuizPage() {
                         href="/activities/think-provoke"
                         className="h-32 flex gap-3 items-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                         rel="noopener noreferrer">
-                            <div className="text-left pl-2">
+                        <div className="text-left pl-2">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankevekker</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Vekk ditt indre</p>
                         </div>
@@ -43,6 +43,17 @@ export default function QuizPage() {
                             <div className="text-left pl-2">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Morsomme spill</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>For hele klassen</p>
+                        </div>
+                    </Link>
+
+                    <Link 
+                        href="/activities/activityoverview"
+                        className="h-32 flex gap-3 items-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="text-left pl-2">
+                            <h2 className={"mb-1 text-2xl font-semibold"}>Mine aktiviter</h2>
+                            <p className={"m-0 max-w-[30ch] text-sm"}>Dine opprettede aktiviteter</p>
                         </div>
                     </Link>
                 </div>
