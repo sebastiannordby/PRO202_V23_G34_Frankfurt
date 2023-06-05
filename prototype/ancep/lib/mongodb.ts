@@ -18,8 +18,6 @@ export default async function getDatabaseAsync(){
 
   const mongoClient = await client.connect();
 
-  console.log('Listener count mongo db: ', mongoClient.listenerCount);
-
   return mongoClient;
 }
 
