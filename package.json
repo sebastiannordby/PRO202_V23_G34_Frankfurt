@@ -4,7 +4,7 @@
   "description": "<img src=\"https://therealsujitk-vercel-badge.vercel.app/?app=pro-202-v23-g34-frankfurt\"/>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "echo \"Error: no tests specified\"",
     "build": "npm run build:client && npm run build:server",
     "build:client": "cd prototype/ancep && npm run build",
     "build:server": "cd socket_server && npm run build",
