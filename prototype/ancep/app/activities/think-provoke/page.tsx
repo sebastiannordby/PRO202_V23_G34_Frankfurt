@@ -1,12 +1,12 @@
 "use client"
 import { useEffect, useState } from "react";
-import { HomeArrow } from "@/app/components/HomeArrow";
+import { BackArrow } from "@/app/components/BackArrow";
 import Link from "next/link";
 
 export default function ThinkProvokingPage() {
     return (
         <main className="main-layout relative">
-            <HomeArrow />
+            <BackArrow />
             
             <div className="content h-full pb-10 backdrop-blur-2xl"
                 style={{ background: 'none', height: '100%'}}>

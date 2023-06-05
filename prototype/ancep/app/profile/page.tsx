@@ -4,7 +4,8 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { AddBadge } from "../components/AddBadge";
 import { Badge } from "@/lib/models/badge";
-import CharLimitStatusBox from "@/app/components/CharLimitStatusBox";
+import CharLimitStatusBox from "@/app/components/profile/CharLimitStatusBox";
+//import {ChangeProfilePic} from "@/app/components/profile/ChangeProfilePic";
   
 export default function ProfilePage() {
     const { data: session } = useSession();
@@ -36,15 +37,12 @@ export default function ProfilePage() {
             <div className="content">
                 <h1 className="page-title">Min profil</h1>
                 <p className="text-sm">Se din progresjon og opptjente merker</p>
-                {session?.user?.image ? 
-                    <>
-                        <img 
+
+                        <img
                             width="150"
                             height="150"
-                            className="mt-2 rounded-full"
-                            src={session?.user?.image as string}/>
-                    </> : ''
-                }
+                            className="mt-2"
+                            src="/images/avatars/PiratePhil.png" />
                 <span>
                     <CharLimitStatusBox limit={50} />
                 </span>
