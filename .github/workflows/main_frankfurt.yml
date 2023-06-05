@@ -24,13 +24,13 @@ jobs:
       - name: npm install, build, and test
         run: |
           cd socket_server
-          npm ci
+          npm install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ./socket_server
 
   deploy:
     runs-on: ubuntu-latest
