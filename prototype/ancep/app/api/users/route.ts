@@ -1,13 +1,13 @@
 import getDatabaseAsync from '@/lib/mongodb';
 import { NextResponse } from 'next/server';
-import { useSession } from "next-auth/react";
-
 
 export async function GET(req: Request) {
-
     const client = await getDatabaseAsync;
     const db = client.db("ancep");
     const users = await db.collection("users").find().toArray();
+
+    client.close();
+
     return NextResponse.json(users);
 }
 
@@ -19,6 +19,8 @@ export async function POST(req: Request) {
         { email: email },
         { $set: { status: status } }
     );
+
+    client.close();
 
     if (usersUpdated.matchedCount === 0) {
         return NextResponse.json({ message: "No user found" });

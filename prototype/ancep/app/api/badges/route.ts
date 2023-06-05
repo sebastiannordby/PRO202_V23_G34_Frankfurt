@@ -24,6 +24,7 @@ export async function GET(request: Request) {
       }
     });
 
+    client.close();
     //console.log('UserBadges: ', result);
 
     return NextResponse.json(result);

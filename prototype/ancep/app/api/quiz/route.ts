@@ -8,6 +8,8 @@ export async function GET(req: Request) {
     const quizes = await db.collection('quizes').find().toArray();
   
     console.log('Quizes: ', quizes);
+
+    client.close();
   
     return NextResponse.json(quizes);
 }
@@ -18,6 +20,8 @@ export async function POST(req: Request){
     const client = await getDatabaseAsync;
     const db = client.db("ancep");
     const quizes = await db.collection('quizes').find().toArray();
+  
+    client.close();
+  
     quizes.push()
-    
 }
