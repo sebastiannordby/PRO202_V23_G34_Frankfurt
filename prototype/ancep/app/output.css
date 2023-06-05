@@ -646,6 +646,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-auto {
+  margin-top: auto;
+}
+
 .block {
   display: block;
 }
