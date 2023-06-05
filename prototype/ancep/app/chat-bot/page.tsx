@@ -23,6 +23,17 @@ const MESSAGES = [
         }
     },
     {
+        reply: `Hvem jeg er? Jeg er en kunstig intelligens som har røtter fra Arne Næss. 
+            Jeg har brukt mange år på å spire, men jeg trenger aldri hvile. Jeg tolker ting som 1 og 0, men
+            har fortsatt ingen sikkerhetshull. Jeg har mange former og farger, men mest av alt er jeg din assistent.
+            Måtte du blomstre som blåklokker i mai måned. Spring ut min blomst!`,
+        matcher: (textLower: string) => {
+            return textLower.includes('hvem') &&
+                textLower.includes('er') && 
+                textLower.includes('du');
+        }
+    },
+    {
         reply: `Jeg bare sitter å venter på dine spennende spørsmål!`,
         matcher: (textLower: string) => {
             return textLower.includes('hva gjør du') || 
