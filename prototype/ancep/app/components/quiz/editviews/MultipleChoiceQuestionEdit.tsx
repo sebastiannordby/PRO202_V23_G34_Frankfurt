@@ -1,4 +1,4 @@
-import { Dispatch, useEffect, useState } from "react";
+import { Dispatch, useDebugValue, useEffect, useState } from "react";
 
 export default function MultipleChoiceQuestionEdit(
     props:{
@@ -11,6 +11,12 @@ export default function MultipleChoiceQuestionEdit(
 
     const {questionValue, answers, answersChanged, questionValueChanged} = props;
 
+    const[internalAnswers, setInternalAnswers] = useState<string[]>([]);
+
+
+useEffect(()=>{
+    setInternalAnswers(answers);
+},[])
 
     const AddAnswer:Function = (props:{newAnswer:Dispatch<string>})=>{
 
@@ -43,21 +49,26 @@ export default function MultipleChoiceQuestionEdit(
 
 
         const [view, setView] = useState<JSX.Element[]>();
-
+      
         useEffect(()=>{
+
+            console.log("answers from AnswerViewList:\n"+answers)
+           
 
             var viewList = answers.map((data)=>{
                 var key = Math.random() * 10;
-
+    
                 return(
                     <div key={key} className="border rounded flex h-[50px]">
                         <label className="w-full my-auto">{data}</label>
                         <button className="bg-red-500 2-[25px] p-1" onClick={()=>removeClick(data)}>X</button>
                     </div>
                 )
-
+    
             })
+
             setView(viewList);
+
 
         },[])
 
@@ -71,9 +82,10 @@ export default function MultipleChoiceQuestionEdit(
     }
 
     const answerAdded = (newAnswer:string)=>{
-
-        answers.push(newAnswer);
-        answersChanged(answers);
+        var org = internalAnswers;
+        org.push(newAnswer);
+        answersChanged(org);
+        setInternalAnswers(org)
     }
 
     const removeAnswer = (answerToRemove:string)=>{
@@ -92,7 +104,7 @@ export default function MultipleChoiceQuestionEdit(
                 <label className="p-1">Legg til svar alternativ</label>
                 <AddAnswer newAnswer={answerAdded}/>
             </div>
-            <AnswerViewList answers={answers} removeClick={removeAnswer}/>
+            <AnswerViewList answers={internalAnswers} removeClick={removeAnswer}/>
         </div>
     )
 
