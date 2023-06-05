@@ -19,7 +19,7 @@ export const authOptions: AuthOptions = {
  },
  callbacks: {
   async signIn({ user, account, profile, email, credentials }) {
-    const client = await getDatabaseAsync;
+    const client = await getDatabaseAsync();
     const db = client.db("ancep");
     const dbuser = await db
       .collection('users')
