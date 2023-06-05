@@ -13,5 +13,11 @@ export function getClientPusher() {
 }
 
 export function getSocketServerAdr() {
-    return  window.location.hostname + ':4000';
+    const environment = process.env.NODE_ENV || 'development';
+
+    if(environment === 'development') {
+        return  window.location.hostname + ':4000';
+    } else {
+        return process.env.SOCKET_SERVER;
+    }
 }

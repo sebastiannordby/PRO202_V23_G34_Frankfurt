@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ae86b632-4bdd-47af-b631-6698d8d738bd/resourceGroups/cloud-shell-storage-westeurope/providers/Microsoft.Web/sites/frankfurt",
+    "appService.deploySubpath": "."
+}
