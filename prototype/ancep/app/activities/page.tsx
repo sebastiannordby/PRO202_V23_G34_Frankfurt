@@ -42,7 +42,7 @@ export default function QuizPage() {
                         rel="noopener noreferrer">
                             <div className="text-left pl-2">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankebobla</h2>
-                            <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deggi</p>
+                            <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deg</p>
                         </div>
                     </Link>
                 </div>
