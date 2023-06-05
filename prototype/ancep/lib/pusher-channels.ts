@@ -14,10 +14,14 @@ export function getClientPusher() {
 
 export function getSocketServerAdr() {
     const environment = process.env.NODE_ENV || 'development';
+    let adr;
 
     if(environment === 'development') {
-        return  window.location.hostname + ':4000';
+        adr = window.location.hostname + ':4000';
     } else {
-        return process.env.SOCKET_SERVER;
+        adr = process.env.SOCKET_SERVER ?? '';
     }
+
+    console.log('ADRESS SOCKET: ', adr);
+    return adr;
 }
