@@ -1,45 +1,36 @@
 "use client"
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useEffect, useState } from "react";
-import { THINK_PROVOKE_CHANNEL } from "@/lib/pusher-channels";
+import { THINK_PROVOKE_CHANNEL, getClientPusher, getJoinChannelName } from "@/lib/pusher-channels";
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
-import PusherClient from 'pusher-js';
-import {Channel} from 'pusher-js';
-
+import { io, Socket } from 'socket.io-client';
 
 export default function JoinThinkProvokePage() {
     const [hostCode, setHostCode] = useState('');
-    const [pusher, setPusher] = useState<PusherClient>();
-    const [channel, setChannel] = useState<Channel>();
+    const [socket, setSocket] = useState<Socket>();
     const { data: session } = useSession();
-    PusherClient.logToConsole = true;
 
     useEffect(() => {
-        let nPusher = new PusherClient('bef553a644fc3fdd487a', {
-            cluster: 'eu'
-        });
+        const URL: string = 'localhost:4000';
+        const nSocket = io(URL, { transports : ['websocket'] });
 
-        setPusher(nPusher);
-        
-        const nChannel = nPusher.subscribe(THINK_PROVOKE_CHANNEL);
-        nChannel.bind('user-join', function(data: any) {
-            alert(JSON.stringify(data));
-        });
+        nSocket.connect();
 
-        setChannel(nChannel);
+
+        setSocket(nSocket);
     }, []);
 
     const joinGame = () => {
         if(hostCode?.length == 8) {
             const joinUser: JoinUser = {
                 email: session?.user?.email ?? 'En feil har oppstått',
-                name: session?.user?.name ?? 'En feil har oppstått'
+                name: session?.user?.name ?? 'En feil har oppstått',
+                hostCode: hostCode
             };
 
-            if(channel?.trigger('client-' + hostCode + '-join', joinUser)) {
-                alert('Du ble med i spillet. Sitt for å avvente');
-            }
+            socket?.emit(getJoinChannelName(hostCode), joinUser);
+            alert('Du ble med i spillet. Sitt for å avvente');
         } else {
             alert('Kode for å bli med må være 8 karakterer lang.');
         }
@@ -57,7 +48,7 @@ export default function JoinThinkProvokePage() {
                     <div className="flex gap-2 mt-2">
                         <input 
                             value={hostCode}
-                            onChange={(e) => setHostCode(e.target.value)}
+                            onChange={(e) => setHostCode(e.target.value.replace(' ', ''))}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                             focus:border-blue-500 block flex-grow p-2.5 dark:bg-gray-700 dark:border-gray-600 
                             dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

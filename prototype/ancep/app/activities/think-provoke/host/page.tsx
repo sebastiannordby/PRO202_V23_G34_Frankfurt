@@ -3,37 +3,20 @@
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import PusherClient from 'pusher-js';
-import {Channel} from 'pusher-js';
-import { THINK_PROVOKE_CHANNEL } from "@/lib/pusher-channels";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
+import PusherClient from 'pusher-js';
+import { io, Socket } from 'socket.io-client';
 
 export default function HostThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
     const { data: session } = useSession();
+    const [socket, setSocket] = useState<Socket>();
+    const [socketOn, setSocketOn] = useState(false);
     const [joinedUsers, setJoinedUsers] = useState<JoinUser[]>([]);
     PusherClient.logToConsole = true;
 
     useEffect(() => {
-        const pusher = new PusherClient('bef553a644fc3fdd487a', {
-            cluster: 'eu'
-        });
-        
-        const channel = pusher.subscribe(THINK_PROVOKE_CHANNEL);
-       
-        channel.bind('pusher:subscription_succeeded', function(members: any) {
-            console.log('successfully subscribed!');
-        });
-
-        channel.bind('client-' + hostCode + '-join', function(user: JoinUser) {
-            alert('Someone joined');
-            joinedUsers.push(user);
-            setJoinedUsers(joinedUsers);
-        });
-    }, []);
-
-    useEffect(() => {
-        if(session?.user) {
+        if((session?.user?.email?.length ?? 0 > 0) && !socketOn) {
             (async() => {
                 const res = await fetch(
                     '/api/quiz/think-provoke/host?email=' + session?.user?.email);
@@ -43,6 +26,26 @@ export default function HostThinkProvokePage() {
                     const {code} = jsonObj;
         
                     setHostCode(code);
+
+                    const URL: string = 'localhost:4000';
+                    const nSocket = io(URL, { transports : ['websocket'] });
+
+                    nSocket.connect();
+                    nSocket.on('think-provoke-joined', (data: JoinUser) => {
+                        console.log('DATA: ', data);
+                        joinedUsers.push(data);
+                        setJoinedUsers(joinedUsers);
+                    });
+
+                    setSocket(socket);
+                    setSocketOn(true);
+
+                    nSocket.emit('think-provoke-host', {
+                        hostCode: code
+                    });
+
+
+                    alert('Spill startet');
                 } else {
                     alert('Kunne ikke starte spill: ' + await res.text());
                 }
