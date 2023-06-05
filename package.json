@@ -17,8 +17,8 @@
     "test:client": "echo 'Not configured: cd client && npm run test'",
     "test:server": "cd socket_server && npm run test",
     "postinstall": "npm run install:client && npm run install:server",
-    "install:client": "cd prototype/ancep && npm install --include=dev",
-    "install:server": "cd socket_server && npm install"
+    "install:client": "cd prototype/ancep && npm run build",
+    "install:server": "cd socket_server && npm run build"
   },
   "repository": {
     "type": "git",
