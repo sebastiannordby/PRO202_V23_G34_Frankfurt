@@ -19,7 +19,7 @@ export function getSocketServerAdr() {
     if(environment === 'development') {
         adr = window.location.hostname + ':4000';
     } else {
-        adr = process.env.SOCKET_SERVER ?? '';
+        adr = process.env.SOCKET_SERVER ?? 'https://frankfurt.azurewebsites.net';
     }
 
     console.log('ADRESS SOCKET: ', adr);
