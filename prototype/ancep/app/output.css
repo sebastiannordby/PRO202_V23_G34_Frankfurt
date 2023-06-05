@@ -522,16 +522,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.custom-input {
-  border-radius: 0.25rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding: 0.25rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -622,6 +612,14 @@ video {
   margin-left: auto;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -636,14 +634,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .mt-auto {
@@ -682,8 +672,8 @@ video {
   height: 1.25rem;
 }
 
-.h-64 {
-  height: 16rem;
+.h-\[50px\] {
+  height: 50px;
 }
 
 .h-\[70\%\] {
@@ -694,20 +684,12 @@ video {
   height: calc(100% - 1rem);
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[50px\] {
-  height: 50px;
 }
 
 .max-h-72 {
@@ -736,10 +718,6 @@ video {
 
 .w-80 {
   width: 20rem;
-}
-
-.w-\[50px\] {
-  width: 50px;
 }
 
 .w-full {
@@ -780,10 +758,6 @@ video {
 
 .resize-none {
   resize: none;
-}
-
-.resize {
-  resize: both;
 }
 
 .list-inside {
@@ -941,10 +915,6 @@ video {
   border-width: 1px;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-\[2px\] {
   border-width: 2px;
 }
@@ -1001,9 +971,19 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
 .bg-pink-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -1013,16 +993,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .bg-none {

@@ -9,6 +9,8 @@ import { Quiz } from "@/lib/models/quiz"
 import { eventNames } from "process";
 import { useEffect, useState } from 'react';
 import { Type } from "typescript";
+import { create } from "domain";
+import { createInflateRaw } from "zlib";
 
 export default function CreateQuiz(){
     
@@ -51,7 +53,6 @@ export default function CreateQuiz(){
             var key = (Math.random() * 10).toString();
 
             return(
-
                 <div key={key} className="flex grid grid-cols-[5fr_1fr]">
                     <DilemmaQuestionView question={data} keyValue={key.toString()}/>
                     <button 
@@ -65,18 +66,26 @@ export default function CreateQuiz(){
     }
 
     const updateEditQuestion = (newValue:Question)=>{
+        console.log("On Page")
         console.log(newValue.Answer?.MultipleChoice)
+        console.log("QuestionValue: " + newValue.Value)
         setCurrentEditQuestion(newValue)
     }
 
 
+    const createNewQuestion = ()=>{
+        var test = new Question();
+        setCurrentEditQuestion(test);
+        console.log(test);
+        setShowEditQuestion(true)
+    }
+
     return(
         <div className="flex flex-col p-1 h-full overflow-y-hidden" >
             <div className="flex mb-1">
-                <button className="bg-blue-500  rounded p-1 mr-2 text-xl" onClick={()=>setShowEditQuestion(true)}>Nytt spørsmål</button>
+                <button className="bg-blue-500  rounded p-1 mr-2 text-xl" onClick={()=>createNewQuestion()}>Nytt spørsmål</button>
                 <button className="bg-blue-500 p-1 rounded text-xl">Lagre</button>
             </div>
-
             <div>
                 <label>Quiz Navn:</label>
                 <input 
@@ -87,27 +96,15 @@ export default function CreateQuiz(){
                     onChange={(event)=>{quiz.Name = event.target.value  }}  
                 />
             </div>
-
-
-            
-
             <div className="flex flex-col h-full max-h-full overflow-y-auto">
                 <QuestionsView questions={testQuestions}/>
             </div>
-
-
-           
            <EditQuestion 
                 question={currentEditQuestion} 
-                questionChanged={(newValue:Question)=>updateEditQuestion(newValue)}
+                confirmed={()=>updateEditQuestion(currentEditQuestion)}
                 visible={showEditQuestion}
                 visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}
             />
-
-                
-     
         </div>
-
     )
-
 }

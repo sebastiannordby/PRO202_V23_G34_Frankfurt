@@ -1,110 +1,80 @@
 import { Dispatch, useDebugValue, useEffect, useState } from "react";
+import MultipleChoiceAnswerViewList from "../answer/MultipleChoiceAnswerViewList";
 
 export default function MultipleChoiceQuestionEdit(
     props:{
-        questionValue:string,
-        questionValueChanged:Dispatch<string>,
         answers:string[],
         answersChanged:Dispatch<string[]>
     }
 ){
 
-    const {questionValue, answers, answersChanged, questionValueChanged} = props;
+    const { answers, answersChanged} = props;
 
-    const[internalAnswers, setInternalAnswers] = useState<string[]>([]);
+    const [answerToAdd, setAnswerToAdd] = useState("")
 
 
-useEffect(()=>{
-    setInternalAnswers(answers);
-},[])
-
-    const AddAnswer:Function = (props:{newAnswer:Dispatch<string>})=>{
-
-        const {newAnswer} = props;
-
-        const [answer, setAnswer] = useState("");
-
-        const onEnter: Function =(key:string)=>{
-
-            if(key === "Enter"){
-                newAnswer(answer);
-                setAnswer("");
-            }
-
+    useEffect(()=>{
+        console.log("this fires")
+        if(answers === undefined){
+            answersChanged([]);
         }
 
-        return(
-            <div className={"flex" }>
-                <input value={answer} onKeyUp={(event)=>onEnter(event.key)} onChange={(event) => setAnswer(event.target.value)}/>
-                <button>Legg til</button>
-            </div>
-        )
-
-    }
+    },[answers])
 
     
-    const AnswerViewList:Function = (props:{answers:string[], removeClick:Dispatch<string>})=>{
-
-        const {answers, removeClick} = props;
-
-
-        const [view, setView] = useState<JSX.Element[]>();
-      
-        useEffect(()=>{
-
-            console.log("answers from AnswerViewList:\n"+answers)
-           
-
-            var viewList = answers.map((data)=>{
-                var key = Math.random() * 10;
-    
-                return(
-                    <div key={key} className="border rounded flex h-[50px]">
-                        <label className="w-full my-auto">{data}</label>
-                        <button className="bg-red-500 2-[25px] p-1" onClick={()=>removeClick(data)}>X</button>
-                    </div>
-                )
-    
-            })
-
-            setView(viewList);
-
-
-        },[])
-
-        
-        return(
-            <div className="flex flex-col">
-                {view}
-            </div>
-        ) ;
-
-    }
+   
 
     const answerAdded = (newAnswer:string)=>{
-        var org = internalAnswers;
-        org.push(newAnswer);
-        answersChanged(org);
-        setInternalAnswers(org)
+
+        if(newAnswer == "") return;
+
+        var org = answers;
+        var index = org.indexOf(newAnswer);
+        if(index == -1){
+            
+            org.push(newAnswer);
+            answersChanged(org);
+            setAnswerToAdd("");
+        }
     }
 
     const removeAnswer = (answerToRemove:string)=>{
-        var index = answers.indexOf(answerToRemove)
-        answers.splice(index, 1);
-        answersChanged(answers);
+
+        var org = answers;
+        var index = org.indexOf(answerToRemove)
+        if(index !== -1){
+
+            org.splice(index, 1);
+            answersChanged(org);
+        }
+    }
+
+    const onEnter = (key:string)=>{
+
+        if(key == "Enter"){
+            answerAdded(answerToAdd);
+        }
+
     }
 
     return(
         <div>
-            <div>
-                <label>Spørsmål:</label>
-                <input value={questionValue} onChange={(event)=>questionValueChanged(event.target.value)}/>
-            </div>
             <div className="flex flex-col">
                 <label className="p-1">Legg til svar alternativ</label>
-                <AddAnswer newAnswer={answerAdded}/>
+
+                <div className={"flex" }>
+                    <input value={answerToAdd} onKeyUp={(event)=>onEnter(event.key)} onChange={(event) => setAnswerToAdd(event.target.value)}/>
+                    <button onClick={()=>answerAdded(answerToAdd)}>Legg til</button>
+                </div>
             </div>
-            <AnswerViewList answers={internalAnswers} removeClick={removeAnswer}/>
+            {
+                answers.map((data)=>
+                    <div key={data} className="border rounded flex h-[50px]">
+                        <label className="w-full my-auto">{data}</label>
+                        <button className="bg-red-500 2-[25px] p-1" onClick={()=>removeAnswer(data)}>X</button>
+                    </div>
+                )
+            }
         </div>
     )
 
