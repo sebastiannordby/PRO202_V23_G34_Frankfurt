@@ -1,0 +1,36 @@
+{
+  "name": "pro202_v23_g34_frankfurt",
+  "version": "1.0.0",
+  "description": "<img src=\"https://therealsujitk-vercel-badge.vercel.app/?app=pro-202-v23-g34-frankfurt\"/>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd prototype/ancep && npm run build",
+    "build:server": "cd socket_server && npm run build",
+    "dev": "concurrently 'npm:dev:client' 'npm:dev:server'",
+    "dev:client": "cd prototype/ancep && npm run dev",
+    "dev:server": "cd socket_server && npm run dev",
+    "start": "cd server && npm run start",
+    "test:client": "echo 'Not configured: cd client && npm run test'",
+    "test:server": "cd socket_server && npm run test",
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd prototype/ancep && npm install --include=dev",
+    "install:server": "cd socket_server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/issues"
+  },
+  "homepage": "https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt#readme",
+  "dependencies": {
+    "concurrently": "^8.1.0"
+  }
+}
+
