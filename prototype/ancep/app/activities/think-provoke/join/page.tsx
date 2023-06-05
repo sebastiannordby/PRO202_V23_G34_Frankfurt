@@ -1,7 +1,7 @@
 "use client"
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useEffect, useState } from "react";
-import { THINK_PROVOKE_CHANNEL, getClientPusher, getJoinChannelName } from "@/lib/pusher-channels";
+import { THINK_PROVOKE_CHANNEL, getClientPusher, getJoinChannelName, getSocketServerAdr } from "@/lib/pusher-channels";
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import { io, Socket } from 'socket.io-client';
@@ -12,7 +12,7 @@ export default function JoinThinkProvokePage() {
     const { data: session } = useSession();
 
     useEffect(() => {
-        const URL: string = 'localhost:4000';
+        const URL: string = getSocketServerAdr();
         const nSocket = io(URL, { transports : ['websocket'] });
 
         nSocket.connect();
