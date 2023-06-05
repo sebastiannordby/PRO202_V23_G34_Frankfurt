@@ -54,5 +54,5 @@ app.get('/', (req, res) => {
 });
 
 server.listen(4000, () => {
-    console.log('listening on *:4000');
+    console.log('listening on *:3000');
 });

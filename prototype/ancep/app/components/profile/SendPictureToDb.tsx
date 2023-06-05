@@ -1,12 +1,12 @@
-const SendTextToDb = async (email: string, text: string) => {
+const SendPictureToDb = async (email: string, picture: string) => {
 
     try {
-        const res = await fetch('/api/users', {
+        const res = await fetch('/api/users/profilepicture', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: email, status: text })
+            body: JSON.stringify({ email: email, picture: picture })
         });
         const result = await res.json();
 
@@ -20,4 +20,4 @@ const SendTextToDb = async (email: string, text: string) => {
     }
 };
 
-export default SendTextToDb;
+export default SendPictureToDb;

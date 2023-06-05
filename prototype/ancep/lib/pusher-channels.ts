@@ -11,3 +11,7 @@ export function getClientPusher() {
         cluster: 'eu'
     });
 }
+
+export function getSocketServerAdr() {
+    return  window.location.hostname + ':4000';
+}

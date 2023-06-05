@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import PusherClient from 'pusher-js';
 import { io, Socket } from 'socket.io-client';
+import { getSocketServerAdr } from "@/lib/pusher-channels";
 
 export default function HostThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
@@ -27,7 +28,7 @@ export default function HostThinkProvokePage() {
         
                     setHostCode(code);
 
-                    const URL: string = 'localhost:4000';
+                    const URL: string = getSocketServerAdr();
                     const nSocket = io(URL, { transports : ['websocket'] });
 
                     nSocket.connect();
