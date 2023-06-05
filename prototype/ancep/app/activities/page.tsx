@@ -41,8 +41,8 @@ export default function QuizPage() {
                         className="h-32 flex gap-3 items-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                         rel="noopener noreferrer">
                             <div className="text-left pl-2">
-                            <h2 className={"mb-1 text-2xl font-semibold"}>Morsomme spill</h2>
-                            <p className={"m-0 max-w-[30ch] text-sm"}>For hele klassen</p>
+                            <h2 className={"mb-1 text-2xl font-semibold"}>Tankebobla</h2>
+                            <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deggi</p>
                         </div>
                     </Link>
                 </div>
