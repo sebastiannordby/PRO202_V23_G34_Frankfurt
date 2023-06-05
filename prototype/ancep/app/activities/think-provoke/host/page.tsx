@@ -3,7 +3,8 @@
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import Pusher from "pusher-js";
+import PusherClient from 'pusher-js';
+import {Channel} from 'pusher-js';
 import { THINK_PROVOKE_CHANNEL } from "@/lib/pusher-channels";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 
@@ -11,10 +12,10 @@ export default function HostThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
     const { data: session } = useSession();
     const [joinedUsers, setJoinedUsers] = useState<JoinUser[]>([]);
-    Pusher.logToConsole = true;
+    PusherClient.logToConsole = true;
 
     useEffect(() => {
-        const pusher = new Pusher('bef553a644fc3fdd487a', {
+        const pusher = new PusherClient('bef553a644fc3fdd487a', {
             cluster: 'eu'
         });
         
@@ -72,7 +73,7 @@ export default function HostThinkProvokePage() {
 
                     <div className="flex flex-col gap-2">
                         {joinedUsers?.map(x => 
-                            <div className="p-4">
+                            <div key={x.email} className="p-4">
                                 <span>{x.name} - {x.email}</span>
                             </div>
                         )}

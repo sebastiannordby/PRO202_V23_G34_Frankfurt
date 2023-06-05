@@ -31,10 +31,16 @@ export async function GET(request: Request) {
 
   return NextResponse.json([]);
 }
+
+type POST_TYPE = {
+  badges: any[];
+  email: string;
+}
+
 export async function POST(req: Request) {
   const client = await getDatabaseAsync();
   const db = client.db("ancep");
-  const { email, badges } = await req.json();
+  const { email, badges }: POST_TYPE = await req.json();
   const user = await db.collection('users').findOne({ email: email });
 
   if (!req.body || !email || !badges) {
@@ -42,7 +48,7 @@ export async function POST(req: Request) {
   }
 
   const existingBadges = user?.badges ?? [];
-  const newBadges = badges.filter(badge => 
+  const newBadges = (badges ?? []).filter(badge => 
     !existingBadges.includes(badge));
 
   if (newBadges.length === 0) {

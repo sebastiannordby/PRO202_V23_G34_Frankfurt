@@ -1,21 +1,22 @@
 "use client"
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useEffect, useState } from "react";
-import Pusher, { Channel } from "pusher-js";
 import { THINK_PROVOKE_CHANNEL } from "@/lib/pusher-channels";
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
+import PusherClient from 'pusher-js';
+import {Channel} from 'pusher-js';
 
 
 export default function JoinThinkProvokePage() {
     const [hostCode, setHostCode] = useState('');
-    const [pusher, setPusher] = useState<Pusher>();
+    const [pusher, setPusher] = useState<PusherClient>();
     const [channel, setChannel] = useState<Channel>();
     const { data: session } = useSession();
-    Pusher.logToConsole = true;
+    PusherClient.logToConsole = true;
 
     useEffect(() => {
-        let nPusher = new Pusher('bef553a644fc3fdd487a', {
+        let nPusher = new PusherClient('bef553a644fc3fdd487a', {
             cluster: 'eu'
         });
 
