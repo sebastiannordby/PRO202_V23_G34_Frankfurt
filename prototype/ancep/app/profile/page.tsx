@@ -39,10 +39,10 @@ export default function ProfilePage() {
                 {session?.user?.image ? 
                     <>
                         <img 
-                        width="150"
-                        height="150"
-                        className="mt-2 rounded-full md:hidden"
-                        src={session?.user?.image as string}/>
+                            width="150"
+                            height="150"
+                            className="mt-2 rounded-full"
+                            src={session?.user?.image as string}/>
                     </> : ''
                 }
                 <span>
