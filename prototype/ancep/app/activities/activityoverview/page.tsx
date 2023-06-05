@@ -25,9 +25,12 @@ export default function ActivityOverview(){
 
 
     return (
-        <div className="flex flex-col">
-            <h1 className="mx-auto">Mine Aktiviter</h1>
-            <QuizListView quizes={quizes}/>
+        <div className="flex flex-col main-layout">
+            <div className="w-full bg-white bg-opacity-[0.7] p-4 rounded-[1.5rem] h-full overflow-hidden max-h-full">
+                <h1 className="mx-auto text-4xl">Mine Aktiviter</h1>
+
+                <QuizListView quizes={quizes}/>
+            </div>
         </div>
     )
 }

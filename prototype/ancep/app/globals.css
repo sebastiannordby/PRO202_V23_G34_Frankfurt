@@ -6,9 +6,24 @@
 
 @layer components{
   .custom-input{
-    @apply border rounded border-black p-1 text-xl;
+    @apply border border-primary rounded border-primary text-black p-1 text-xl;
   }
+
+  .btn{
+    @apply p-2 text-xl rounded border;
+  }
+
+  .btn-primary{
+    @apply border border-primary bg-primary p-2 text-xl text-white rounded hover:bg-white hover:text-primary;
+  }
+
+  .btn-secondary{
+    @apply bg-white border border-primary p-2 text-xl text-primary rounded hover:bg-primary hover:text-white;
+  }
+
 }
+
+
 
 
 :root {

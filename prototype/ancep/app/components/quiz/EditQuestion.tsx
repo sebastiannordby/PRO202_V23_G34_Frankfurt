@@ -73,7 +73,7 @@ export default function EditQuestion(
         var custom = allTypes?.map((data:string)=>{ 
             var key = Math.random() * 10;
             return(
-                <button className={"p-1 border rounded " + (typeString == data ? " bg-green-500" : " bg-blue-500")} key={key + "id"} onClick={()=>questionTypeSelected(data)}>
+                <button className="btn" key={key + "id"} onClick={()=>questionTypeSelected(data)}>
                     {data}
                 </button>
             )
@@ -114,35 +114,35 @@ export default function EditQuestion(
             title="Nytt spørsmål" 
             Footer={
                 <div className="flex justify-end">
-                    <button className="mr-2 border rounded border-color" onClick={()=>visibleChanged?.(false)}>Avbryt</button>
-                    <button onClick={()=>saveQuestion()} >Legg til</button>
+                    <button className="btn-primary mr-2" onClick={()=>visibleChanged?.(false)}>Avbryt</button>
+                    <button className="btn-primary" onClick={()=>saveQuestion()} >Legg til</button>
                 </div>
             } 
     >
 
         <div className="flex flex-col max-h-full h-full">
-            <div className="flex flex-row">
-                <label>Spørsmåls type:</label>        
-                <div className="flex">
+            <div className="flex flex-col w-full    p-2 ">
+                {/* <label className="w-max mx-auto text-2xl text-black">Spørsmåls type:</label>         */}
+                <div className="grid grid-cols-3">
                     <QuizOptions click={(type:QuestionType)=> setQuestionType(type)} currentQuestionType={questionType}/>
                 </div>
             </div> 
-            <div className="">
+            <div className="m-4  flex flex-col  h-full max-h-full  overflow-hidden">
 
-                <div>
-                    <label>Spørsmål:</label>
-                    <input value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
+                <label className="text-2xl ml-2">Spørsmål:</label>
+                <textarea className="custom-input h-[150px] min-h-[150px] mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
+                <div className="flex flex-col overflow-y-scroll h-full">
+                    <QuestionEditor 
+                        type={questionType}
+                        dilemma1={dilemma1} 
+                        dilemma1Changed={setDilemme1}
+                        dilemma2={dilemma2}
+                        dilemma2Changed={setDilemme2}
+                        multipleChoiceAnswers={multipleChoiceAnswers}
+                        multipleChoiceAnswersChanged={multipleChoiceEdited}
+                    />
                 </div>
-
-                <QuestionEditor 
-                    type={questionType}
-                    dilemma1={dilemma1} 
-                    dilemma1Changed={setDilemme1}
-                    dilemma2={dilemma2}
-                    dilemma2Changed={setDilemme2}
-                    multipleChoiceAnswers={multipleChoiceAnswers}
-                    multipleChoiceAnswersChanged={multipleChoiceEdited}
-                />
+                
             </div>             
         </div>
     </Popup>

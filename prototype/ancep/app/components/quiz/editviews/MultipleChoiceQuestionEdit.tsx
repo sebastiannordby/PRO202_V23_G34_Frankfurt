@@ -32,7 +32,7 @@ export default function MultipleChoiceQuestionEdit(
         var index = org.indexOf(newAnswer);
         if(index == -1){
             
-            org.push(newAnswer);
+            org.unshift(newAnswer)
             answersChanged(org);
             setAnswerToAdd("");
         }
@@ -58,23 +58,26 @@ export default function MultipleChoiceQuestionEdit(
     }
 
     return(
-        <div>
+        <div className="mx-2">
             <div className="flex flex-col">
                 <label className="p-1">Legg til svar alternativ</label>
 
-                <div className={"flex" }>
-                    <input value={answerToAdd} onKeyUp={(event)=>onEnter(event.key)} onChange={(event) => setAnswerToAdd(event.target.value)}/>
-                    <button onClick={()=>answerAdded(answerToAdd)}>Legg til</button>
+                <div className={"flex " }>
+                    <input className="custom-input " value={answerToAdd} onKeyUp={(event)=>onEnter(event.key)} onChange={(event) => setAnswerToAdd(event.target.value)}/>
+                    <button className="btn-primary ml-2" onClick={()=>answerAdded(answerToAdd)}>Legg til</button>
                 </div>
             </div>
-            {
-                answers.map((data)=>
-                    <div key={data} className="border rounded flex h-[50px]">
-                        <label className="w-full my-auto">{data}</label>
-                        <button className="bg-red-500 2-[25px] p-1" onClick={()=>removeAnswer(data)}>X</button>
-                    </div>
-                )
-            }
+            <div className="flex flex-col overflow-y-auto h-full max-h-full mt-2">
+                {
+                    answers.map((data)=>
+                        <div key={data} className="border rounded flex h-[50px] p-2 border-black text-black my-1">
+                            <label className="w-full my-auto">{data}</label>
+                            <button className="bg-red-500 h-[35px] w-[35px] text-white rounded border border-red-500 text-xl hover:bg-white hover:text-red-500 flex justify-center p-1" onClick={()=>removeAnswer(data)}>X</button>
+                        </div>
+                    )
+                }
+            </div>
+           
         </div>
     )
 

@@ -56,7 +56,7 @@ export default function CreateQuiz(){
                 <div key={key} className="flex grid grid-cols-[5fr_1fr]">
                     <DilemmaQuestionView question={data} keyValue={key.toString()}/>
                     <button 
-                        className="border border-secondary rounded bg-primary hover:border-primary hover:bg-white" 
+                        className="border bg-white hover:bg-primary hover:text-white" 
                         onClick={()=> setShowEditQuestion(true)}>
                         Rediger
                     </button>
@@ -81,30 +81,35 @@ export default function CreateQuiz(){
     }
 
     return(
-        <div className="flex flex-col p-1 h-full overflow-y-hidden" >
-            <div className="flex mb-1">
-                <button className="bg-blue-500  rounded p-1 mr-2 text-xl" onClick={()=>createNewQuestion()}>Nytt spørsmål</button>
-                <button className="bg-blue-500 p-1 rounded text-xl">Lagre</button>
-            </div>
-            <div>
-                <label>Quiz Navn:</label>
-                <input 
+        <div className="flex flex-col p-1 h-full overflow-y-hidden main-layout" >
 
-                    type="text" 
-                    value={quiz?.Name} 
-                    className=" rounded border-black border border-[1px] mb-1"
-                    onChange={(event)=>{quiz.Name = event.target.value  }}  
+            <div className="flex flex-col w-full bg-white bg-opacity-[0.8] p-5 rounded-[1.5rem]">
+
+                <div className="my-4 flex w-full h-[50px]">
+                    <h1 className="text-2xl my-auto">Quiz Navn:</h1>
+                    <input 
+                        type="text" 
+                        value={quiz?.Name} 
+                        className="focus:border-primary custom-input focus:border my-auto rounded text-2xl  mx-2 shadow-xl"
+                        onChange={(event)=>{quiz.Name = event.target.value  }}  
+                    />
+                    <button className="bg-primary text-white shadow-xl p-2 my-auto rounded text-xl h-min ml-auto">Lagre</button>
+
+                </div>
+               
+                <button className="bg-white shadow-xl w-max  rounded p-1 mr-2 text-xl border-primary border mb-2" onClick={()=>createNewQuestion()}>Nytt spørsmål</button>
+               
+                <div className="flex flex-col h-full max-h-full overflow-y-auto">
+                    <QuestionsView questions={testQuestions}/>
+                </div>
+                <EditQuestion 
+                    question={currentEditQuestion} 
+                    confirmed={()=>updateEditQuestion(currentEditQuestion)}
+                    visible={showEditQuestion}
+                    visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}
                 />
             </div>
-            <div className="flex flex-col h-full max-h-full overflow-y-auto">
-                <QuestionsView questions={testQuestions}/>
-            </div>
-           <EditQuestion 
-                question={currentEditQuestion} 
-                confirmed={()=>updateEditQuestion(currentEditQuestion)}
-                visible={showEditQuestion}
-                visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}
-            />
+    
         </div>
     )
 }

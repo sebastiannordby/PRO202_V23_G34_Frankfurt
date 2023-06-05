@@ -24,7 +24,7 @@ export default function QuizListView(props:{quizes:Quiz[]}){
     
 
     return (
-        <div className="flex flex-col h-full m-2 overflow-y-auto ">
+        <div className="flex flex-col h-full overflow-y-auto p-2 roudnded-[1.5rem] overflow-y-scroll h-[calc(100%_-_5rem)]">
             {quizView}
         </div>
 
