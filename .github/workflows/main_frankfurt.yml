@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./socket_server
+          path: ./socket_server/
 
   deploy:
     runs-on: ubuntu-latest
