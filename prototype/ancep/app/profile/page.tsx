@@ -153,7 +153,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12"
-                                        src="/images/badges/bio-diversity.png" />
+                                        src="/images/badges/bio-diversity.png"
+                                        alt="bio-diversity"
+                                    />
                                     <p className="ml-2">Sirkel av mangfold</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et sirkulært symbol som viser frem ulike elementer av biologisk mangfold, som planter, dyr og økosystemer, og understreker viktigheten av å bevare og respektere mangfoldet av liv på jorden.</p>
                                     <span></span>
@@ -168,7 +170,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/tree-of-life.png" />
+                                        src="/images/badges/tree-of-life.png"
+                                        alt="tree-of-life"
+                                    />
                                     <p className="ml-8 pb-3">Livets tre</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et symbol som representerer sammenhengen mellom alle levende vesener og viktigheten av å bevare og pleie naturen.</p>
                                     <span></span>
@@ -183,7 +187,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/earth-mandala.png" />
+                                        src="/images/badges/earth-mandala.png"
+                                        alt="earth-mandala"
+                                    />
                                     <p className="ml-5 pb-3">Jord Mandala</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et sirkulært design med elementer av naturen, som trær, dyr og vann, som symboliserer enheten og harmonien mellom mennesker og miljøet.</p>
                                     <span></span>
@@ -198,7 +204,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/green-feet.png" />
+                                        src="/images/badges/green-feet.png"
+                                        alt="green-feet"
+                                    />
                                     <p className="ml-5 pb-3">Grønne fotspor</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et symbol som illustrerer konseptet bærekraftig livsstil og ideen om at hver enkelts handlinger etterlater en innvirkning på miljøet.</p>
                                     <span></span>
@@ -213,7 +221,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/ying-yang-earth.png" />
+                                        src="/images/badges/ying-yang-earth.png"
+                                        alt="ying-yang-earth"
+                                    />
                                     <p className="ml-3 pb-3">Yin-Yang Jorden</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">En variant av det tradisjonelle yin-yang-symbolet, der den ene halvparten representerer naturen og den andre representerer det menneskelige samfunn, og fremhever behovet for balanse og harmoni mellom de to.</p>
                                     <span></span>
@@ -228,7 +238,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/ouroboros-tree.png" />
+                                        src="/images/badges/ouroboros-tree.png"
+                                        alt="ouroboros-tree"
+                                    />
                                     <p className="ml-8 pb-3">Ouroboros</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">En representasjon av et tre som danner en sirkel og dets grener flettes sammen med røttene, og symboliserer livets sykliske natur, regenerering og den kontinuerlige forbindelsen mellom mennesker og natur.</p>
                                     <span></span>
@@ -243,7 +255,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/gaias-hands.png" />
+                                        src="/images/badges/gaias-hands.png"
+                                        alt="gaias-hands"
+                                    />
                                     <p className="ml-8 pb-3">Gaias hender</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et symbol med to hender som vugger en klode, som indikerer ansvaret og forvaltningen mennesker har overfor jorden, inspirert av konseptet Gaia, den levende jorden.</p>
                                     <span></span>
@@ -258,7 +272,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/spiral-of-awerness.png" />
+                                        src="/images/badges/spiral-of-awerness.png"
+                                        alt="spiral-of-awerness"
+                                    />
                                     <p className="ml-3 text-sm pb-3">Spiral av bevisthet</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et spiralformet symbol som viser reisen til selvrefleksjon og utvidende bevissthet, som symboliserer prosessen med å utdype ens forståelse av økologiske problemer og personlig ansvar.</p>
                                     <span></span>
@@ -273,7 +289,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/water-droplet-network.png" />
+                                        src="/images/badges/water-droplet-network.png"
+                                        alt="water-droplet-network"
+                                    />
                                     <p className="ml-3 text-sm pb-3">Vanndråpnenettverk</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et nettverkslignende symbol dannet av sammenkoblede vanndråper, som symboliserer den globale tilkoblingen og gjensidig avhengighet av vannforekomster, og fremhever viktigheten av vannbevaring og -beskyttelse.</p>
                                     <span></span>
@@ -288,7 +306,9 @@ export default function ProfilePage() {
                                         width="50"
                                         height="50"
                                         className="mt-2 ml-12 rounded-full"
-                                        src="/images/badges/scales-of-justice.png" />
+                                        src="/images/badges/scales-of-justice.png"
+                                        alt="scales-of-justice"
+                                    />
                                     <p className="ml-2 pb-3 text-sm">Rettferdighetsskalaer</p>
                                     <p className="badge-desc right-4 pl-40 text-sm">Et symbol med en balanseskala, der den ene siden representerer menneskelige behov og den andre siden representerer økologisk integritet, og understreker behovet for en balansert tilnærming som tar hensyn til begge aspekter.</p>
                                     <span></span>
