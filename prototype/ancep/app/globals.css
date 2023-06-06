@@ -301,3 +301,44 @@ Badge Animation
 .bg-transparent-black {
   background: rgba(0, 0, 0, .25);
 }
+
+.think-bubble-page-background {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 15px;
+  color: var(--ancep-black);
+  overflow: auto;
+  height: auto;
+  background: url('/images/activityspictures/TankeBoblaBackground.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.main-bubble {
+    padding-top: 2rem;
+}
+
+.outline-text {
+    -webkit-text-stroke: 0.3px black;
+    color: white;
+}
+.thoughts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes hover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
