@@ -35,7 +35,7 @@ export default function HostThinkProvokePage() {
                     nSocket.connect();
                     nSocket.on('think-provoke-joined', (data: JoinUser) => {
                         console.log('DATA: ', data);
-                        setJoinedUsers([...joinedUsers, data]);
+                        setJoinedUsers(users => [...users, data]);
                     });
 
                     setSocket(socket);
