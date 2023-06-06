@@ -68,8 +68,6 @@ export default function MultipleChoiceQuestionEdit(
                     )
                 }
             </div>
-           
         </div>
-    )
-
+    );
 }
