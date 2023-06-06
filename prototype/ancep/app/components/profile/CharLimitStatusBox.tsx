@@ -49,11 +49,13 @@ const CharLimitStatusBox = ({ limit }) => {
     const handleKeyUp = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            SendTextToDb(email, text).then(r => console.log(r));
-            setText('');
             setIsEditing(false);
-            setStatus(text);
-            addBadgeToProfile('2');
+            if (text.trim() !== '') {
+                SendTextToDb(email, text).then(r => console.log(r));
+                setText('');
+                setStatus(text);
+                addBadgeToProfile('2');
+            }
         }
     };
     const handleEdit = () => {
