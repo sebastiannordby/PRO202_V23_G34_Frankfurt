@@ -275,3 +275,25 @@ Badge Animation
 .badge-container:hover .badge-name {
   display: block;
 }
+
+/*
+  Activity's backgrounds
+ */
+
+.cabin-background {
+  background: url('/images/activityspictures/tankehytta.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.think-provoke-background {
+  background: url('/images/activityspictures/tankevekker.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.think-bubble-background {
+  background: url('/images/activityspictures/tankebobla.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
