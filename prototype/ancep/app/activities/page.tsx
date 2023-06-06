@@ -45,16 +45,6 @@ export default function QuizPage() {
                             <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deg</p>
                         </div>
                     </Link>
-
-                    <Link 
-                        href="/activities/activityoverview"
-                        className="h-36 flex gap-3 items-center justify-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
-                        rel="noopener noreferrer">
-                        <div className="text-left pl-2">
-                            <h2 className={"mb-1 text-2xl font-semibold"}>Mine aktiviter</h2>
-                            <p className={"m-0 max-w-[30ch] text-sm"}>Dine opprettede aktiviteter</p>
-                        </div>
-                    </Link>
                 </div>
             </div>
         </main>

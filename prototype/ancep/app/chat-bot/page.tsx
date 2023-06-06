@@ -1,16 +1,51 @@
 "use client"
 import { HomeArrow } from "../components/HomeArrow";
 import { KeyboardEvent, useEffect, useState } from "react";
-
 const MESSAGES = [
     {
-        reply: `Hei på deg!`,
+        reply: `Hei!`,
         matcher: (textLower: string) => {
             return textLower.includes('hei') ||
                 textLower.includes('hallo') || 
                 textLower.includes('mårn') || 
-                textLower.includes('morn') || 
+                textLower.includes('morn') ||
+                textLower.includes('halla') ||
                 textLower.includes('god morgen');
+        }
+    },
+    {
+        reply: `Det tror jeg bare du kan svare på!`,
+        matcher: (textLower: string) => {
+            return textLower.includes('er') &&
+                textLower.includes('jeg') &&
+                textLower.includes('dum');
+        }
+    },
+    {
+        reply: `'Dom' skrives 'dum', men det er fortsatt bare du som kan svare på det!`,
+        matcher: (textLower: string) => {
+            return textLower.includes('er') &&
+                textLower.includes('jeg') &&
+                textLower.includes('dom');
+        }
+    },
+    {
+        reply: `Hmm, hva vil du gjøre?`,
+        matcher: (textLower: string) => {
+            return textLower.includes('hva') &&
+                textLower.includes('skal') &&
+                textLower.includes('jeg') && 
+                textLower.includes('gjøre') && 
+                textLower.includes('i') && 
+                textLower.includes('livet');
+        }
+    },
+    {
+        reply: `Prøv tankehytta! Kanskje Arne er der?`,
+        matcher: (textLower: string) => {
+            return textLower.includes('kom') &&
+                textLower.includes('frem') &&
+                textLower.includes('arne');
         }
     },
     {
@@ -34,7 +69,7 @@ const MESSAGES = [
         }
     },
     {
-        reply: `Jeg bare sitter å venter på dine spennende spørsmål!`,
+        reply: `Jeg sitter å venter på dine spennende spørsmål!`,
         matcher: (textLower: string) => {
             return textLower.includes('hva gjør du') || 
                 textLower.includes('skjer') ||
@@ -43,14 +78,89 @@ const MESSAGES = [
     },
     {
         reply: `
-            Arne Dekke Eide Næss (født 27. januar 1912 i Oslo, død 12. januar 2009[5] ) var en norsk filosof, som gjennom sine lærebøker i logikk, metodelære og filosofihistorie bidro til å gi filosofien en nøkkelstilling i det akademiske og intellektuelle liv i Norge i etterkrigstiden. Han regnes som grunnleggeren av dypøkologien og den såkalte Oslo-skolen.[6] Hans lære blir oftest omtalt som økosofi.`,
+            Arne Dekke Eide Næss var en norsk filosof og en av de mest innflytelsesrike intellektuelle skikkelsene i Norge i det 20. århundre. Han ble født 27. januar 1912 og døde 12. januar 2009.
+            Næss er mest kjent for sitt arbeid innen miljøfilosofi og for å ha grunnlagt den dype økologibevgelsen. Dyp økologi setter spørsmålstegn ved grunnlaget for vår forståelse av menneske-natur forholdet og argumenterer for en mer grunnleggende og "dypere" forståelse av vår plass i verden.
+            Foruten sitt arbeid med økologi, bidro Næss også betydelig innen andre felt av filosofi, spesielt innen semantikk og innen Gandhis ikkevoldsprinsipper.
+            I tillegg til hans akademiske prestasjoner, var Næss også en ivrig fjellklatrer og var viktig for utviklingen av norsk fjellklatring. Han bygde en hytte på den norske fjelltoppen Hallingskarvet, som han kalte Tvergastein, og han brukte mange av sine somre der.
+            Vennligst merk at jeg er en AI som simulerer perspektivet til Arne Næss basert på tilgjengelig informasjon, og jeg er ikke Arne Næss selv.`,
         matcher: (textLower: string) => {
             return textLower.includes('hvem er arne næss') || 
                 textLower.includes('hva gjorde arne næss') ||
                 (textLower.includes("hvem") && textLower.includes('arne næss'));
         }
     },
+     {
+        reply: `
+            Arne Næss viktigste bidrag til filosofi er utviklingen av konseptet om "økologi av tanker". Han argumenterte for at ulike kulturer og samfunn kan ha forskjellige, men likevel gyldige, perspektiver på verden. Han mente at menneskets væremåte måtte endres for å oppnå en mer bærekraftig og harmonisk relasjon til naturen.`,
+        matcher: (textLower: string) => {
+            return textLower.includes('bidrag') && 
+                textLower.includes('til') &&
+                textLower.includes('filosofi');
+        }
+    },
+     {
+        reply: `
+            Biosentrisme: En oppfatning om at all levende natur har en egenverdi uavhengig av dens nytteverdi for mennesker.
+            Selvrealisering: Ideen om at individuelle mennesker kan utvikle seg og oppnå sin fulle potensialitet gjennom en dyp forbindelse med naturen.
+            Økologisk likhet: En anerkjennelse av at alle arter og økosystemer er like viktige og fortjener respekt og beskyttelse.
+            Handlekraft: Oppfordringen til å handle i tråd med ens økologiske verdier og arbeide for å bevare naturen.  `,
+        matcher: (textLower: string) => {
+            return textLower.includes('prinsipper') && 
+                textLower.includes('kjennetegner') &&
+                textLower.includes('filosofi');
+        }
+    },
+         {
+        reply: `
+           Arne Næss hadde en betydelig innflytelse på miljøbevegelsen, spesielt gjennom sitt arbeid med dypøkologi. Han bidro til å skape en bevissthet rundt økologiske problemer og behovet for å endre vårt forhold til naturen. Næss' filosofi inspirerte mange miljøforkjempere og aktivister over hele verden og ble en viktig del av miljøbevegelsens ideologiske fundament.`,
+        matcher: (textLower: string) => {
+            return textLower.includes('påvirket') && 
+                textLower.includes('miljøbevegelsen');
+        }
+    },
+         {
+        reply: `
+            Arne Næss skrev flere bøker om filosofi, miljøvern og dypøkologi. Noen av hans mest kjente verk inkluderer "Sult og strid" (1938), "Valg og verdier" (1989), "Økologi, samfunn og livsstil" (1990) og "Livsfilosofi" (2003). `,
+        matcher: (textLower: string) => {
+            return textLower.includes('hvilke') && 
+                textLower.includes('bøker') &&
+                textLower.includes('skrev');
+        }
+    },
+         {
+        repls: `
+            Arne Næss mente at mennesket er en del av naturen og ikke overordnet den. Han argumenterte for at mennesker bør ha en ydmyk holdning til naturen og erkjenne sin avhengighet av økosystemet. Han oppfordret til respekt for alt liv og til å forstå at menneskets handlinger kan ha konsekvenser for hele økosystemet.`,
+        matcher: (textLower: string) => {
+            return (textLower.includes('menneske') ||
+                textLower.includes('menneskets')) && 
+                textLower.includes('rolle') &&
+                textLower.includes('naturen');
+        }
+    },
+         {
+        reply: `
+            Arne Næss, i tillegg til sitt filosofiske arbeid, var en dyktig fjellklatrer. Han var sterkt involvert i utviklingen av fjellklatring i Norge, og mange betrakter dette som et uvanlig "talent" for en filosof. Han var også spesielt flink til å rape, og likte å sitte rundt bordet å rape om kapp konkurranse med andre. `,
+        matcher: (textLower: string) => {
+            return textLower.includes('talenter') &&
+                textLower.includes('fritiden');
+        }
+    },
     {
+        reply: `
+        "Økologi av tanker" er et begrep som ble brukt av Arne Næss for å beskrive ideen om at ulike kulturer og perspektiver kan ha gyldige måter å forstå verden på.`,
+        matcher: (textLower: string) => {
+            return textLower.includes('økologi av tanker');
+        }
+    },
+      {
+        reply: `
+        Arne Næss er mest kjent for sitt verk "Sult og strid" (1938), hvor han utforsket filosofiske og sosiale temaer. Men hans mest betydningsfulle verk er kanskje "Økologi, samfunn og livsstil" (1990), hvor han presenterte konseptet dypøkologi og utviklet en økofilosofi basert på økologisk likhet. `,
+        matcher: (textLower: string) => {
+            return textLower.includes('mest') && 
+                textLower.includes('verk');
+        }
+    },
+     {
         reply: `
             Dypøkologien, grunnlagt av den norske filosofen Arne Næss, er et mer radikalt syn på økologien enn det mer allmenne vanlige «grunne» synet på økologien, som setter mennesket i sentrum. Tilhengerne av dypøkologien mener at alt liv har en verdi i seg selv og ikke bare ut ifra hvilken nytte den har for mennesket. Derfor må menneskeheten tilpasse seg naturens behov og krav.
 
