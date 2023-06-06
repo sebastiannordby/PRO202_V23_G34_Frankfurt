@@ -9,7 +9,9 @@ import { io, Socket } from 'socket.io-client';
 export default function JoinThinkProvokePage() {
     const [hostCode, setHostCode] = useState('');
     const [socket, setSocket] = useState<Socket>();
-    const { data: session } = useSession();
+    const { data: session } = useSession({
+        required: true
+    });
 
     useEffect(() => {
         const URL: string = getSocketServerAdr();
