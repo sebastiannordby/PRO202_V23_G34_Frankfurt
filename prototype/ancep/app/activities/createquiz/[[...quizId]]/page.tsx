@@ -2,26 +2,39 @@
 
 import DilemmaQuestionView from "@/app/components/quiz/DilemmaQuestionView";
 import EditQuestion from "@/app/components/quiz/EditQuestion";
-import Popup from "@/app/components/client/Popup";
-import { QuizAnswer } from "@/lib/models/answer";
-import { Question, QuestionType } from "@/lib/models/question";
+import { Question } from "@/lib/models/question";
 import { Quiz } from "@/lib/models/quiz"
-import { eventNames } from "process";
 import { useEffect, useState } from 'react';
-import { Type } from "typescript";
-import { create } from "domain";
-import { createInflateRaw } from "zlib";
-import QuizService from "@/lib/services/quizService";
+import {QuizService} from "@/lib/services/quizService";
+import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function CreateQuiz(){
     const [quiz , setQuiz] = useState(new Quiz());
     const [showEditQuestion, setShowEditQuestion ] = useState(false);
     const [currentEditQuestion, setCurrentEditQuestion] = useState(new Question());
     const [testQuestions, setTestQuestions] = useState<Question[]>();
-
     const [quizName, setQuizName] = useState("");
-    
+    const {quizId} = useParams()
+    const {data:session} = useSession();
 
+
+
+    useEffect(()=>{
+        (async()=>{
+
+            if(quizId !== undefined){
+                var data = await QuizService.single(quizId)
+                setQuiz(data);
+            }
+
+        })()
+       
+
+        
+
+    },[])
 
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
@@ -61,12 +74,16 @@ export default function CreateQuiz(){
 
         if(quizName !== ""){
 
-            quiz.Name = quizName;
-            var result = setQuiz(quiz);
-
-            console.log(result);
+            var email = session?.user?.email 
             
-            QuizService.addQuiz(quiz)
+            if(email === undefined){
+                console.error("Du må være logget inn for å lage aktivitet");
+            }
+            quiz.Name = quizName;
+            quiz.Email = email ?? "";
+
+            var data = await QuizService.add(quiz)
+            console.log(data);
         }
     }
 

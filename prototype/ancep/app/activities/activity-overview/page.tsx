@@ -3,6 +3,7 @@
 import QuizListView from "@/app/components/quiz/QuizListView";
 import QuizOverView from "@/app/components/quiz/QuizOverView";
 import { Quiz } from "@/lib/models/quiz";
+import {QuizService} from "@/lib/services/quizService";
 import { useEffect, useState } from "react";
 
 export default function ActivityOverview(){
@@ -10,6 +11,16 @@ export default function ActivityOverview(){
     const [quizes, setQuizes] = useState<Quiz[]>([]);
     
     useEffect(()=>{
+
+        (async()=>{
+            
+            console.log("This runs");
+            var data = await QuizService.all();
+            console.log(data);
+            setQuizes(data);
+
+        })();
+
         var test:Quiz = new Quiz();
         test._id = "test";
         test.Name = "Min nye test quiz"
@@ -19,7 +30,8 @@ export default function ActivityOverview(){
         for (let i = 0; i < 10; i++) {
             testList.push(test);
         }
-        setQuizes(testList);
+
+
 
     },[])
 

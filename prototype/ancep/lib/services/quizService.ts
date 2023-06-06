@@ -1,11 +1,50 @@
 import { Quiz } from "@/lib/models/quiz";
 import { QUIZ_COLLECTION } from "@/lib/mongo-collections";
 import { json } from "stream/consumers";
+import { Question } from "../models/question";
+
+
+const streamReader = async (reader?:ReadableStreamDefaultReader<Uint8Array> ): Promise<string>=>{
+    var readingDone:boolean = false;
+    var stringValue:string = "";
+    var decoder = new TextDecoder();
+
+    if(reader === undefined) return "";
+
+    while(!readingDone){
+        var readRes = await reader?.read();
+        
+        var bytes = readRes?.value
+        readingDone = readRes?.done ?? false;
+        var decodedValue = decoder.decode(bytes);
+        if(decodedValue.includes("<!DOCTYPE")){
+            readingDone = true;
+            return "";
+        }
+        stringValue += decodedValue;
+
+
+        if(readingDone){
+            reader?.releaseLock();
+        }
+    }
+
+    return stringValue;
+}
+
+
 
 
 const GET = async <T>(url:string): Promise<T>=>{
+    var response = await fetch(url, {
+        method: "GET"
+    })
 
-    return {} as T;
+    if(!response.ok){
+        return null as T;
+    }
+    var jsonValue = await streamReader(response.body?.getReader());
+    return JSON.parse(jsonValue)
 }
 
 
@@ -21,18 +60,26 @@ const POST = async <T>(url:string, data:any): Promise<T>=>{
         return null as T;
     }
 
-    var jsonValue = await response.json()
-    console.log(jsonValue);
-
-    return JSON.parse(jsonValue) as T;
+    var jsonValue = await streamReader(response.body?.getReader());
+    return JSON.parse(jsonValue)
 }
 
 
 const QuizService = {
 
-    addQuiz: (data:Quiz)=> POST("/api/quiz", data),
+    add: (data:Quiz) => POST<Quiz>("/api/quiz/add", data),
+    all: ()=>GET<Quiz[]>("/api/quiz/all"),
+    single: (quizId:string)=>GET<Quiz>("/api/quiz/single/" + quizId),
+    quizByUser:(userId:string) => GET<Quiz[]>("/api/quiz/user/" + userId),
 
 }
 
-export default QuizService;
+const QuestionService = {
+    all:(quizId:string)=> GET<Question[]>("/api/question/all/" + quizId),
+    single:(questionId:string) => GET<Question>("/api/question/single/" + questionId),
+    add:(question:Question) => POST<Question>("/api/question/add", question),
+    
+
+}
+export {QuizService, QuestionService};
 
