@@ -1,7 +1,8 @@
 import { Question, QuestionType } from "@/lib/models/question";
 import Popup from "../client/Popup";
-import { Dispatch, useEffect, useState } from "react";
-import QuestionEditor from "./editviews/QuestionEditor";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import DilemmaQuestionEdit from "./editviews/DilemmaQuestionEdit";
+import MultipleChoiceQuestionEdit from "./editviews/MultipleChoiceQuestionEdit";
 
 export default function EditQuestion(
     props:{
@@ -12,7 +13,6 @@ export default function EditQuestion(
     }
 )
 {
-
     const
     {
         visible,
@@ -29,7 +29,6 @@ export default function EditQuestion(
     const [questionValue, setQuestionValue] = useState("");
     const [multipleChoiceAnswers, setMultipleAnswers] = useState<string[]>([]);
 
-
     useEffect(()=>{
         
         setDilemme1("")
@@ -42,48 +41,7 @@ export default function EditQuestion(
             setQuestionValue?.(question.Value)
             setMultipleAnswers?.(question.Answer.MultipleChoice)
         }
-
-
     },[visible])
-
-  
-    const QuizOptions: Function = (props:{click:Dispatch<QuestionType>, currentQuestionType: QuestionType}) => {
-        const {click, currentQuestionType} = props;
-
-        const[type, setType] = useState(QuestionType.TextAnswer);
-        const [typeString, setTypeString] = useState<string>("");
-
-        const [elements, setElements] = useState<JSX.Element[]>()
- 
-        const [allTypes, setAllTypes] = useState<string[]>();
-
-        useEffect(()=>{
-            var types = Object.values(QuestionType).filter((V) => isNaN(Number(V))) as string[];
-            setAllTypes(types)
-            setElements(custom);
-        },[])
-
-        const questionTypeSelected = (value:string)=>{
-            var typeSelected = QuestionType[value as keyof typeof QuestionType];
-            setTypeString(value);
-            setType(typeSelected);
-            click(typeSelected);
-        }
-
-        var custom = allTypes?.map((data:string)=>{ 
-            var key = Math.random() * 10;
-            return(
-                <button className="btn" key={key + "id"} onClick={()=>questionTypeSelected(data)}>
-                    {data}
-                </button>
-            )
-        })
-      
-        
-
-        return custom;
-    }
-
 
     const saveQuestion = ()=>{
         
@@ -93,59 +51,86 @@ export default function EditQuestion(
         newQuestion.Answer.Dilemma.Dilemma2 = dilemma2;
         newQuestion.Answer.MultipleChoice = multipleChoiceAnswers;
        confirmed(newQuestion)
-    }
-
-
-    const multipleChoiceEdited = (newValue: string[])=>{
-
-        console.log(newValue);
-
-
-        setMultipleAnswers(newValue);
-
-    }
-
+    };
 
     return(
-
         <Popup 
             visible={visible} 
             visibleChanged={(value:boolean)=> visibleChanged?.(value)} 
-            title="Nytt spørsmål" 
+            title="Legg til et nytt spørsmål" 
             Footer={
                 <div className="flex justify-end">
                     <button className="btn-primary mr-2" onClick={()=>visibleChanged?.(false)}>Avbryt</button>
                     <button className="btn-primary" onClick={()=>saveQuestion()} >Legg til</button>
                 </div>
-            } 
-    >
+            }>
+            <div className="flex flex-col max-h-full h-full">
+                <div className="flex flex-col w-full    p-2 ">
+                    {/* <label className="w-max mx-auto text-2xl text-black">Spørsmåls type:</label>         */}
+                    <div className="grid grid-cols-3">
+                        <button className="btn"  onClick={() => setQuestionType(QuestionType.TextAnswer)}>Tekst svar</button>
+                        <button className="btn"  onClick={() => setQuestionType(QuestionType.Dilemma)}>Dilemma</button>
+                        <button className="btn"  onClick={() => setQuestionType(QuestionType.MultipleChoice)}>Flerspørsmål</button>
+                    </div>
+                </div> 
+                <div className="m-4  flex flex-col  h-full max-h-full  overflow-hidden">
 
-        <div className="flex flex-col max-h-full h-full">
-            <div className="flex flex-col w-full    p-2 ">
-                {/* <label className="w-max mx-auto text-2xl text-black">Spørsmåls type:</label>         */}
-                <div className="grid grid-cols-3">
-                    <QuizOptions click={(type:QuestionType)=> setQuestionType(type)} currentQuestionType={questionType}/>
-                </div>
-            </div> 
-            <div className="m-4  flex flex-col  h-full max-h-full  overflow-hidden">
+                    <label className="text-xl ml-2">Spørsmål</label>
+                    <textarea className="custom-input h-[150px] min-h-[150px] mt-2 mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
+                    <div className="flex flex-col overflow-y-scroll h-full">
+                        <QuestionEditor 
+                            type={questionType}
+                            dilemma1={dilemma1} 
+                            dilemma1Changed={setDilemme1}
+                            dilemma2={dilemma2}
+                            dilemma2Changed={setDilemme2}
+                            multipleChoiceAnswers={multipleChoiceAnswers}
+                            multipleChoiceAnswersChanged={setMultipleAnswers}
+                        />
+                    </div>
+                </div>             
+            </div>
+        </Popup>
+    );
+}
 
-                <label className="text-2xl ml-2">Spørsmål:</label>
-                <textarea className="custom-input h-[150px] min-h-[150px] mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
-                <div className="flex flex-col overflow-y-scroll h-full">
-                    <QuestionEditor 
-                        type={questionType}
-                        dilemma1={dilemma1} 
-                        dilemma1Changed={setDilemme1}
-                        dilemma2={dilemma2}
-                        dilemma2Changed={setDilemme2}
-                        multipleChoiceAnswers={multipleChoiceAnswers}
-                        multipleChoiceAnswersChanged={multipleChoiceEdited}
-                    />
-                </div>
-                
-            </div>             
-        </div>
-    </Popup>
-    )
+function QuestionEditor(
+    props:{
+        type:QuestionType, 
+        multipleChoiceAnswers:string[],
+        dilemma1:string,
+        dilemma2:string, 
+        multipleChoiceAnswersChanged:Dispatch<SetStateAction<string[]>>,
+        dilemma1Changed:Dispatch<string>,
+        dilemma2Changed:Dispatch<string>
+}) {
+    const {
+            type, 
+            dilemma1, 
+            dilemma2, 
+            multipleChoiceAnswers, 
+            dilemma1Changed, 
+            dilemma2Changed,
+            multipleChoiceAnswersChanged,
+    } = props;
 
+    if(type == QuestionType.Dilemma) {
+        return(
+            <DilemmaQuestionEdit 
+                dilemma1={dilemma1}
+                dilemma1Changed={dilemma1Changed}
+                dilemma2={dilemma2}
+                dilemma2Changed={dilemma2Changed}/>
+        );
+    } else if(type == QuestionType.MultipleChoice) {
+        return(
+            <MultipleChoiceQuestionEdit 
+                answers={multipleChoiceAnswers}
+                answersChanged={multipleChoiceAnswersChanged}/>
+        );
+    } else if(type == QuestionType.TextAnswer) {
+        return <h1>Kommer</h1>;
+    } else {
+        return <></>;
+    }
 }

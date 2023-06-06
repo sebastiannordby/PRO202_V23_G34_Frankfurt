@@ -1,10 +1,10 @@
-import { Dispatch, useDebugValue, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useDebugValue, useEffect, useState } from "react";
 import MultipleChoiceAnswerViewList from "../answer/MultipleChoiceAnswerViewList";
 
 export default function MultipleChoiceQuestionEdit(
     props:{
         answers:string[],
-        answersChanged:Dispatch<string[]>
+        answersChanged:Dispatch<SetStateAction<string[]>>
     }
 ){
 
@@ -14,47 +14,38 @@ export default function MultipleChoiceQuestionEdit(
 
 
     useEffect(()=>{
-        console.log("this fires")
         if(answers === undefined){
             answersChanged([]);
         }
-
     },[answers])
-
-    
    
 
     const answerAdded = (newAnswer:string)=>{
+        if(newAnswer == "") 
+            return;
 
-        if(newAnswer == "") return;
+            const index = answers.indexOf(newAnswer);
 
-        var org = answers;
-        var index = org.indexOf(newAnswer);
         if(index == -1){
-            
-            org.unshift(newAnswer)
-            answersChanged(org);
+            answersChanged([...answers, newAnswer]);
             setAnswerToAdd("");
         }
     }
 
     const removeAnswer = (answerToRemove:string)=>{
-
-        var org = answers;
-        var index = org.indexOf(answerToRemove)
-        if(index !== -1){
-
-            org.splice(index, 1);
-            answersChanged(org);
+        const index = answers.indexOf(answerToRemove)
+        
+        if(index !== -1) {
+            const arr = [...answers];
+            arr.splice(index, 1);
+            answersChanged(arr);
         }
     }
 
     const onEnter = (key:string)=>{
-
         if(key == "Enter"){
             answerAdded(answerToAdd);
         }
-
     }
 
     return(
@@ -72,7 +63,10 @@ export default function MultipleChoiceQuestionEdit(
                     answers.map((data)=>
                         <div key={data} className="border rounded flex h-[50px] p-2 border-black text-black my-1">
                             <label className="w-full my-auto">{data}</label>
-                            <button className="bg-red-500 h-[35px] w-[35px] text-white rounded border border-red-500 text-xl hover:bg-white hover:text-red-500 flex justify-center p-1" onClick={()=>removeAnswer(data)}>X</button>
+                            <button 
+                                className="bg-red-500 h-[35px] w-[35px] text-white rounded border border-red-500 text-xl hover:bg-white 
+                                    hover:text-red-500 flex justify-center p-1" 
+                                onClick={()=>removeAnswer(data)}>X</button>
                         </div>
                     )
                 }

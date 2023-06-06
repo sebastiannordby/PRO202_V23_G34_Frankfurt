@@ -9,7 +9,6 @@ export default function DilemmaQuestionView(props:{question:Question, keyValue:s
                 <label className="p-2 border rounded bg-blue-300">{question.Answer.Dilemma.Dilemma1}</label>
                 <label className="p-2 border rounded bg-blue-300" >{question.Answer.Dilemma.Dilemma2}</label>
             </div>
-
         </div>
     )
 
