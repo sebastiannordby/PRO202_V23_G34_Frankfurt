@@ -55,7 +55,7 @@ export default function ArchivePage() {
         <main className="main-layout">
             <HomeArrow />
 
-            <div className="content">
+            <div className="content" style={{ height: '100% !important'}}>
                 <h1 className="page-title">Kunnskapssamling</h1>
                 <p className="font-medium text-md">Utforsk Arne sitt akriv</p>
 
@@ -77,7 +77,7 @@ export default function ArchivePage() {
                         aria-activedescendant="docsearch-item-0" 
                         aria-controls="docsearch-list" />
 
-                    <section className="flex flex-col flex-grow max-h-72">
+                    <section className="flex flex-col flex-grow h-full">
                         <h1 className="font-medium text-lg">Dypøkologi</h1>
                         <ul className="font-semibold list-disc list-inside pl-2 mt-2 overflow-y-scroll max-h-full">
                             {
