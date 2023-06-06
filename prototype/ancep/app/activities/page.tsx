@@ -17,30 +17,30 @@ export default function QuizPage() {
                 <p className="text-lg">Morsomme aktiviteter alene eller med andre</p>
                 
                 <div 
-                    className="h-full overflow-auto p-2 mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
+                    className="h-full p-2 mx-auto w-full gap-2 flex flex-col justify-center items-center text-center lg:mb-0 md:flex-row md:flex-wrap lg:text-left mt-6 text-white max-w-3xl">
                     <Link
                         href="/activities/cabin"
-                        className="h-32 flex gap-3 items-center card cabin-background w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+                        className="h-36 flex gap-3 items-center card cabin-background w-full shadow-xl group rounded-lg hover:border transition-colors hover:border-white"
                         rel="noopener noreferrer">
-                            <div className="text-left pl-2">
+                        <div className="flex flex-col items-center justify-center text-left bg-transparent-black rounded-lg text-white px-5 py-3 h-full w-full">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankehytta</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Del dine tanker og reflekter med andre</p>
                         </div>
                     </Link>
                     <Link
                         href="/activities/think-provoke"
-                        className="h-32 flex gap-3 items-center card think-provoke-background w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+                        className="h-36 flex gap-3 items-center card think-provoke-background w-full shadow-xl group rounded-lg hover:border transition-colors hover:border-white"
                         rel="noopener noreferrer">
-                        <div className="text-left pl-2">
+                        <div className="flex flex-col items-center justify-center text-left bg-transparent-black rounded-lg text-white px-5 py-3 h-full w-full">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankevekker</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Vekk ditt indre</p>
                         </div>
                     </Link>
                     <Link
                         href=""
-                        className="h-32 flex gap-3 items-center card think-bubble-background w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+                        className="h-36 flex gap-3 items-center card think-bubble-background w-full shadow-xl group rounded-lg hover:border transition-colors hover:border-white"
                         rel="noopener noreferrer">
-                            <div className="text-left pl-2">
+                        <div className="flex flex-col items-center justify-center text-left bg-transparent-black rounded-lg text-white px-5 py-3 h-full w-full">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankebobla</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deg</p>
                         </div>
@@ -48,9 +48,8 @@ export default function QuizPage() {
 
                     <Link 
                         href="/activities/activityoverview"
-                        className="h-32 flex gap-3 items-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
-                        rel="noopener noreferrer"
-                    >
+                        className="h-36 flex gap-3 items-center justify-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+                        rel="noopener noreferrer">
                         <div className="text-left pl-2">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Mine aktiviter</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Dine opprettede aktiviteter</p>

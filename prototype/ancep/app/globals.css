@@ -297,3 +297,7 @@ Badge Animation
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.bg-transparent-black {
+  background: rgba(0, 0, 0, .2);
+}
