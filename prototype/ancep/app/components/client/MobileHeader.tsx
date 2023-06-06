@@ -1,11 +1,30 @@
 'use client'
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
+import {UserProfile} from "@/lib/models/user-profile";
 
 export function MobileHeader() {
     const [menuVisible, setMenuVisibility] = useState(false);
     const { data: session } = useSession();
+    const [profilePicture, setProfilePicture] = useState('');
+
+    useEffect(() => {
+        (async() => {
+            if(session?.user?.email) {
+                const response = await fetch('/api/users?email=' + session?.user?.email);
+                if (!response.ok)
+                    throw new Error('Failed to fetch users');
+                const data = await response.json() as UserProfile[];
+                const user = data.find((user) => user.email === session?.user?.email);
+                if (user && user.picture) {
+                    setProfilePicture(user.picture);
+                } else {
+                    setProfilePicture('PandaPhil.png');
+                }
+            }
+        })();
+    }, [session?.user?.email]);
 
     return (
         <>
@@ -46,15 +65,15 @@ export function MobileHeader() {
                                 </p>
                                 <p className=" font-semibold">{session?.user?.email}</p>
                             </div>
-                            {session?.user?.image ? 
+                            {profilePicture ?
                                 <>
-                                    <img 
-                                        width="50"
-                                        height="50"
-                                        className="mt-2 rounded-full md:hidden"
-                                        src={session?.user?.image as string}/> 
-                                </> : ''
-                            }
+                                <img
+                                    width="50"
+                                    height="50"
+                                    className="mt-2 hover:opacity-90 transition-all duration-150"
+                                    alt={profilePicture}
+                                    src={`/images/avatars/${profilePicture}`}/>
+                                </> : ''}
                         </div>
                     </Link>
                 </div>
