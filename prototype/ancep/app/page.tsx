@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="home flex flex-col items-center main-layout
         p-6 rounded-t-3xl justify-center bg-white w-full">
-      <div className="content items-center flex flex-col md:flex-row md:flex-wrap gap-2 bg-none"
+      <div className="overflow-y-scroll w-full md:justify-center md:justify-items-center mx-auto md:max-w-2xl items-center flex flex-col md:grid md:grid-cols-2 gap-2 bg-none"
         style={{ background: 'none' }}>
         <Link
           href="/activities"
@@ -89,7 +89,8 @@ export default function Home() {
         <Link
           href="/teacher"
           onClick={() => addBadgeToProfile('9')}
-          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 md:col-span-2 md:w-full md:text-center 
+            flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/veiledning.png"
