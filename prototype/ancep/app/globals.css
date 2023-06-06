@@ -234,6 +234,31 @@ Badge Animation
   position: relative;
 }
 
+.badge-background {
+  background: white;
+  margin-left: 0.4vh;
+  width: 98%;
+  opacity: 90%;
+  border-radius: 8px;
+  box-shadow: silver 2px 2px 0 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.badge-desc {
+  font-style: oblique;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--ancep-black);
+  margin-top: -74.5px;
+  padding-bottom: 8px;
+}
+
+.badge-pop-background {
+  background: whitesmoke;
+  border-radius: 8px;
+}
+
 .badge-name {
   display: none;
   position: absolute;
