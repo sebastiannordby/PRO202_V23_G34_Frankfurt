@@ -28,7 +28,7 @@ export function MobileHeader() {
 
     return (
         <>
-            <header className='flex flex-col p-2 pt-3 items-start px-4 h-40 md:h-28'>
+            <header className='flex flex-col p-2 pt-3 items-start px-4 h-40 md:h-20'>
                 <div className="flex items-center w-full mb-3">
                     <Link
                         href="/"
