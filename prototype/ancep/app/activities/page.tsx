@@ -37,22 +37,12 @@ export default function QuizPage() {
                         </div>
                     </Link>
                     <Link
-                        href=""
+                        href="/activities/think-bubble"
                         className="h-36 flex gap-3 items-center card think-bubble-background w-full shadow-xl group rounded-lg hover:border transition-colors hover:border-white"
                         rel="noopener noreferrer">
                         <div className="flex flex-col items-center justify-center text-left bg-transparent-black rounded-lg text-white px-5 py-3 h-full w-full">
                             <h2 className={"mb-1 text-2xl font-semibold"}>Tankebobla</h2>
                             <p className={"m-0 max-w-[30ch] text-sm"}>Ikke la tankene gå fra deg</p>
-                        </div>
-                    </Link>
-
-                    <Link 
-                        href="/activities/activityoverview"
-                        className="h-36 flex gap-3 items-center justify-center card w-full shadow-xl group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
-                        rel="noopener noreferrer">
-                        <div className="text-left pl-2">
-                            <h2 className={"mb-1 text-2xl font-semibold"}>Mine aktiviter</h2>
-                            <p className={"m-0 max-w-[30ch] text-sm"}>Dine opprettede aktiviteter</p>
                         </div>
                     </Link>
                 </div>
