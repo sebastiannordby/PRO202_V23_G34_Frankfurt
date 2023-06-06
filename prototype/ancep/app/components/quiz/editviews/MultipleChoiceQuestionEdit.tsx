@@ -7,11 +7,8 @@ export default function MultipleChoiceQuestionEdit(
         answersChanged:Dispatch<SetStateAction<string[]>>
     }
 ){
-
     const { answers, answersChanged} = props;
-
     const [answerToAdd, setAnswerToAdd] = useState("")
-
 
     useEffect(()=>{
         if(answers === undefined){
@@ -24,9 +21,9 @@ export default function MultipleChoiceQuestionEdit(
         if(newAnswer == "") 
             return;
 
-            const index = answers.indexOf(newAnswer);
+        const index = answers.indexOf(newAnswer);
 
-        if(index == -1){
+        if(index == -1) {
             answersChanged([...answers, newAnswer]);
             setAnswerToAdd("");
         }
