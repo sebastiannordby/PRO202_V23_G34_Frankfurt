@@ -26,6 +26,8 @@ export default function MultipleChoiceQuestionEdit(
         if(index == -1) {
             answersChanged([...answers, newAnswer]);
             setAnswerToAdd("");
+        } else {
+            alert(newAnswer + ' er allerede registrert som et svar');
         }
     }
 

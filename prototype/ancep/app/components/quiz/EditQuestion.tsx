@@ -64,19 +64,18 @@ export default function EditQuestion(
                     <button className="btn-primary" onClick={()=>saveQuestion()} >Legg til</button>
                 </div>
             }>
-            <div className="flex flex-col max-h-full h-full">
-                <div className="flex flex-col w-full    p-2 ">
-                    {/* <label className="w-max mx-auto text-2xl text-black">Spørsmåls type:</label>         */}
-                    <div className="grid grid-cols-3">
+            <div className="flex flex-col max-h-full h-full p-4">
+                <div className="flex flex-col w-full p-2 ">
+                    <label className="text-xl text-black">Velg spørsmålstype</label>        
+                    <div className="grid grid-cols-3 gap-2 mt-3">
                         <button className="btn"  onClick={() => setQuestionType(QuestionType.TextAnswer)}>Tekst svar</button>
                         <button className="btn"  onClick={() => setQuestionType(QuestionType.Dilemma)}>Dilemma</button>
                         <button className="btn"  onClick={() => setQuestionType(QuestionType.MultipleChoice)}>Flerspørsmål</button>
                     </div>
                 </div> 
-                <div className="m-4  flex flex-col  h-full max-h-full  overflow-hidden">
-
+                <div className="flex flex-col h-full max-h-full  overflow-hidden mt-4">
                     <label className="text-xl ml-2">Spørsmål</label>
-                    <textarea className="custom-input h-[150px] min-h-[150px] mt-2 mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
+                    <textarea className="custom-input h-[150px] min-h-[150px] mt-3 mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
                     <div className="flex flex-col overflow-y-scroll h-full">
                         <QuestionEditor 
                             type={questionType}
