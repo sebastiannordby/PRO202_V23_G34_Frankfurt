@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { AddBadge } from '@/app/components/AddBadge';
 import { io, Socket } from 'socket.io-client';
 import { getSocketServerAdr } from '@/lib/pusher-channels';
+import Link from 'next/link';
 
 const channelName: string = 'private-cabin';
 const eventName: string = "client-message";
@@ -18,7 +19,7 @@ type ChatMessage = {
 }
 
 export default function CabinChatPage() {
-    const { data: session } = useSession();
+    const { data: session } = useSession({ required: true });
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [animationVisible, setAnimationVisible] = useState(true);
