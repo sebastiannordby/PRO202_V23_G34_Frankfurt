@@ -11,13 +11,17 @@ import { useEffect, useState } from 'react';
 import { Type } from "typescript";
 import { create } from "domain";
 import { createInflateRaw } from "zlib";
+import QuizService from "@/lib/services/quizService";
 
 export default function CreateQuiz(){
-    const [quiz , setQuiz] = useState({} as Quiz);
+    const [quiz , setQuiz] = useState(new Quiz());
     const [showEditQuestion, setShowEditQuestion ] = useState(false);
     const [currentEditQuestion, setCurrentEditQuestion] = useState(new Question());
     const [testQuestions, setTestQuestions] = useState<Question[]>();
-    const [test, setTest] = useState<Question>(new Question());
+
+    const [quizName, setQuizName] = useState("");
+    
+
 
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
@@ -53,6 +57,19 @@ export default function CreateQuiz(){
         setShowEditQuestion(true)
     }
 
+    const saveQuiz = async ()=>{
+
+        if(quizName !== ""){
+
+            quiz.Name = quizName;
+            var result = setQuiz(quiz);
+
+            console.log(result);
+            
+            QuizService.addQuiz(quiz)
+        }
+    }
+
     return(
         <div className="flex flex-col p-1 h-full overflow-y-hidden main-layout" >
 
@@ -64,10 +81,10 @@ export default function CreateQuiz(){
                     <h1 className="text-xl my-auto">Quiz Navn:</h1>
                     <input 
                         type="text" 
-                        value={quiz?.Name} 
+                        value={quizName} 
                         placeholder="Tast inn quiz navn"
                         className="focus:border-primary custom-input focus:border my-auto rounded text-xl  mx-2 shadow-xl"
-                        onChange={(event)=>{quiz.Name = event.target.value  }}  />
+                        onChange={(event)=>{setQuizName(event.target.value)}}  />
                     <button className="bg-white shadow-xl w-max rounded p-1 mr-2 text-xl border-primary border" onClick={()=>createNewQuestion()}>Legg til spørsmål</button>
                 </div>
                
@@ -82,7 +99,7 @@ export default function CreateQuiz(){
                     visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}/>
 
                 <div className="p-2 flex align-items-end">
-                    <button className="bg-primary text-white shadow-xl p-2 my-auto rounded text-xl h-min ml-auto">Lagre</button>
+                    <button className="bg-primary text-white shadow-xl p-2 my-auto rounded text-xl h-min ml-auto" onClick={()=>saveQuiz()}>Lagre</button>
                 </div>
             </div>
         </div>

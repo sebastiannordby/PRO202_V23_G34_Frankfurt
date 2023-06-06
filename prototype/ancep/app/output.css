@@ -584,12 +584,20 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
 
 .inset-0 {
   inset: 0px;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .left-0 {
@@ -600,8 +608,16 @@ video {
   left: 3rem;
 }
 
+.left-24 {
+  left: 6rem;
+}
+
 .right-0 {
   right: 0px;
+}
+
+.right-4 {
+  right: 1rem;
 }
 
 .top-0 {
@@ -624,10 +640,6 @@ video {
   margin: 0.5rem;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -638,6 +650,11 @@ video {
   margin-right: auto;
 }
 
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -646,11 +663,6 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
 }
 
 .mb-1 {
@@ -673,8 +685,24 @@ video {
   margin-bottom: 1rem;
 }
 
+.ml-12 {
+  margin-left: 3rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
 }
 
 .ml-auto {
@@ -729,6 +757,10 @@ video {
   height: 8rem;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .h-40 {
   height: 10rem;
 }
@@ -774,10 +806,6 @@ video {
   height: 100vh;
 }
 
-.max-h-72 {
-  max-height: 18rem;
-}
-
 .max-h-full {
   max-height: 100%;
 }
@@ -817,10 +845,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[35pc\] {
-  width: 35pc;
 }
 
 .max-w-2xl {
@@ -1042,6 +1066,11 @@ video {
   border-color: rgb(150 96 142 / var(--tw-border-opacity));
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .border-slate-300 {
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
@@ -1049,11 +1078,6 @@ video {
 
 .border-transparent {
   border-color: transparent;
-}
-
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -1179,12 +1203,24 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
 
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pl-40 {
+  padding-left: 10rem;
+}
+
+.pl-60 {
+  padding-left: 15rem;
 }
 
 .pr-2 {
@@ -1575,6 +1611,31 @@ Badge Animation
   position: relative;
 }
 
+.badge-background {
+  background: white;
+  margin-left: 0.4vh;
+  width: 98%;
+  opacity: 90%;
+  border-radius: 8px;
+  box-shadow: silver 2px 2px 0 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.badge-desc {
+  font-style: oblique;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--ancep-black);
+  margin-top: -74.5px;
+  padding-bottom: 8px;
+}
+
+.badge-pop-background {
+  background: whitesmoke;
+  border-radius: 8px;
+}
+
 .badge-name {
   display: none;
   position: absolute;
@@ -1592,6 +1653,32 @@ Badge Animation
   display: block;
 }
 
+/*
+  Activity's backgrounds
+ */
+
+.cabin-background {
+  background: url('/images/activityspictures/tankehytta.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.think-provoke-background {
+  background: url('/images/activityspictures/tankevekker.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.think-bubble-background {
+  background: url('/images/activityspictures/tankebobla.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-transparent-black {
+  background: rgba(0, 0, 0, .25);
+}
+
 .first-letter\:relative::first-letter {
   position: relative;
 }
@@ -1600,6 +1687,10 @@ Badge Animation
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:border:hover {
+  border-width: 1px;
 }
 
 .hover\:border-white:hover {
@@ -1632,19 +1723,24 @@ Badge Animation
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:text-gray-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:text-red-500:hover {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1813,12 +1909,8 @@ Badge Animation
     margin-right: auto;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:h-28 {
-    height: 7rem;
+  .md\:h-20 {
+    height: 5rem;
   }
 
   .md\:w-60 {
