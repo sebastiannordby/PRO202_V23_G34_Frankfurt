@@ -37,7 +37,7 @@ export default function QuizPage() {
                         </div>
                     </Link>
                     <Link
-                        href=""
+                        href="/activities/think-bubble"
                         className="h-36 flex gap-3 items-center card think-bubble-background w-full shadow-xl group rounded-lg hover:border transition-colors hover:border-white"
                         rel="noopener noreferrer">
                         <div className="flex flex-col items-center justify-center text-left bg-transparent-black rounded-lg text-white px-5 py-3 h-full w-full">
