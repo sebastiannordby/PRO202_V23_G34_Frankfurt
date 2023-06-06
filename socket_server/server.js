@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
+console.log('Server should run on port: ', PORT);
+
 app.set('port', PORT);
 
 const server = http.createServer(app);
@@ -14,6 +17,7 @@ const io = new Server(server, {
 });
 
 const ROOMS = { };
+const CABIN = [];
 
 io.on('connection', (socket) => {
     socket.on('think-provoke-join', (data) => {
@@ -47,8 +51,20 @@ io.on('connection', (socket) => {
         }
     });
 
+    socket.on('join-cabin', data => {
+        console.log('JOINED CABIN: ', data);
+        socket.join("cabin-room");
+
+    });
+
+    socket.on('cabin-message', data => {
+        console.log('CABIN MESSAGE: ', data);
+        io.to('cabin-room').emit('cabin-message', data)
+    });
+
     console.log('a user connected');
 });
+
 
 app.get('/', (req, res) => {
     res.json('Wohooo. Socket server up and running.');

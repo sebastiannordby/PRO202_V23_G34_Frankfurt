@@ -1,12 +1,12 @@
 "use client"
-import PusherClient from 'pusher-js';
-import {Channel} from 'pusher-js';
 import { KeyboardEvent, useState } from 'react';
 import { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { HomeArrow } from '@/app/components/HomeArrow';
 import { v4 as uuidv4 } from 'uuid';
 import { AddBadge } from '@/app/components/AddBadge';
+import { io, Socket } from 'socket.io-client';
+import { getSocketServerAdr } from '@/lib/pusher-channels';
 
 const channelName: string = 'private-cabin';
 const eventName: string = "client-message";
@@ -17,16 +17,28 @@ type ChatMessage = {
     id: string;
 }
 
-PusherClient.logToConsole = true;
-
 export default function CabinChatPage() {
     const { data: session } = useSession();
     const [newMessage, setNewMessage] = useState('');
     const [messages, setMessages] = useState<ChatMessage[]>([]);
-    const [pusherClient, setPusherClient] = useState<PusherClient>();
-    const [channel, setChannel] = useState<Channel>();
     const [animationVisible, setAnimationVisible] = useState(true);
     const { addBadgeToProfile } = AddBadge();
+    const [ socket, setSocket ] = useState<Socket>();
+
+    useEffect(() => {
+        if((session?.user?.email?.length ?? 0 > 0) && !socket) {
+            const URL: string = getSocketServerAdr();
+            const nSocket = io(URL, { transports : ['websocket'] });
+
+            nSocket.connect();
+            nSocket.on('cabin-message', (message: ChatMessage) => {
+                setMessages(mess => [...mess, message]);
+            });
+            
+            nSocket.emit('join-cabin');
+            setSocket(nSocket);
+        }
+    }, [ session ]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -34,34 +46,8 @@ export default function CabinChatPage() {
         }, 5000);
     }, []);
 
-    useEffect(() => {
-        const newPusherClient = new PusherClient('bef553a644fc3fdd487a', {
-            cluster: 'eu'
-        });
-
-        setPusherClient(newPusherClient);
-
-        const newChannel = newPusherClient.subscribe(channelName);
-
-        newChannel.bind('pusher:subscription_succeeded', function(members: any) {
-            console.log('successfully subscribed!');
-        });
-
-        newChannel.bind(eventName, function(newMessage: any) {
-            const newMessages = [...messages, newMessage];
-
-            console.log(newMessages);
-
-            messages.push(newMessage);
-            setMessages(messages);
-        });
-
-        setChannel(newChannel);
-    }, []);
-
     const onInput = (e: KeyboardEvent<HTMLInputElement>) => {
         if(e.key === "Enter" && newMessage?.length > 0) {
-
             if(newMessage?.toLocaleLowerCase()?.includes("kom frem arne")) {
                 open('/images/arne-busk.jpg', '_blank');
                 addBadgeToProfile('10');
@@ -72,23 +58,15 @@ export default function CabinChatPage() {
     };
 
     const sendMessage = () => {
-        if(!channel?.subscribed) {
-            throw Error("Not subscribed");
-        }
-
         const chatMessage: ChatMessage = {
             message: newMessage,
             user: session?.user?.name ?? 'Ikke pålogget',
             id: uuidv4()
         };
 
-        if(channel.trigger(eventName, chatMessage)) {
-            messages.push(chatMessage);
-    
-            setMessages(messages);
-            setNewMessage('');
-            addBadgeToProfile('3')
-        }
+        socket?.emit('cabin-message', chatMessage);      
+        setNewMessage('');
+        addBadgeToProfile('3');
     };
 
     return (
@@ -127,7 +105,7 @@ export default function CabinChatPage() {
                             className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
                                 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
                                 p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
-                                dark:focus:ring-blue-800">Bli med</button>
+                                dark:focus:ring-blue-800">Send</button>
                     </div>    
                 </div>
             </div>

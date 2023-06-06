@@ -7,7 +7,7 @@ export const AddBadge = () => {
 
     const addBadgeToProfile = async (badgeId: string) => {
         if (!session?.user?.email || !badgeId) {
-            console.error('A user must be logged in and badgeData must be set');
+            console.info('A user must be logged in and badgeData must be set');
             return;
         }
         console.log('Email: ', session.user.email);
