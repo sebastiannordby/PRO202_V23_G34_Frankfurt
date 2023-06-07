@@ -13,7 +13,7 @@ export default function CreateQuiz(){
     const [quiz , setQuiz] = useState(new Quiz());
     const [showEditQuestion, setShowEditQuestion ] = useState(false);
     const [currentEditQuestion, setCurrentEditQuestion] = useState(new Question());
-    const [questions, setQuestions] = useState<Question[]>();
+    const [questions, setQuestions] = useState<Question[]>([]);
     const [quizName, setQuizName] = useState("");
     const {quizId} = useParams()
     const {data:session} = useSession();
@@ -49,16 +49,11 @@ export default function CreateQuiz(){
     }
     
 
-    const deleteQuestion = async (questionId:string)=>{
+    const deleteQuestion = async  (questionId:string)=>{
+        
         await QuestionService.remove(questionId);
 
-        var index = questions?.findIndex(x=>x._id === questionId) ?? -1;
-
-        if(index !== -1){
-
-            questions?.splice(index, 1);
-        }
-        await refreshQuestions()
+        await refreshQuestions();
     }
     
     const QuestionsView: Function = (props:{questions:Question[]})=>{
@@ -90,23 +85,25 @@ export default function CreateQuiz(){
 
         setShowEditQuestion(false);
 
+
+        const saveQuestion = async (quizId:string, question:Question) : Promise<Question>=>{
+            question.QuizId = quizId;
+            const _question = await QuestionService.add(newValue);
+            return _question;
+        }
+
+
         if(quizId === "" || quizId === undefined){
             var quiz = await insertQuiz(quizName, email);
             _quizId = quiz._id ?? "";
 
-        }
-
-
-
-        newValue.QuizId = _quizId;
-        const _question = await QuestionService.add(newValue);
-        if(quizId === undefined || quizId ===""){
+            await saveQuestion(_quizId, newValue);
             router.push("/activities/createquiz/" + _quizId);
         }
         else{
-            console.log("Quiz id has value");
-            questions?.push(_question);
-            setQuestions(questions);
+            await saveQuestion(_quizId, newValue);
+           
+            await refreshQuestions();
         }
     }
 
