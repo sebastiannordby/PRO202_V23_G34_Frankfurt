@@ -19,7 +19,7 @@ export default function Home() {
         <Link
           href="/activities"
           onClick={() => addBadgeToProfile('7')}
-          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 md:w-full shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/tankevekker.png"
@@ -38,7 +38,7 @@ export default function Home() {
         <Link
           href="/chat-bot"
           onClick={() => addBadgeToProfile('1')}
-          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 md:w-full shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/chatbot.png"
@@ -55,7 +55,7 @@ export default function Home() {
         <Link
           href="/archive"
           onClick={() => addBadgeToProfile('4')}
-          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 md:w-full shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
           <img
               src="/images/sider/arkiv.png"
@@ -72,7 +72,7 @@ export default function Home() {
         <Link
           href="/profile"
           onClick={() => addBadgeToProfile('2')}
-          className="h-32 flex gap-3 items-center card w-80 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
+          className="h-32 flex gap-3 items-center card w-80 md:w-full shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
           rel="noopener noreferrer">
             <img
               src="/images/sider/profil.png"
