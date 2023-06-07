@@ -949,6 +949,10 @@ video {
   grid-template-columns: 5fr 1fr;
 }
 
+.grid-cols-\[5fr_1fr_1fr\] {
+  grid-template-columns: 5fr 1fr 1fr;
+}
+
 .flex-row {
   flex-direction: row;
 }

@@ -48,6 +48,12 @@ export default function CreateQuiz(){
         setQuestions(quest);
     }
     
+
+    const deleteQuestion = async (questionId:string)=>{
+        await QuestionService.remove(questionId);
+
+        await refreshQuestions()
+    }
     
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
@@ -56,13 +62,16 @@ export default function CreateQuiz(){
             var key = (Math.random() * 10).toString();
 
             return(
-                <div key={key} className="flex grid grid-cols-[5fr_1fr]">
+                <div key={key} className="grid grid-cols-[5fr_1fr_1fr]">
                     <DilemmaQuestionView question={data} keyValue={key.toString()}/>
-                    <button 
-                        className="border bg-white hover:bg-primary hover:text-white" 
-                        onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
-                        Rediger
-                    </button>
+                        <button className="btn bg-red-500 text-white">
+                            Slett
+                        </button>
+                        <button 
+                            className="border bg-white hover:bg-primary hover:text-white" 
+                            onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
+                            Rediger
+                        </button>
                 </div>
             )
         })

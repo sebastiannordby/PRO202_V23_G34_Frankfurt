@@ -78,6 +78,7 @@ const QuestionService = {
     all:(quizId:string)=> GET<Question[]>("/api/question/all?quizId=" + quizId),
     single:(questionId:string) => GET<Question>("/api/question/single?questionId=" + questionId),
     add:(question:Question) => POST<Question>("/api/question/add", question),
+    remove:(questionId:string) => POST<boolean>("/api/question/remove?questionId=" + questionId, null),
     
 
 }
