@@ -52,6 +52,12 @@ export default function CreateQuiz(){
     const deleteQuestion = async (questionId:string)=>{
         await QuestionService.remove(questionId);
 
+        var index = questions?.findIndex(x=>x._id === questionId) ?? -1;
+
+        if(index !== -1){
+
+            questions?.splice(index, 1);
+        }
         await refreshQuestions()
     }
     
@@ -64,20 +70,20 @@ export default function CreateQuiz(){
             return(
                 <div key={key} className="grid grid-cols-[5fr_1fr_1fr]">
                     <DilemmaQuestionView question={data} keyValue={key.toString()}/>
-                        <button className="btn bg-red-500 text-white">
-                            Slett
-                        </button>
-                        <button 
-                            className="border bg-white hover:bg-primary hover:text-white" 
-                            onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
-                            Rediger
-                        </button>
+                    <button className="btn bg-red-500 text-white" onClick={()=>deleteQuestion(data._id ?? "")}>
+                        Slett
+                    </button>
+                    <button 
+                        className="border bg-white hover:bg-primary hover:text-white" 
+                        onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
+                        Rediger
+                    </button>
                 </div>
             )
         })
     }
 
-    const updateEditQuestion = async (newValue:Question)=>{
+    const questionConfirmed = async (newValue:Question)=>{
         
         var email = session?.user?.email ?? "";
         var _quizId = quizId;
@@ -87,17 +93,26 @@ export default function CreateQuiz(){
         if(quizId === "" || quizId === undefined){
             var quiz = await insertQuiz(quizName, email);
             _quizId = quiz._id ?? "";
+
         }
+
+
+
         newValue.QuizId = _quizId;
-        await QuestionService.add(newValue);
-        router.push("/activities/createquiz/" + _quizId);
+        const _question = await QuestionService.add(newValue);
+        if(quizId === undefined || quizId ===""){
+            router.push("/activities/createquiz/" + _quizId);
+        }
+        else{
+            console.log("Quiz id has value");
+            questions?.push(_question);
+            setQuestions(questions);
+        }
     }
 
 
     const createNewQuestion = ()=>{
-        var test = new Question();
-        setCurrentEditQuestion(test);
-        console.log(test);
+        setCurrentEditQuestion(new Question());
         setShowEditQuestion(true)
     }
 
@@ -153,7 +168,7 @@ export default function CreateQuiz(){
 
                 <EditQuestion 
                     question={currentEditQuestion} 
-                    confirmed={(newValue:Question)=>updateEditQuestion(newValue)}
+                    confirmed={(newValue:Question)=>questionConfirmed(newValue)}
                     visible={showEditQuestion}
                     visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}/>
 
