@@ -23,8 +23,7 @@ export default function ThinkBubble() {
                 const data = await response.json() as Thought[];
 
                 const user = data.find((user) => user.email === session?.user?.email);
-                // @ts-ignore
-                setThoughts(user.thoughts);
+                setThoughts(user?.thoughts ?? []);
             }
         })();
     }, [session]);
@@ -61,7 +60,7 @@ export default function ThinkBubble() {
                     </div>
                 </h1>
                 <div className="flex justify-center pb-6 " >
-                    <div className="main-bubble items-center relative hover:bg-blue-800">
+                    <div className="main-bubble items-center relative">
                             <img
                                 className=""
                                 width="250"
@@ -80,7 +79,7 @@ export default function ThinkBubble() {
                            onKeyDown={handleInputChange}
                     />
                 </div>
-                <div className="thoughts pt-6 flex-content hover:bg-blue-800">
+                <div className="thoughts pt-6 flex-content">
                     {
                         thought.map((thought, index) => (
                             <div key={index} className="relative mr-4 mt-4">
@@ -92,7 +91,7 @@ export default function ThinkBubble() {
                                     alt="thoughts"
                                 />
                                 <p className="absolute inset-0 flex items-center justify-center text-center text-xs text-black animate-grow">
-                                        {thought}
+                                    {thought}
                                 </p>
                             </div>
                         ))
