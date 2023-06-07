@@ -2,12 +2,14 @@
 
 import DilemmaQuestionView from "@/app/components/quiz/DilemmaQuestionView";
 import EditQuestion from "@/app/components/quiz/EditQuestion";
-import { Question } from "@/lib/models/question";
+import { Question, QuestionType } from "@/lib/models/question";
 import { Quiz } from "@/lib/models/quiz"
 import { useEffect, useState } from 'react';
 import {QuestionService, QuizService} from "@/lib/services/quizService";
 import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import MultipleChoiceQuestionView from "@/app/components/quiz/MultipleChoiceQuestionView";
+import TextQuestionView from "@/app/components/quiz/TextQuestionView";
 
 export default function CreateQuiz(){
     const [quiz , setQuiz] = useState(new Quiz());
@@ -59,20 +61,41 @@ export default function CreateQuiz(){
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
 
+
+        const View = (props:{question:Question})=>{
+
+            const {question} = props;
+
+            switch(question.Type){
+                case QuestionType.Dilemma:
+                    return <DilemmaQuestionView question={question}/>;
+
+                case QuestionType.MultipleChoice:
+                    return <MultipleChoiceQuestionView question={question}/>
+                
+                case QuestionType.TextAnswer:
+                    return <TextQuestionView question={question}/>
+            }
+        }
+
         return questions?.map((data:Question)=>{
             var key = (Math.random() * 10).toString();
 
             return(
-                <div key={key} className="grid grid-cols-[5fr_1fr_1fr]">
-                    <DilemmaQuestionView question={data} keyValue={key.toString()}/>
-                    <button className="btn bg-red-500 text-white" onClick={()=>deleteQuestion(data._id ?? "")}>
-                        Slett
-                    </button>
-                    <button 
-                        className="border bg-white hover:bg-primary hover:text-white" 
-                        onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
-                        Rediger
-                    </button>
+                <div key={key} className="text-xl flex flex-col bg-white m-2 p-2 border rounded gap-1">
+                    <div className="flex justify-between w-full">
+                        <button className="btn bg-red-500 text-white hover:bg-red-900" onClick={()=>deleteQuestion(data._id ?? "")}>
+                            Slett
+                        </button>
+                        <button 
+                            className="border bg-white btn hover:bg-primary hover:text-white" 
+                            onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
+                            Rediger
+                        </button>
+                    </div>
+                    <label>Spørsmål:</label>
+                    <View  question={data}/>
+                    
                 </div>
             )
         })
@@ -87,8 +110,13 @@ export default function CreateQuiz(){
 
 
         const saveQuestion = async (quizId:string, question:Question) : Promise<Question>=>{
+            
+            if(currentEditQuestion._id !== undefined){
+                question._id = currentEditQuestion._id;
+            }
+
             question.QuizId = quizId;
-            const _question = await QuestionService.add(newValue);
+            const _question = await QuestionService.add(question);
             return _question;
         }
 

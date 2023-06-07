@@ -36,10 +36,11 @@ export default function EditQuestion(
         setQuestionValue?.("")
         setMultipleAnswers?.([])
         if(question !== undefined){
+            setQuestionType(question.Type);
             setDilemme1(question.Answer.Dilemma.Dilemma1)
             setDilemme2(question.Answer.Dilemma.Dilemma2)
-            setQuestionValue?.(question.Value)
-            setMultipleAnswers?.(question.Answer.MultipleChoice)
+            setQuestionValue(question.Value)
+            setMultipleAnswers(question.Answer.MultipleChoice)
         }
     },[visible])
 
@@ -47,6 +48,7 @@ export default function EditQuestion(
         
         var newQuestion = new Question();
         newQuestion.Value = questionValue;
+        newQuestion.Type = questionType;
         newQuestion.Answer.Dilemma.Dilemma1 = dilemma1;
         newQuestion.Answer.Dilemma.Dilemma2 = dilemma2;
         newQuestion.Answer.MultipleChoice = multipleChoiceAnswers;

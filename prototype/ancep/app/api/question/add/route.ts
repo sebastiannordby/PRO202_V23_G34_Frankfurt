@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request){
 
     
-    const newValue = await req.json();
+    const newValue = await req.json() as Question;
 
 
     const client = await getDatabaseAsync();
@@ -15,9 +15,22 @@ export async function POST(req: Request){
     const collection = await db.collection(QUESTION_COLLECTION);
   
     var exists = await collection.findOne({_id: new ObjectId(newValue._id)})
+    console.log(newValue);
+    console.log("It exists");
+    console.log(exists);
 
     if(exists !== null){
-        const updateResult = await collection.updateOne({_id: new ObjectId(newValue._id)}, newValue)
+        const updateResult = await collection.updateOne({_id: new ObjectId(newValue._id)},
+        {"$set":{
+            Value:newValue.Value,
+            Type: newValue.Type,
+            QuizId: newValue.QuizId,
+            Answer:newValue.Answer
+            } as Question
+        })
+
+
+
         var newUpdatedQuestion = await collection.findOne({_id: new ObjectId(newValue._id)})
         await client.close();
         return NextResponse.json(newUpdatedQuestion);
