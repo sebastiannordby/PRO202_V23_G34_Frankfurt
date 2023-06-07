@@ -5,9 +5,8 @@ import { THINK_PROVOKE_CHANNEL, getClientPusher, getJoinChannelName, getSocketSe
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import { io, Socket } from 'socket.io-client';
-import { ScriptProps } from "next/script";
 
-export default function JoinThinkProvokePage(props: ScriptProps) {
+export default function JoinThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string | undefined>('');
     const [socket, setSocket] = useState<Socket>();
     const { data: session } = useSession({
