@@ -1,7 +1,9 @@
 import getDatabaseAsync from "@/lib/mongodb";
-import { HostGame } from "@/lib/models/quiz/think-provoke/host-game";
+import { HostGameDB } from "@/lib/models/quiz/think-provoke/host-game";
 import { NextResponse } from "next/server";
 import { THINK_PROVOKE_COLLECTION } from "@/lib/mongo-collections";
+import { StartGameCommand } from "@/lib/models/quiz/think-provoke/start-game";
+import { MongoClient, ObjectId } from "mongodb";
 
 function generateCode() {
     var code = '';
@@ -15,42 +17,68 @@ function generateCode() {
     return code;
 }
 
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const userEmail = searchParams.get('email')?.toLocaleLowerCase() ?? '';
 
-    if(!userEmail){
-        return;
-    }
+export async function POST(request: Request) {
+    const command = (await request.json()) as StartGameCommand;
+    let client: MongoClient | null = null;
 
-    const client = await getDatabaseAsync();
-    const db = client.db("ancep");
-
-    const existingGame = await db
-        .collection<HostGame>(THINK_PROVOKE_COLLECTION)
-        .findOne({
-            hostEmail: userEmail,
-            status: 'ongoing'
-        });
-
-    if(existingGame) {
+    try
+    {
+        client = await getDatabaseAsync();
+        const db = client.db("ancep");
+    
+        const existingGames = await db
+            .collection<HostGameDB>(THINK_PROVOKE_COLLECTION)
+            .find({
+                hostEmail: command.email,
+                status: 'ongoing',
+            }).toArray();
+    
+        const existingGame = existingGames.find(x => 
+            x.quizId == command.quizId);
+        const gamesToTerminate = existingGames.filter(x => 
+            x != existingGame);
+    
+        for(let i = 0; i < gamesToTerminate.length; i++) {
+            const gameToTerminate = gamesToTerminate[i];
+    
+            await db.collection(THINK_PROVOKE_COLLECTION)
+                .updateOne(
+                    {
+                        _id: gameToTerminate._id
+                    }, 
+                    {
+                        $set: {
+                            status: 'terminated'
+                        }
+                    }
+                );
+        }
+    
+        if(existingGame) {
+            console.log('Existing game: ', existingGame);
+            return NextResponse.json({
+                code: existingGame.code
+            });
+        }
+    
+        const generatedCode = generateCode();
+        await db
+            .collection<HostGameDB>(THINK_PROVOKE_COLLECTION)
+            .insertOne({
+                _id: new ObjectId(),
+                quizId: command?.quizId,
+                code: generatedCode,
+                hostEmail: command.email,
+                status: 'ongoing'
+            });
+    
+        await client.close();
+    
         return NextResponse.json({
-            code: existingGame.code
+            code: generateCode
         });
+    } finally {
+        client?.close();
     }
-
-    const generatedCode = generateCode();
-    await db
-        .collection<HostGame>(THINK_PROVOKE_COLLECTION)
-        .insertOne({
-            code: generatedCode,
-            hostEmail: userEmail,
-            status: 'ongoing'
-        });
-
-    await client.close();
-
-    return NextResponse.json({
-        code: generateCode
-    });
 }
