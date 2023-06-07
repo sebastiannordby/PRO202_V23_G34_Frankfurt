@@ -2,7 +2,7 @@ import getDatabaseAsync from "@/lib/mongodb";
 import { HostGameDB } from "@/lib/models/quiz/think-provoke/host-game";
 import { NextResponse } from "next/server";
 import { QUIZ_COLLECTION, THINK_PROVOKE_COLLECTION } from "@/lib/mongo-collections";
-import { ExistingGameResponse, StartGameCommand } from "@/lib/models/quiz/think-provoke/start-game";
+import { ExistingGameResponse, StartGameCommand, StartGameResponse } from "@/lib/models/quiz/think-provoke/start-game";
 import { MongoClient, ObjectId } from "mongodb";
 import { Quiz } from "@/lib/models/quiz";
 
@@ -98,12 +98,16 @@ export async function POST(request: Request) {
     
         if(existingGame) {
             console.log('Existing game: ', existingGame);
-            return NextResponse.json({
+            const response: StartGameResponse = {
                 code: existingGame.code
-            });
+            };
+            return NextResponse.json(response);
         }
     
         const generatedCode = generateCode();
+        const response: StartGameResponse = {
+            code: generatedCode
+        };
         await db
             .collection<HostGameDB>(THINK_PROVOKE_COLLECTION)
             .insertOne({
@@ -113,13 +117,10 @@ export async function POST(request: Request) {
                 hostEmail: command.email,
                 status: 'ongoing'
             });
-    
-        await client.close();
-    
-        return NextResponse.json({
-            code: generateCode
-        });
+
+        return NextResponse.json(response);
     } finally {
+        console.log('CLOSING CLIENT');
        await client?.close();
     }
 }

@@ -68,32 +68,32 @@ export default function HostThinkProvokePage() {
                 method: 'POST',
                 body: JSON.stringify(startQuizCommand)
             });
+
+            console.log('RESPONSE: ', res);
             
-            if(res.ok) {
-                const game = (await res?.json()) as StartGameResponse;
-    
-                setHostCode(game.code);
+            const game = (await res.json()) as StartGameResponse;
+            if(!game?.code?.length)
+                return;
 
-                const URL: string = getSocketServerAdr();
-                const nSocket = io(URL, { transports : ['websocket'] });
+            setHostCode(game.code);
 
-                nSocket.connect();
-                nSocket.on('think-provoke-joined', (data: JoinUser) => {
-                    console.log('DATA: ', data);
-                    setJoinedUsers(users => [...users, data]);
-                });
+            const URL: string = getSocketServerAdr();
+            const nSocket = io(URL, { transports : ['websocket'] });
 
-                setSocket(socket);
-                setSocketOn(true);
+            nSocket.connect();
+            nSocket.on('think-provoke-joined', (data: JoinUser) => {
+                console.log('DATA: ', data);
+                setJoinedUsers(users => [...users, data]);
+            });
 
-                nSocket.emit('think-provoke-host', {
-                    hostCode: game.code
-                });
+            setSocket(socket);
+            setSocketOn(true);
 
-                setQuizStarted(true);
-            } else {
-                alert('Kunne ikke starte spill: ' + await res.text());
-            }
+            nSocket.emit('think-provoke-host', {
+                hostCode: game.code
+            });
+
+            setQuizStarted(true);
         }
     };
 
@@ -134,7 +134,7 @@ export default function HostThinkProvokePage() {
                 <HomeArrow/>
 
                 <div className="content">
-                    <h1 className="page-title">Velg hvem spill du vil hoste</h1>
+                    <h1 className="page-title">Velg hvem quiz du vil være vert for</h1>
 
                     <div className="p-2 flex flex-col gap-2">
                         {
