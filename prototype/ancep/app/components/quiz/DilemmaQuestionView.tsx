@@ -4,7 +4,7 @@ export default function DilemmaQuestionView(props:{question:Question}){
     const {question} = props;
     return(
         <div className="flex flex-col  rounded p-2 bg-white">
-            <label className="w-full ">{question.Value}</label>
+            <textarea disabled className="w-full " value={question.Value}/>
 
             <div className="flex flex-col border p-1 rounded border-black">
                 <label className="text-[15px]">Svar alternativer:</label>

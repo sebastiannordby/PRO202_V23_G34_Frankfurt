@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request){
 
     
-    const newValue = await req.json() as Question;
+    const newValue = await req.json();
 
 
     const client = await getDatabaseAsync();
@@ -25,7 +25,7 @@ export async function POST(req: Request){
             Value:newValue.Value,
             Type: newValue.Type,
             QuizId: newValue.QuizId,
-            Answer:newValue.Answer
+            Answer:newValue.Answer,
             } as Question
         })
 

@@ -5,7 +5,7 @@ export default function TextQuestionView(props:{question:Question}){
     const {question} = props;
 
     return(
-            <label className="my-auto ">{question.Value}</label>
+            <textarea disabled className="my-auto " value={question.Value}/>
     )
     
 

@@ -7,7 +7,7 @@ export default function MultipleChoiceQuestionView(props:{question:Question}){
 
     return(
         <div className="flex flex-col">
-            <label>{question.Value}</label>
+            <textarea disabled={true} value={question.Value}/>
             <div className="flex flex-col">
                 {
                     question.Answer.MultipleChoice.map((data)=>
