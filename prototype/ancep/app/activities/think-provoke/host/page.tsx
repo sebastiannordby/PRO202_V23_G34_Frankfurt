@@ -11,10 +11,10 @@ export default function HostLandingPage() {
                 <div className="flex flex-wrap mt-2 justify-center items-center gap-4">
                     <Link 
                         className="bg-white p-4 rounded-lg hover:cursor-pointer hover:scale-105"
-                        href="/activities/think-provoke/activity-overview">
+                        href="/activities/activity-overview">
                         <h1 className="mb-4 text-center">Lag ditt eget spill!</h1>
                         <Image
-                            alt="Start spill"
+                            alt="Lag ditt eget spill"
                             src="/images/think-provoke/host/q-and-a.png"
                             height={200}
                             width={150} />
@@ -24,7 +24,7 @@ export default function HostLandingPage() {
                         href="/activities/think-provoke/host/start">
                         <h1 className="mb-4 text-center">Start spill!</h1>
                         <Image
-                            alt="Lag ditt eget spill"
+                            alt="Start spill"
                             src="/images/think-provoke/host/spill.png"
                             height={200}
                             width={150} />

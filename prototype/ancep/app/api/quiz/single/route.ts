@@ -12,16 +12,18 @@ export async function GET(req: NextRequest) {
 
     const quizId = searchParams.get("quizId") ?? "";
 
-    console.log("QuizId: " + quizId);
 
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
-    const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).findOne({_id:quizId,});
+    const quiz = await db.collection<Quiz>(QUIZ_COLLECTION).findOne({_id:quizId});
   
-    console.log('Quizes: ', quizes);
 
+    console.log("Quiz found:")
+    console.log(quiz);
+
+    
     await client.close();
 
   
-    return NextResponse.json(quizes);
+    return NextResponse.json(quiz);
 }

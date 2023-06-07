@@ -27,6 +27,7 @@ export default function CreateQuiz(){
             if(quizId !== undefined){
                 var data = await QuizService.single(quizId)
                 setQuiz(data);
+                setQuizName(data.Name);
             }
 
         })()
