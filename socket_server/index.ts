@@ -93,8 +93,6 @@ async function thinkProvokeHostStart(socket: Socket, data: JoinUserCommand) {
     let client: MongoClient | null = null; 
 
     try {
-        console.info('think-provoke-host(data):', data );
-
         if(!data || !data.code) 
             return;
 
@@ -104,9 +102,11 @@ async function thinkProvokeHostStart(socket: Socket, data: JoinUserCommand) {
 
         client = await getDatabaseAsync();
         const db = client.db("ancep");
-        const quiz = await db.collection('think-provoke').findOne({
-            code: data.code
-        });
+        const quiz = await db
+            .collection('think-provoke')
+            .findOne({
+                code: data.code
+            });
 
         if(!quiz) 
             return;
