@@ -9,11 +9,11 @@ export async function GET(req: NextRequest) {
 
     const { searchParams } = new URL(req.url);
 
-    const userId = searchParams.get("userId") ?? ""; 
+    const email = searchParams.get("email") ?? ""; 
 
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
-    const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).find({Email: userId}).toArray();
+    const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).find().toArray();
   
     console.log('Quizes: ', quizes);
 

@@ -70,7 +70,8 @@ const QuizService = {
     add: (data:Quiz) => POST<Quiz>("/api/quiz/add", data),
     all: ()=>GET<Quiz[]>("/api/quiz/all"),
     single: (quizId:string)=>GET<Quiz>("/api/quiz/single?quizId=" + quizId),
-    quizByUser:(userId:string) => GET<Quiz[]>("/api/quiz/user?userId=" + userId),
+    quizByUser:(email:string) => GET<Quiz[]>("/api/quiz/user?email=" + email),
+    remove:(quizId:string) => POST<boolean>("/api/quiz/remove?quizId=" + quizId, null),
 
 }
 

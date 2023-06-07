@@ -14,14 +14,14 @@ export default function ActivityOverview(){
 
     const [quizes, setQuizes] = useState<Quiz[]>([]);
     
-    const {status} = useSession();
+    const {status, data:session} = useSession();
 
     useEffect(()=>{
 
         (async()=>{
             
             console.log("This runs");
-            var data = await QuizService.quizByUser(status);
+            var data = await QuizService.all();
             console.log(data);
             setQuizes(data);
 
