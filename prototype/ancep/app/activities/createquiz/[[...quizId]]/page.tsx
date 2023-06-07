@@ -5,19 +5,19 @@ import EditQuestion from "@/app/components/quiz/EditQuestion";
 import { Question } from "@/lib/models/question";
 import { Quiz } from "@/lib/models/quiz"
 import { useEffect, useState } from 'react';
-import {QuizService} from "@/lib/services/quizService";
-import { useRouter } from "next/router";
-import { useParams } from "next/navigation";
+import {QuestionService, QuizService} from "@/lib/services/quizService";
+import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 export default function CreateQuiz(){
     const [quiz , setQuiz] = useState(new Quiz());
     const [showEditQuestion, setShowEditQuestion ] = useState(false);
     const [currentEditQuestion, setCurrentEditQuestion] = useState(new Question());
-    const [testQuestions, setTestQuestions] = useState<Question[]>();
+    const [questions, setQuestions] = useState<Question[]>();
     const [quizName, setQuizName] = useState("");
     const {quizId} = useParams()
     const {data:session} = useSession();
+    const router = useRouter();
 
 
 
@@ -26,17 +26,29 @@ export default function CreateQuiz(){
 
             if(quizId !== undefined){
                 var data = await QuizService.single(quizId)
-                setQuiz(data);
-                setQuizName(data.Name);
+                if(data !== null){
+                    setQuiz(data);
+                    setQuizName(data.Name);
+                }
             }
 
         })()
        
+        refreshQuestions();
 
         
 
     },[])
 
+
+    const refreshQuestions = async ()=>{
+        var quest = await QuestionService.all(quizId)
+
+        console.log(quest);
+        setQuestions(quest);
+    }
+    
+    
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
 
@@ -48,7 +60,7 @@ export default function CreateQuiz(){
                     <DilemmaQuestionView question={data} keyValue={key.toString()}/>
                     <button 
                         className="border bg-white hover:bg-primary hover:text-white" 
-                        onClick={()=> setShowEditQuestion(true)}>
+                        onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
                         Rediger
                     </button>
                 </div>
@@ -56,11 +68,16 @@ export default function CreateQuiz(){
         })
     }
 
-    const updateEditQuestion = (newValue:Question)=>{
-        console.log("On Page")
-        console.log(newValue.Answer?.MultipleChoice)
-        console.log("QuestionValue: " + newValue.Value)
+    const updateEditQuestion = async (newValue:Question)=>{
+        
+        setShowEditQuestion(false);
+        newValue.QuizId = quizId;
+        questions?.push(newValue);
+        setQuestions(questions);
         setCurrentEditQuestion(newValue)
+        await QuestionService.add(newValue);
+
+
     }
 
 
@@ -83,7 +100,17 @@ export default function CreateQuiz(){
             quiz.Name = quizName;
             quiz.Email = email ?? "";
 
+            
             var data = await QuizService.add(quiz)
+
+            console.log(data);
+
+            if(quizId !== data._id){
+
+                router.push("/activities/createquiz/" + data._id);
+            }
+
+
             console.log(data);
         }
     }
@@ -107,12 +134,12 @@ export default function CreateQuiz(){
                 </div>
                
                 <div className="flex flex-col h-full max-h-full overflow-y-auto">
-                    <QuestionsView questions={testQuestions}/>
+                    <QuestionsView questions={questions}/>
                 </div>
 
                 <EditQuestion 
                     question={currentEditQuestion} 
-                    confirmed={()=>updateEditQuestion(currentEditQuestion)}
+                    confirmed={(newValue:Question)=>updateEditQuestion(newValue)}
                     visible={showEditQuestion}
                     visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}/>
 

@@ -1,4 +1,4 @@
-import { QuizAnswer } from "./answer";
+import { ObjectId } from "mongodb";import { QuizAnswer } from "./answer";
 
 export class Question  {
     _id?:string;

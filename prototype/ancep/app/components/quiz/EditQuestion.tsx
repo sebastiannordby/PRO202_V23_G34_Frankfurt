@@ -36,8 +36,8 @@ export default function EditQuestion(
         setQuestionValue?.("")
         setMultipleAnswers?.([])
         if(question !== undefined){
-            setDilemme1?.(question.Answer.Dilemma.Dilemma1)
-            setDilemme2?.(question.Answer.Dilemma.Dilemma2)
+            setDilemme1(question.Answer.Dilemma.Dilemma1)
+            setDilemme2(question.Answer.Dilemma.Dilemma2)
             setQuestionValue?.(question.Value)
             setMultipleAnswers?.(question.Answer.MultipleChoice)
         }

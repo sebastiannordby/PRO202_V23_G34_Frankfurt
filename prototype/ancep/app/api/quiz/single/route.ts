@@ -1,6 +1,7 @@
 import { Quiz } from "@/lib/models/quiz";
 import { QUIZ_COLLECTION } from "@/lib/mongo-collections";
 import getDatabaseAsync from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 import { NextApiRequest } from "next";
 import { Raleway } from "next/font/google";
 import { useParams } from "next/navigation";
@@ -13,14 +14,14 @@ export async function GET(req: NextRequest) {
     const quizId = searchParams.get("quizId") ?? "";
 
 
+    console.log("Quizid:" + quizId)
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
-    const quiz = await db.collection<Quiz>(QUIZ_COLLECTION).findOne({_id:quizId});
+    const collection = db.collection(QUIZ_COLLECTION);
+    const quiz = await collection.findOne({_id: new ObjectId(quizId)});
   
 
-    console.log("Quiz found:")
     console.log(quiz);
-
     
     await client.close();
 

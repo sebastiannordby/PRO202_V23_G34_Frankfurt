@@ -4,6 +4,9 @@ import QuizListView from "@/app/components/quiz/QuizListView";
 import QuizOverView from "@/app/components/quiz/QuizOverView";
 import { Quiz } from "@/lib/models/quiz";
 import {QuizService} from "@/lib/services/quizService";
+import { stat } from "fs";
+import { ObjectId } from "mongodb";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -11,12 +14,14 @@ export default function ActivityOverview(){
 
     const [quizes, setQuizes] = useState<Quiz[]>([]);
     
+    const {status} = useSession();
+
     useEffect(()=>{
 
         (async()=>{
             
             console.log("This runs");
-            var data = await QuizService.all();
+            var data = await QuizService.quizByUser(status);
             console.log(data);
             setQuizes(data);
 
