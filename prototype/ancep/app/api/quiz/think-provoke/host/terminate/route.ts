@@ -3,7 +3,6 @@ import { TeminateGameCommand } from "@/lib/models/quiz/think-provoke/terminate-g
 import { THINK_PROVOKE_COLLECTION } from "@/lib/mongo-collections";
 import getDatabaseAsync from "@/lib/mongodb";
 import { MongoClient } from "mongodb";
-import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
     let client : MongoClient | null = null;
@@ -21,8 +20,6 @@ export async function POST(request: Request) {
             .findOne({ 
                 code: command.code
             });
-
-        console.log('Game: ', game);
 
         if(game) {
             await db

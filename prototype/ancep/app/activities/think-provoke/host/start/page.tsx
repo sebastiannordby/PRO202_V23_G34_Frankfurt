@@ -30,23 +30,15 @@ export default function HostThinkProvokePage() {
                 const quizesObj = (await quizesResponse.json()) as Quiz[];
                 const onGoingQuizRes = await fetch('/api/quiz/think-provoke/host?email=' + session?.user?.email);
                 const onGoingQuizObj = (await onGoingQuizRes.json()) as ExistingGameResponse;
-                console.log('HERE: ', {
-                    onGoingQuizObj
-                });
     
                 if(onGoingQuizObj) {
                     const onGoingQuiz = quizesObj
                         .find(x => x._id == onGoingQuizObj.quizId);
     
-                    console.log('HERE: ', {
-                        onGoingQuiz,
-                        onGoingQuizObj
-                    });
-    
                     if(onGoingQuiz) {
                         setSelectedQuiz(onGoingQuiz);
                         setHostCode(onGoingQuizObj.code);
-                        setQuizStarted(true);
+                        socketStartGame(onGoingQuizObj.code);
                     }
                 }
     
@@ -69,32 +61,43 @@ export default function HostThinkProvokePage() {
                 body: JSON.stringify(startQuizCommand)
             });
 
-            console.log('RESPONSE: ', res);
-            
             const game = (await res.json()) as StartGameResponse;
             if(!game?.code?.length)
                 return;
 
             setHostCode(game.code);
 
-            const URL: string = getSocketServerAdr();
-            const nSocket = io(URL, { transports : ['websocket'] });
+            socketStartGame(game.code);
 
-            nSocket.connect();
-            nSocket.on('think-provoke-joined', (data: JoinUser) => {
-                console.log('DATA: ', data);
-                setJoinedUsers(users => [...users, data]);
-            });
-
-            setSocket(socket);
-            setSocketOn(true);
-
-            nSocket.emit('think-provoke-host', {
-                hostCode: game.code
-            });
-
-            setQuizStarted(true);
+            return () => {
+                socket?.close();
+                setSocketOn(false);
+                setQuizStarted(false);
+                setSelectedQuiz(null);
+                setQuizes([]);
+                setIsLoading(true);
+            };
         }
+    };
+
+    const socketStartGame = (code: string) => {
+        const URL: string = getSocketServerAdr();
+        const nSocket = io(URL, { transports : ['websocket'] });
+
+        nSocket.connect();
+        nSocket.on('set-user-list', (data: JoinUser[]) => {
+            console.log('SET USER LIST: ', data);
+            setJoinedUsers(data ?? []);
+        });
+
+        setSocket(socket);
+        setSocketOn(true);
+
+        nSocket.emit('think-provoke-host', {
+            code: code
+        });
+
+        setQuizStarted(true);
     };
 
     const stopQuiz = async() => {
@@ -109,6 +112,9 @@ export default function HostThinkProvokePage() {
             });
 
             if(response.ok) {
+                socket?.emit('terminate-quiz', {
+                    code: hostCode
+                });
                 setSelectedQuiz(null);
                 setHostCode('');
                 setQuizStarted(false);
@@ -202,7 +208,7 @@ export default function HostThinkProvokePage() {
                     <div className="flex flex-col gap-2">
                         {joinedUsers?.map(x => 
                             <div key={x.email} className="p-4">
-                                <span>{x.name} - {x.email}</span>
+                                <span>{x.fullName} - {x.email}</span>
                             </div>
                         )}
                     </div>
