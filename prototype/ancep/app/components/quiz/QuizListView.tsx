@@ -1,39 +1,25 @@
 import { Quiz } from "@/lib/models/quiz";
-import { useEffect, useState } from "react";
+import { Dispatch, useEffect, useState } from "react";
 import QuizOverView from "./QuizOverView";
 import { QuizService } from "@/lib/services/quizService";
 
-export default function QuizListView(){
+export default function QuizListView(props:{removeQuizClicked:Dispatch<Quiz>, quizes:Quiz[]}){
+
+
+    const {quizes, removeQuizClicked} = props;
 
     const [quizView, setQuizView]  = useState<JSX.Element[]>();
 
-
-
-    const removeQuiz = async (_quiz:Quiz)=>{
-
-        await QuizService.remove(_quiz._id ?? "");
-        await refreshQuizes();
-    }
-
-    const refreshQuizes = async ()=>{
-        var quiz = await QuizService.all();
-
-        console.log(quiz);
-        var quizViewValue = quiz?.map((data)=>{
+    useEffect(()=>{
+        var quizViewValue = quizes?.map((data)=>{
             var key = (Math.random() * 10).toString();
             return(
-                <QuizOverView key={key} quiz={data} removeQuizClicked={removeQuiz}/>
+                <QuizOverView key={key} quiz={data} removeQuizClicked={removeQuizClicked}/>
             )
         })
         setQuizView(quizViewValue);
-    }
-
-    useEffect(()=>{
-        (async()=>{
-            await refreshQuizes();
-        })()
         
-    },[])
+    },[quizes])
 
     
 
