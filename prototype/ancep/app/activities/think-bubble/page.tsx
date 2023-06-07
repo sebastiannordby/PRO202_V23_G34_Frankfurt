@@ -1,11 +1,37 @@
 "use client"
 import {BackArrow} from "@/app/components/BackArrow";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {PushThought} from "@/app/components/activities/thoughtbubble/PushThought";
+import {useSession} from "next-auth/react";
+import {Thought} from "@/lib/models/thought";
+import {HandleBubbleInput} from "@/app/components/activities/thoughtbubble/HandleBubbleInput";
 
 export default function ThinkBubble() {
-    const [count, setCount] = useState(8);
+    const { data: session } = useSession();
     const {pushThoughtToProfile} = PushThought();
+    const [thought, setThoughts] = useState<string[]>([]);
+    const { inputValue, handleInputChange, handleInputValueChange } = HandleBubbleInput('', thought, setThoughts, pushThoughtToProfile);
+
+
+    useEffect(() => {
+        document.title = 'Min profil';
+        (async() => {
+            if(session?.user?.email) {
+                const response = await fetch('/api/users?email=' + session?.user?.email);
+                if (!response.ok)
+                    throw new Error('Failed to fetch thoughts');
+                const data = await response.json() as Thought[];
+
+                const user = data.find((user) => user.email === session?.user?.email);
+                // @ts-ignore
+                setThoughts(user.thoughts);
+            }
+        })();
+    }, [session]);
+
+    useEffect(() => {
+        console.log(thought);
+    }, [thought]);
 
     return (
         <main className="main-layout">
@@ -48,13 +74,15 @@ export default function ThinkBubble() {
                 <div className="thought-input">
                     <input className="pl-4 pr-4 w-full h-12 rounded-full border-4 border-blue-400 border-opacity-70 drop-shadow-md"
                            type="text"
+                           value={inputValue}
                            placeholder="Skriv her..."
-                            onChange={(e) => {console.log(e.target.value), pushThoughtToProfile(e.target.value)}}
+                           onChange={handleInputValueChange}
+                           onKeyDown={handleInputChange}
                     />
                 </div>
                 <div className="thoughts pt-6 flex-content hover:bg-blue-800">
                     {
-                        Array.from({length: count}).map((_, index) => (
+                        thought.map((thought, index) => (
                             <div key={index} className="relative mr-4 mt-4">
                                 <img
                                     className="animate-grow animate-hover"
@@ -64,7 +92,7 @@ export default function ThinkBubble() {
                                     alt="thoughts"
                                 />
                                 <p className="absolute inset-0 flex items-center justify-center text-center text-xs text-black animate-grow">
-                                    {index + 1} av {count}
+                                        {thought}
                                 </p>
                             </div>
                         ))
