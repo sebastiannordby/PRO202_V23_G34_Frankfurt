@@ -1,5 +1,4 @@
 import { useSession } from 'next-auth/react';
-import { POST } from "@/app/api/users/thoughts/route";
 
 export const PushThought = () => {
     const {data: session} = useSession();
