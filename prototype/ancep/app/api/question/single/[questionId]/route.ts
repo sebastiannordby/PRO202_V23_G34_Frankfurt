@@ -7,7 +7,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
 
-    const {questionId} = useParams();
+    const {searchParams} = new URL(req.url);
+    const questionId = searchParams.get("questionId") ?? "";
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
     const question = await db.collection<Question>(QUIZ_COLLECTION).findOne({_id:questionId});

@@ -1,6 +1,5 @@
 import { Question } from "@/lib/models/question";
-import { Quiz } from "@/lib/models/quiz";
-import { QUESTION_COLLECTION, QUIZ_COLLECTION } from "@/lib/mongo-collections";
+import { QUESTION_COLLECTION } from "@/lib/mongo-collections";
 import getDatabaseAsync from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 

@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function SoloThinkProvokePage() {
     const [quizes, setQuizes] = useState<Quiz[]>([
         {
+            Email:"test@hot.no",
             Name: 'Quiz 1',
             Questions: []
         }

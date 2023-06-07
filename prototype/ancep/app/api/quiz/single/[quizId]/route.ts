@@ -6,15 +6,17 @@ import { Raleway } from "next/font/google";
 import { useParams } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
 
-    const{ query } = req;
+    const { searchParams } = new URL(req.url);
 
-    console.log("QuizId: " + query?.quizId);
+    const quizId = searchParams.get("quizId") ?? "";
+
+    console.log("QuizId: " + quizId);
 
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
-    const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).findOne({_id:query.quizId,});
+    const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).findOne({_id:quizId,});
   
     console.log('Quizes: ', quizes);
 

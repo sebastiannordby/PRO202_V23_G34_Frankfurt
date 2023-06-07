@@ -1,12 +1,16 @@
 import { Quiz } from "@/lib/models/quiz";
 import { QUIZ_COLLECTION } from "@/lib/mongo-collections";
 import getDatabaseAsync from "@/lib/mongodb";
+import { NextApiRequest } from "next";
 import { useParams } from "next/navigation";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
 
-    const {userId} = useParams()
+    const { searchParams } = new URL(req.url);
+
+    const userId = searchParams.get("userId") ?? ""; 
+
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
     const quizes = await db.collection<Quiz>(QUIZ_COLLECTION).find({Email: userId}).toArray();

@@ -69,14 +69,14 @@ const QuizService = {
 
     add: (data:Quiz) => POST<Quiz>("/api/quiz/add", data),
     all: ()=>GET<Quiz[]>("/api/quiz/all"),
-    single: (quizId:string)=>GET<Quiz>("/api/quiz/single/" + quizId),
-    quizByUser:(userId:string) => GET<Quiz[]>("/api/quiz/user/" + userId),
+    single: (quizId:string)=>GET<Quiz>("/api/quiz/single?quizId=" + quizId),
+    quizByUser:(userId:string) => GET<Quiz[]>("/api/quiz/user?userId=" + userId),
 
 }
 
 const QuestionService = {
-    all:(quizId:string)=> GET<Question[]>("/api/question/all/" + quizId),
-    single:(questionId:string) => GET<Question>("/api/question/single/" + questionId),
+    all:(quizId:string)=> GET<Question[]>("/api/question/all?quizId=" + quizId),
+    single:(questionId:string) => GET<Question>("/api/question/single?questionId=" + questionId),
     add:(question:Question) => POST<Question>("/api/question/add", question),
     
 
