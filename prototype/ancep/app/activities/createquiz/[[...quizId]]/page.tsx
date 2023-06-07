@@ -70,14 +70,18 @@ export default function CreateQuiz(){
 
     const updateEditQuestion = async (newValue:Question)=>{
         
+        var email = session?.user?.email ?? "";
+        var _quizId = quizId;
+
         setShowEditQuestion(false);
-        newValue.QuizId = quizId;
-        questions?.push(newValue);
-        setQuestions(questions);
-        setCurrentEditQuestion(newValue)
+
+        if(quizId === "" || quizId === undefined){
+            var quiz = await insertQuiz(quizName, email);
+            _quizId = quiz._id ?? "";
+        }
+        newValue.QuizId = _quizId;
         await QuestionService.add(newValue);
-
-
+        router.push("/activities/createquiz/" + _quizId);
     }
 
 
@@ -88,32 +92,33 @@ export default function CreateQuiz(){
         setShowEditQuestion(true)
     }
 
+    const insertQuiz = async (quizName:string, email:string) : Promise<Quiz> =>{
+
+        
+        if(email === ""){
+            console.error("Du må være logget inn for å lage aktivitet");
+        }
+        quiz.Name = quizName;
+        quiz.Email = email ?? "";
+
+        
+        var data = await QuizService.add(quiz)
+        setQuiz(data);
+        return data;
+    
+    }
+
+
     const saveQuiz = async ()=>{
 
-        if(quizName !== ""){
+        var result = await insertQuiz(quizName, session?.user?.email ?? "");
+        setQuiz(result);
 
-            var email = session?.user?.email 
-            
-            if(email === undefined){
-                console.error("Du må være logget inn for å lage aktivitet");
-            }
-            quiz.Name = quizName;
-            quiz.Email = email ?? "";
+        router.push("/activities/createquiz/"+ result._id);
 
-            
-            var data = await QuizService.add(quiz)
-
-            console.log(data);
-
-            if(quizId !== data._id){
-
-                router.push("/activities/createquiz/" + data._id);
-            }
-
-
-            console.log(data);
-        }
     }
+
+
 
     return(
         <div className="flex flex-col p-1 h-full overflow-y-hidden main-layout" >
