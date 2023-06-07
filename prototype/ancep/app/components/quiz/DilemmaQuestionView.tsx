@@ -1,9 +1,9 @@
 import { Question } from "@/lib/models/question";
 
-export default function DilemmaQuestionView(props:{question:Question}){
-    const {question} = props;
+export default function DilemmaQuestionView(props:{question:Question, keyValue?:string}){
+    const {question, keyValue} = props;
     return(
-        <div className="flex flex-col  rounded p-2 bg-white">
+        <div key={keyValue} className="flex flex-col  rounded p-2 bg-white">
             <textarea disabled className="w-full " value={question.Value}/>
 
             <div className="flex flex-col border p-1 rounded border-black">
