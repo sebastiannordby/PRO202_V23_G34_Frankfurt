@@ -24,14 +24,15 @@ export default function ActivityOverview(){
 
 
     const removeQuiz = async (quiz:Quiz)=>{
-
+        console.log("remove started");
         await QuizService.remove(quiz._id ??"");
 
         await refresh();
+        console.log("remove ended")
     }
 
     return (
-        <div className="flex flex-col main-layout">
+        <div className="flex flex-col main-layout h-full">
             <div className="w-full bg-white bg-opacity-[0.7] p-4 rounded-[1.5rem] h-full overflow-hidden max-h-full">
                 <div className="flex justify-between w-full">
                     <h1 className="mx-auto text-4xl">Mine Aktiviter</h1>

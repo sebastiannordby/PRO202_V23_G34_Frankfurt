@@ -7,15 +7,15 @@ export default function QuizOverView(props:{quiz:Quiz, removeQuizClicked:Dispatc
     const {quiz, removeQuizClicked} = props;
 
     return(
-        <Link href={"/activities/createquiz/" + quiz._id}>
-            <div className="flex bg-white   shadow-xl rounded p-2 mt-4 ">
-                <div className="flex flex-col align-center items-center mx-auto">
-                    <label>{quiz.Name}</label>
-                    <label>Antall spørsmål:{quiz.Questions.length}</label>
-                </div>
-                <button className="btn bg-red-500 text-white" onClick={()=>removeQuizClicked(quiz)}>Slett</button>
-            </div>
-        </Link>
+
+        <div className="flex bg-white  shadow-xl rounded p-2 mt-4 ">
+            <Link className="mx-auto " href={"/activities/createquiz/" + quiz._id}>
+                    <div className="flex w-full h-full flex-col align-center items-center mx-auto">
+                        <label className="m-auto">{quiz.Name}</label>
+                    </div>
+            </Link>
+            <button className="btn bg-red-500 text-white" onClick={()=>removeQuizClicked(quiz)}>Slett</button>
+        </div>
     )
 
     
