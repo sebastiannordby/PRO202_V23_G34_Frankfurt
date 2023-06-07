@@ -5,13 +5,16 @@ import {PushThought} from "@/app/components/activities/thoughtbubble/PushThought
 import {useSession} from "next-auth/react";
 import {Thought} from "@/lib/models/thought";
 import {HandleBubbleInput} from "@/app/components/activities/thoughtbubble/HandleBubbleInput";
+import { HandleDeleteBubble } from "@/app/components/activities/thoughtbubble/HandleDeleteBubble";
 
 export default function ThinkBubble() {
     const { data: session } = useSession();
     const {pushThoughtToProfile} = PushThought();
     const [thought, setThoughts] = useState<string[]>([]);
     const { inputValue, handleInputChange, handleInputValueChange } = HandleBubbleInput('', thought, setThoughts, pushThoughtToProfile);
-
+    const [ canWriteMessage, setCanWriteMessage ] = useState(true);
+    const [deleteBadgesVisible, setDeleteBadgesVisibility] = useState(false);
+    const { handleDeleteThought } = HandleDeleteBubble({ thought, setThoughts });
 
     useEffect(() => {
         document.title = 'Min profil';
@@ -29,7 +32,7 @@ export default function ThinkBubble() {
     }, [session]);
 
     useEffect(() => {
-        console.log(thought);
+        setCanWriteMessage(true);
     }, [thought]);
 
     return (
@@ -46,7 +49,7 @@ export default function ThinkBubble() {
                             height="40px"
                             src="/images/activityspictures/BubbleThink.png"
                             alt="delete"
-                            onClick={() => {console.log("delete")}}
+                            onClick={() => {setDeleteBadgesVisibility(!deleteBadgesVisible)}}
                         />
                         <p className="text-xxl cursor-pointer absolute top-4 right-5">+</p>
                         <img
@@ -55,7 +58,7 @@ export default function ThinkBubble() {
                             height="40px"
                             src="/images/activityspictures/BubbleThink.png"
                             alt="add"
-                            onClick={() => {console.log("add")}}
+                            onClick={() => {setCanWriteMessage(!canWriteMessage)}}
                         />
                     </div>
                 </h1>
@@ -77,6 +80,7 @@ export default function ThinkBubble() {
                            placeholder="Skriv her..."
                            onChange={handleInputValueChange}
                            onKeyDown={handleInputChange}
+                           disabled={ canWriteMessage }
                     />
                 </div>
                 <div className="thoughts pt-6 flex-content">
@@ -93,6 +97,16 @@ export default function ThinkBubble() {
                                 <p className="absolute inset-0 flex items-center justify-center text-center text-xs text-black animate-grow">
                                     {thought}
                                 </p>
+                                <div id="defaultModal" tabIndex={-1} aria-hidden={!deleteBadgesVisible}>
+                                    <img
+                                        className="absolute top-0 left-0 cursor-pointer rounded-full shadow-2xl hover:shadow-lg hover:bg-red-500"
+                                        width="110px"
+                                        height="110px"
+                                        src="/images/activityspictures/BubbleThink.png"
+                                        alt="delete"
+                                        onClick={() => {handleDeleteThought(thought).then(r => (console.log('Deleted ' + thought + ' ' + index)))} }
+                                    />
+                                </div>
                             </div>
                         ))
                     }

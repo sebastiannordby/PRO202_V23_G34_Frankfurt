@@ -12,8 +12,7 @@ export function HandleBubbleInput(initialValue: string, thought: string[], setTh
             const newThought = inputValue;
             const updatedThoughts = [...thought, newThought];
             if (updatedThoughts.length > 10) {
-                alert("Du kan ikke ha mer enn 10 tanker");
-            }
+                alert("Du kan ikke ha mer enn 10 tanker"); }
             else {
                 setThoughts(updatedThoughts);
                 await pushThoughtToProfile(newThought);

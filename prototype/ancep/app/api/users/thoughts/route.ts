@@ -1,6 +1,5 @@
 import getDatabaseAsync from '@/lib/mongodb';
-import { NextResponse } from 'next/server';
-
+import {NextResponse} from 'next/server';
 
 export async function POST(req: Request) {
     const client = await getDatabaseAsync();
@@ -32,23 +31,5 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "No user found" });
     }
 
-    return NextResponse.json({ message: "THOUGHTS UPDATED" });
+    return NextResponse.json({ message: "THOUGHT ADDED" });
 }
-
-/* export async function DELETE(req: Request) {
-    const client = await getDatabaseAsync();
-    const db = client.db("ancep");
-    const {email, index} = await req.json();
-    const user = await db.collection('users').findOne({ email: email });
-
-    if (!user || !user.thoughts) {
-        return;
-    }
-
-    user.thoughts.splice(index, 1);
-
-    const usersUpdated = await db.collection('users').updateOne(
-        { email: email },
-        { $set: { thoughts: user.thoughts } }
-    );
-} */
