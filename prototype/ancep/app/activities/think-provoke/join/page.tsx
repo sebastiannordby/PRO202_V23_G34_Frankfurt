@@ -5,9 +5,10 @@ import { THINK_PROVOKE_CHANNEL, getClientPusher, getJoinChannelName, getSocketSe
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import { io, Socket } from 'socket.io-client';
+import { ScriptProps } from "next/script";
 
-export default function JoinThinkProvokePage() {
-    const [hostCode, setHostCode] = useState('');
+export default function JoinThinkProvokePage(props: ScriptProps) {
+    const [hostCode, setHostCode] = useState<string | undefined>('');
     const [socket, setSocket] = useState<Socket>();
     const { data: session } = useSession({
         required: true
@@ -20,14 +21,21 @@ export default function JoinThinkProvokePage() {
         nSocket.connect();
 
         setSocket(nSocket);
+
+
+        return () => {
+            nSocket?.emit('think-provoke-leave');
+            nSocket?.close();
+            setHostCode(undefined);
+        };
     }, []);
 
     const joinGame = () => {
         if(hostCode?.length == 8) {
             const joinUser: JoinUser = {
                 email: session?.user?.email ?? 'En feil har oppstått',
-                name: session?.user?.name ?? 'En feil har oppstått',
-                hostCode: hostCode
+                fullName: session?.user?.name ?? 'En feil har oppstått',
+                code: hostCode
             };
 
             socket?.emit(getJoinChannelName(hostCode), joinUser);

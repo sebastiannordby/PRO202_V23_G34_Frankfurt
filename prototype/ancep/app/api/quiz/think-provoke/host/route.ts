@@ -97,7 +97,6 @@ export async function POST(request: Request) {
         }
     
         if(existingGame) {
-            console.log('Existing game: ', existingGame);
             const response: StartGameResponse = {
                 code: existingGame.code
             };
@@ -120,7 +119,6 @@ export async function POST(request: Request) {
 
         return NextResponse.json(response);
     } finally {
-        console.log('CLOSING CLIENT');
        await client?.close();
     }
 }
