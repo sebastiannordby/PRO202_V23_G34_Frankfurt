@@ -7,26 +7,54 @@ import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import { io, Socket } from 'socket.io-client';
 import { getSocketServerAdr } from "@/lib/pusher-channels";
 import { Quiz } from "@/lib/models/quiz";
-import { StartGameCommand, StartGameResponse } from "@/lib/models/quiz/think-provoke/start-game";
+import { ExistingGameResponse, StartGameCommand, StartGameResponse } from "@/lib/models/quiz/think-provoke/start-game";
+import { TeminateGameCommand } from "@/lib/models/quiz/think-provoke/terminate-game";
 
 export default function HostThinkProvokePage() {
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
-    const { data: session } = useSession();
+    const { data: session } = useSession({
+        required: true
+    });
     const [socket, setSocket] = useState<Socket>();
     const [socketOn, setSocketOn] = useState(false);
     const [joinedUsers, setJoinedUsers] = useState<JoinUser[]>([]);
     const [quizes, setQuizes] = useState<Quiz[]>([]);
-    const [selectedQuiz, setSelectedQuiz] = useState<Quiz>();
+    const [selectedQuiz, setSelectedQuiz] = useState<Quiz | null>(null);
     const [quizStarted, setQuizStarted] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        (async() => {
-            const response = await fetch('/api/quiz/all');
-            const quizesRes = (await response.json()) as Quiz[];
-
-            setQuizes(quizesRes);
-        })();
-    }, []);
+        if(session?.user?.email) {
+            (async() => {
+                const quizesResponse = await fetch('/api/quiz/all');
+                const quizesObj = (await quizesResponse.json()) as Quiz[];
+                const onGoingQuizRes = await fetch('/api/quiz/think-provoke/host?email=' + session?.user?.email);
+                const onGoingQuizObj = (await onGoingQuizRes.json()) as ExistingGameResponse;
+                console.log('HERE: ', {
+                    onGoingQuizObj
+                });
+    
+                if(onGoingQuizObj) {
+                    const onGoingQuiz = quizesObj
+                        .find(x => x._id == onGoingQuizObj.quizId);
+    
+                    console.log('HERE: ', {
+                        onGoingQuiz,
+                        onGoingQuizObj
+                    });
+    
+                    if(onGoingQuiz) {
+                        setSelectedQuiz(onGoingQuiz);
+                        setHostCode(onGoingQuizObj.code);
+                        setQuizStarted(true);
+                    }
+                }
+    
+                setQuizes(quizesObj);
+                setIsLoading(false);
+            })();
+        }
+    }, [ session ]);
 
     const startQuiz = async () => {
         if((session?.user?.email?.length ?? 0 > 0) && !socketOn) {
@@ -69,6 +97,37 @@ export default function HostThinkProvokePage() {
         }
     };
 
+    const stopQuiz = async() => {
+        if(confirm("Er du sikker på at du vil avslutte denne quizen?")) {
+            const command: TeminateGameCommand = {
+                code: hostCode
+            };
+
+            const response = await fetch('/api/quiz/think-provoke/host/terminate', {
+                method: 'POST',
+                body: JSON.stringify(command)
+            });
+
+            if(response.ok) {
+                setSelectedQuiz(null);
+                setHostCode('');
+                setQuizStarted(false);
+            } else {
+                alert('Kunne ikke terminere spill');
+            }
+        }
+    };
+
+    if(isLoading) {
+        return (
+            <main className="main-layout">
+                <div className="content">
+                    <h1>Leter etter eksisterende quizer. Vennligst vent...</h1>
+                </div>
+            </main>
+        );
+    }
+
     if(!quizStarted) {
         return (
             <main className="main-layout">
@@ -110,8 +169,21 @@ export default function HostThinkProvokePage() {
             <HomeArrow />
             
             <div className="content" style={{ height: '100% !important'}}>
-                <h1 className="page-title">Quiz - {selectedQuiz?.Name}</h1>
-                <p className="mt-2">Del ut tilgangskoden nedenfor så andre kan bli med</p>
+                <div className="flex gap-2 justify-between">
+                    <div>
+                        <h1 className="page-title">Quiz - {selectedQuiz?.Name}</h1>
+                        <p className="mt-2">Del ut tilgangskoden nedenfor så andre kan bli med</p>
+                    </div>
+
+                    <button 
+                        onClick={stopQuiz}
+                        data-modal-hide="defaultModal" 
+                        type="button" 
+                        className="ml-auto w-24 self-start text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+                            focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+                            p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                            dark:focus:ring-blue-800">Avslutt</button>
+                </div>
 
                 <div className="p-2 mt-4">
                     <h3 className="text-lg">Din kode: {hostCode}</h3>
@@ -123,7 +195,6 @@ export default function HostThinkProvokePage() {
                         dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Kode?"/>
                 </div>
-
 
                 <div className="mt-2 p-2">
                     <h3 className="text-lg">Brukere som er med i spillet</h3>

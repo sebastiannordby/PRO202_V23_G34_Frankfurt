@@ -1,9 +1,10 @@
 import getDatabaseAsync from "@/lib/mongodb";
 import { HostGameDB } from "@/lib/models/quiz/think-provoke/host-game";
 import { NextResponse } from "next/server";
-import { THINK_PROVOKE_COLLECTION } from "@/lib/mongo-collections";
-import { StartGameCommand } from "@/lib/models/quiz/think-provoke/start-game";
+import { QUIZ_COLLECTION, THINK_PROVOKE_COLLECTION } from "@/lib/mongo-collections";
+import { ExistingGameResponse, StartGameCommand } from "@/lib/models/quiz/think-provoke/start-game";
 import { MongoClient, ObjectId } from "mongodb";
+import { Quiz } from "@/lib/models/quiz";
 
 function generateCode() {
     var code = '';
@@ -17,6 +18,46 @@ function generateCode() {
     return code;
 }
 
+export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const userEmail = searchParams.get('email')?.toLocaleLowerCase();
+    
+    let client: MongoClient | null = null;
+
+    try
+    {
+        client = await getDatabaseAsync();
+        const db = client.db("ancep");
+
+        const existingStartedGame = await db
+            .collection<HostGameDB>(THINK_PROVOKE_COLLECTION)
+            .findOne({
+                status: 'ongoing',
+                hostEmail: userEmail,
+            });
+           
+        if(existingStartedGame) {
+            const quiz = await db
+                .collection(QUIZ_COLLECTION)
+                .findOne({
+                    _id: new ObjectId(existingStartedGame.quizId)
+                });
+
+            if(quiz) {
+                const response: ExistingGameResponse = {
+                    quizId: quiz._id.toString(),
+                    code: existingStartedGame.code
+                };
+
+                return NextResponse.json(response);
+            }
+        }
+
+        return NextResponse.json(null);
+    } finally {
+        await client?.close();
+    }
+}
 
 export async function POST(request: Request) {
     const command = (await request.json()) as StartGameCommand;
@@ -79,6 +120,6 @@ export async function POST(request: Request) {
             code: generateCode
         });
     } finally {
-        client?.close();
+       await client?.close();
     }
 }
