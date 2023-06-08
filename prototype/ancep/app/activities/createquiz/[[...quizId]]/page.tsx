@@ -97,8 +97,7 @@ export default function CreateQuiz(){
                         </button>
                     </div>
                     <label>Spørsmål:</label>
-                    <View  question={data}/>
-                    
+                    <View question={data}/>
                 </div>
             )
         })
@@ -162,18 +161,14 @@ export default function CreateQuiz(){
 
 
     const saveQuiz = async ()=>{
-
         var result = await insertQuiz(quizName, session?.user?.email ?? "");
         setQuiz(result);
 
         router.push("/activities/createquiz/"+ result._id);
-
     }
 
-
-
     return(
-        <div className="flex flex-col p-1 h-full overflow-y-hidden main-layout" >
+        <div className="flex flex-col p-1 h-full main-layout" >
 
             <div 
                 className="content flex flex-col w-full bg-white bg-opacity-[0.8] p-5 rounded-[1.5rem]"
@@ -190,7 +185,7 @@ export default function CreateQuiz(){
                     <button className="bg-white shadow-xl w-max rounded p-1 mr-2 text-xl border-primary border" onClick={()=>createNewQuestion()}>Legg til spørsmål</button>
                 </div>
                
-                <div className="flex flex-col h-full max-h-full overflow-y-auto">
+                <div className="flex flex-col h-full max-h-full">
                     <QuestionsView questions={questions}/>
                 </div>
 

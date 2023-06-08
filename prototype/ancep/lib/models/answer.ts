@@ -2,10 +2,9 @@ import { type } from "os"
 import { QuestionType } from "./question"
 
 export class QuizAnswer  {
-        TextAnswer:string = "" 
-        MultipleChoice:string[] = [] 
-        Dilemma: Dilemma = new Dilemma() 
-        
+    TextAnswer:string = "" 
+    MultipleChoice:string[] = [] 
+    Dilemma: Dilemma = new Dilemma() 
 }
 
 export class Dilemma  {

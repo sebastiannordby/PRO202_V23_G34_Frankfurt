@@ -57,7 +57,7 @@ export default function MultipleChoiceQuestionEdit(
                     <button className="btn-primary ml-2" onClick={()=>answerAdded(answerToAdd)}>Legg til</button>
                 </div>
             </div>
-            <div className="flex flex-col overflow-y-auto h-full max-h-full mt-2">
+            <div className="flex flex-col h-full max-h-full mt-2">
                 {
                     answers.map((data)=>
                         <div key={data} className="border rounded flex h-[50px] p-2 border-black text-black my-1">

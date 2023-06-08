@@ -75,10 +75,10 @@ export default function EditQuestion(
                         <button className="btn"  onClick={() => setQuestionType(QuestionType.MultipleChoice)}>Flerspørsmål</button>
                     </div>
                 </div> 
-                <div className="flex flex-col h-full max-h-full  overflow-hidden mt-4">
+                <div className="flex flex-col h-full mt-4">
                     <label className="text-xl ml-2">Spørsmål</label>
-                    <textarea className="custom-input h-[150px] min-h-[150px] mt-3 mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
-                    <div className="flex flex-col overflow-y-scroll h-full">
+                    <textarea className="custom-input mt-3 mx-2" placeholder="Hvilke spørsmål vil du stille idag?" value={questionValue} onChange={(event)=>setQuestionValue(event.target.value)}/>
+                    <div className="flex flex-col h-full">
                         <QuestionEditor 
                             type={questionType}
                             dilemma1={dilemma1} 

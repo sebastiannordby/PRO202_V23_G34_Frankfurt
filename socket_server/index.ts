@@ -26,7 +26,42 @@ export type ThinkProvokeRoom = {
     hostSocket: Socket;
     clients: Socket[];
     code: string;
+    questions?: ThinkRoomQuestion[];
+    answers: ThinkProvokeAnswer[];
 };
+
+export type ThinkProvokeAnswer = {
+    email: string;
+    answer: string;
+    questionId: string;
+};
+
+export enum ThinkRoomQuestionType  {
+    TextAnswer,
+    Dilemma,
+    MultipleChoice,
+}
+
+export type ThinkProvokeDilemma = {
+    DilemmaQuestion:string;
+    Dilemma1:string;
+    Dilemma2:string;
+    DilemmaTextAnswer:string;
+}
+
+export type ThinkProvokeQuizAnswer = {
+    TextAnswer: string;
+    MultipleChoice: string[];
+    Dilemma: ThinkProvokeDilemma;
+}
+
+export type ThinkRoomQuestion =  {
+    _id?: string;
+    Value: string;
+    Type: ThinkRoomQuestionType;
+    QuizId: string;
+    Answer: ThinkProvokeQuizAnswer;
+}
 
 const ROOMS: ThinkProvokeRoom[] = [];
 const CABIN = [];
@@ -64,9 +99,13 @@ function thinkProvokeClientJoin(socket: Socket, data: JoinUserCommand) {
 
     room.clients.push(socket);
     roomEmitServerList(room);
-
+    socket.join(getRoomChannelName(data.code));
     console.log('THINK PROVOKE | CLIENT SUCCESSFULLY JOINED: ', data.code, data.email, data.fullName);
 }
+
+function getRoomChannelName(code: string | undefined) {
+    return "think-provoke-" + code;
+} 
 
 function roomEmitServerList(room: ThinkProvokeRoom | undefined) {
     if(!room?.hostSocket?.connected)  {
@@ -89,7 +128,7 @@ function roomEmitServerList(room: ThinkProvokeRoom | undefined) {
     room.hostSocket.emit(EVENT_SET_USER_LIST, userList);
 }
 
-async function thinkProvokeHostStart(socket: Socket, data: JoinUserCommand) {
+async function thinkProvokeHostEstablish(socket: Socket, data: JoinUserCommand) {
     let client: MongoClient | null = null; 
 
     try {
@@ -120,7 +159,8 @@ async function thinkProvokeHostStart(socket: Socket, data: JoinUserCommand) {
             ROOMS.push({
                 code: data.code,
                 hostSocket: socket,
-                clients: []
+                clients: [],
+                answers: []
             });
         }
     } finally {
@@ -128,6 +168,64 @@ async function thinkProvokeHostStart(socket: Socket, data: JoinUserCommand) {
 
         console.log('ROOMS ARE NOW: ', ROOMS.map(x => x.code));
     }
+}
+
+function thinkProvokeSetQuestion(socket: Socket, questionId: string) {
+    const room = getRoomByCode(socket.data.code);
+    if(!room)
+        return;
+
+    console.info('thinkProvokeSetQuestion: ', questionId);
+    const question = room.questions?.find(x => x._id == questionId);
+    console.info('thinkProvokeSetQuestion: ', question);
+
+    io.to(getRoomChannelName(room.code)).emit(
+        EVENT_CLIENT_SET_QUESTION, question);
+}
+
+function thinkProvokeClientAnswer(socket: Socket, answer: ThinkProvokeAnswer) {
+    const room = getRoomByCode(socket.data.code);
+    if(!room)
+        return;
+
+    room.answers.push(answer);
+    room?.hostSocket?.emit(EVENT_SET_GAME_ANSWERS, 
+        room.answers.filter(x => x.questionId == answer.questionId));
+}
+
+async function thinkProvokeStart(code: string | undefined, command: ThinkProvokeStartCommand) {
+    console.info('thinkProvokeStart() invoked with command: ', command);
+
+    if(!code)
+        return;
+
+    const room = getRoomByCode(code);
+    if(!room)
+        return;
+
+
+    console.info('thinkProvokeStart() emitting to clients and host');
+    room.questions = command.questions;
+
+    room?.hostSocket?.emit(EVENT_SET_GAME_STARTED, {
+        questions: command.questions,
+        selectedQuizId: command.selectedQuestionId
+    });
+
+    
+    const question = room.questions?.find(x => x._id == command.selectedQuestionId);
+    console.info('thinkProvokeSetQuestion: ', question);
+
+    io.to(getRoomChannelName(room.code)).emit(
+        EVENT_CLIENT_SET_QUESTION, question);
+
+    io.to(getRoomChannelName(room.code)).emit(EVENT_CLIENT_SET_GAME_STARTED, {
+        questions: command.questions,
+        selectedQuizId: command.selectedQuestionId,
+        question: question
+    });
+
+    roomEmitServerList(room);
 }
 
 function onClientConnectionClose(socket: Socket) {
@@ -140,11 +238,24 @@ function onClientConnectionClose(socket: Socket) {
     }
 }
 
-const EVENT_SET_USER_LIST = 'set-user-list';
+type ThinkProvokeStartCommand = {
+    code: string;
+    questions: ThinkRoomQuestion[];
+    selectedQuestionId: string;
+}
 
-const ON_THINK_PROVOKE_HOST = 'think-provoke-host';
+const EVENT_SET_USER_LIST = 'set-user-list';
+const EVENT_SET_GAME_STARTED = 'set-game-started';
+const EVENT_SET_GAME_ANSWERS = 'set-game-answers';
+const EVENT_CLIENT_SET_GAME_STARTED = 'client-set-game-started';
+const EVENT_CLIENT_SET_QUESTION = 'client-set-question';
+
+const ON_THINK_PROVOKE_HOST = 'think-provoke-host-establish';
 const ON_THINK_PROVOKE_JOIN = 'think-provoke-join';
 const ON_THINK_PROVOKE_LEAVE = 'think-provoke-leave';
+const ON_THINK_PROVOKE_START = 'think-provoke-start';
+const ON_THINK_PROVOKE_SET_QUESTION = 'think-provoke-set-question';
+const ON_CLIENT_SEND_ANSWER = 'client-send-answer';
 const ON_JOIN_CABIN = 'join-cabin';
 const ON_CABIN_MESSAGE = 'cabin-message';
 
@@ -154,15 +265,26 @@ io.on('connection', (socket: Socket) => {
     });
 
     socket.on(ON_THINK_PROVOKE_HOST, async (data: JoinUserCommand) => {
-        await thinkProvokeHostStart(socket, data);
+        await thinkProvokeHostEstablish(socket, data);
 
         // socket.emit(EVENT_SET_USER_LIST);
     });
 
-    
-    socket.on(ON_THINK_PROVOKE_LEAVE, function (data: any) {
+    socket.on(ON_CLIENT_SEND_ANSWER, (answer: ThinkProvokeAnswer) => {
+        thinkProvokeClientAnswer(socket, answer);
+    });
+
+    socket.on(ON_THINK_PROVOKE_LEAVE, (data: any) => {
         const room = getRoomByCode(socket.data.code);
         roomEmitServerList(room);
+    });
+
+    socket.on(ON_THINK_PROVOKE_START, async(command: ThinkProvokeStartCommand) => {
+        await thinkProvokeStart(socket.data.code, command);
+    });
+
+    socket.on(ON_THINK_PROVOKE_SET_QUESTION, async (questionId: string) => {
+        thinkProvokeSetQuestion(socket, questionId);
     });
 
     socket.on(ON_JOIN_CABIN, (data: any) => {

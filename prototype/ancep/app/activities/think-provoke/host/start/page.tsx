@@ -9,19 +9,37 @@ import { getSocketServerAdr } from "@/lib/pusher-channels";
 import { Quiz } from "@/lib/models/quiz";
 import { ExistingGameResponse, StartGameCommand, StartGameResponse } from "@/lib/models/quiz/think-provoke/start-game";
 import { TeminateGameCommand } from "@/lib/models/quiz/think-provoke/terminate-game";
+import { QuestionService, QuizService } from "@/lib/services/quizService";
+import { Question } from "@/lib/models/question";
+
+const THINK_PROVOKE_ESTABLISH = 'think-provoke-host-establish';
+const THINK_PROVOKE_JOIN = 'think-provoke-join';
+const THINK_PROVOKE_LEAVE = 'think-provoke-leave';
+const THINK_PROVOKE_START = 'think-provoke-start';
+const EVENT_SET_GAME_ANSWERS = 'set-game-answers';
+const SET_QUESTION_COMMAND = 'think-provoke-set-question';
+
+export type ThinkProvokeAnswer = {
+    email: string;
+    answer: string;
+    questionId: string;
+};
 
 export default function HostThinkProvokePage() {
+    const { data: session } = useSession({ required: true });
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
-    const { data: session } = useSession({
-        required: true
-    });
     const [socket, setSocket] = useState<Socket>();
     const [socketOn, setSocketOn] = useState(false);
     const [joinedUsers, setJoinedUsers] = useState<JoinUser[]>([]);
     const [quizes, setQuizes] = useState<Quiz[]>([]);
     const [selectedQuiz, setSelectedQuiz] = useState<Quiz | null>(null);
-    const [quizStarted, setQuizStarted] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [quizLobbyOpen, setQuizLobbyOpen] = useState(false);
+    const [isGameRunning, setIsGameRunning] = useState(false);
+    const [questions, setQuestions] = useState<Question[]>([]);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(-1);
+    const [currentQuestion, setCurrentQuestion] = useState<Question>();
+    const [currentQuestionAnswers, setCurrentQuestionAnswers] = useState<ThinkProvokeAnswer[]>([]);
 
     useEffect(() => {
         if(session?.user?.email) {
@@ -38,7 +56,7 @@ export default function HostThinkProvokePage() {
                     if(onGoingQuiz) {
                         setSelectedQuiz(onGoingQuiz);
                         setHostCode(onGoingQuizObj.code);
-                        socketStartGame(onGoingQuizObj.code);
+                        socketOpenGameLobby(onGoingQuizObj.code);
                     }
                 }
     
@@ -48,7 +66,7 @@ export default function HostThinkProvokePage() {
         }
     }, [ session ]);
 
-    const startQuiz = async () => {
+    const openQuizLobby = async () => {
         if((session?.user?.email?.length ?? 0 > 0) && !socketOn) {
             const startQuizCommand: StartGameCommand = {
                 email: session?.user?.email ?? '',
@@ -66,38 +84,74 @@ export default function HostThinkProvokePage() {
                 return;
 
             setHostCode(game.code);
+            socketOpenGameLobby(game.code);
 
-            socketStartGame(game.code);
-
-            return () => {
-                socket?.close();
-                setSocketOn(false);
-                setQuizStarted(false);
-                setSelectedQuiz(null);
-                setQuizes([]);
-                setIsLoading(true);
-            };
+            // return () => {
+            //     socket?.close();
+            //     setSocketOn(false);
+            //     setQuizLobbyOpen(false);
+            //     setSelectedQuiz(null);
+            //     setQuizes([]);
+            //     setIsLoading(true);
+            // };
         }
     };
 
-    const socketStartGame = (code: string) => {
+    const startGame = async() => {
+        if(!confirm("Er du sikker på at du vil starte spillet?"))
+            return;
+        
+        const questions = await QuestionService.all(selectedQuiz?._id ?? '');
+        if(!questions || questions.length === 0 ) {
+            alert('Det er ingen spørsmål i valgt quiz...');
+            return;
+        }
+
+        if(!socket) {
+            alert('Du har mistet forbindelsen..');
+            return;
+        }
+
+        setQuestions(questions);
+        setCurrentQuestionIndex(0);
+        setCurrentQuestion(questions[0]);
+
+        socket?.emit(THINK_PROVOKE_START, {
+            code: hostCode,
+            questions: questions,
+            selectedQuestionId: questions[0]._id
+        });
+    };
+
+    const socketOpenGameLobby = (code: string) => {
+        console.info('socketOpenGameLobby: ', code);
         const URL: string = getSocketServerAdr();
         const nSocket = io(URL, { transports : ['websocket'] });
 
         nSocket.connect();
         nSocket.on('set-user-list', (data: JoinUser[]) => {
-            console.log('SET USER LIST: ', data);
+            console.info('set-user-list: ', data);
             setJoinedUsers(data ?? []);
         });
 
-        setSocket(socket);
+        nSocket.on('set-game-started', async (data: any) => {
+            console.info('set-game-started: ', data);
+
+            setIsGameRunning(true);
+        });
+
+        nSocket.on(EVENT_SET_GAME_ANSWERS, (anwers: ThinkProvokeAnswer[]) => {
+            setCurrentQuestionAnswers(anwers);
+        });
+
+        setSocket(nSocket);
         setSocketOn(true);
 
-        nSocket.emit('think-provoke-host', {
+        nSocket.emit(THINK_PROVOKE_ESTABLISH, {
             code: code
         });
 
-        setQuizStarted(true);
+        setQuizLobbyOpen(true);
     };
 
     const stopQuiz = async() => {
@@ -117,10 +171,21 @@ export default function HostThinkProvokePage() {
                 });
                 setSelectedQuiz(null);
                 setHostCode('');
-                setQuizStarted(false);
+                setQuizLobbyOpen(false);
             } else {
                 alert('Kunne ikke terminere spill');
             }
+        }
+    };
+
+    const gotoNextQuestion = () => {
+        if(currentQuestionIndex + 1 <= questions.length) {
+            const question = questions[currentQuestionIndex + 1];
+
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+            setCurrentQuestion(question);
+            setCurrentQuestionAnswers([]);
+            socket?.emit(SET_QUESTION_COMMAND, question._id);
         }
     };
 
@@ -134,19 +199,54 @@ export default function HostThinkProvokePage() {
         );
     }
 
-    if(!quizStarted) {
+    if(isGameRunning) {
+        return (
+            <main className="main-layout">
+                <div className="content">
+                    <div className="flex gap-2 w-full justify-between">
+                        <div>
+                            <h1>Spørsmål - {currentQuestionIndex + 1}</h1>
+                            <p className="mt-2 text-lg">{currentQuestion?.Value}</p>
+                        </div>
+                        <div className="self-start">
+                            <button 
+                                onClick={gotoNextQuestion}
+                                data-modal-hide="defaultModal" 
+                                type="button" 
+                                className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+                                    focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+                                    p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                                    dark:focus:ring-blue-800">Neste spørsmål</button>
+                                    
+                        </div>    
+                    </div>
+
+                    <h2>Svar:</h2>
+                    {
+                        currentQuestionAnswers?.map(x => 
+                            <div>
+                                {x.email} - {x.answer}
+                            </div>
+                        )
+                    }
+                </div>
+            </main>
+        );
+    }
+
+    if(!quizLobbyOpen) {
         return (
             <main className="main-layout">
                 <HomeArrow/>
 
                 <div className="content">
-                    <h1 className="page-title">Velg hvem quiz du vil være vert for</h1>
+                    <h1 className="page-title">Velg hvilken quiz du vil være vert for</h1>
 
                     <div className="p-2 flex flex-col gap-2">
                         {
                             quizes?.map(quiz => 
                                 <div 
-                                    key={quiz.Name}
+                                    key={quiz._id}
                                     className={"p-3 py-5 border border-slate-400 rounded-md " + 
                                         (selectedQuiz == quiz ? " bg-pink-600 text-white" : "")} 
                                     onClick={() => setSelectedQuiz(quiz)}>
@@ -157,13 +257,13 @@ export default function HostThinkProvokePage() {
                     </div>
                     <div className="p-2 flex items-end">
                         <button 
-                            onClick={startQuiz}
+                            onClick={openQuizLobby}
                             data-modal-hide="defaultModal" 
                             type="button" 
                             className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
                                 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
                                 p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
-                                dark:focus:ring-blue-800">Start Quiz</button>
+                                dark:focus:ring-blue-800">Åpne spill</button>
                     </div>
                 </div>
             </main>
@@ -205,13 +305,24 @@ export default function HostThinkProvokePage() {
                 <div className="mt-2 p-2">
                     <h3 className="text-lg">Brukere som er med i spillet</h3>
 
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 max-h-52 overflow-auto">
                         {joinedUsers?.map(x => 
                             <div key={x.email} className="p-4">
                                 <span>{x.fullName} - {x.email}</span>
                             </div>
                         )}
                     </div>
+                </div>
+
+                <div className="p-2 flex align-items-end">
+                    <button 
+                        onClick={startGame}
+                        data-modal-hide="defaultModal" 
+                        type="button" 
+                        className="ml-auto w-24 self-start text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+                            focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+                            p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                            dark:focus:ring-blue-800">Start</button>
                 </div>
             </div>
         </main>

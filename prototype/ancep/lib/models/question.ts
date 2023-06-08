@@ -6,12 +6,10 @@ export class Question  {
     Type:QuestionType = QuestionType.TextAnswer
     QuizId:string = ""
     Answer:QuizAnswer = new QuizAnswer()
-
-
 }
 
 export enum QuestionType  {
-    TextAnswer,
-    Dilemma,
-    MultipleChoice,
+    TextAnswer = 0,
+    Dilemma = 1,
+    MultipleChoice = 2,
 }
