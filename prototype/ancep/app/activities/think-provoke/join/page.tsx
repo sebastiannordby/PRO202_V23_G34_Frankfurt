@@ -85,7 +85,8 @@ export default function JoinThinkProvokePage() {
         socket?.emit(SEND_ANSWER, {
             email: session?.user?.email,
             questionId: currentQuestion?._id,
-            answer: answer
+            answer: answer,
+            fullName: session?.user?.name
         });
     };
 

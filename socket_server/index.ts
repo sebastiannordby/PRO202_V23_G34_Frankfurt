@@ -32,6 +32,7 @@ export type ThinkProvokeRoom = {
 
 export type ThinkProvokeAnswer = {
     email: string;
+    fullName: string;
     answer: string;
     questionId: string;
 };

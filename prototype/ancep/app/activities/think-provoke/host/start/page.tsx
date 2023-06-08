@@ -21,6 +21,7 @@ const SET_QUESTION_COMMAND = 'think-provoke-set-question';
 
 export type ThinkProvokeAnswer = {
     email: string;
+    fullName: string;
     answer: string;
     questionId: string;
 };
