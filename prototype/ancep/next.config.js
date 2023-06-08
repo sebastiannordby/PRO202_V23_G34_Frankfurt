@@ -5,10 +5,11 @@ const nextConfig = {
         remotePatterns: [
 
         ]
-    },
-    typescript: {
-        ignoreBuildErrors: true
     }
 }
+
+// typescript: {
+//     ignoreBuildErrors: true
+// }
 
 module.exports = nextConfig

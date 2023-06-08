@@ -1,6 +1,6 @@
 "use client"
 import { HomeArrow } from "@/app/components/HomeArrow";
-import { useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { getJoinChannelName, getSocketServerAdr } from "@/lib/pusher-channels";
 import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
@@ -153,7 +153,7 @@ type QuizQuestionParams = {
     sendAnswer: (answer: string) => void | undefined; 
 };
 
-export function QuizQuestion({ question, sendAnswer }: QuizQuestionParams) {
+const  QuizQuestion:FunctionComponent<QuizQuestionParams> = ({ question, sendAnswer }) => {
     // const [textAnswer, setTextAnswer] = useState('');
 
     // const sendTextAnswer = () => {
