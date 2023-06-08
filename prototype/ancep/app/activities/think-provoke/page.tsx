@@ -1,5 +1,4 @@
 "use client"
-import { useEffect, useState } from "react";
 import { BackArrow } from "@/app/components/BackArrow";
 import Link from "next/link";
 

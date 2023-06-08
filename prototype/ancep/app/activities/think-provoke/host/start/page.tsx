@@ -224,7 +224,7 @@ export default function HostThinkProvokePage() {
                     <h2>Svar:</h2>
                     {
                         currentQuestionAnswers?.map(x => 
-                            <div>
+                            <div key={x.email} className="p-2">
                                 {x.email} - {x.answer}
                             </div>
                         )
