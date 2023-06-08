@@ -15,7 +15,7 @@ export default function ActivityOverview(){
         (async ()=>{
             await refresh();
         })();
-    })
+    },[])
 
     const refresh = async ()=>{
         var data = await QuizService.all();
