@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     const client = await getDatabaseAsync();
     const db = client.db("ancep");
     const question = await db.collection(QUIZ_COLLECTION).findOne({_id: new ObjectId(questionId)});
-  
+    
     await client.close();
   
     return NextResponse.json(question);

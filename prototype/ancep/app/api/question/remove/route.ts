@@ -1,4 +1,3 @@
-import { Question } from "@/lib/models/question";
 import { QUESTION_COLLECTION } from "@/lib/mongo-collections";
 import getDatabaseAsync from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
@@ -16,7 +15,7 @@ export async function POST(req: Request){
   
     await collection.findOneAndDelete({_id: new ObjectId(questionId)})
 
-
+    console.log(`Question: ${questionId} deleted`);
 
     return NextResponse.json(true);
 }

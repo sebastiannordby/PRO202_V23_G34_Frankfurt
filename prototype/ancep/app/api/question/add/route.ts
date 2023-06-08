@@ -20,6 +20,8 @@ export async function POST(req: Request){
     console.log(exists);
 
     if(exists !== null){
+        console.log("Question exists, updating instead");
+        
         const updateResult = await collection.updateOne({_id: new ObjectId(newValue._id)},
         {"$set":{
             Value:newValue.Value,
