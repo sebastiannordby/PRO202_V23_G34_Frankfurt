@@ -98,7 +98,8 @@ export default function JoinThinkProvokePage() {
     if(isQuizStarted) {
         if(hasAnsweredQuestion) {
             return(
-                <main className="main-layout">
+                <main className="main-layout"
+                    style={{background: "url('/images/think-provoke/join/background.png')"}}>
                     <div className="content">
                         <h1>Spørsmål: {currentQuestion?.Value}</h1>
                         <p>Ditt svar: {currentAnswer}</p>
@@ -108,7 +109,8 @@ export default function JoinThinkProvokePage() {
         }
 
         return (
-            <main className="main-layout">
+            <main className="main-layout"
+                style={{background: "url('/images/think-provoke/join/background.png')"}}>
                 <div className="content">
                     <div className="flex flex-col justify-center">
                         <h1 className="mb-4 text-xl text-center">{currentQuestion?.Value}</h1>
@@ -124,7 +126,8 @@ export default function JoinThinkProvokePage() {
 
     if(isInLobby) {
         return (
-            <main className="main-layout">
+            <main className="main-layout"
+                style={{background: "url('/images/think-provoke/join/background.png')"}}>
                 <div className="content">
                     <h1>Venter på at verten skal starte.</h1>
                     <p>Vennligst vent 😎</p>
@@ -134,7 +137,9 @@ export default function JoinThinkProvokePage() {
     }
 
     return (
-        <main className="main-layout">
+        <main className="main-layout"
+            style={{background: "url('/images/think-provoke/join/background.png')"}}>
+            
             <HomeArrow />
             
             <div className="content">
@@ -229,8 +234,6 @@ const  QuizQuestion:FunctionComponent<QuizQuestionParams> = ({ question, sendAns
             </div>
         );
     } 
-
-    console.log('QUESTION: ', question?.Type == QuestionType.TextAnswer);
 
     return (<h1>Her er det noe feil?</h1>);
 }
