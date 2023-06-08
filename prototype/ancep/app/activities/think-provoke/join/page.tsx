@@ -6,10 +6,12 @@ import { useSession } from "next-auth/react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
 import { io, Socket } from 'socket.io-client';
 import { Question, QuestionType } from "@/lib/models/question";
+import { useRouter } from "next/navigation";
 
 const EVENT_SET_GAME_STARTED = 'client-set-game-started';
 const EVENT_SET_QUESTION = 'client-set-question';
 const SEND_ANSWER = 'client-send-answer';
+const EVENT_CLIENT_QUIT = 'client-quit';
 
 export type GameStartedEvent = {
     question: Question;
@@ -17,10 +19,12 @@ export type GameStartedEvent = {
 };
 
 export default function JoinThinkProvokePage() {
+    const router = useRouter();
     const [hostCode, setHostCode] = useState<string | undefined>('');
     const [socket, setSocket] = useState<Socket>();
     const [currentQuestion, setCurrentQuestion] = useState<Question>();
     const [isQuizStarted, setIsQuizStarted] = useState(false);
+    const [isInLobby, setIsInLobby] = useState(false);
     const [hasAnsweredQuestion, setHasAnsweredQuestion] = useState<boolean>(false);
     const [currentAnswer, setCurrentAnswer] = useState<string>();
     const { data: session } = useSession({
@@ -34,8 +38,6 @@ export default function JoinThinkProvokePage() {
         nSocket.connect();
 
         nSocket.on(EVENT_SET_GAME_STARTED, (command: GameStartedEvent) => {
-            console.info('Host started game with questions: ', command);
-            alert('HOST HAR STARTET SPILL');
             setCurrentQuestion(command.question);
             setIsQuizStarted(true);
         });
@@ -44,11 +46,14 @@ export default function JoinThinkProvokePage() {
             if(!question)
                 return;
 
-            console.info('QUESTION FIND: ', question);
-
             setCurrentQuestion(question);
             setCurrentAnswer(undefined);
             setHasAnsweredQuestion(false);
+        });
+
+        nSocket.on(EVENT_CLIENT_QUIT, () => {
+            socket?.disconnect();
+            router.push('/');
         });
 
         setSocket(nSocket);
@@ -69,7 +74,7 @@ export default function JoinThinkProvokePage() {
             };
 
             socket?.emit(getJoinChannelName(hostCode), joinUser);
-            alert('Du ble med i spillet. Sitt for å avvente');
+            setIsInLobby(true);
         } else {
             alert('Kode for å bli med må være 8 karakterer lang.');
         }
@@ -112,6 +117,17 @@ export default function JoinThinkProvokePage() {
                             sendAnswer={onAnswerSelected}
                             question={currentQuestion}/>
                     </div>
+                </div>
+            </main>
+        );
+    }
+
+    if(isInLobby) {
+        return (
+            <main className="main-layout">
+                <div className="content">
+                    <h1>Venter på at verten skal starte.</h1>
+                    <p>Vennligst vent 😎</p>
                 </div>
             </main>
         );

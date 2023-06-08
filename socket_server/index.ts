@@ -64,9 +64,8 @@ export type ThinkRoomQuestion =  {
     Answer: ThinkProvokeQuizAnswer;
 }
 
-const ROOMS: ThinkProvokeRoom[] = [];
+let ROOMS: ThinkProvokeRoom[] = [];
 const CABIN = [];
-
 
 export type JoinUserCommand = {
     email: string;
@@ -184,6 +183,20 @@ function thinkProvokeSetQuestion(socket: Socket, questionId: string) {
         EVENT_CLIENT_SET_QUESTION, question);
 }
 
+function thinkProvokeQuit(socket: Socket, code: string) {
+    const room = getRoomByCode(code);
+
+    room?.hostSocket?.disconnect();
+    
+    io.to(getRoomChannelName(code)).emit(EVENT_CLIENT_QUIT);
+        
+    room?.clients?.forEach(x => {
+        x.disconnect();
+    });
+
+    ROOMS = ROOMS.filter(x => x.code !== code);
+}
+
 function thinkProvokeClientAnswer(socket: Socket, answer: ThinkProvokeAnswer) {
     const room = getRoomByCode(socket.data.code);
     if(!room)
@@ -250,7 +263,9 @@ const EVENT_SET_GAME_STARTED = 'set-game-started';
 const EVENT_SET_GAME_ANSWERS = 'set-game-answers';
 const EVENT_CLIENT_SET_GAME_STARTED = 'client-set-game-started';
 const EVENT_CLIENT_SET_QUESTION = 'client-set-question';
+const EVENT_CLIENT_QUIT = 'client-quit';
 
+const ON_THINK_PROVOKE_QUIT = 'think-provoke-host-quit';
 const ON_THINK_PROVOKE_HOST = 'think-provoke-host-establish';
 const ON_THINK_PROVOKE_JOIN = 'think-provoke-join';
 const ON_THINK_PROVOKE_LEAVE = 'think-provoke-leave';
@@ -278,6 +293,10 @@ io.on('connection', (socket: Socket) => {
     socket.on(ON_THINK_PROVOKE_LEAVE, (data: any) => {
         const room = getRoomByCode(socket.data.code);
         roomEmitServerList(room);
+    });
+
+    socket.on(ON_THINK_PROVOKE_QUIT, ({code} : {code: string}) => {
+        thinkProvokeQuit(socket, code);
     });
 
     socket.on(ON_THINK_PROVOKE_START, async(command: ThinkProvokeStartCommand) => {

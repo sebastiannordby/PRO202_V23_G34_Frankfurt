@@ -35,7 +35,7 @@ var ThinkRoomQuestionType;
     ThinkRoomQuestionType[ThinkRoomQuestionType["Dilemma"] = 1] = "Dilemma";
     ThinkRoomQuestionType[ThinkRoomQuestionType["MultipleChoice"] = 2] = "MultipleChoice";
 })(ThinkRoomQuestionType || (exports.ThinkRoomQuestionType = ThinkRoomQuestionType = {}));
-const ROOMS = [];
+let ROOMS = [];
 const CABIN = [];
 function getRoomByCode(hostCode) {
     const room = ROOMS.find(x => x.code == hostCode);
@@ -128,6 +128,16 @@ function thinkProvokeSetQuestion(socket, questionId) {
     console.info('thinkProvokeSetQuestion: ', question);
     io.to(getRoomChannelName(room.code)).emit(EVENT_CLIENT_SET_QUESTION, question);
 }
+function thinkProvokeQuit(socket, code) {
+    var _a, _b;
+    const room = getRoomByCode(code);
+    (_a = room === null || room === void 0 ? void 0 : room.hostSocket) === null || _a === void 0 ? void 0 : _a.disconnect();
+    io.to(getRoomChannelName(code)).emit(EVENT_CLIENT_QUIT);
+    (_b = room === null || room === void 0 ? void 0 : room.clients) === null || _b === void 0 ? void 0 : _b.forEach(x => {
+        x.disconnect();
+    });
+    ROOMS = ROOMS.filter(x => x.code !== code);
+}
 function thinkProvokeClientAnswer(socket, answer) {
     var _a;
     const room = getRoomByCode(socket.data.code);
@@ -175,6 +185,8 @@ const EVENT_SET_GAME_STARTED = 'set-game-started';
 const EVENT_SET_GAME_ANSWERS = 'set-game-answers';
 const EVENT_CLIENT_SET_GAME_STARTED = 'client-set-game-started';
 const EVENT_CLIENT_SET_QUESTION = 'client-set-question';
+const EVENT_CLIENT_QUIT = 'client-quit';
+const ON_THINK_PROVOKE_QUIT = 'think-provoke-host-quit';
 const ON_THINK_PROVOKE_HOST = 'think-provoke-host-establish';
 const ON_THINK_PROVOKE_JOIN = 'think-provoke-join';
 const ON_THINK_PROVOKE_LEAVE = 'think-provoke-leave';
@@ -197,6 +209,9 @@ io.on('connection', (socket) => {
     socket.on(ON_THINK_PROVOKE_LEAVE, (data) => {
         const room = getRoomByCode(socket.data.code);
         roomEmitServerList(room);
+    });
+    socket.on(ON_THINK_PROVOKE_QUIT, ({ code }) => {
+        thinkProvokeQuit(socket, code);
     });
     socket.on(ON_THINK_PROVOKE_START, (command) => __awaiter(void 0, void 0, void 0, function* () {
         yield thinkProvokeStart(socket.data.code, command);

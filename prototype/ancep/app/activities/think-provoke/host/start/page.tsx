@@ -1,18 +1,20 @@
 "use client"
 
+import { io, Socket } from 'socket.io-client';
 import { HomeArrow } from "@/app/components/HomeArrow";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { JoinUser } from "@/lib/models/quiz/think-provoke/join-user";
-import { io, Socket } from 'socket.io-client';
 import { getSocketServerAdr } from "@/lib/pusher-channels";
 import { Quiz } from "@/lib/models/quiz";
 import { ExistingGameResponse, StartGameCommand, StartGameResponse } from "@/lib/models/quiz/think-provoke/start-game";
 import { TeminateGameCommand } from "@/lib/models/quiz/think-provoke/terminate-game";
-import { QuestionService, QuizService } from "@/lib/services/quizService";
+import { QuestionService } from "@/lib/services/quizService";
 import { Question } from "@/lib/models/question";
+import { useRouter } from 'next/navigation';
 
 const THINK_PROVOKE_ESTABLISH = 'think-provoke-host-establish';
+const THINK_PROVOKE_QUIT = 'think-provoke-host-quit';
 const THINK_PROVOKE_JOIN = 'think-provoke-join';
 const THINK_PROVOKE_LEAVE = 'think-provoke-leave';
 const THINK_PROVOKE_START = 'think-provoke-start';
@@ -27,6 +29,7 @@ export type ThinkProvokeAnswer = {
 };
 
 export default function HostThinkProvokePage() {
+    const router = useRouter();
     const { data: session } = useSession({ required: true });
     const [hostCode, setHostCode] = useState<string>('Laster kode..');
     const [socket, setSocket] = useState<Socket>();
@@ -167,12 +170,15 @@ export default function HostThinkProvokePage() {
             });
 
             if(response.ok) {
-                socket?.emit('terminate-quiz', {
+                socket?.emit(THINK_PROVOKE_QUIT, {
                     code: hostCode
                 });
+                
                 setSelectedQuiz(null);
                 setHostCode('');
                 setQuizLobbyOpen(false);
+                setIsGameRunning(false);
+                router.push('/');
             } else {
                 alert('Kunne ikke terminere spill');
             }
@@ -209,16 +215,27 @@ export default function HostThinkProvokePage() {
                             <h1>Spørsmål - {currentQuestionIndex + 1}</h1>
                             <p className="mt-2 text-lg">{currentQuestion?.Value}</p>
                         </div>
-                        <div className="self-start">
+                        <div className="self-start flex gap-2">
                             <button 
                                 onClick={gotoNextQuestion}
+                                disabled={currentQuestionIndex + 1 == questions.length}
+                                data-modal-hide="defaultModal" 
+                                type="button" 
+                                className={
+                                    "ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4" +
+                                    "focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm" +
+                                    "p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700" +
+                                    "dark:focus:ring-blue-800" +
+                                    (currentQuestionIndex + 1 == questions.length ? ' hidden' : '')
+                                }>Neste spørsmål</button>
+                            <button 
+                                onClick={stopQuiz}
                                 data-modal-hide="defaultModal" 
                                 type="button" 
                                 className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
                                     focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
                                     p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
-                                    dark:focus:ring-blue-800">Neste spørsmål</button>
-                                    
+                                    dark:focus:ring-blue-800">Avslutt</button>
                         </div>    
                     </div>
 
