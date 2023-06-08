@@ -10,6 +10,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import MultipleChoiceQuestionView from "@/app/components/quiz/MultipleChoiceQuestionView";
 import TextQuestionView from "@/app/components/quiz/TextQuestionView";
+import { QUIZ_COLLECTION } from "@/lib/mongo-collections";
 
 export default function CreateQuiz(){
     const [quiz , setQuiz] = useState(new Quiz());
@@ -34,7 +35,9 @@ export default function CreateQuiz(){
                 }
             }
 
-        })()
+        })();
+
+
        
         refreshQuestions();
 
@@ -126,7 +129,7 @@ export default function CreateQuiz(){
             _quizId = quiz._id ?? "";
 
             await saveQuestion(_quizId, newValue);
-            router.push("/activities/createquiz/" + _quizId);
+            router.replace("/activities/createquiz/" + _quizId);
         }
         else{
             await saveQuestion(_quizId, newValue);
