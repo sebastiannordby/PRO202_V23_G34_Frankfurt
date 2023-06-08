@@ -107,7 +107,9 @@ export default function JoinThinkProvokePage() {
                     <div className="flex flex-col justify-center">
                         <h1 className="mb-4 text-xl text-center">{currentQuestion?.Value}</h1>
 
-                        <QuizQuestion sendAnswer={onAnswerSelected} question={currentQuestion}/>
+                        <QuizQuestion 
+                            sendAnswer={onAnswerSelected}
+                            question={currentQuestion}/>
                     </div>
                 </div>
             </main>
@@ -146,15 +148,18 @@ export default function JoinThinkProvokePage() {
     );
 }
 
-export function QuizQuestion(
-    { question, sendAnswer } : { question: Question | undefined, sendAnswer: (answer: string) => void }
-) {
-    const [textAnswer, setTextAnswer] = useState('');
+type QuizQuestionParams = {
+    question: Question | undefined;
+    sendAnswer: (answer: string) => void | undefined; 
+};
 
-    const sendTextAnswer = () => {
-        sendAnswer(textAnswer);
-        setTextAnswer('');
-    };
+export function QuizQuestion({ question, sendAnswer }: QuizQuestionParams) {
+    // const [textAnswer, setTextAnswer] = useState('');
+
+    // const sendTextAnswer = () => {
+    //     sendAnswer(textAnswer);
+    //     setTextAnswer('');
+    // };
 
     if(question?.Type == QuestionType.Dilemma) {
         return (
@@ -184,27 +189,28 @@ export function QuizQuestion(
                 }
             </div>
         );
-    } else if(question?.Type == QuestionType.TextAnswer) {
-        <div className="flex flex-gap p-2 justify-center">
-            <p>Skriv ditt svar under: </p>
+    } 
+    // else if(question?.Type == QuestionType.TextAnswer) {
+    //     <div className="flex flex-gap p-2 justify-center">
+    //         <p>Skriv ditt svar under: </p>
 
-            <textarea 
-                rows={5}
-                value={textAnswer}
-                onChange={(e) => setTextAnswer(e.target.value)}
-                className="resize-none">
-            </textarea>
+    //         <textarea 
+    //             rows={5}
+    //             value={textAnswer}
+    //             onChange={(e) => setTextAnswer(e.target.value)}
+    //             className="resize-none">
+    //         </textarea>
 
-            <button 
-                onClick={sendTextAnswer}
-                data-modal-hide="defaultModal" 
-                type="button" 
-                className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
-                    focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
-                    p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
-                    dark:focus:ring-blue-800">Ferdig</button>
-        </div>
-    }
+    //         <button 
+    //             onClick={sendTextAnswer}
+    //             data-modal-hide="defaultModal" 
+    //             type="button" 
+    //             className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+    //                 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+    //                 p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+    //                 dark:focus:ring-blue-800">Ferdig</button>
+    //     </div>
+    // }
 
     return (<h1>Her er det noe feil?</h1>);
 }

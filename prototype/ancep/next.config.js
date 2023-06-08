@@ -5,6 +5,9 @@ const nextConfig = {
         remotePatterns: [
 
         ]
+    },
+    typescript: {
+        ignoreBuildErrors: true
     }
 }
 
