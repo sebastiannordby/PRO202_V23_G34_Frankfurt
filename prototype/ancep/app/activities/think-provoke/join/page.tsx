@@ -100,9 +100,9 @@ export default function JoinThinkProvokePage() {
             return(
                 <main className="main-layout"
                     style={{background: "url('/images/think-provoke/join/background.png')"}}>
-                    <div className="content">
+                    <div className="content text-center">
                         <h1>Spørsmål: {currentQuestion?.Value}</h1>
-                        <p>Ditt svar: {currentAnswer}</p>
+                        <p className="mt-2">Ditt svar: {currentAnswer}</p>
                     </div>
                 </main>
             );
@@ -128,7 +128,7 @@ export default function JoinThinkProvokePage() {
         return (
             <main className="main-layout"
                 style={{background: "url('/images/think-provoke/join/background.png')"}}>
-                <div className="content">
+                <div className="content text-center">
                     <h1>Venter på at verten skal starte.</h1>
                     <p>Vennligst vent 😎</p>
                 </div>
