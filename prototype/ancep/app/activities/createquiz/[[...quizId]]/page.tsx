@@ -22,11 +22,8 @@ export default function CreateQuiz(){
     const {data:session} = useSession();
     const router = useRouter();
 
-
-
     useEffect(()=>{
         (async()=>{
-
             if(quizId !== undefined){
                 var data = await QuizService.single(quizId)
                 if(data !== null){
@@ -34,37 +31,24 @@ export default function CreateQuiz(){
                     setQuizName(data.Name);
                 }
             }
-
         })();
-
-
        
         refreshQuestions();
-
-        
-
-    },[])
-
+    },[]);
 
     const refreshQuestions = async ()=>{
         var quest = await QuestionService.all(quizId)
-
         console.log(quest);
         setQuestions(quest);
-    }
-    
+    };
 
     const deleteQuestion = async  (questionId:string)=>{
-        
         await QuestionService.remove(questionId);
-
         await refreshQuestions();
-    }
+    };
     
     const QuestionsView: Function = (props:{questions:Question[]})=>{
         const {questions} = props;
-
-
         const View = (props:{question:Question})=>{
 
             const {question} = props;
@@ -85,18 +69,19 @@ export default function CreateQuiz(){
             var key = (Math.random() * 10).toString();
 
             return(
-                <div key={key} className="text-xl flex flex-col bg-white m-2 p-2 border rounded gap-1">
-                    <div className="flex justify-between w-full">
-                        <button className="btn bg-red-500 text-white hover:bg-red-900" onClick={()=>deleteQuestion(data._id ?? "")}>
-                            Slett
-                        </button>
+                <div key={key} className="text-xl flex flex-col bg-white m-2border rounded-md gap-1">
+                    <div className="flex gap-2 w-full items-center p-3 bg-blue-200">
+                        <h1 className="mr-auto">Spørsmål</h1>
                         <button 
                             className="border bg-white btn hover:bg-primary hover:text-white" 
                             onClick={()=> {setCurrentEditQuestion(data); setShowEditQuestion(true);}}>
                             Rediger
                         </button>
+                        <button className="btn bg-red-500 text-white hover:bg-red-900" onClick={()=>deleteQuestion(data._id ?? "")}>
+                            Slett
+                        </button>
                     </div>
-                    <label>Spørsmål:</label>
+                    
                     <View question={data}/>
                 </div>
             )
@@ -104,15 +89,12 @@ export default function CreateQuiz(){
     }
 
     const questionConfirmed = async (newValue:Question)=>{
-        
-        var email = session?.user?.email ?? "";
-        var _quizId = quizId;
+        const email = session?.user?.email ?? "";
+        let _quizId = quizId;
 
         setShowEditQuestion(false);
 
-
         const saveQuestion = async (quizId:string, question:Question) : Promise<Question>=>{
-            
             if(currentEditQuestion._id !== undefined){
                 question._id = currentEditQuestion._id;
             }
@@ -122,43 +104,36 @@ export default function CreateQuiz(){
             return _question;
         }
 
-
         if(quizId === "" || quizId === undefined){
             var quiz = await insertQuiz(quizName, email);
             _quizId = quiz._id ?? "";
 
             await saveQuestion(_quizId, newValue);
             router.replace("/activities/createquiz/" + _quizId);
-        }
-        else{
+        } else {
             await saveQuestion(_quizId, newValue);
            
             await refreshQuestions();
         }
     }
 
-
     const createNewQuestion = ()=>{
         setCurrentEditQuestion(new Question());
         setShowEditQuestion(true)
-    }
+    };
 
     const insertQuiz = async (quizName:string, email:string) : Promise<Quiz> =>{
-
-        
         if(email === ""){
             console.error("Du må være logget inn for å lage aktivitet");
         }
         quiz.Name = quizName;
         quiz.Email = email ?? "";
-
         
-        var data = await QuizService.add(quiz)
+        const data = await QuizService.add(quiz)
         setQuiz(data);
-        return data;
-    
-    }
 
+        return data;
+    };
 
     const saveQuiz = async ()=>{
         var result = await insertQuiz(quizName, session?.user?.email ?? "");
@@ -168,11 +143,12 @@ export default function CreateQuiz(){
     }
 
     return(
-        <div className="flex flex-col p-1 h-full main-layout" >
-
+        <main className="flex flex-col h-full main-layout" >
             <div 
                 className="content flex flex-col w-full bg-white bg-opacity-[0.8] p-5 rounded-[1.5rem]"
                 style={{ height: '100% !important'}}>
+
+                <h1 className="page-title">Design Tankevekker Quiz</h1>
 
                 <div className="my-4 flex w-full h-[50px] align-items-center items-center">
                     <h1 className="text-xl my-auto">Quiz Navn:</h1>
@@ -185,20 +161,23 @@ export default function CreateQuiz(){
                     <button className="bg-white shadow-xl w-max rounded p-1 mr-2 text-xl border-primary border" onClick={()=>createNewQuestion()}>Legg til spørsmål</button>
                 </div>
                
-                <div className="flex flex-col h-full max-h-full">
+                <div className="flex flex-col gap-4 h-full flex-grow overflow-scroll">
                     <QuestionsView questions={questions}/>
                 </div>
 
-                <EditQuestion 
-                    question={currentEditQuestion} 
-                    confirmed={(newValue:Question)=>questionConfirmed(newValue)}
-                    visible={showEditQuestion}
-                    visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}/>
+                <div>
+                    <EditQuestion 
+                        question={currentEditQuestion} 
+                        confirmed={(newValue:Question)=>questionConfirmed(newValue)}
+                        visible={showEditQuestion}
+                        visibleChanged={(visible:boolean)=>setShowEditQuestion(visible)}/>
+                        
+                </div>
 
                 <div className="p-2 flex align-items-end">
                     <button className="bg-primary text-white shadow-xl p-2 my-auto rounded text-xl h-min ml-auto" onClick={()=>saveQuiz()}>Lagre</button>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

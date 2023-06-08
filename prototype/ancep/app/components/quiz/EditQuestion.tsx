@@ -23,10 +23,10 @@ export default function EditQuestion(
     } = props;
 
     const [questionType, setQuestionType] = useState(QuestionType.TextAnswer);
-
-    const [dilemma1, setDilemme1] = useState("");
-    const [dilemma2, setDilemme2] = useState("");
-    const [questionValue, setQuestionValue] = useState("");
+    const [dilemma1, setDilemme1] = useState('');
+    const [dilemma2, setDilemme2] = useState('');
+    const [textAnswer, setTextAnswer] = useState('');
+    const [questionValue, setQuestionValue] = useState('');
     const [multipleChoiceAnswers, setMultipleAnswers] = useState<string[]>([]);
 
     useEffect(()=>{
@@ -97,13 +97,13 @@ export default function EditQuestion(
 
 function QuestionEditor(
     props:{
-        type:QuestionType, 
-        multipleChoiceAnswers:string[],
-        dilemma1:string,
-        dilemma2:string, 
-        multipleChoiceAnswersChanged:Dispatch<SetStateAction<string[]>>,
-        dilemma1Changed:Dispatch<string>,
-        dilemma2Changed:Dispatch<string>
+        type: QuestionType, 
+        multipleChoiceAnswers: string[],
+        dilemma1: string,
+        dilemma2: string, 
+        multipleChoiceAnswersChanged: Dispatch<SetStateAction<string[]>>,
+        dilemma1Changed: Dispatch<string>,
+        dilemma2Changed: Dispatch<string>,
 }) {
     const {
             type, 
@@ -129,8 +129,6 @@ function QuestionEditor(
                 answers={multipleChoiceAnswers}
                 answersChanged={multipleChoiceAnswersChanged}/>
         );
-    } else if(type == QuestionType.TextAnswer) {
-        return <h1>Kommer</h1>;
     } else {
         return <></>;
     }

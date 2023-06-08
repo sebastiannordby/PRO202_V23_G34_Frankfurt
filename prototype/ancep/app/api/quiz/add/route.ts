@@ -5,8 +5,6 @@ import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request){
-
-    
     const jsonData = await req.json();
     const quiz = jsonData as Quiz;
     const objectId = new ObjectId(jsonData._id);
@@ -22,7 +20,6 @@ export async function POST(req: Request){
     if(exists !== null){
         const updateResult = await collection.updateOne({_id: objectId}, {"$set": {Name: quiz.Name} as Quiz} );
         const updatedValue = await collection.findOne({_id: objectId});
-
         await client.close();
         return NextResponse.json(updatedValue);
     }

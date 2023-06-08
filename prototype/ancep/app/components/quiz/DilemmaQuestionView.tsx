@@ -3,18 +3,15 @@ import { Question } from "@/lib/models/question";
 export default function DilemmaQuestionView(props:{question:Question, keyValue?:string}){
     const {question, keyValue} = props;
     return(
-        <div key={keyValue} className="flex flex-col  rounded p-2 bg-white">
-            <textarea disabled className="w-full " value={question.Value}/>
+        <div key={keyValue} className="flex flex-col  rounded bg-white">
+            <textarea disabled className="w-full resize-none p-2" value={question.Value}/>
 
-            <div className="flex flex-col border p-1 rounded border-black">
-                <label className="text-[15px]">Svar alternativer:</label>
-                <div className="grid grid-cols-2 gap-1">
-                    <div className="flex p-1 flex-col rounded p-1 bg-blue-300">
-                        <label>A:</label>
+            <div className="flex flex-col p-2 rounded">
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="flex p-2 flex-col rounded bg-blue-300">
                         <label >{question.Answer.Dilemma.Dilemma1}</label>
                     </div>
-                    <div className="flex p-1 flex-col rounded p-1 bg-blue-300">
-                        <label>B:</label>
+                    <div className="flex p-2 flex-col rounded bg-blue-300">
                         <label >{question.Answer.Dilemma.Dilemma2}</label>
                     </div>
                 </div>

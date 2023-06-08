@@ -171,12 +171,12 @@ type QuizQuestionParams = {
 };
 
 const  QuizQuestion:FunctionComponent<QuizQuestionParams> = ({ question, sendAnswer }) => {
-    // const [textAnswer, setTextAnswer] = useState('');
+    const [textAnswer, setTextAnswer] = useState('');
 
-    // const sendTextAnswer = () => {
-    //     sendAnswer(textAnswer);
-    //     setTextAnswer('');
-    // };
+    const sendTextAnswer = () => {
+        sendAnswer(textAnswer);
+        setTextAnswer('');
+    };
 
     if(question?.Type == QuestionType.Dilemma) {
         return (
@@ -195,7 +195,7 @@ const  QuizQuestion:FunctionComponent<QuizQuestionParams> = ({ question, sendAns
         );
     } else if(question?.Type == QuestionType.MultipleChoice) {
         return (
-            <div className="flex gap-2 p-2 justify-center">
+            <div className="flex gap-2 p-2 flex-wrap justify-center">
                 {
                     question.Answer.MultipleChoice.map(x => 
                         <div 
@@ -206,28 +206,31 @@ const  QuizQuestion:FunctionComponent<QuizQuestionParams> = ({ question, sendAns
                 }
             </div>
         );
+    } else if(question?.Type == QuestionType.TextAnswer) {
+        return (
+            <div className="flex flex-col gap-2 p-2 justify-center">
+                <p>Skriv ditt svar under: </p>
+
+                <textarea 
+                    rows={5}
+                    value={textAnswer}
+                    onChange={(e) => setTextAnswer(e.target.value)}
+                    className="resize-none p-4 rounded-md">
+                </textarea>
+
+                <button 
+                    onClick={sendTextAnswer}
+                    data-modal-hide="defaultModal" 
+                    type="button" 
+                    className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
+                        focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
+                        p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                        dark:focus:ring-blue-800">Ferdig</button>
+            </div>
+        );
     } 
-    // else if(question?.Type == QuestionType.TextAnswer) {
-    //     <div className="flex flex-gap p-2 justify-center">
-    //         <p>Skriv ditt svar under: </p>
 
-    //         <textarea 
-    //             rows={5}
-    //             value={textAnswer}
-    //             onChange={(e) => setTextAnswer(e.target.value)}
-    //             className="resize-none">
-    //         </textarea>
-
-    //         <button 
-    //             onClick={sendTextAnswer}
-    //             data-modal-hide="defaultModal" 
-    //             type="button" 
-    //             className="ml-auto w-24 text-white bg-pink-600 hover:bg-pink-600 focus:ring-4 
-    //                 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm
-    //                 p-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
-    //                 dark:focus:ring-blue-800">Ferdig</button>
-    //     </div>
-    // }
+    console.log('QUESTION: ', question?.Type == QuestionType.TextAnswer);
 
     return (<h1>Her er det noe feil?</h1>);
 }
