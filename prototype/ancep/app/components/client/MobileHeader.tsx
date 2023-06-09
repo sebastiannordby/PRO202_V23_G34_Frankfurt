@@ -91,7 +91,7 @@ export function MobileHeader() {
                         <div className="h-full overflow-x-hidden overflow-y-scroll space-y-6">
                             <div className="mb-32 w-full gap-2 flex flex-col justify-center content-center text-center mt-6 text-white">
                                 <Link
-                                    href="/quiz"
+                                    href="/activities"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                         <img
