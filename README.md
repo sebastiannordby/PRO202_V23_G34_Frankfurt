@@ -5,6 +5,10 @@
 
 
 ## Architecture
+  - Frontend: NextJs, React and Tailwind
+  - Backend: NextJs and NodeJS(socket server for interactive games)
+  - Database: MongoDB
+  - Languages/Markup/Frameworks: TypeScript, JavaScript, CSS, HTML 
 
 ## Configuration
 
