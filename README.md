@@ -5,3 +5,18 @@
 
 
 <h2>Architecture</h2>
+
+<h3>Configuration</h3>
+
+Add a .env.local file to /prototype/ancep:
+
+GOOGLE_ID=
+GOOGLE_SECRET=
+NEXTAUTH_SECRET=
+MONGODB_URI=
+NEXT_PUBLIC_SOCKET_SERVER=localhost:4000
+
+Add a .env file to /socket_server:
+
+PORT=4000
+MONGODB_URI_SOCKET=
