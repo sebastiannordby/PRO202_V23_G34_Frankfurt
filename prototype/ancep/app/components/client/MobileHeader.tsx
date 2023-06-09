@@ -92,6 +92,7 @@ export function MobileHeader() {
                             <div className="mb-32 w-full gap-2 flex flex-col justify-center content-center text-center mt-6 text-white">
                                 <Link
                                     href="/activities"
+                                    onClick={() => setMenuVisibility(false)}
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-3 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                         <img
@@ -110,6 +111,7 @@ export function MobileHeader() {
                                 
                                 <Link
                                     href="/chat-bot"
+                                    onClick={() => setMenuVisibility(false)}
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                         <img
@@ -126,6 +128,7 @@ export function MobileHeader() {
 
                                 <Link
                                     href="/archive"
+                                    onClick={() => setMenuVisibility(false)}
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                     <img
@@ -142,6 +145,7 @@ export function MobileHeader() {
 
                                 <Link
                                     href="/profile"
+                                    onClick={() => setMenuVisibility(false)}
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                     <img
@@ -158,6 +162,7 @@ export function MobileHeader() {
 
                                 <Link
                                     href="/teacher"
+                                    onClick={() => setMenuVisibility(false)}
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                         <img
