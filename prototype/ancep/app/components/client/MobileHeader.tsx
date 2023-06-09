@@ -109,7 +109,7 @@ export function MobileHeader() {
                                 </Link>
                                 
                                 <Link
-                                    href="/chat"
+                                    href="/chat-bot"
                                     className="mx-auto flex gap-3 items-center card w-72 shadow-md group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-white"
                                     rel="noopener noreferrer">
                                         <img
