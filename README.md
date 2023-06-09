@@ -4,19 +4,19 @@
 [![Build and deploy Node.js app to Azure Web App - frankfurt](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml/badge.svg)](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml)
 
 
-<h2>Architecture</h2>
+## Architecture
 
-<h3>Configuration</h3>
+## Configuration
 
-Add a .env.local file to /prototype/ancep:
+### Add a ".env.local" file in path "/prototype/ancep":
 
-GOOGLE_ID=
-GOOGLE_SECRET=
-NEXTAUTH_SECRET=
-MONGODB_URI=
-NEXT_PUBLIC_SOCKET_SERVER=localhost:4000
+GOOGLE_ID=</br>
+GOOGLE_SECRET=</br>
+NEXTAUTH_SECRET=</br>
+MONGODB_URI=</br>
+NEXT_PUBLIC_SOCKET_SERVER=localhost:4000</br>
 
-Add a .env file to /socket_server:
+### Add a ".env" file in path "/socket_server":
 
-PORT=4000
-MONGODB_URI_SOCKET=
+PORT=4000</br>
+MONGODB_URI_SOCKET=</br>
