@@ -3,8 +3,8 @@
 
 [![Build and deploy Node.js app to Azure Web App - frankfurt](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml/badge.svg)](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml)
 
-DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/
-SOCKET SERVER URI: https://frankfurt.azurewebsites.net/
+- DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/
+- SOCKET SERVER URI: https://frankfurt.azurewebsites.net/
 
 ## Architecture
   - Frontend: NextJs, React and Tailwind
