@@ -3,12 +3,20 @@
 
 [![Build and deploy Node.js app to Azure Web App - frankfurt](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml/badge.svg)](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml)
 
+DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/
+SOCKET SERVER URI: https://frankfurt.azurewebsites.net/
 
 ## Architecture
   - Frontend: NextJs, React and Tailwind
   - Backend: NextJs and NodeJS(socket server for interactive games)
   - Database: MongoDB
   - Languages/Markup/Frameworks: TypeScript, JavaScript, CSS, HTML 
+
+## Installation - Terminal/Command line
+- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm install" 
+- Change directory to "PRO202_V23_G34_Frankfurt/socket_server" and run "npm install" 
+- Change directory to "PRO202_V23_G34_Frankfurt/prototype/ancep" and run "npm install"
+- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm run dev" 
 
 ## Configuration
 
