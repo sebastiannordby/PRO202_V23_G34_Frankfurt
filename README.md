@@ -20,6 +20,10 @@
 
 ## Configuration
 
+The configuration below will be provided in a .txt document
+- File(.env.local) for "/prototype/ancep" is named "frontend_config.txt"
+- File(.env) for "/socket_server" is named "backend_config.txt"
+
 ### Add a ".env.local" file in path "/prototype/ancep":
 
 GOOGLE_ID=</br>
