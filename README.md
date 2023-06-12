@@ -1,28 +1,28 @@
-# PRO202_V23_G34_Frankfurt - Installation Guide
+# Installation Guide - PRO202_V23_G34_Frankfurt
 <img src="https://therealsujitk-vercel-badge.vercel.app/?app=pro-202-v23-g34-frankfurt"/>
 
 [![Build and deploy Node.js app to Azure Web App - frankfurt](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml/badge.svg)](https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt/actions/workflows/main_frankfurt.yml)
 
-- DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/
-- SOCKET SERVER URI: https://frankfurt.azurewebsites.net/
+- DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/</br>
+- SOCKET SERVER URI: https://frankfurt.azurewebsites.net/</br>
 
 ## Architecture
-  - Frontend: NextJs, React and Tailwind
-  - Backend: NextJs and NodeJS(socket server for interactive games)
-  - Database: MongoDB
-  - Languages/Markup/Frameworks: TypeScript, JavaScript, CSS, HTML 
+  - Frontend: NextJs, React and Tailwind</br>
+  - Backend: NextJs and NodeJS(socket server for interactive games)</br>
+  - Database: MongoDB</br>
+  - Languages/Markup/Frameworks: TypeScript, JavaScript, CSS, HTML </br>
 
 ## Installation - Terminal/Command line
-- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm install" 
-- Change directory to "PRO202_V23_G34_Frankfurt/socket_server" and run "npm install" 
-- Change directory to "PRO202_V23_G34_Frankfurt/prototype/ancep" and run "npm install"
-- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm run dev" 
+- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm install" </br>
+- Change directory to "PRO202_V23_G34_Frankfurt/socket_server" and run "npm install" </br>
+- Change directory to "PRO202_V23_G34_Frankfurt/prototype/ancep" and run "npm install"</br>
+- Change directory to "PRO202_V23_G34_Frankfurt" and run "npm run dev" </br>
 
 ## Configuration
 
-The configuration below will be provided in a .txt document
-- File(.env.local) for "/prototype/ancep" is named "frontend_config.txt"
-- File(.env) for "/socket_server" is named "backend_config.txt"
+The configuration below will be provided in a .txt document</br>
+- File(.env.local) for "/prototype/ancep" is named "frontend_config.txt"</br>
+- File(.env) for "/socket_server" is named "backend_config.txt"</br>
 
 ### Add a ".env.local" file in path "/prototype/ancep":
 
