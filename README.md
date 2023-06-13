@@ -5,6 +5,7 @@
 
 - DEMO URI: https://pro-202-v23-g34-frankfurt.vercel.app/</br>
 - SOCKET SERVER URI: https://frankfurt.azurewebsites.net/</br>
+- LINK TO THE FIRST PROTOTYPE: https://pro-202-v23-g34-frankfurt-prototype.vercel.app/
 
 ## Architecture
   - Frontend: NextJs, React and Tailwind</br>
