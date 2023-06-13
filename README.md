@@ -7,6 +7,7 @@
 - SOCKET SERVER URI: https://frankfurt.azurewebsites.net/</br>
 - LINK TO THE FIRST PROTOTYPE: https://pro-202-v23-g34-frankfurt-prototype.vercel.app/
 - LINK TO GITHUB REPOSITORY: https://github.com/sebastiannordby/PRO202_V23_G34_Frankfurt
+- LINK TO FORKED VERSION OF PROTOTYPE: https://github.com/Kristiania-EDU/PRO202_V23_G34_Frankfurt_Prototype/tree/master
 
 ## Architecture
   - Frontend: NextJs, React and Tailwind</br>
